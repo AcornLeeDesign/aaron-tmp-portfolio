@@ -4,4 +4,19 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   css: ['~/assets/css/main.css'],
+
+  runtimeConfig: {
+    public: {
+      siteUrl: 'https://aaronlee.design',
+    },
+  },
+
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+        { rel: 'apple-touch-icon', href: '/favicon.png' },
+      ],
+    },
+  },
 })
