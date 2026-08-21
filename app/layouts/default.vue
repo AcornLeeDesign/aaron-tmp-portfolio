@@ -1,7 +1,7 @@
 <template>
   <div class="site">
     <header class="header">
-      <NuxtLink to="/" class="header__name">Aaron Lee's temporary portfolio</NuxtLink>
+      <NuxtLink to="/" class="header__name">Aaron Lee's placeholder portfolio</NuxtLink>
     </header>
 
     <main class="main">
