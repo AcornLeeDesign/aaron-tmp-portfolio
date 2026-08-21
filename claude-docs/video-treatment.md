@@ -45,9 +45,7 @@ Use the width and height values as the `aspect` property in the waterfall grid d
 
 ## 3. Compress MP4 (H.264)
 
-Two quality tiers depending on where the video is used:
-
-### Waterfall grid (small display, aggressive compression)
+Waterfall videos use aggressive compression for their small display size:
 
 ```bash
 ffmpeg -y -i input.mp4 \
@@ -57,31 +55,14 @@ ffmpeg -y -i input.mp4 \
   output.mp4
 ```
 
-### Blog pages (larger display, higher quality)
-
-```bash
-ffmpeg -y -i input.mp4 \
-  -vf "scale='min(1200,iw)':-2" \
-  -c:v libx264 -crf 23 -preset slow \
-  -an -movflags +faststart \
-  output.mp4
-```
-
 ## 4. Generate WebM (VP9)
 
-Smaller alternative served to Chrome/Firefox. Match the scale to the tier above:
+Generate a fallback that matches the waterfall scale:
 
 ```bash
-# Waterfall
 ffmpeg -y -i input.mp4 \
   -vf "scale='min(1080,iw)':-2" \
   -c:v libvpx-vp9 -crf 35 -b:v 0 \
-  -an \
-  output.webm
-
-# Blog
-ffmpeg -y -i input.mp4 \
-  -c:v libvpx-vp9 -crf 30 -b:v 0 \
   -an \
   output.webm
 ```
@@ -128,11 +109,12 @@ done
 
 The `app/components/VideoPlayer.vue` component handles:
 
-- **Lazy loading** via IntersectionObserver (200px rootMargin) — video sources only injected when scrolling near
+- **Lazy loading** via IntersectionObserver (75px root margin) — video sources are attached once shortly before entering the viewport
 - **`preload="none"`** — browser won't buffer until needed
 - **Poster image** — auto-derived from video path (`/videos/foo.mp4` -> `/videos/posters/foo.jpg`)
-- **Dual format** — WebM served first (smaller), MP4 as fallback
-- **Autoplay/loop/muted** — background video behavior
+- **Dual format** — browser-compatible H.264 MP4 first, WebM as fallback
+- **Viewport playback** — a persistent observer pauses offscreen videos and a global coordinator plays at most three visible videos
+- **Autoplay/loop/muted** — background video behavior with page-visibility pausing
 
 ## File structure after treatment
 
