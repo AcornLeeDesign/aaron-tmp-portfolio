@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useHead({ title: 'Aaron Tmp Portfolio' })
+useHead({ title: 'Aaron Lee Tmp Portfolio' })
 
 interface Tag {
   label: string
