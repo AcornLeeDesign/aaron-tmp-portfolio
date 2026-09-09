@@ -23,3 +23,6 @@ logs
 .env.*
 !.env.example
 .vercel
+
+# Unoptimized source footage is kept locally; the app uses optimized files in public/videos.
+public/videos/originals/

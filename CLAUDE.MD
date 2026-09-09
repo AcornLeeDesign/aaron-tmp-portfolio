@@ -1,12 +1,12 @@
 # Aaron Tmp Portfolio
 
 ## Project Overview
-Personal portfolio website for ACAD 275. Built with Nuxt 4 and Vue 3. Uses Bun as the package manager.
+Personal portfolio website for ACAD 275. Built with Nuxt 4 and Vue 3. Uses npm as the package manager.
 
 ## Tech Stack
 - Framework: Nuxt 4 (v4.4.2)
 - Language: TypeScript, Vue 3 SFCs with `<script setup lang="ts">`
-- Package Manager: Bun — always use `bun install`, `bun run dev`, etc. Never npm/yarn/pnpm.
+- Package Manager: npm — always use `npm install`, `npm run dev`, etc. npm only - no other package managers.
 
 ## Project Structure (Nuxt 4)
 
@@ -14,9 +14,14 @@ Personal portfolio website for ACAD 275. Built with Nuxt 4 and Vue 3. Uses Bun a
       app.vue                    # Root component — <NuxtLayout> + <NuxtPage />
       pages/
         index.vue                # Home (/) — waterfall video grid
-        about.vue                # About page (/about) — centered bio
+        nova.vue                 # Gated Nova case study (/nova)
+        nuance.vue               # Gated Nuance case study (/nuance)
       components/
         VideoPlayer.vue          # Lazy-loading video with WebM/MP4 sources + poster
+        CaseStudyGate.vue        # Password form for case studies
+        CaseStudyPage.vue        # Shared case study layout + gated body
+      data/
+        caseStudies.ts           # Structured Nova / Nuance case study content
       layouts/
         default.vue              # Site shell: header + floating pill nav + contact popover
       assets/
@@ -48,7 +53,13 @@ Personal portfolio website for ACAD 275. Built with Nuxt 4 and Vue 3. Uses Bun a
 - Aspect ratios can be manually overridden (e.g. `1 / 1`) — `object-fit: cover` handles cropping.
 
 ## Case-study Routes
-- Case-study subpages are intentionally inactive; project cards must not link to internal detail routes.
+- `/nova` and `/nuance` are password-gated case studies (shared `sessionStorage` key `case-study-unlocked`).
+- Default password is `case` via `runtimeConfig.public.caseStudyPassword`.
+- Content lives in `app/data/caseStudies.ts` (sourced from Framer dumps in `content/case-studies/`).
+- Shared UI: `CaseStudyGate.vue` (password form) + `CaseStudyPage.vue` (layout/body).
+- These routes are development-only and return 404 in production builds.
+- Home waterfall cards remain unlinked and retain the "Case study soon" label.
+- Do not invent case-study facts beyond the Framer text package.
 
 ## Key CSS Variables (defined in main.css :root)
 - `--color-bg` — page background (#ffffff)
@@ -70,11 +81,11 @@ Personal portfolio website for ACAD 275. Built with Nuxt 4 and Vue 3. Uses Bun a
 - Mobile-first responsive design.
 
 ## Commands
-- `bun install` — install dependencies
-- `bun run dev` — dev server at http://localhost:3000
-- `bun run build` — production build
-- `bun run generate` — static generation
-- `bun run preview` — preview production build
+- `npm install` — install dependencies
+- `npm run dev` — dev server at http://localhost:3000
+- `npm run build` — production build
+- `npm run generate` — static generation
+- `npm run preview` — preview production build
 
 ## Video Treatment
 - All new videos must go through the optimization process documented in `claude-docs/video-treatment.md`.

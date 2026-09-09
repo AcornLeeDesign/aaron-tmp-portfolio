@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: 'https://aaronlee.design',
+      caseStudyPassword: 'case',
     },
   },
 
