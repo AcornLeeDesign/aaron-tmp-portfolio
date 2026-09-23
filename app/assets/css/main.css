@@ -1,5 +1,21 @@
 /* ── Self-hosted Fonts ── */
 @font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/GeneralSans-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/GeneralSans-VariableItalic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'PP Mori';
   src: url('/fonts/PPMori-Regular.otf') format('opentype');
   font-style: normal;
@@ -123,7 +139,7 @@ ol {
   --space-xxxl: 40px;
 
   /* Typography */
-  --font-sans: 'PP Mori', 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'General Sans', 'PP Mori', 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-mono: ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, monospace;
   --font-mono-ui: 'Atkinson Hyperlegible Mono', var(--font-mono);
   --font-duration: 'Atkinson Hyperlegible', var(--font-mono-ui);

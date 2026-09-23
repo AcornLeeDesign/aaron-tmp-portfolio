@@ -60,21 +60,19 @@ const MAX_SOUND_HEIGHT = 60
 const DRAWING_HEIGHT = MAX_SOUND_HEIGHT
 const MIN_SOUND_HEIGHT = 40
 const SAMPLE_WIDTH = 4
-const MAX_GRADIENT_STOPS = 96
 const AMPLITUDE_SMOOTHING_RADIUS = 8
 const RAW_AMPLITUDE_MIX = 0.18
+const FREQUENCY_SMOOTHING_RADIUS = 10
+const RAW_FREQUENCY_MIX = 0.04
 const YOUTUBE_VIDEO_ID = 'EfgAd6iHApE'
 const BLUE_COLOR: RgbColor = { red: 164, green: 202, blue: 250 }
-const GREEN_COLOR: RgbColor = { red: 202, green: 242, blue: 222 }
 const PINK_COLOR: RgbColor = { red: 248, green: 205, blue: 232 }
 const YELLOW_COLOR: RgbColor = { red: 255, green: 239, blue: 166 }
 const FREQUENCY_COLOR_STOPS: FrequencyColorStop[] = [
   { position: 0, color: BLUE_COLOR },
-  { position: 0.5, color: BLUE_COLOR },
-  { position: 0.62, color: GREEN_COLOR },
-  { position: 0.72, color: BLUE_COLOR },
-  { position: 0.82, color: PINK_COLOR },
-  { position: 0.9, color: YELLOW_COLOR },
+  { position: 0.28, color: BLUE_COLOR },
+  { position: 0.58, color: PINK_COLOR },
+  { position: 0.78, color: YELLOW_COLOR },
   { position: 1, color: BLUE_COLOR },
 ]
 
@@ -89,7 +87,9 @@ let youtubePlayer: YouTubePlayer | undefined
 let isYouTubePlayerReady = false
 let decodedProfile = new Uint8Array()
 let smoothedAmplitudeProfile = new Float32Array()
-let history: SoundSample[] = []
+let smoothedFrequencyProfile = new Float32Array()
+let pixelBuffer: HTMLCanvasElement | undefined
+let pixelBufferContext: CanvasRenderingContext2D | null = null
 let profileIndex = 0
 let lastSampleTime = 0
 
@@ -180,6 +180,7 @@ function decodeProfile() {
   const binary = window.atob(YLANG_YLANG_PROFILE)
   decodedProfile = Uint8Array.from(binary, character => character.charCodeAt(0))
   smoothedAmplitudeProfile = new Float32Array(YLANG_YLANG_SAMPLE_COUNT)
+  smoothedFrequencyProfile = new Float32Array(YLANG_YLANG_SAMPLE_COUNT)
 
   for (let sampleIndex = 0; sampleIndex < YLANG_YLANG_SAMPLE_COUNT; sampleIndex += 1) {
     let weightedAmplitude = 0
@@ -204,6 +205,29 @@ function decodeProfile() {
     const rollingAmplitude = weightedAmplitude / totalWeight
     smoothedAmplitudeProfile[sampleIndex] = rollingAmplitude * (1 - RAW_AMPLITUDE_MIX)
       + rawAmplitude * RAW_AMPLITUDE_MIX
+
+    let weightedFrequency = 0
+    let totalFrequencyWeight = 0
+
+    for (
+      let offset = -FREQUENCY_SMOOTHING_RADIUS;
+      offset <= FREQUENCY_SMOOTHING_RADIUS;
+      offset += 1
+    ) {
+      const wrappedIndex = (
+        (sampleIndex + offset) % YLANG_YLANG_SAMPLE_COUNT
+        + YLANG_YLANG_SAMPLE_COUNT
+      ) % YLANG_YLANG_SAMPLE_COUNT
+      const distance = offset / (FREQUENCY_SMOOTHING_RADIUS / 2)
+      const weight = Math.exp(-0.5 * distance * distance)
+      weightedFrequency += ((decodedProfile[wrappedIndex * 2 + 1] ?? 0) / 255) * weight
+      totalFrequencyWeight += weight
+    }
+
+    const rawFrequency = (decodedProfile[sampleIndex * 2 + 1] ?? 0) / 255
+    const rollingFrequency = weightedFrequency / totalFrequencyWeight
+    smoothedFrequencyProfile[sampleIndex] = rollingFrequency * (1 - RAW_FREQUENCY_MIX)
+      + rawFrequency * RAW_FREQUENCY_MIX
   }
 }
 
@@ -214,7 +238,8 @@ function readSample(index: number): SoundSample {
 
   return {
     amplitude: smoothedAmplitudeProfile[wrappedIndex] ?? 0,
-    frequency: (decodedProfile[offset + 1] ?? 0) / 255,
+    frequency: smoothedFrequencyProfile[wrappedIndex]
+      ?? (decodedProfile[offset + 1] ?? 0) / 255,
   }
 }
 
@@ -237,10 +262,14 @@ function colorForFrequency(frequency: number) {
   ]!
   const lowerStop = FREQUENCY_COLOR_STOPS[Math.max(0, upperStopIndex - 1)]!
   const stopRange = upperStop.position - lowerStop.position
+  const linearMix = stopRange === 0
+    ? 0
+    : (palettePosition - lowerStop.position) / stopRange
+  const easedMix = linearMix * linearMix * (3 - 2 * linearMix)
   const color = mixColor(
     lowerStop.color,
     upperStop.color,
-    stopRange === 0 ? 0 : (palettePosition - lowerStop.position) / stopRange,
+    easedMix,
   )
 
   return `rgb(${color.red} ${color.green} ${color.blue})`
@@ -260,11 +289,59 @@ function interpolateSample(from: SoundSample, to: SoundSample, amount: number): 
   }
 }
 
-function rebuildHistory(width: number) {
-  const requiredSamples = Math.ceil(width / SAMPLE_WIDTH) + 4
-  history = Array.from(
-    { length: requiredSamples },
-    (_, index) => readSample(profileIndex - requiredSamples + index + 1),
+function drawSampleColumn(
+  target: CanvasRenderingContext2D,
+  sample: SoundSample,
+  x: number,
+  width: number,
+) {
+  const top = topForAmplitude(sample.amplitude)
+  target.fillStyle = colorForFrequency(sample.frequency)
+  target.fillRect(x, top, width, DRAWING_HEIGHT - top)
+}
+
+function rebuildPixelBuffer(width: number) {
+  pixelBuffer = document.createElement('canvas')
+  pixelBuffer.width = Math.max(1, Math.ceil(width))
+  pixelBuffer.height = DRAWING_HEIGHT
+  pixelBufferContext = pixelBuffer.getContext('2d', { willReadFrequently: true })
+  if (!pixelBufferContext) return
+
+  const columnCount = Math.ceil(pixelBuffer.width / SAMPLE_WIDTH) + 1
+  for (let sampleOffset = columnCount - 1; sampleOffset >= 0; sampleOffset -= 1) {
+    const x = pixelBuffer.width - (sampleOffset + 1) * SAMPLE_WIDTH
+    drawSampleColumn(
+      pixelBufferContext,
+      readSample(profileIndex - sampleOffset),
+      x,
+      SAMPLE_WIDTH + 1,
+    )
+  }
+}
+
+function appendSampleToPixelBuffer(sample: SoundSample) {
+  if (!pixelBuffer || !pixelBufferContext) return
+
+  const shiftedWidth = pixelBuffer.width - SAMPLE_WIDTH
+  if (shiftedWidth <= 0) {
+    rebuildPixelBuffer(pixelBuffer.width)
+    return
+  }
+
+  // Move already-rendered colors as pixels so their hue cannot be reinterpreted later.
+  const shiftedPixels = pixelBufferContext.getImageData(
+    SAMPLE_WIDTH,
+    0,
+    shiftedWidth,
+    DRAWING_HEIGHT,
+  )
+  pixelBufferContext.clearRect(0, 0, pixelBuffer.width, DRAWING_HEIGHT)
+  pixelBufferContext.putImageData(shiftedPixels, 0, 0)
+  drawSampleColumn(
+    pixelBufferContext,
+    sample,
+    pixelBuffer.width - SAMPLE_WIDTH,
+    SAMPLE_WIDTH + 1,
   )
 }
 
@@ -278,87 +355,44 @@ function resizeCanvas() {
   canvas.height = Math.round(DRAWING_HEIGHT * pixelRatio)
   context = canvas.getContext('2d')
   context?.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
-  rebuildHistory(bounds.width)
+  rebuildPixelBuffer(bounds.width)
   drawStrip(0)
 }
 
 function drawStrip(progress: number) {
   const canvas = canvasRef.value
-  if (!canvas || !context || history.length === 0) return
+  if (!canvas || !context || !pixelBuffer) return
 
   const width = canvas.getBoundingClientRect().width
-  const latestSample = history[history.length - 1]!
+  const offset = Math.min(SAMPLE_WIDTH, progress * SAMPLE_WIDTH)
+  const latestSample = readSample(profileIndex)
   const nextSample = readSample(profileIndex + 1)
   const edgeSample = interpolateSample(latestSample, nextSample, progress)
-  const points = history.map((sample, index) => ({
-    ...sample,
-    x: width - (history.length - index - 1) * SAMPLE_WIDTH - progress * SAMPLE_WIDTH,
-  }))
-  points.push({ ...edgeSample, x: width })
 
   context.clearRect(0, 0, width, DRAWING_HEIGHT)
+  context.drawImage(pixelBuffer, -offset, 0)
 
-  const gradient = context.createLinearGradient(0, 0, width, 0)
-  const visiblePoints = points.filter(point => point.x >= 0 && point.x <= width)
-  const stopStride = Math.max(1, Math.ceil(visiblePoints.length / MAX_GRADIENT_STOPS))
-  gradient.addColorStop(0, colorForFrequency(visiblePoints[0]?.frequency ?? 0.5))
-
-  for (let index = stopStride; index < visiblePoints.length - 1; index += stopStride) {
-    const point = visiblePoints[index]!
-    gradient.addColorStop(point.x / width, colorForFrequency(point.frequency))
+  if (offset > 0) {
+    drawSampleColumn(context, edgeSample, width - offset - 1, offset + 2)
   }
-
-  gradient.addColorStop(1, colorForFrequency(edgeSample.frequency))
-
-  const firstPoint = points[0]!
-  const lastPoint = points[points.length - 1]!
-  context.beginPath()
-  context.moveTo(firstPoint.x, DRAWING_HEIGHT)
-  context.lineTo(firstPoint.x, topForAmplitude(firstPoint.amplitude))
-
-  for (let index = 1; index < points.length; index += 1) {
-    const previousPoint = points[index - 1]!
-    const point = points[index]!
-    const midpointX = (previousPoint.x + point.x) / 2
-    const midpointY = (
-      topForAmplitude(previousPoint.amplitude)
-      + topForAmplitude(point.amplitude)
-    ) / 2
-    context.quadraticCurveTo(
-      previousPoint.x,
-      topForAmplitude(previousPoint.amplitude),
-      midpointX,
-      midpointY,
-    )
-  }
-
-  context.quadraticCurveTo(
-    lastPoint.x,
-    topForAmplitude(lastPoint.amplitude),
-    lastPoint.x,
-    topForAmplitude(lastPoint.amplitude),
-  )
-  context.lineTo(lastPoint.x, DRAWING_HEIGHT)
-  context.closePath()
-  context.fillStyle = gradient
-  context.fill()
 }
 
 function advanceProfile(sampleCount: number) {
   if (sampleCount <= 0) return
 
   profileIndex = (profileIndex + sampleCount) % YLANG_YLANG_SAMPLE_COUNT
-  const requiredSamples = history.length
+  const visibleColumnCount = pixelBuffer
+    ? Math.ceil(pixelBuffer.width / SAMPLE_WIDTH) + 1
+    : 0
 
-  if (sampleCount >= requiredSamples) {
-    rebuildHistory(canvasRef.value?.getBoundingClientRect().width ?? window.innerWidth)
+  if (sampleCount >= visibleColumnCount) {
+    rebuildPixelBuffer(canvasRef.value?.getBoundingClientRect().width ?? window.innerWidth)
     return
   }
 
   for (let index = sampleCount - 1; index >= 0; index -= 1) {
-    history.push(readSample(profileIndex - index))
+    appendSampleToPixelBuffer(readSample(profileIndex - index))
   }
-  history.splice(0, sampleCount)
 }
 
 function animate(timestamp: number) {
@@ -436,7 +470,7 @@ onBeforeUnmount(() => {
         <path d="M15.25 5a7 7 0 0 1 0 10" />
       </template>
     </svg>
-    <span>Sound: FKJ — Ylang Ylang</span>
+    <span>FKJ — Ylang Ylang</span>
   </button>
   <div class="sound-gradient__player" aria-hidden="true">
     <div ref="playerHostRef" />
@@ -474,7 +508,7 @@ onBeforeUnmount(() => {
   mix-blend-mode: overlay;
   opacity: 0.42;
   filter: contrast(1.3);
-  animation: sound-gradient-grain 500ms steps(2, end) infinite;
+  animation: sound-gradient-grain 4s linear infinite;
   content: '';
   -webkit-mask-image: linear-gradient(to bottom, transparent 18%, black 62%);
   mask-image: linear-gradient(to bottom, transparent 18%, black 62%);
