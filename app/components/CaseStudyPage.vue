@@ -30,7 +30,7 @@ function onUnlocked() {
 <template>
   <article class="case">
     <div class="case__top">
-      <NuxtLink to="/" class="case__back">
+      <NuxtLink to="/" class="case__back text-primary">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path
             d="M15.75 19.5 8.25 12l7.5-7.5"
@@ -44,25 +44,25 @@ function onUnlocked() {
       </NuxtLink>
 
       <header class="case__header">
-        <h1 class="case__title">{{ study.title }}</h1>
-        <p class="case__lede">{{ study.overview }}</p>
+        <h1 class="case__title text-primary">{{ study.title }}</h1>
+        <p class="case__lede text-primary">{{ study.overview }}</p>
 
         <dl class="case__meta">
           <div class="case__meta-item">
-            <dt>Role</dt>
-            <dd>{{ study.role }}</dd>
+            <dt class="text-primary">Role</dt>
+            <dd class="text-primary">{{ study.role }}</dd>
           </div>
           <div class="case__meta-item">
-            <dt>Team</dt>
-            <dd>{{ study.team.join(', ') }}</dd>
+            <dt class="text-primary">Team</dt>
+            <dd class="text-primary">{{ study.team.join(', ') }}</dd>
           </div>
           <div class="case__meta-item">
-            <dt>Timeline</dt>
-            <dd>{{ study.timeline }}</dd>
+            <dt class="text-primary">Timeline</dt>
+            <dd class="text-primary">{{ study.timeline }}</dd>
           </div>
           <div class="case__meta-item">
-            <dt>Tools</dt>
-            <dd>{{ study.tools.join(', ') }}</dd>
+            <dt class="text-primary">Tools</dt>
+            <dd class="text-primary">{{ study.tools.join(', ') }}</dd>
           </div>
         </dl>
 
@@ -91,18 +91,18 @@ function onUnlocked() {
         :key="section.id"
         class="case__section prose"
       >
-        <h2>{{ section.title }}</h2>
+        <h2 class="text-primary">{{ section.title }}</h2>
 
         <template v-for="(block, index) in section.blocks" :key="`${section.id}-${index}`">
-          <p v-if="block.type === 'paragraph' && block.text">
+          <p v-if="block.type === 'paragraph' && block.text" class="text-primary">
             {{ block.text }}
           </p>
 
-          <h3 v-else-if="block.type === 'subheading' && block.text">
+          <h3 v-else-if="block.type === 'subheading' && block.text" class="text-primary">
             {{ block.text }}
           </h3>
 
-          <blockquote v-else-if="block.type === 'quote' && block.text">
+          <blockquote v-else-if="block.type === 'quote' && block.text" class="text-primary">
             <p>{{ block.text }}</p>
             <footer v-if="block.attribution">{{ block.attribution }}</footer>
           </blockquote>
@@ -112,11 +112,11 @@ function onUnlocked() {
             <p v-if="block.caption" class="case__stat-caption">{{ block.caption }}</p>
           </div>
 
-          <ul v-else-if="block.type === 'list' && block.items?.length">
+          <ul v-else-if="block.type === 'list' && block.items?.length" class="text-primary">
             <li v-for="item in block.items" :key="item">{{ item }}</li>
           </ul>
 
-          <p v-else-if="block.type === 'callout' && block.text" class="case__callout">
+          <p v-else-if="block.type === 'callout' && block.text" class="case__callout text-primary">
             {{ block.text }}
           </p>
 
@@ -138,23 +138,22 @@ function onUnlocked() {
 <style scoped>
 .case {
   padding-inline: var(--page-padding);
-  padding-bottom: 5rem;
+  padding-bottom: var(--space-xxxl);
 }
 
 .case__top {
   max-width: 720px;
   margin-inline: auto;
-  padding-top: 24px;
+  padding-top: var(--space-xl);
 }
 
 .case__back {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-text);
-  margin-bottom: 28px;
+  gap: var(--space-xxs);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-xxl);
   opacity: 0.75;
   transition: opacity var(--transition-fast);
 }
@@ -164,63 +163,61 @@ function onUnlocked() {
 }
 
 .case__header {
-  margin-bottom: 32px;
+  margin-bottom: var(--space-xxl);
 }
 
 .case__title {
-  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
-  font-weight: 500;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
   letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 12px;
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-s);
 }
 
 .case__lede {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
   max-width: 40rem;
 }
 
 .case__meta {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px 24px;
-  margin-top: 28px;
-  padding-top: 24px;
+  gap: var(--space-m) var(--space-xl);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
   border-top: 1px solid var(--color-border);
 }
 
 .case__meta-item dt {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: 4px;
+  margin-bottom: var(--space-xxs);
 }
 
 .case__meta-item dd {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
 }
 
 .case__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px;
+  gap: var(--space-xs);
+  margin-top: var(--space-l);
   list-style: none;
   padding: 0;
 }
 
 .case__tags li {
-  font-size: 12px;
-  font-weight: 500;
-  padding: 4px 10px;
-  border-radius: 999px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-xxs) var(--space-s);
+  border-radius: var(--radius-pill);
   background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
   color: var(--color-text);
 }
@@ -236,8 +233,8 @@ function onUnlocked() {
 
 .case__hero,
 .case__media {
-  margin: 0 0 2rem;
-  border-radius: 10px;
+  margin: 0 0 var(--space-xxl);
+  border-radius: var(--radius-s);
   overflow: hidden;
   background: #000;
   border: 1px solid var(--color-border);
@@ -267,52 +264,52 @@ function onUnlocked() {
 }
 
 .case__media figcaption {
-  padding: 10px 12px 12px;
-  font-size: 13px;
-  font-weight: 400;
+  padding: var(--space-xs) var(--space-s) var(--space-s);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
   color: var(--color-text-muted);
   background: color-mix(in srgb, var(--color-bg) 80%, #000);
 }
 
 .case__section + .case__section {
-  margin-top: 0.5rem;
+  margin-top: var(--space-xs);
 }
 
 .case__stat {
-  margin: 1.25em 0;
-  padding: 16px 18px;
-  border-radius: 10px;
+  margin: var(--space-l) 0;
+  padding: var(--space-m) var(--space-l);
+  border-radius: var(--radius-s);
   background-color: color-mix(in srgb, var(--color-surface) 45%, transparent);
 }
 
 .case__stat-value {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.35;
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading);
   margin: 0 !important;
 }
 
 .case__stat-caption {
-  margin-top: 6px !important;
+  margin-top: var(--space-xs) !important;
   margin-bottom: 0 !important;
-  font-size: 13px;
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
 }
 
 .case__callout {
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  line-height: 1.5 !important;
-  padding: 14px 0;
+  font-size: var(--font-size-s) !important;
+  font-weight: var(--font-weight-medium) !important;
+  line-height: var(--line-height-body) !important;
+  padding: var(--space-m) 0;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
 
 .case__section :deep(blockquote footer) {
-  margin-top: 8px;
-  font-size: 13px;
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-xs);
   font-style: normal;
-  color: var(--color-text-muted);
+  color: inherit;
 }
 
 @media (max-width: 639px) {

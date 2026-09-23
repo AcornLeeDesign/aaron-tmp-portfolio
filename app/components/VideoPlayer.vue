@@ -12,7 +12,7 @@ interface VideoRegistration {
   onPlaying: () => void
 }
 
-const MAX_PLAYING_VIDEOS = 3
+const MAX_PLAYING_VIDEOS = 2
 const videoRegistrations = new Map<number, VideoRegistration>()
 let nextRegistrationId = 0
 let playbackTimer: number | undefined
@@ -64,6 +64,7 @@ function playVideo(registration: VideoRegistration) {
     || !registration.wantsPlayback
     || document.visibilityState !== 'visible'
     || !registration.video.isConnected
+    || registration.video.querySelector('source') === null
     || !registration.video.paused
   ) {
     return
@@ -103,7 +104,9 @@ function syncPlayback() {
           return registration
         })
         .filter(registration =>
-          registration.visibilityRatio > 0 && registration.video.isConnected
+          registration.visibilityRatio > 0
+          && registration.video.isConnected
+          && registration.video.querySelector('source') !== null
         )
         .sort((a, b) =>
           b.visibilityRatio - a.visibilityRatio
@@ -206,29 +209,25 @@ const posterSrc = computed(() =>
   props.poster ?? props.src.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
 )
 
-let preloadObserver: IntersectionObserver | undefined
+let sourceObserver: IntersectionObserver | undefined
 let viewportObserver: IntersectionObserver | undefined
 let registration: VideoRegistration | undefined
+let sourceReleaseTimer: number | undefined
 
-function isNearViewport(video: HTMLVideoElement) {
-  const rect = video.getBoundingClientRect()
-  const margin = 75
-  return (
-    rect.bottom >= -margin
-    && rect.top <= window.innerHeight + margin
-    && rect.right >= -margin
-    && rect.left <= window.innerWidth + margin
-  )
+const SOURCE_RELEASE_DELAY = 2500
+
+function clearSourceRelease() {
+  if (sourceReleaseTimer === undefined) return
+  window.clearTimeout(sourceReleaseTimer)
+  sourceReleaseTimer = undefined
 }
 
 function attachSources() {
   const video = videoRef.value
   if (!video || sourcesAttached.value) return
 
+  clearSourceRelease()
   sourcesAttached.value = true
-  preloadObserver?.unobserve(video)
-  window.removeEventListener('scroll', checkPreloadFallback)
-  window.removeEventListener('resize', checkPreloadFallback)
 
   nextTick(() => {
     video.load()
@@ -236,11 +235,25 @@ function attachSources() {
   })
 }
 
-function checkPreloadFallback() {
+function releaseSources() {
   const video = videoRef.value
-  if (video && isNearViewport(video)) {
-    attachSources()
-  }
+  if (!video || !sourcesAttached.value) return
+
+  if (registration) pauseVideo(registration)
+  sourcesAttached.value = false
+
+  nextTick(() => {
+    video.load()
+    schedulePlaybackSync()
+  })
+}
+
+function scheduleSourceRelease() {
+  if (!sourcesAttached.value || sourceReleaseTimer !== undefined) return
+  sourceReleaseTimer = window.setTimeout(() => {
+    sourceReleaseTimer = undefined
+    releaseSources()
+  }, SOURCE_RELEASE_DELAY)
 }
 
 onMounted(() => {
@@ -249,13 +262,16 @@ onMounted(() => {
 
   registration = registerVideo(video)
 
-  preloadObserver = new IntersectionObserver(
+  sourceObserver = new IntersectionObserver(
     ([entry]) => {
       if (entry?.isIntersecting) {
+        clearSourceRelease()
         attachSources()
+      } else {
+        scheduleSourceRelease()
       }
     },
-    { rootMargin: '75px' }
+    { rootMargin: '200px 75%' }
   )
 
   viewportObserver = new IntersectionObserver(
@@ -269,18 +285,14 @@ onMounted(() => {
     }
   )
 
-  preloadObserver.observe(video)
+  sourceObserver.observe(video)
   viewportObserver.observe(video)
-  window.addEventListener('scroll', checkPreloadFallback, { passive: true })
-  window.addEventListener('resize', checkPreloadFallback)
-  checkPreloadFallback()
 })
 
 onBeforeUnmount(() => {
-  preloadObserver?.disconnect()
+  clearSourceRelease()
+  sourceObserver?.disconnect()
   viewportObserver?.disconnect()
-  window.removeEventListener('scroll', checkPreloadFallback)
-  window.removeEventListener('resize', checkPreloadFallback)
 
   if (registration) {
     unregisterVideo(registration)
@@ -294,7 +306,8 @@ onBeforeUnmount(() => {
     loop
     muted
     playsinline
-    preload="none"
+    aria-hidden="true"
+    :preload="sourcesAttached ? 'metadata' : 'none'"
     :poster="posterSrc"
   >
     <template v-if="sourcesAttached">

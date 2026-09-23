@@ -1,335 +1,462 @@
 <script setup lang="ts">
+import { projects } from '~/data/projects'
+
 useHead({ title: 'Aaron Lee Tmp Portfolio' })
 
-interface Tag {
-  label: string
-  icon?: 'deployment'
+const carouselRef = ref<HTMLElement | null>(null)
+const scrollSectionRef = ref<HTMLElement | null>(null)
+const aboutRef = ref<HTMLElement | null>(null)
+const carouselScrollHeight = ref('100svh')
+const aboutContentHeight = ref('220px')
+const currentProject = ref(0)
+const isCarouselActive = ref(false)
+let scrollFrame: number | undefined
+let carouselResizeObserver: ResizeObserver | undefined
+let aboutResizeObserver: ResizeObserver | undefined
+
+function updateAboutLayout() {
+  const about = aboutRef.value
+  if (!about) return
+  aboutContentHeight.value = `${Math.ceil(about.getBoundingClientRect().height)}px`
+  nextTick(updateAboutPosition)
 }
 
-interface Project {
-  id: number
-  title: string
-  aspect: string
-  src: string
-  type?: 'image'
-  border?: boolean
-  tag?: Tag
-  href?: string
+function updateAboutPosition() {
+  const about = aboutRef.value
+  const section = scrollSectionRef.value
+  if (!about || !section) return
+
+  const finalTop = Number.parseFloat(window.getComputedStyle(about).top) || 0
+  const centeredTop = Math.max(finalTop, (window.innerHeight - about.offsetHeight) / 2)
+  const startingOffset = centeredTop - finalTop
+  const sectionBounds = section.getBoundingClientRect()
+  const sectionTop = window.scrollY + sectionBounds.top
+  const progress = sectionTop > 0
+    ? Math.min(Math.max(window.scrollY / sectionTop, 0), 1)
+    : 1
+
+  isCarouselActive.value = sectionBounds.top <= 0
+  about.style.setProperty('--about-parallax-y', `${startingOffset * (1 - progress)}px`)
 }
 
-// Three columns with varying heights to create the waterfall effect
-// Video items use aspect ratio from actual video dimensions
-const columns: Project[][] = [
-  [
-    { id: 13, title: 'DoorDash', aspect: '1024 / 607', src: '/images/doordash.png', type: 'image', tag: { label: 'Case study soon' } },
-    { id: 8, title: 'Rabbithole', aspect: '2256 / 1464', src: '/videos/rabbithole.mp4', tag: { label: 'Case study soon' } },
-    { id: 2, title: 'Haven 3D', aspect: '9 / 16', src: '/videos/haven_3d.mp4' },
-    { id: 9, title: 'eVTOL', aspect: '3274 / 1454', src: '/images/evtol.png', type: 'image' },
-  ],
-  [
-    { id: 1, title: 'Nuance Pure', aspect: '1 / 1', src: '/videos/nuance_pure.mp4', tag: { label: 'Case study soon' } },
-    { id: 3, title: 'Manta', aspect: '3418 / 2032', src: '/videos/manta.mp4', tag: { label: 'Demo', icon: 'deployment' }, href: 'https://manta-one.vercel.app/' },
-    { id: 4, title: 'Gameboy', aspect: '1158 / 1578', src: '/videos/gameboy.mp4', tag: { label: 'Demo', icon: 'deployment' }, href: 'https://gameboy-basic.vercel.app/' },
-    { id: 10, title: 'Haven', aspect: '1678 / 1080', src: '/images/haven.png', type: 'image' },
-  ],
-  [
-    { id: 14, title: 'Fleetline', aspect: '2984 / 2056', src: '/videos/fleetline.mp4', tag: { label: 'Case study soon' } },
-    { id: 6, title: 'Nova Practice', aspect: '1588 / 1288', src: '/videos/nova_practice_V.mp4', border: true, tag: { label: 'Case study soon' } },
-    { id: 5, title: 'Wiggle', aspect: '1738 / 1000', src: '/videos/wiggle.mp4', border: true, tag: { label: 'Demo', icon: 'deployment' }, href: 'https://wiggle.framer.website/' },
-    { id: 7, title: 'Pen', aspect: '2038 / 1008', src: '/videos/pen.mp4' },
-    { id: 11, title: 'Watch', aspect: '1920 / 1080', src: '/images/watch_3_4_view.png', type: 'image', border: true },
-    { id: 12, title: 'Chewsy', aspect: '1 / 1', src: '/videos/chewsy_createsc.mp4' },
-  ],
-]
+function updateCarouselState() {
+  const carousel = carouselRef.value
+  if (!carousel) return
 
-const isMobile = ref(false)
-let mobileMediaQuery: MediaQueryList | undefined
+  const cards = [...carousel.querySelectorAll<HTMLElement>('.project-card')]
+  const carouselLeft = carousel.getBoundingClientRect().left
+  currentProject.value = cards.reduce((closestIndex, card, index) => {
+    const closestDistance = Math.abs(cards[closestIndex]!.getBoundingClientRect().left - carouselLeft)
+    const distance = Math.abs(card.getBoundingClientRect().left - carouselLeft)
+    return distance < closestDistance ? index : closestIndex
+  }, 0)
+}
 
-const mobileProjects = computed(() => [
-  ...columns
-    .map(column => column[0])
-    .filter((project): project is Project => project !== undefined),
-  ...columns.flatMap(column => column.slice(1)),
-])
+function moveCarousel(direction: -1 | 1) {
+  const carousel = carouselRef.value
+  const section = scrollSectionRef.value
+  if (!carousel || !section) return
 
-const renderedColumns = computed(() => isMobile.value ? [mobileProjects.value] : columns)
+  const cards = [...carousel.querySelectorAll<HTMLElement>('.project-card')]
+  const targetIndex = Math.min(
+    Math.max(currentProject.value + direction, 0),
+    cards.length - 1
+  )
+  const target = cards[targetIndex]
+  if (!target) return
 
-function syncMobileLayout(event: MediaQueryList | MediaQueryListEvent) {
-  isMobile.value = event.matches
+  const targetLeft = target.getBoundingClientRect().left
+    - carousel.getBoundingClientRect().left
+    + carousel.scrollLeft
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const sectionTop = window.scrollY + section.getBoundingClientRect().top
+  window.scrollTo({
+    top: sectionTop + targetLeft,
+    behavior: reduceMotion ? 'auto' : 'smooth',
+  })
+}
+
+function syncCarouselToPage() {
+  scrollFrame = undefined
+  updateAboutPosition()
+  const carousel = carouselRef.value
+  const section = scrollSectionRef.value
+  if (!carousel || !section) return
+
+  const maxScroll = Math.max(0, carousel.scrollWidth - carousel.clientWidth)
+  const sectionTop = window.scrollY + section.getBoundingClientRect().top
+  const progress = Math.min(Math.max(window.scrollY - sectionTop, 0), maxScroll)
+
+  if (Math.abs(carousel.scrollLeft - progress) > 0.5) {
+    carousel.scrollLeft = progress
+  }
+  updateCarouselState()
+}
+
+function scheduleCarouselSync() {
+  if (scrollFrame !== undefined) return
+  scrollFrame = window.requestAnimationFrame(syncCarouselToPage)
+}
+
+function updateCarouselLayout() {
+  const carousel = carouselRef.value
+  if (!carousel) return
+
+  const horizontalDistance = Math.max(0, carousel.scrollWidth - carousel.clientWidth)
+  carouselScrollHeight.value = `${horizontalDistance + window.innerHeight}px`
+  nextTick(() => {
+    updateAboutPosition()
+    scheduleCarouselSync()
+  })
 }
 
 onMounted(() => {
-  mobileMediaQuery = window.matchMedia('(max-width: 639px)')
-  syncMobileLayout(mobileMediaQuery)
-  mobileMediaQuery.addEventListener('change', syncMobileLayout)
+  nextTick(() => {
+    updateAboutLayout()
+    if (aboutRef.value) {
+      aboutResizeObserver = new ResizeObserver(updateAboutLayout)
+      aboutResizeObserver.observe(aboutRef.value)
+    }
+
+    updateCarouselLayout()
+    if (carouselRef.value) {
+      carouselResizeObserver = new ResizeObserver(updateCarouselLayout)
+      carouselResizeObserver.observe(carouselRef.value)
+    }
+  })
+  window.addEventListener('scroll', scheduleCarouselSync, { passive: true })
+  window.addEventListener('resize', updateCarouselLayout)
 })
 
 onBeforeUnmount(() => {
-  mobileMediaQuery?.removeEventListener('change', syncMobileLayout)
+  window.removeEventListener('scroll', scheduleCarouselSync)
+  window.removeEventListener('resize', updateCarouselLayout)
+  carouselResizeObserver?.disconnect()
+  aboutResizeObserver?.disconnect()
+  if (scrollFrame !== undefined) {
+    window.cancelAnimationFrame(scrollFrame)
+  }
 })
 </script>
 
 <template>
-  <section class="waterfall">
-    <div class="home-about-row">
-      <div class="home-about">
-        <p>Aaron Lee is a product designer and digital artist based in Los Angeles and San Francisco. He's constantly learning about systems design and organizational psychology. God designed him with fingers and so his fingers will be designing too.</p>
-        <p>Open to opportunities</p>
-
-        <div class="home-socials" aria-label="Social links">
-          <a
-            class="home-socials__link"
-            href="https://x.com/acorn_lee_"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X"
-            title="X"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
-            </svg>
-          </a>
-          <a
-            class="home-socials__link"
-            href="https://www.linkedin.com/in/aaaronlee/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            title="LinkedIn"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.1 20.45H3.54V8.98H7.1v11.47Z"/>
-            </svg>
-          </a>
-          <a
-            class="home-socials__link"
-            href="mailto:alee9193@usc.edu"
-            aria-label="Email"
-            title="Email"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3.75 5.25h16.5c.83 0 1.5.67 1.5 1.5v10.5c0 .83-.67 1.5-1.5 1.5H3.75c-.83 0-1.5-.67-1.5-1.5V6.75c0-.83.67-1.5 1.5-1.5Z" fill="none" stroke="currentColor" stroke-width="1.75"/>
-              <path d="m3 6 9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+  <section class="home">
+    <div
+      id="about"
+      class="home-about-row"
+      :style="{ '--about-content-height': aboutContentHeight }"
+    >
+      <div
+        ref="aboutRef"
+        class="home-about text-primary"
+        :class="{ 'home-about--behind-carousel': isCarouselActive }"
+      >
+        <p class="home-about__statement">Design is the intentional creation of systems for intelligent beings to operate in and understand the world. When design is the focus, experiments scale beyond scraps to people.</p>
+        <p class="home-about__bio">Aaron is a product designer that builds surfaces and systems for scaling complex technologies, allowing products to change lives sustainably</p>
+        <div class="home-about__status">
+          <p class="home-about__status-label">Currently</p>
+          <p>Open to work</p>
         </div>
       </div>
     </div>
 
-    <div class="waterfall__columns">
-      <div
-        v-for="(column, colIndex) in renderedColumns"
-        :key="colIndex"
-        class="waterfall__col"
-      >
-        <component
-          :is="project.href ? 'a' : 'div'"
-          v-for="project in column"
-          :key="project.id"
-          :href="project.href || undefined"
-          :target="project.href ? '_blank' : undefined"
-          :rel="project.href ? 'noopener noreferrer' : undefined"
-          class="waterfall__item"
-          :class="{
-            'waterfall__item--bordered': project.border,
-            'waterfall__item--demo': project.tag?.label === 'Demo',
-          }"
-          :style="{ aspectRatio: project.aspect }"
+    <div
+      ref="scrollSectionRef"
+      id="work"
+      class="carousel-scroll"
+      :style="{ height: carouselScrollHeight }"
+    >
+      <div class="carousel-scroll__sticky">
+        <div
+          ref="carouselRef"
+          class="project-carousel"
+          role="region"
+          aria-label="Selected projects carousel"
+          tabindex="0"
+          @keydown.left.prevent="moveCarousel(-1)"
+          @keydown.right.prevent="moveCarousel(1)"
         >
-          <img
-            v-if="project.type === 'image'"
-            :src="project.src"
-            :alt="project.title"
-            :loading="project.id === 13 ? 'eager' : 'lazy'"
-            :fetchpriority="project.id === 13 ? 'high' : 'auto'"
-            decoding="async"
-            class="waterfall__image"
-          />
-          <VideoPlayer v-else :src="project.src" />
-          <div v-if="project.tag" class="waterfall__tag">
-            <span>{{ project.tag.label }}</span>
-            <!-- External link icon (Deployment) -->
-            <svg v-if="project.tag.icon === 'deployment'" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13.5 6H5.25C4.00736 6 3 7.00736 3 8.25V18.75C3 19.9926 4.00736 21 5.25 21H15.75C16.9926 21 18 19.9926 18 18.75V10.5M7.5 16.5L21 3M21 3L15.75 3M21 3V8.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </component>
+          <article v-for="project in projects" :key="project.id" class="project-card">
+            <component
+              :is="project.href ? 'a' : 'div'"
+              :id="`project-${project.id}`"
+              :href="project.href || undefined"
+              :target="project.href ? '_blank' : undefined"
+              :rel="project.href ? 'noopener noreferrer' : undefined"
+              :aria-label="project.href ? project.title : undefined"
+              class="project-card__media"
+              :class="{
+                'project-card__media--bordered': project.border,
+              }"
+              :style="{ aspectRatio: project.aspect }"
+            >
+              <img
+                v-if="project.type === 'image'"
+                :src="project.src"
+                :alt="project.title"
+                :loading="project.id === 13 ? 'eager' : 'lazy'"
+                :fetchpriority="project.id === 13 ? 'high' : 'auto'"
+                decoding="async"
+                class="project-card__asset"
+              />
+              <VideoPlayer v-else :src="project.src" />
+            </component>
+            <div class="project-card__details">
+              <h2 class="text-primary">{{ project.title }}</h2>
+              <div class="project-card__metadata">
+                <p
+                  v-for="discipline in project.description"
+                  :key="discipline"
+                  class="project-card__description"
+                >
+                  {{ discipline }}
+                </p>
+                <time class="project-card__duration">{{ project.duration }}</time>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.waterfall {
-  --preview-radius: 8px;
-  --tag-edge-offset: 4px;
+.home {
+  --preview-radius: var(--radius-xs);
+  padding-top: var(--layout-header-clearance);
   padding-inline: var(--page-padding);
-  padding-bottom: 3rem;
-}
-
-.waterfall__columns {
-  display: flex;
-  gap: var(--waterfall-column-gap);
-}
-
-.waterfall__col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--waterfall-column-gap);
-  min-width: 0;
-}
-
-.home-about {
-  width: calc(
-    (100% - (var(--waterfall-column-gap) * (var(--waterfall-column-count) - 1)))
-    / var(--waterfall-column-count)
-  );
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.6;
   color: var(--color-text);
 }
 
-.home-about p + p {
-  margin-top: 1em;
-}
-
-.home-socials {
+.home-about {
+  position: fixed;
+  z-index: 0;
+  top: calc(var(--layout-header-clearance) + var(--space-xxl));
+  left: 50%;
   display: flex;
-  gap: 4px;
-  margin-top: 16px;
+  width: min(calc(100vw - (var(--page-padding) * 2)), 640px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xl);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.4;
+  pointer-events: none;
+  filter: blur(0);
+  transform: translate3d(-50%, var(--about-parallax-y, 0px), 0);
+  transition: filter 240ms ease-out;
+  will-change: transform, filter;
 }
 
-.home-socials__link {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border-radius: 12px;
-  background-color: var(--color-surface);
-  color: #ffffff;
-  cursor: pointer;
-  transition:
-    background-color var(--transition-fast),
-    transform 100ms ease-out;
+.home-about--behind-carousel {
+  filter: blur(12px);
 }
 
-.home-socials__link svg {
-  width: 20px;
-  height: 20px;
+.home-about p {
+  margin: 0;
 }
 
-.home-socials__link:hover {
-  background-color: rgb(108, 108, 108);
+.home-about__statement {
+  width: 100%;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-align: justify;
 }
 
-.home-socials__link:active {
-  transform: scale(0.909);
+.home-about__bio {
+  width: 100%;
+}
+
+.home-about__status {
+  width: min(100%, 260px);
+}
+
+.home-about__status-label {
+  font-weight: var(--font-weight-semibold);
 }
 
 .home-about-row {
   width: 100%;
-  padding-block: 40px;
+  min-height: max(
+    calc(100svh - var(--layout-header-clearance)),
+    calc(
+      var(--space-xxl)
+      + var(--about-content-height, 220px)
+      + clamp(64px, 8vw, 96px)
+      + 100px
+    )
+  );
+  scroll-margin-top: var(--layout-anchor-offset);
 }
 
-.waterfall__item {
+.carousel-scroll {
   position: relative;
-  border-radius: var(--preview-radius);
-  background-color: #000;
-  width: 100%;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: block;
+  z-index: 1;
+  margin-inline: calc(var(--page-padding) * -1);
+  scroll-margin-top: 0;
 }
 
-a.waterfall__item {
+.carousel-scroll__sticky {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: 100svh;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-bottom: 110px;
+}
+
+.project-carousel {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  gap: var(--space-xl);
+  padding-inline: var(--page-padding);
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+.project-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.project-carousel:focus-visible {
+  outline: 1px solid var(--color-text);
+  outline-offset: 4px;
+}
+
+.project-card {
+  display: flex;
+  flex: 0 0 clamp(320px, 40vw, 605px);
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+.project-card__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-height: calc(100svh - 200px);
+  border-radius: var(--preview-radius);
+  background-color: transparent;
+  overflow: hidden;
+}
+
+a.project-card__media {
   cursor: pointer;
 }
 
-.waterfall__item--demo {
-  transition: transform 150ms ease;
-  transform-origin: center;
-}
-
-@media (hover: hover) {
-  .waterfall__item--demo:hover {
-    transform: scale(0.9756);
-  }
-}
-
-.waterfall__item--demo:active {
-  transform: scale(0.9524);
-}
-
-.waterfall__tag {
-  position: absolute;
-  top: var(--tag-edge-offset);
-  right: var(--tag-edge-offset);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 12px;
-  background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
-  border-radius: max(0px, calc(var(--preview-radius) - var(--tag-edge-offset)));
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--color-text);
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-  pointer-events: none;
-}
-
-.waterfall__tag svg {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-
-.waterfall__item:hover .waterfall__tag {
-  opacity: 1;
-}
-
-.waterfall__item--bordered {
+.project-card__media--bordered {
   border: 1px solid var(--color-border);
 }
 
-/* Crop bottom 4px of Nova video to hide recording artifact */
-#player-6 :deep(video) {
+.project-card__asset {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card__media :deep(video) {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  clip-path: inset(0 round var(--preview-radius));
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+/* Keep the subject centered when the portrait Haven render is cropped to 3:4. */
+#project-2 :deep(video),
+#project-4 :deep(video) {
+  object-position: center center;
+}
+
+/* Push Rabbithole's captured right-edge line outside the clipped frame. */
+#project-8 :deep(video) {
+  width: calc(100% + 4px);
+  max-width: none;
+}
+
+/* Overscan Nova just enough to remove the captured black bottom edge. */
+#project-6 :deep(video) {
+  width: calc(100% + 4px);
+  max-width: none;
   height: calc(100% + 4px);
 }
 
-.waterfall__image {
+.project-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+  overflow-wrap: anywhere;
+}
+
+.project-card__details h2 {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0;
+  line-height: 1.2;
 }
 
-.waterfall__item :deep(video) {
+.project-card__metadata {
+  display: flex;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: var(--font-size-s);
+  line-height: 1.4;
 }
 
-/* Mobile and tablet: show tags by default */
-@media (max-width: 1023px) {
-  .waterfall__tag {
-    opacity: 1;
-  }
+.project-card__description {
+  width: 100%;
+  margin: 0;
+  font-weight: var(--font-weight-regular);
+  color: #808080;
 }
 
-/* Mobile: stack into a single column */
+.project-card__duration {
+  width: 100%;
+  color: var(--color-text);
+  font-family: var(--font-duration);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+  opacity: 0.5;
+}
+
 @media (max-width: 639px) {
-  .waterfall__columns {
-    flex-direction: column;
+  .home-about-row {
+    min-height: max(
+      calc(100svh - var(--layout-header-clearance)),
+      calc(
+        var(--space-xxl)
+        + var(--about-content-height, 220px)
+        + var(--space-xxl)
+        + 100px
+      )
+    );
   }
 
-  .home-about {
-    width: 100%;
+  .project-card {
+    flex-basis: calc(100vw - (var(--page-padding) * 2) - 28px);
+  }
+
+  .carousel-scroll__sticky {
+    padding-bottom: 110px;
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .home-about {
+    transition: none;
+  }
+}
 </style>

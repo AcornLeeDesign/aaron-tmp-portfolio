@@ -35,7 +35,7 @@ function submit() {
 <template>
   <div class="gate">
     <form class="gate__form" @submit.prevent="submit">
-      <label class="gate__label" for="case-study-password">
+      <label class="gate__label text-primary" for="case-study-password">
         Enter password to view this case study
       </label>
       <div class="gate__row">
@@ -57,7 +57,7 @@ function submit() {
       <p
         v-if="error"
         id="case-study-password-error"
-        class="gate__error"
+        class="gate__error text-primary"
         role="alert"
       >
         {{ error }}
@@ -70,7 +70,7 @@ function submit() {
 .gate {
   display: flex;
   justify-content: center;
-  padding: 4rem var(--page-padding) 6rem;
+  padding: var(--space-xxxl) var(--page-padding);
 }
 
 .gate__form {
@@ -78,29 +78,28 @@ function submit() {
   max-width: 360px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-s);
 }
 
 .gate__label {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--color-text);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
 }
 
 .gate__row {
   display: flex;
-  gap: 8px;
+  gap: var(--space-xs);
 }
 
 .gate__input {
   flex: 1;
   min-width: 0;
-  height: 42px;
-  padding: 0 14px;
+  height: var(--control-height);
+  padding: 0 var(--space-m);
   border: 1px solid var(--color-border);
-  border-radius: 10px;
-  background-color: #161616;
+  border-radius: var(--radius-s);
+  background-color: #ffffff;
   color: var(--color-text);
   font-weight: 400;
   outline: none;
@@ -116,14 +115,15 @@ function submit() {
 }
 
 .gate__submit {
-  height: 42px;
-  padding: 0 16px;
+  height: var(--control-height);
+  padding: 0 var(--space-m);
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-s);
   background-color: var(--color-surface);
   color: var(--color-text);
-  font-weight: 500;
-  font-size: 14px;
+  font-family: var(--font-mono-ui);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-s);
   cursor: pointer;
   transition:
     background-color var(--transition-fast),
@@ -131,7 +131,7 @@ function submit() {
 }
 
 .gate__submit:hover {
-  background-color: rgb(108, 108, 108);
+  background-color: #d4d4d4;
 }
 
 .gate__submit:active {
@@ -139,8 +139,7 @@ function submit() {
 }
 
 .gate__error {
-  font-size: 13px;
-  font-weight: 400;
-  color: #ff8f8f;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
 }
 </style>
