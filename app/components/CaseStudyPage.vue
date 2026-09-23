@@ -137,7 +137,7 @@ function onUnlocked() {
 
 <style scoped>
 .case {
-  padding-inline: var(--page-padding);
+  padding-inline: var(--layout-content-edge);
   padding-bottom: var(--space-xxxl);
 }
 

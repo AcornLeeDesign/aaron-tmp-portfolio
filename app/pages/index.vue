@@ -10,6 +10,7 @@ const carouselScrollHeight = ref('100svh')
 const aboutContentHeight = ref('220px')
 const currentProject = ref(0)
 const isCarouselActive = ref(false)
+const WORK_THEME_CLASS = 'home-work-theme'
 let scrollFrame: number | undefined
 let carouselResizeObserver: ResizeObserver | undefined
 let aboutResizeObserver: ResizeObserver | undefined
@@ -36,6 +37,7 @@ function updateAboutPosition() {
     : 1
 
   isCarouselActive.value = sectionBounds.top <= 0
+  document.documentElement.classList.toggle(WORK_THEME_CLASS, isCarouselActive.value)
   about.style.setProperty('--about-parallax-y', `${startingOffset * (1 - progress)}px`)
 }
 
@@ -129,6 +131,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  document.documentElement.classList.remove(WORK_THEME_CLASS)
   window.removeEventListener('scroll', scheduleCarouselSync)
   window.removeEventListener('resize', updateCarouselLayout)
   carouselResizeObserver?.disconnect()
@@ -140,7 +143,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="home">
+  <section class="home" :class="{ 'home--work-theme': isCarouselActive }">
     <div
       id="about"
       class="home-about-row"
@@ -151,7 +154,7 @@ onBeforeUnmount(() => {
         class="home-about text-primary"
         :class="{ 'home-about--behind-carousel': isCarouselActive }"
       >
-        <p class="home-about__statement">Design is the intentional creation of systems for intelligent beings to operate in and understand the world. When design is the focus, experiments scale beyond scraps to people.</p>
+        <p class="home-about__statement">Design scales experiments from scraps to people. It is the intentional creation of systems for intelligent beings to operate within and understand the world.</p>
         <p class="home-about__bio">Aaron is a product designer that builds surfaces and systems for scaling complex technologies, allowing products to change lives sustainably</p>
         <div class="home-about__status">
           <p class="home-about__status-label">Currently</p>
@@ -225,7 +228,7 @@ onBeforeUnmount(() => {
 .home {
   --preview-radius: var(--radius-xs);
   padding-top: var(--layout-header-clearance);
-  padding-inline: var(--page-padding);
+  padding-inline: var(--layout-content-edge);
   color: var(--color-text);
 }
 
@@ -235,7 +238,7 @@ onBeforeUnmount(() => {
   top: calc(var(--layout-header-clearance) + var(--space-xxl));
   left: 50%;
   display: flex;
-  width: min(calc(100vw - (var(--page-padding) * 2)), 640px);
+  width: min(calc(100vw - (var(--page-padding) * 2)), var(--intro-content-width));
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-xl);
@@ -243,14 +246,13 @@ onBeforeUnmount(() => {
   font-weight: var(--font-weight-regular);
   line-height: 1.4;
   pointer-events: none;
-  filter: blur(0);
   transform: translate3d(-50%, var(--about-parallax-y, 0px), 0);
-  transition: filter 240ms ease-out;
-  will-change: transform, filter;
+  transition: color var(--transition-theme);
+  will-change: transform, color;
 }
 
 .home-about--behind-carousel {
-  filter: blur(12px);
+  color: var(--color-bg);
 }
 
 .home-about p {
@@ -260,7 +262,7 @@ onBeforeUnmount(() => {
 .home-about__statement {
   width: 100%;
   font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-heading);
   letter-spacing: -0.02em;
   line-height: 1.2;
   text-align: justify;
@@ -295,7 +297,7 @@ onBeforeUnmount(() => {
 .carousel-scroll {
   position: relative;
   z-index: 1;
-  margin-inline: calc(var(--page-padding) * -1);
+  margin-inline: calc(var(--layout-content-edge) * -1);
   scroll-margin-top: 0;
 }
 
@@ -314,7 +316,8 @@ onBeforeUnmount(() => {
   width: 100%;
   align-items: flex-end;
   gap: var(--space-xl);
-  padding-inline: var(--page-padding);
+  padding-right: var(--layout-content-edge);
+  padding-left: var(--intro-content-edge);
   overflow: hidden;
   scrollbar-width: none;
 }
@@ -352,6 +355,22 @@ a.project-card__media {
 
 .project-card__media--bordered {
   border: 1px solid var(--color-border);
+}
+
+.home--work-theme :is(
+  #project-1,
+  #project-3,
+  #project-4,
+  #project-7,
+  #project-12
+)::after {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: inherit;
+  content: '';
+  pointer-events: none;
 }
 
 .project-card__asset {
@@ -400,7 +419,7 @@ a.project-card__media {
 .project-card__details h2 {
   width: 100%;
   font-size: var(--font-size-m);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-heading);
   letter-spacing: 0;
   line-height: 1.2;
 }
@@ -418,7 +437,8 @@ a.project-card__media {
   width: 100%;
   margin: 0;
   font-weight: var(--font-weight-regular);
-  color: #808080;
+  color: var(--color-subdued);
+  transition: color var(--transition-theme);
 }
 
 .project-card__duration {

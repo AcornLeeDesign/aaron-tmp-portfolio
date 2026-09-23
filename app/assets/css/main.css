@@ -122,11 +122,17 @@ ol {
   --color-surface: #eeeeee;
   --color-text: #1c1f24;
   --color-text-muted: var(--color-text);
+  --color-subdued: #808080;
   --color-accent: #1c1f24;
   --color-border: #d6d9de;
   --color-placeholder: #d9d9d9;
   --color-nav-surface: #eeeeee;
   --color-nav-surface-hover: #dedede;
+  --color-sound-overlay-text: #1c1f24;
+  --sound-gradient-brightness: 1;
+  --sound-gradient-saturation: 1.35;
+  --sound-gradient-strip-height: 92px;
+  --sound-gradient-wave-height: 60px;
 
   /* Spacing — all layout spacing uses this 4px scale. */
   --space-xxs: 4px;
@@ -154,6 +160,7 @@ ol {
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-heading: 500;
   --font-weight-semibold: 600;
 
   --line-height-tight: 1.15;
@@ -172,11 +179,16 @@ ol {
 
   /* Layout */
   --page-padding: var(--space-m);
-  --showcase-content-width: 1600px;
+  --layout-frame-max-width: 1600px;
+  --intro-content-width: 640px;
   --project-metadata-width: 160px;
   --layout-content-edge: max(
     var(--page-padding),
-    calc((100vw - var(--showcase-content-width)) / 2)
+    calc((100vw - var(--layout-frame-max-width)) / 2)
+  );
+  --intro-content-edge: max(
+    var(--page-padding),
+    calc((100vw - var(--intro-content-width)) / 2)
   );
   --layout-header-clearance: 112px;
   --layout-anchor-offset: 96px;
@@ -184,6 +196,28 @@ ol {
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
+  --transition-theme: 320ms ease;
+}
+
+html.home-work-theme {
+  --color-bg: #101010;
+  --color-surface: #242424;
+  --color-text: #ffffff;
+  --color-text-muted: #ffffff;
+  --color-subdued: #a3a3a3;
+  --color-accent: #ffffff;
+  --color-border: #383838;
+  --color-placeholder: #2b2b2b;
+  --color-nav-surface: #292929;
+  --color-nav-surface-hover: #383838;
+  --sound-gradient-brightness: 0.95;
+  --sound-gradient-saturation: 3;
+  --sound-gradient-strip-height: 48px;
+  --sound-gradient-wave-height: 48px;
+}
+
+html.home-work-theme .header__mark-link img {
+  filter: invert(1);
 }
 
 /* ── Base Typography ── */
@@ -193,11 +227,14 @@ body {
   font-weight: var(--font-weight-medium);
   color: var(--color-text);
   background-color: var(--color-bg);
+  transition:
+    color var(--transition-theme),
+    background-color var(--transition-theme);
 }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: var(--line-height-tight);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-heading);
   letter-spacing: -0.02em;
 }
 
@@ -212,6 +249,7 @@ p + p {
 /* ── Utilities ── */
 .text-primary {
   color: var(--color-text);
+  transition: color var(--transition-theme);
 }
 
 /* ── Prose (markdown-style content) ── */
@@ -228,7 +266,7 @@ p + p {
 
 .prose h2 {
   font-size: var(--font-size-l);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-heading);
   letter-spacing: -0.01em;
   line-height: var(--line-height-heading);
   margin-top: var(--space-xxl);
@@ -237,7 +275,7 @@ p + p {
 
 .prose h3 {
   font-size: var(--font-size-s);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-heading);
   line-height: var(--line-height-body);
   margin-top: var(--space-xl);
   margin-bottom: var(--space-xs);

@@ -25,11 +25,12 @@ defineProps<{
   color: var(--color-text);
   font-family: var(--font-mono-ui);
   font-size: var(--font-size-s);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-heading);
   line-height: var(--line-height-body);
   white-space: nowrap;
   transition:
     background-color var(--transition-fast),
+    color var(--transition-theme),
     transform 100ms ease-out;
 }
 

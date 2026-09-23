@@ -70,7 +70,7 @@ function submit() {
 .gate {
   display: flex;
   justify-content: center;
-  padding: var(--space-xxxl) var(--page-padding);
+  padding: var(--space-xxxl) var(--layout-content-edge);
 }
 
 .gate__form {

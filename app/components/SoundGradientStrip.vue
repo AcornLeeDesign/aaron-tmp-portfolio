@@ -78,7 +78,7 @@ const FREQUENCY_COLOR_STOPS: FrequencyColorStop[] = [
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const playerHostRef = ref<HTMLElement | null>(null)
-const isAudioEnabled = ref(false)
+const isAudioEnabled = ref(true)
 
 let context: CanvasRenderingContext2D | null = null
 let animationFrame = 0
@@ -151,7 +151,7 @@ async function setupYouTubePlayer() {
     width: '200',
     videoId: YOUTUBE_VIDEO_ID,
     playerVars: {
-      autoplay: 0,
+      autoplay: 1,
       controls: 0,
       disablekb: 1,
       loop: 1,
@@ -470,7 +470,7 @@ onBeforeUnmount(() => {
         <path d="M15.25 5a7 7 0 0 1 0 10" />
       </template>
     </svg>
-    <span>FKJ — Ylang Ylang</span>
+    <span>FKJ, Ylang Ylang</span>
   </button>
   <div class="sound-gradient__player" aria-hidden="true">
     <div ref="playerHostRef" />
@@ -484,15 +484,11 @@ onBeforeUnmount(() => {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 92px;
-  overflow: hidden;
-  background: linear-gradient(
-    to bottom,
-    rgb(255 255 255 / 0%),
-    rgb(255 255 255 / 92%) 60%,
-    #ffffff 100%
-  );
+  height: var(--sound-gradient-strip-height);
+  overflow: visible;
+  background: transparent;
   pointer-events: none;
+  transition: height var(--transition-theme);
 }
 
 .sound-gradient::after {
@@ -515,32 +511,23 @@ onBeforeUnmount(() => {
   pointer-events: none;
 }
 
-.sound-gradient::before {
-  position: absolute;
-  z-index: 1;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 64px;
-  background: rgb(255 255 255 / 0.1%);
-  -webkit-backdrop-filter: saturate(2);
-  backdrop-filter: saturate(2);
-  content: '';
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 75%);
-  mask-image: linear-gradient(to bottom, transparent, black 75%);
-  pointer-events: none;
-}
-
 .sound-gradient__canvas {
+  --canvas-bottom-overscan: 20px;
   position: absolute;
   z-index: 0;
   right: -20px;
-  bottom: 0;
+  bottom: calc(var(--canvas-bottom-overscan) * -1);
   left: -20px;
   width: calc(100% + 40px);
-  height: 60px;
+  height: calc(var(--sound-gradient-wave-height) + var(--canvas-bottom-overscan));
   max-width: none;
-  filter: blur(16px) saturate(1.35);
+  filter:
+    blur(16px)
+    saturate(var(--sound-gradient-saturation))
+    brightness(var(--sound-gradient-brightness));
+  transition:
+    filter var(--transition-theme),
+    height var(--transition-theme);
 }
 
 @keyframes sound-gradient-grain {
@@ -562,7 +549,7 @@ onBeforeUnmount(() => {
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
-  color: inherit;
+  color: var(--color-sound-overlay-text);
   border: 0;
   background: transparent;
   cursor: pointer;
