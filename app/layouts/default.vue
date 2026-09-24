@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const route = useRoute()
+const isCaseStudy = computed(() => route.path === '/nuance' || route.path === '/nova')
 const pacificTime = ref('--:--:-- PST')
 let clockTimer: ReturnType<typeof setInterval> | undefined
 
@@ -27,9 +29,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="site">
+  <div class="site" :class="{ 'site--case-study': isCaseStudy }">
     <header class="header">
-      <div class="header__identity text-primary">
+      <div v-if="!isCaseStudy" class="header__identity text-primary">
         <span>Aaron Lee</span>
         <span class="header__subdued">Product designer, digital artist</span>
       </div>
@@ -42,14 +44,14 @@ onBeforeUnmount(() => {
         <HeaderNavButton to="/#about">About</HeaderNavButton>
       </nav>
 
-      <div class="header__location text-primary">
+      <div v-if="!isCaseStudy" class="header__location text-primary">
         <time class="header__time" aria-label="Current Pacific time">
           {{ pacificTime }}
         </time>
         <span class="header__subdued">Los Angeles, San Francisco</span>
       </div>
 
-      <address class="header__contacts text-primary" aria-label="Contact Aaron Lee">
+      <address v-if="!isCaseStudy" class="header__contacts text-primary" aria-label="Contact Aaron Lee">
         <a href="mailto:alee9193@usc.edu">alee9193@usc.edu</a>
         <a href="https://x.com/acorn_lee_" target="_blank" rel="noopener noreferrer">X</a>
         <a href="https://www.linkedin.com/in/aaaronlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -60,7 +62,7 @@ onBeforeUnmount(() => {
       <slot />
     </main>
 
-    <SoundGradientStrip />
+    <SoundGradientStrip v-if="!isCaseStudy" />
   </div>
 </template>
 
@@ -186,6 +188,10 @@ onBeforeUnmount(() => {
 @media (max-width: 767px) {
   .header {
     top: calc(var(--space-xxxl) + var(--space-xl));
+  }
+
+  .site--case-study .header {
+    top: var(--space-m);
   }
 
   .header__identity,

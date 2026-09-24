@@ -8,12 +8,13 @@ export interface Project {
   type?: 'image'
   border?: boolean
   href?: string
+  to?: string
 }
 
 // Shared project order across homepage layout variants.
 export const projects: Project[] = [
   { id: 13, title: 'Doordash', description: ['Product design and Art direction', 'Intern'], duration: '2026', aspect: '1024 / 607', src: '/images/doordash.png', type: 'image', border: true },
-  { id: 1, title: 'Nuance', description: ['Product design and 3D art', 'Concept'], duration: '2025', aspect: '1 / 1', src: '/videos/nuance_pure.mp4' },
+  { id: 1, title: 'Nuance', description: ['Product design and 3D art', 'Concept'], duration: '2025', aspect: '1 / 1', src: '/videos/nuance_pure.mp4', to: '/nuance' },
   { id: 6, title: 'Nova', description: ['Product design and Design PM', 'Full-time'], duration: '2024-2025', aspect: '1588 / 1288', src: '/videos/nova_practice_V.mp4', border: true },
   { id: 3, title: 'Manta', description: ['3D art and web design', 'Artwork'], duration: '2025', aspect: '3418 / 2032', src: '/videos/manta.mp4', href: 'https://manta-one.vercel.app/' },
   { id: 14, title: 'Fleetline', description: ['Product design', 'Contract'], duration: '2026', aspect: '2984 / 2056', src: '/videos/fleetline.mp4', border: true },

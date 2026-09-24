@@ -11,6 +11,7 @@ const aboutContentHeight = ref('220px')
 const currentProject = ref(0)
 const isCarouselActive = ref(false)
 const WORK_THEME_CLASS = 'home-work-theme'
+const NuxtLink = resolveComponent('NuxtLink')
 let scrollFrame: number | undefined
 let carouselResizeObserver: ResizeObserver | undefined
 let aboutResizeObserver: ResizeObserver | undefined
@@ -181,12 +182,13 @@ onBeforeUnmount(() => {
         >
           <article v-for="project in projects" :key="project.id" class="project-card">
             <component
-              :is="project.href ? 'a' : 'div'"
+              :is="project.to ? NuxtLink : project.href ? 'a' : 'div'"
               :id="`project-${project.id}`"
+              :to="project.to || undefined"
               :href="project.href || undefined"
               :target="project.href ? '_blank' : undefined"
               :rel="project.href ? 'noopener noreferrer' : undefined"
-              :aria-label="project.href ? project.title : undefined"
+              :aria-label="project.to || project.href ? `View ${project.title}` : undefined"
               class="project-card__media"
               :class="{
                 'project-card__media--bordered': project.border,
@@ -252,7 +254,7 @@ onBeforeUnmount(() => {
 }
 
 .home-about--behind-carousel {
-  color: var(--color-bg);
+  color: color-mix(in srgb, var(--color-text) 20%, var(--color-bg));
 }
 
 .home-about p {
@@ -349,7 +351,7 @@ onBeforeUnmount(() => {
   overflow: hidden;
 }
 
-a.project-card__media {
+a.project-card__media[href] {
   cursor: pointer;
 }
 

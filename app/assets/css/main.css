@@ -179,13 +179,9 @@ ol {
 
   /* Layout */
   --page-padding: var(--space-m);
-  --layout-frame-max-width: 1600px;
   --intro-content-width: 640px;
   --project-metadata-width: 160px;
-  --layout-content-edge: max(
-    var(--page-padding),
-    calc((100vw - var(--layout-frame-max-width)) / 2)
-  );
+  --layout-content-edge: var(--page-padding);
   --intro-content-edge: max(
     var(--page-padding),
     calc((100vw - var(--intro-content-width)) / 2)
