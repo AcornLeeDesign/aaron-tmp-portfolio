@@ -21,41 +21,6 @@ type FrequencyColorStop = {
   color: RgbColor
 }
 
-type YouTubePlayer = {
-  destroy: () => void
-  mute: () => void
-  pauseVideo: () => void
-  playVideo: () => void
-  seekTo: (seconds: number, allowSeekAhead: boolean) => void
-  unMute: () => void
-}
-
-type YouTubePlayerEvent = {
-  target: YouTubePlayer
-}
-
-type YouTubePlayerOptions = {
-  height: string
-  width: string
-  videoId: string
-  playerVars: Record<string, number | string>
-  events: {
-    onReady: (event: YouTubePlayerEvent) => void
-    onAutoplayBlocked: () => void
-  }
-}
-
-type YouTubeApi = {
-  Player: new (element: HTMLElement, options: YouTubePlayerOptions) => YouTubePlayer
-}
-
-declare global {
-  interface Window {
-    YT?: YouTubeApi
-    onYouTubeIframeAPIReady?: () => void
-  }
-}
-
 const MAX_SOUND_HEIGHT = 60
 const DRAWING_HEIGHT = MAX_SOUND_HEIGHT
 const MIN_SOUND_HEIGHT = 40
@@ -64,7 +29,6 @@ const AMPLITUDE_SMOOTHING_RADIUS = 8
 const RAW_AMPLITUDE_MIX = 0.18
 const FREQUENCY_SMOOTHING_RADIUS = 10
 const RAW_FREQUENCY_MIX = 0.04
-const YOUTUBE_VIDEO_ID = 'EfgAd6iHApE'
 const BLUE_COLOR: RgbColor = { red: 164, green: 202, blue: 250 }
 const PINK_COLOR: RgbColor = { red: 248, green: 205, blue: 232 }
 const YELLOW_COLOR: RgbColor = { red: 255, green: 239, blue: 166 }
@@ -77,14 +41,14 @@ const FREQUENCY_COLOR_STOPS: FrequencyColorStop[] = [
 ]
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
-const playerHostRef = ref<HTMLElement | null>(null)
-const isAudioEnabled = ref(true)
+const audioRef = ref<HTMLAudioElement | null>(null)
+const isAudioEnabled = ref(false)
 
 let context: CanvasRenderingContext2D | null = null
 let animationFrame = 0
 let motionPreference: MediaQueryList | undefined
-let youtubePlayer: YouTubePlayer | undefined
-let isYouTubePlayerReady = false
+let playbackRequest = 0
+let isPlaybackPending = false
 let decodedProfile = new Uint8Array()
 let smoothedAmplitudeProfile = new Float32Array()
 let smoothedFrequencyProfile = new Float32Array()
@@ -92,25 +56,6 @@ let pixelBuffer: HTMLCanvasElement | undefined
 let pixelBufferContext: CanvasRenderingContext2D | null = null
 let profileIndex = 0
 let lastSampleTime = 0
-
-function loadYouTubeApi() {
-  if (window.YT?.Player) return Promise.resolve(window.YT)
-
-  return new Promise<YouTubeApi>((resolve) => {
-    const previousReadyHandler = window.onYouTubeIframeAPIReady
-    window.onYouTubeIframeAPIReady = () => {
-      previousReadyHandler?.()
-      if (window.YT) resolve(window.YT)
-    }
-
-    if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
-      const script = document.createElement('script')
-      script.src = 'https://www.youtube.com/iframe_api'
-      script.async = true
-      document.head.append(script)
-    }
-  })
-}
 
 function currentProfileTime() {
   const intervalProgress = lastSampleTime > 0
@@ -120,60 +65,52 @@ function currentProfileTime() {
   return ((profileIndex * YLANG_YLANG_SAMPLE_INTERVAL_MS + intervalProgress) % duration) / 1000
 }
 
-function applyAudioState() {
-  if (!youtubePlayer || !isYouTubePlayerReady) return
+function removePlaybackFallback() {
+  window.removeEventListener('pointerup', startAudioOnInteraction)
+  window.removeEventListener('keydown', startAudioOnInteraction)
+}
 
-  if (isAudioEnabled.value) {
-    youtubePlayer.seekTo(currentProfileTime(), true)
-    youtubePlayer.unMute()
-    youtubePlayer.playVideo()
-    return
+async function playAudio() {
+  const audio = audioRef.value
+  if (!audio) return
+
+  const request = ++playbackRequest
+  isPlaybackPending = true
+  // The asset is attenuated by 18 dB, including on devices that ignore volume.
+  if (Number.isFinite(audio.duration) && audio.duration > 0) {
+    audio.currentTime = currentProfileTime() % audio.duration
   }
 
-  youtubePlayer.mute()
-  youtubePlayer.pauseVideo()
+  try {
+    await audio.play()
+    if (request !== playbackRequest) return
+    isAudioEnabled.value = true
+    removePlaybackFallback()
+  } catch {
+    if (request === playbackRequest) isAudioEnabled.value = false
+  } finally {
+    if (request === playbackRequest) isPlaybackPending = false
+  }
+}
+
+function startAudioOnInteraction(event: Event) {
+  // Let the sound button's click handler handle its own gesture.
+  if (event.target instanceof Element && event.target.closest('.sound-gradient__credit')) return
+  if (event instanceof KeyboardEvent && (event.repeat || event.metaKey || event.ctrlKey || event.altKey)) return
+  removePlaybackFallback()
+  void playAudio()
 }
 
 function toggleAudio() {
-  isAudioEnabled.value = !isAudioEnabled.value
-  applyAudioState()
-}
-
-async function setupYouTubePlayer() {
-  const playerHost = playerHostRef.value
-  if (!playerHost) return
-
-  const youtubeApi = await loadYouTubeApi()
-  if (!playerHostRef.value) return
-
-  youtubePlayer = new youtubeApi.Player(playerHost, {
-    height: '200',
-    width: '200',
-    videoId: YOUTUBE_VIDEO_ID,
-    playerVars: {
-      autoplay: 1,
-      controls: 0,
-      disablekb: 1,
-      loop: 1,
-      modestbranding: 1,
-      origin: window.location.origin,
-      playlist: YOUTUBE_VIDEO_ID,
-      playsinline: 1,
-    },
-    events: {
-      onReady: ({ target }) => {
-        youtubePlayer = target
-        isYouTubePlayerReady = true
-        target.mute()
-        applyAudioState()
-      },
-      onAutoplayBlocked: () => {
-        isAudioEnabled.value = false
-        youtubePlayer?.mute()
-        youtubePlayer?.pauseVideo()
-      },
-    },
-  })
+  removePlaybackFallback()
+  if (isAudioEnabled.value || isPlaybackPending) {
+    playbackRequest += 1
+    isPlaybackPending = false
+    audioRef.value?.pause()
+    isAudioEnabled.value = false
+    return
+  }
+  void playAudio()
 }
 
 function decodeProfile() {
@@ -430,7 +367,9 @@ function handleResize() {
 
 onMounted(() => {
   decodeProfile()
-  setupYouTubePlayer()
+  window.addEventListener('pointerup', startAudioOnInteraction)
+  window.addEventListener('keydown', startAudioOnInteraction)
+  void playAudio()
   motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
   motionPreference.addEventListener('change', startAnimation)
   window.addEventListener('resize', handleResize)
@@ -439,9 +378,9 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  youtubePlayer?.destroy()
-  youtubePlayer = undefined
-  isYouTubePlayerReady = false
+  removePlaybackFallback()
+  playbackRequest += 1
+  audioRef.value?.pause()
   window.cancelAnimationFrame(animationFrame)
   window.removeEventListener('resize', handleResize)
   motionPreference?.removeEventListener('change', startAnimation)
@@ -472,9 +411,15 @@ onBeforeUnmount(() => {
     </svg>
     <span>FKJ, Ylang Ylang</span>
   </button>
-  <div class="sound-gradient__player" aria-hidden="true">
-    <div ref="playerHostRef" />
-  </div>
+  <audio
+    ref="audioRef"
+    src="/audio/ylang-ylang-quiet.m4a"
+    preload="metadata"
+    loop
+    @playing="isAudioEnabled = true"
+    @pause="isAudioEnabled = false"
+    @error="isAudioEnabled = false"
+  />
 </template>
 
 <style scoped>
@@ -557,17 +502,6 @@ onBeforeUnmount(() => {
   transition: opacity var(--transition-fast);
 }
 
-.sound-gradient__player {
-  position: fixed;
-  top: 0;
-  left: -10000px;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .sound-gradient__icon {
   width: 20px;
   height: 20px;
@@ -592,8 +526,14 @@ onBeforeUnmount(() => {
   outline-offset: 3px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .sound-gradient__credit {
+    min-width: var(--space-12);
+    min-height: var(--space-12);
+    bottom: var(--space-xs);
+  }
+
+  .sound-gradient__credit span {
     display: none;
   }
 }
