@@ -140,6 +140,7 @@ function attachCoordinatorListeners() {
   if (coordinatorListenersAttached) return
   coordinatorListenersAttached = true
   document.addEventListener('visibilitychange', handleVisibilityChange)
+  document.addEventListener('scroll', schedulePlaybackSync, { capture: true, passive: true })
   window.addEventListener('scroll', schedulePlaybackSync, { passive: true })
   window.addEventListener('resize', schedulePlaybackSync)
 }
@@ -148,6 +149,7 @@ function detachCoordinatorListeners() {
   if (!coordinatorListenersAttached || videoRegistrations.size > 0) return
   coordinatorListenersAttached = false
   document.removeEventListener('visibilitychange', handleVisibilityChange)
+  document.removeEventListener('scroll', schedulePlaybackSync, { capture: true })
   window.removeEventListener('scroll', schedulePlaybackSync)
   window.removeEventListener('resize', schedulePlaybackSync)
 
@@ -213,6 +215,8 @@ let sourceObserver: IntersectionObserver | undefined
 let viewportObserver: IntersectionObserver | undefined
 let registration: VideoRegistration | undefined
 let sourceReleaseTimer: number | undefined
+let isWithinSourceRange = false
+let sourceTransition = 0
 
 const SOURCE_RELEASE_DELAY = 2500
 
@@ -224,12 +228,14 @@ function clearSourceRelease() {
 
 function attachSources() {
   const video = videoRef.value
-  if (!video || sourcesAttached.value) return
+  if (!video || !isWithinSourceRange || sourcesAttached.value) return
 
   clearSourceRelease()
+  const transition = ++sourceTransition
   sourcesAttached.value = true
 
   nextTick(() => {
+    if (transition !== sourceTransition || !sourcesAttached.value) return
     video.load()
     schedulePlaybackSync()
   })
@@ -237,12 +243,14 @@ function attachSources() {
 
 function releaseSources() {
   const video = videoRef.value
-  if (!video || !sourcesAttached.value) return
+  if (!video || isWithinSourceRange || !sourcesAttached.value) return
 
   if (registration) pauseVideo(registration)
+  const transition = ++sourceTransition
   sourcesAttached.value = false
 
   nextTick(() => {
+    if (transition !== sourceTransition || sourcesAttached.value) return
     video.load()
     schedulePlaybackSync()
   })
@@ -264,7 +272,9 @@ onMounted(() => {
 
   sourceObserver = new IntersectionObserver(
     ([entry]) => {
-      if (entry?.isIntersecting) {
+      isWithinSourceRange = Boolean(entry?.isIntersecting)
+
+      if (isWithinSourceRange) {
         clearSourceRelease()
         attachSources()
       } else {
@@ -290,6 +300,8 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  isWithinSourceRange = false
+  sourceTransition += 1
   clearSourceRelease()
   sourceObserver?.disconnect()
   viewportObserver?.disconnect()

@@ -1,0 +1,16 @@
+---
+description: Require design tokens for spacing and other reusable visual values, including Figma implementations
+alwaysApply: true
+---
+
+# Design Tokens
+
+- Use existing CSS custom-property tokens for spacing, typography, color, radius, sizing, and layout values.
+- Never place a raw spacing value in `margin`, `padding`, `gap`, layout offsets, or spacing calculations. `0` is allowed.
+- Use the numeric spacing primitives in `app/assets/css/main.css`; the suffix is the number of 4px units (`--space-12` = 48px).
+- Prefer the readable compact aliases (`--space-xs`, `--space-m`, etc.) when they clearly express an established local pattern.
+- Use semantic layout or component tokens for intentional off-grid values. Define the raw value once in the appropriate token scope, document its purpose, and reference the token everywhere else.
+- When implementing from Figma or using the Figma MCP, translate Figma values to existing tokens. Figma measurements do not override the token requirement.
+- If a Figma value has no equivalent token, use the nearest established token unless exact fidelity is necessary; then add a reusable semantic token instead of writing the value inline.
+- Fluid spacing may use `clamp()`, but its fixed endpoints must be tokens.
+- Exceptions: `0`, one-pixel borders, media-query breakpoints, percentages, runtime geometry, and accessibility off-screen techniques.

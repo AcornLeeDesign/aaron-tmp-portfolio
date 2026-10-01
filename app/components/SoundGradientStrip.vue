@@ -512,13 +512,13 @@ onBeforeUnmount(() => {
 }
 
 .sound-gradient__canvas {
-  --canvas-bottom-overscan: 20px;
+  --canvas-bottom-overscan: var(--space-l);
   position: absolute;
   z-index: 0;
-  right: -20px;
+  right: calc(var(--space-l) * -1);
   bottom: calc(var(--canvas-bottom-overscan) * -1);
-  left: -20px;
-  width: calc(100% + 40px);
+  left: calc(var(--space-l) * -1);
+  width: calc(100% + var(--space-xxxl));
   height: calc(var(--sound-gradient-wave-height) + var(--canvas-bottom-overscan));
   max-width: none;
   filter:
@@ -596,6 +596,11 @@ onBeforeUnmount(() => {
   .sound-gradient__credit {
     display: none;
   }
+}
+
+@media (max-width: 639px) {
+  /* Above the homepage main layer, below the contacts and sound control. */
+  .sound-gradient { z-index: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

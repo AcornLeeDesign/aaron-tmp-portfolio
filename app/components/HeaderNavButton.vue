@@ -1,16 +1,22 @@
 <script setup lang="ts">
-defineProps<{
-  to: string
-}>()
+withDefaults(defineProps<{
+  to?: string
+  as?: string
+}>(), {
+  as: 'span',
+})
 </script>
 
 <template>
-  <NuxtLink
-    :to="to"
+  <component
+    :is="to ? 'NuxtLink' : as"
+    :to="to || undefined"
     class="header-nav-button"
   >
-    <slot />
-  </NuxtLink>
+    <span class="header-nav-button__label" data-nav-content>
+      <slot />
+    </span>
+  </component>
 </template>
 
 <style scoped>
@@ -20,12 +26,14 @@ defineProps<{
   align-items: center;
   justify-content: center;
   padding: var(--space-xs) var(--space-l);
+  border: 0;
+  cursor: pointer;
   border-radius: var(--radius-pill);
-  background-color: var(--color-nav-surface);
-  color: var(--color-text);
+  background-color: var(--header-nav-button-background, var(--color-nav-surface));
+  color: var(--header-nav-button-color, var(--color-text));
   font-family: var(--font-mono-ui);
   font-size: var(--font-size-s);
-  font-weight: var(--font-weight-heading);
+  font-weight: var(--font-weight-button-label);
   line-height: var(--line-height-body);
   white-space: nowrap;
   transition:

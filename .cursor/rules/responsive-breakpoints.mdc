@@ -1,0 +1,14 @@
+---
+description: Standard responsive breakpoints and interaction fallbacks for the portfolio
+alwaysApply: true
+---
+
+# Responsive Breakpoints
+
+- Mobile: `0–639px` (`max-width: 639px`).
+- Tablet: `640–1023px`.
+- Desktop: `1024px` and wider (`min-width: 1024px`).
+- Use `max-width: 1023px` for styles shared by tablet and mobile.
+- Prefer these thresholds over one-off breakpoints. Add a component-specific breakpoint only when its content demonstrably requires one, and document why.
+- Complex desktop interactions must have a linear, touch-friendly fallback at tablet width and below.
+- The homepage project carousel is desktop-only. At `1023px` and below, render projects as a normal single-column list with no sticky or scroll-driven horizontal behavior.

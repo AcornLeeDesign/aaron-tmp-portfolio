@@ -1,0 +1,16 @@
+---
+description: Preserve high visual quality for full-width case-study videos
+alwaysApply: true
+---
+
+# Case-Study Video Quality
+
+- Treat full-width and hero case-study videos as presentation media, not homepage/waterfall thumbnails.
+- Preserve the source pixel dimensions for case-study media up to 2560px wide. Do not apply the 1080px waterfall downscale profile.
+- When the source is browser-compatible H.264, use a stream copy rather than re-encoding: `-c:v copy -an -movflags +faststart`.
+- Only re-encode when compatibility or an unreasonably large source requires it. Keep the original resolution when possible and use a high-quality target such as H.264 CRF 18–20 or VP9 CRF 24–27.
+- Generate WebM fallbacks at the same dimensions as the delivered MP4; never use a visibly lower-quality fallback.
+- Preserve the untouched source in `public/videos/originals/` and generate the poster from that source.
+- Use `VideoPlayer` for lazy loading, playback coordination, and poster handling.
+- Verify delivered resolution, codecs, duration, and file size with `ffprobe` before considering the asset complete.
+- Aggressive CRF 30+, low-bitrate, or downscaled encodes are allowed only for small homepage/waterfall thumbnails.

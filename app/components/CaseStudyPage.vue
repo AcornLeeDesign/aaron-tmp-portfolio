@@ -168,7 +168,7 @@ function onUnlocked() {
 
 .case__title {
   font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-heading);
   letter-spacing: -0.03em;
   line-height: var(--line-height-tight);
   margin-bottom: var(--space-s);
@@ -234,8 +234,10 @@ function onUnlocked() {
 .case__hero,
 .case__media {
   margin: 0 0 var(--space-xxl);
-  border-radius: var(--radius-s);
+  border-radius: var(--case-study-surface-radius);
   overflow: hidden;
+  isolation: isolate;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
   background: #000;
   border: 1px solid var(--color-border);
 }
@@ -246,6 +248,7 @@ function onUnlocked() {
   height: auto;
   display: block;
   aspect-ratio: 16 / 10;
+  border-radius: inherit;
   object-fit: cover;
 }
 
@@ -278,7 +281,7 @@ function onUnlocked() {
 .case__stat {
   margin: var(--space-l) 0;
   padding: var(--space-m) var(--space-l);
-  border-radius: var(--radius-s);
+  border-radius: var(--case-study-surface-radius);
   background-color: color-mix(in srgb, var(--color-surface) 45%, transparent);
 }
 

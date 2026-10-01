@@ -99,7 +99,7 @@ function submit() {
   padding: 0 var(--space-m);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-s);
-  background-color: #ffffff;
+  background-color: var(--color-surface);
   color: var(--color-text);
   font-weight: 400;
   outline: none;
@@ -107,7 +107,7 @@ function submit() {
 }
 
 .gate__input::placeholder {
-  color: var(--color-text-muted);
+  color: var(--color-subdued);
 }
 
 .gate__input:focus {
@@ -131,7 +131,7 @@ function submit() {
 }
 
 .gate__submit:hover {
-  background-color: #d4d4d4;
+  background-color: var(--color-nav-surface-hover);
 }
 
 .gate__submit:active {
