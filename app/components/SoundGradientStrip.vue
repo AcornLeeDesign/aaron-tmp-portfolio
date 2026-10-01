@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SpeakerWaveIcon, SpeakerXMarkIcon } from '@heroicons/vue/24/outline'
 import {
   YLANG_YLANG_PROFILE,
   YLANG_YLANG_SAMPLE_COUNT,
@@ -398,18 +399,9 @@ onBeforeUnmount(() => {
     :aria-pressed="isAudioEnabled"
     @click="toggleAudio"
   >
-    <svg class="sound-gradient__icon" viewBox="0 0 20 20" aria-hidden="true">
-      <path d="M3.25 8h3l4-3.25v10.5L6.25 12h-3z" />
-      <template v-if="!isAudioEnabled">
-        <path d="m13.25 7.25 4.5 5.5" />
-        <path d="m17.75 7.25-4.5 5.5" />
-      </template>
-      <template v-else>
-        <path d="M13 7.25a4 4 0 0 1 0 5.5" />
-        <path d="M15.25 5a7 7 0 0 1 0 10" />
-      </template>
-    </svg>
-    <span>FKJ, Ylang Ylang</span>
+    <SpeakerWaveIcon v-if="isAudioEnabled" class="sound-gradient__icon" aria-hidden="true" />
+    <SpeakerXMarkIcon v-else class="sound-gradient__icon" aria-hidden="true" />
+    <span>FKJ</span>
   </button>
   <audio
     ref="audioRef"
@@ -486,7 +478,9 @@ onBeforeUnmount(() => {
 .sound-gradient__credit {
   position: fixed;
   z-index: 2147483647;
-  bottom: var(--space-m);
+  bottom: var(--layout-footer-bottom);
+  min-height: var(--layout-footer-control-height);
+  padding: 0;
   left: var(--layout-content-edge);
   display: flex;
   align-items: center;
@@ -503,17 +497,9 @@ onBeforeUnmount(() => {
 }
 
 .sound-gradient__icon {
-  width: 20px;
-  height: 20px;
-  flex: 0 0 20px;
-}
-
-.sound-gradient__icon path {
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.5;
+  width: var(--space-5);
+  height: var(--space-5);
+  flex: 0 0 var(--space-5);
 }
 
 .sound-gradient__credit:hover {
@@ -524,23 +510,6 @@ onBeforeUnmount(() => {
   border-radius: 2px;
   outline: 1px solid currentColor;
   outline-offset: 3px;
-}
-
-@media (max-width: 1023px) {
-  .sound-gradient__credit {
-    min-width: var(--space-12);
-    min-height: var(--space-12);
-    bottom: var(--space-xs);
-  }
-
-  .sound-gradient__credit span {
-    display: none;
-  }
-}
-
-@media (max-width: 639px) {
-  /* Above the homepage main layer, below the contacts and sound control. */
-  .sound-gradient { z-index: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -140,7 +140,7 @@ ol {
   --color-media-background: #262626;
   --color-nav-surface: #292929;
   --color-nav-surface-hover: #383838;
-  --color-sound-overlay-text: #1c1f24;
+  --color-sound-overlay-text: var(--color-text);
   /* Figma link categories used in the Work sheet. */
   --color-link-case-study: #fdf144;
   --color-link-instagram: #ff7add;
@@ -241,6 +241,9 @@ ol {
   --intro-content-width: var(--content-copy-width);
   --project-metadata-width: 160px;
   --layout-content-edge: var(--page-padding);
+  /* Shared vertical alignment for the fixed sound control and contacts. */
+  --layout-footer-bottom: var(--space-m);
+  --layout-footer-control-height: var(--space-5);
   --intro-content-edge: max(
     var(--page-padding),
     calc((100vw - var(--intro-content-width)) / 2)
@@ -255,6 +258,13 @@ ol {
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
   --transition-theme: 320ms ease;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --layout-footer-bottom: var(--space-xs);
+    --layout-footer-control-height: var(--space-12);
+  }
 }
 
 @media (max-width: 639px) {

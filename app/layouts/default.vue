@@ -804,7 +804,8 @@ onBeforeUnmount(() => {
 .header__contacts {
   position: fixed;
   right: var(--layout-content-edge);
-  bottom: var(--space-m);
+  bottom: var(--layout-footer-bottom);
+  min-height: var(--layout-footer-control-height);
   display: flex;
   align-items: center;
   gap: var(--space-m);
@@ -851,6 +852,12 @@ onBeforeUnmount(() => {
   .header__identity,
   .header__location {
     font-size: var(--font-size-xxs);
+  }
+}
+
+@media (max-width: 1023px) {
+  .header__contacts {
+    gap: var(--space-xs);
   }
 }
 
