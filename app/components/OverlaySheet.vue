@@ -8,11 +8,21 @@ const scroller = ref<HTMLElement | null>(null)
 const content = ref<HTMLElement | null>(null)
 const clippedAbove = ref(false)
 const clippedBelow = ref(false)
+const pointerInput = ref(false)
 const route = useRoute()
 let resizeObserver: ResizeObserver | undefined
 let previousOverflow: string | undefined
 let opener: HTMLElement | null = null
 let pointerStartedOutside = false
+
+function onPointerInput() {
+  pointerInput.value = true
+}
+
+function onKeyboardInput(event: KeyboardEvent) {
+  if (event.metaKey || event.altKey || event.ctrlKey) return
+  pointerInput.value = false
+}
 
 function updateClipping() {
   const element = scroller.value
@@ -59,11 +69,17 @@ function onBackdropClick(event: MouseEvent) {
 
 watch(() => route.fullPath, close)
 onMounted(() => {
+  // Track the opener's input too: Safari shows :focus-visible on dialog
+  // autofocus even after a tap. Keep focus, but hide its ring for pointer input.
+  document.addEventListener('pointerdown', onPointerInput, true)
+  document.addEventListener('keydown', onKeyboardInput, true)
   resizeObserver = new ResizeObserver(updateClipping)
   if (scroller.value) resizeObserver.observe(scroller.value)
   if (content.value) resizeObserver.observe(content.value)
 })
 onBeforeUnmount(() => {
+  document.removeEventListener('pointerdown', onPointerInput, true)
+  document.removeEventListener('keydown', onKeyboardInput, true)
   resizeObserver?.disconnect()
   restorePage()
 })
@@ -76,6 +92,7 @@ defineExpose({ open })
       :id="id"
       ref="dialog"
       class="overlay-sheet"
+      :class="{ 'overlay-sheet--pointer-input': pointerInput }"
       :aria-label="label"
       @close="restorePage"
       @cancel.prevent="close"
@@ -188,6 +205,7 @@ defineExpose({ open })
 .overlay-sheet__close svg { width: var(--icon-size-m); height: var(--icon-size-m); }
 .overlay-sheet__close:hover { background: var(--color-nav-surface-hover); }
 .overlay-sheet__close:focus-visible { outline: 1px solid currentColor; }
+.overlay-sheet--pointer-input .overlay-sheet__close:focus { outline: none; }
 @media (max-width: 639px) {
   .overlay-sheet__content { padding: var(--space-10) var(--space-xl) var(--space-xl); }
 }
