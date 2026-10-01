@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { NuxtLink } from '#components'
+
 withDefaults(defineProps<{
   to?: string
   as?: string
@@ -9,7 +11,7 @@ withDefaults(defineProps<{
 
 <template>
   <component
-    :is="to ? 'NuxtLink' : as"
+    :is="to ? NuxtLink : as"
     :to="to || undefined"
     class="header-nav-button"
   >
