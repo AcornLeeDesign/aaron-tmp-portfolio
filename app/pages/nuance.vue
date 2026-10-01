@@ -147,7 +147,7 @@ onBeforeUnmount(() => {
             <div class="case-phone-device">
               <div class="case-phone-screen">
                 <div class="case-phone-video-crop">
-                  <VideoPlayer
+                  <VideoPlayer case-study
                     class="case-media-video case-media-video--fig-one-screen"
                     src="/videos/nuance-talking.mp4"
                   />
@@ -322,7 +322,7 @@ onBeforeUnmount(() => {
                 <div class="case-phone-device">
                   <div class="case-phone-screen">
                     <div class="case-phone-video-crop">
-                      <VideoPlayer
+                      <VideoPlayer case-study
                         class="case-media-video case-media-video--mood-screen"
                         src="/videos/mood-colors.mp4"
                       />
@@ -355,7 +355,7 @@ onBeforeUnmount(() => {
           <div class="case-media-stack" aria-label="Product demonstrations">
             <figure class="case-media-figure">
               <div class="case-media-placeholder case-media-placeholder--video">
-                <VideoPlayer
+                <VideoPlayer case-study
                   class="case-media-video"
                   src="/videos/transcript.mp4"
                   aria-label="Transcript feature demonstration"
@@ -365,7 +365,7 @@ onBeforeUnmount(() => {
             </figure>
             <figure class="case-media-figure">
               <div class="case-media-placeholder case-media-placeholder--video">
-                <VideoPlayer
+                <VideoPlayer case-study
                   class="case-media-video"
                   src="/videos/asl-feature.mp4"
                   aria-label="ASL feature demonstration"
@@ -375,7 +375,7 @@ onBeforeUnmount(() => {
             </figure>
             <figure class="case-media-figure">
               <div class="case-media-placeholder case-media-placeholder--video">
-                <VideoPlayer
+                <VideoPlayer case-study
                   class="case-media-video"
                   src="/videos/multi-line.mp4"
                   aria-label="Multi-line transcript demonstration"
@@ -387,7 +387,7 @@ onBeforeUnmount(() => {
             </figure>
             <figure class="case-media-figure">
               <div class="case-media-placeholder case-media-placeholder--video">
-                <VideoPlayer
+                <VideoPlayer case-study
                   class="case-media-video"
                   src="/videos/missed-call.mp4"
                   aria-label="Missed call feature demonstration"

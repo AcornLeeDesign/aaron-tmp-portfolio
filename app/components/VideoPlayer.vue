@@ -1,6 +1,11 @@
 <script lang="ts">
 interface VideoRegistration {
   id: number
+  caseStudy: boolean
+  userPaused: boolean
+  prepare: (load: boolean, active: boolean) => void
+  onPause: () => void
+  onPlay: () => void
   video: HTMLVideoElement
   visibilityRatio: number
   viewportTop: number
@@ -58,9 +63,30 @@ function pauseVideo(registration: VideoRegistration) {
   }
 }
 
+function bufferedAhead(video: HTMLVideoElement) {
+  for (let i = 0; i < video.buffered.length; i++) {
+    if (video.buffered.start(i) <= video.currentTime && video.buffered.end(i) > video.currentTime) {
+      return video.buffered.end(i) - video.currentTime
+    }
+  }
+  return 0
+}
+
+function hasStartupBuffer(video: HTMLVideoElement) {
+  return Number.isFinite(video.duration)
+    && bufferedAhead(video) >= Math.min(3, Math.max(0, video.duration - video.currentTime - 0.1))
+}
+
+function fullyBuffered(video: HTMLVideoElement) {
+  return Number.isFinite(video.duration) && video.buffered.length > 0
+    && video.buffered.start(0) === 0 && video.buffered.end(0) >= video.duration - 0.1
+}
+
 function playVideo(registration: VideoRegistration) {
   if (
     registration.playPending
+    || registration.userPaused
+    || (registration.caseStudy && !hasStartupBuffer(registration.video))
     || !registration.wantsPlayback
     || document.visibilityState !== 'visible'
     || !registration.video.isConnected
@@ -106,15 +132,30 @@ function syncPlayback() {
         .filter(registration =>
           registration.visibilityRatio > 0
           && registration.video.isConnected
-          && registration.video.querySelector('source') !== null
+          && (registration.caseStudy || registration.video.querySelector('source') !== null)
         )
         .sort((a, b) =>
           b.visibilityRatio - a.visibilityRatio
           || a.viewportTop - b.viewportTop
           || a.id - b.id
         )
-        .slice(0, MAX_PLAYING_VIDEOS)
+        .slice(0, [...videoRegistrations.values()].some(item => item.caseStudy) ? 1 : MAX_PLAYING_VIDEOS)
     : []
+
+  // Prepare only the nearest upcoming case-study video, and only once the
+  // current clip is fully buffered so it does not compete with initial playback.
+  const active = candidates[0]
+  const upcoming = document.visibilityState === 'visible' && (!active || fullyBuffered(active.video))
+    ? [...videoRegistrations.values()]
+        .filter(item => item.caseStudy && item !== active
+          && item.video.getBoundingClientRect().top >= window.innerHeight
+          && item.video.getBoundingClientRect().top < window.innerHeight * 2)
+        .sort((a, b) => a.video.getBoundingClientRect().top - b.video.getBoundingClientRect().top)[0]
+    : undefined
+
+  for (const item of videoRegistrations.values()) {
+    if (item.caseStudy) item.prepare(item === active || item === upcoming, item === active)
+  }
 
   const selectedIds = new Set(candidates.map(registration => registration.id))
 
@@ -159,9 +200,16 @@ function detachCoordinatorListeners() {
   }
 }
 
-function registerVideo(video: HTMLVideoElement) {
+function registerVideo(video: HTMLVideoElement, caseStudy: boolean, prepare: VideoRegistration['prepare']) {
   const registration: VideoRegistration = {
     id: nextRegistrationId++,
+    caseStudy,
+    prepare,
+    userPaused: false,
+    onPause: () => {
+      if (registration.caseStudy && registration.wantsPlayback && video.controls) registration.userPaused = true
+    },
+    onPlay: () => { registration.userPaused = false },
     video,
     visibilityRatio: 0,
     viewportTop: Number.POSITIVE_INFINITY,
@@ -179,6 +227,9 @@ function registerVideo(video: HTMLVideoElement) {
 
   videoRegistrations.set(registration.id, registration)
   video.addEventListener('canplay', registration.onCanPlay)
+  video.addEventListener('progress', registration.onCanPlay)
+  video.addEventListener('pause', registration.onPause)
+  video.addEventListener('play', registration.onPlay)
   video.addEventListener('playing', registration.onPlaying)
   attachCoordinatorListeners()
   return registration
@@ -187,6 +238,9 @@ function registerVideo(video: HTMLVideoElement) {
 function unregisterVideo(registration: VideoRegistration) {
   pauseVideo(registration)
   registration.video.removeEventListener('canplay', registration.onCanPlay)
+  registration.video.removeEventListener('progress', registration.onCanPlay)
+  registration.video.removeEventListener('pause', registration.onPause)
+  registration.video.removeEventListener('play', registration.onPlay)
   registration.video.removeEventListener('playing', registration.onPlaying)
   videoRegistrations.delete(registration.id)
 
@@ -202,10 +256,35 @@ function unregisterVideo(registration: VideoRegistration) {
 const props = defineProps<{
   src: string
   poster?: string
+  caseStudy?: boolean
 }>()
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const sourcesAttached = ref(false)
+const preload = ref<'none' | 'metadata' | 'auto'>('none')
+const showControls = ref(false)
+let slowLoadTimer: number | undefined
+
+function clearSlowLoadTimer() {
+  if (slowLoadTimer === undefined) return
+  window.clearTimeout(slowLoadTimer)
+  slowLoadTimer = undefined
+}
+
+function prepareCaseStudy(load: boolean, active: boolean) {
+  preload.value = load ? 'auto' : 'none'
+  if (load) attachSources()
+  if (active && videoRef.value?.paused && !showControls.value) {
+    if (slowLoadTimer === undefined) {
+      slowLoadTimer = window.setTimeout(() => {
+        slowLoadTimer = undefined
+        if (videoRef.value?.paused) showControls.value = true
+      }, 8000)
+    }
+  } else {
+    clearSlowLoadTimer()
+  }
+}
 const webmSrc = computed(() => props.src.replace(/\.mp4$/, '.webm'))
 const posterSrc = computed(() =>
   props.poster ?? props.src.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
@@ -228,11 +307,12 @@ function clearSourceRelease() {
 
 function attachSources() {
   const video = videoRef.value
-  if (!video || !isWithinSourceRange || sourcesAttached.value) return
+  if (!video || (!props.caseStudy && !isWithinSourceRange) || sourcesAttached.value) return
 
   clearSourceRelease()
   const transition = ++sourceTransition
   sourcesAttached.value = true
+  if (!props.caseStudy) preload.value = 'metadata'
 
   nextTick(() => {
     if (transition !== sourceTransition || !sourcesAttached.value) return
@@ -248,6 +328,8 @@ function releaseSources() {
   if (registration) pauseVideo(registration)
   const transition = ++sourceTransition
   sourcesAttached.value = false
+  showControls.value = false
+  if (registration) registration.userPaused = false
 
   nextTick(() => {
     if (transition !== sourceTransition || sourcesAttached.value) return
@@ -261,14 +343,14 @@ function scheduleSourceRelease() {
   sourceReleaseTimer = window.setTimeout(() => {
     sourceReleaseTimer = undefined
     releaseSources()
-  }, SOURCE_RELEASE_DELAY)
+  }, props.caseStudy ? 30000 : SOURCE_RELEASE_DELAY)
 }
 
 onMounted(() => {
   const video = videoRef.value
   if (!video) return
 
-  registration = registerVideo(video)
+  registration = registerVideo(video, Boolean(props.caseStudy), prepareCaseStudy)
 
   sourceObserver = new IntersectionObserver(
     ([entry]) => {
@@ -276,12 +358,13 @@ onMounted(() => {
 
       if (isWithinSourceRange) {
         clearSourceRelease()
-        attachSources()
+        if (!props.caseStudy) attachSources()
       } else {
         scheduleSourceRelease()
       }
+      schedulePlaybackSync()
     },
-    { rootMargin: '200px 75%' }
+    { rootMargin: props.caseStudy ? '100% 0px' : '200px 75%' }
   )
 
   viewportObserver = new IntersectionObserver(
@@ -303,6 +386,7 @@ onBeforeUnmount(() => {
   isWithinSourceRange = false
   sourceTransition += 1
   clearSourceRelease()
+  clearSlowLoadTimer()
   sourceObserver?.disconnect()
   viewportObserver?.disconnect()
 
@@ -318,8 +402,11 @@ onBeforeUnmount(() => {
     loop
     muted
     playsinline
-    aria-hidden="true"
-    :preload="sourcesAttached ? 'metadata' : 'none'"
+    :aria-hidden="showControls ? undefined : true"
+    :aria-label="showControls ? 'Case study video' : undefined"
+    :controls="showControls"
+    :preload="preload"
+    @playing="clearSlowLoadTimer"
     :poster="posterSrc"
   >
     <template v-if="sourcesAttached">

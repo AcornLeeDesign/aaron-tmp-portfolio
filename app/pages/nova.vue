@@ -154,7 +154,7 @@ onBeforeUnmount(() => {
 
         <figure class="case-media-figure case-media-figure--overview">
           <div class="case-media-frame case-media-frame--video case-media-frame--overview-video">
-            <VideoPlayer
+            <VideoPlayer case-study
               class="case-media-video"
               src="/videos/nova_walkthrough.mp4"
             />
@@ -296,7 +296,7 @@ onBeforeUnmount(() => {
           <div class="product-gallery" aria-label="Nova product demonstrations">
             <figure class="case-media-figure product-gallery__wide">
               <div class="case-media-frame case-media-frame--video case-media-frame--product-wide-video">
-                <VideoPlayer
+                <VideoPlayer case-study
                   class="case-media-video"
                   src="/videos/quiz_fullscreen_student.mp4"
                 />
@@ -309,7 +309,7 @@ onBeforeUnmount(() => {
             <figure class="case-media-figure product-gallery__card">
               <div class="case-media-frame case-media-frame--inset case-media-frame--uniform-video">
                 <div class="case-media-inset case-media-inset--quiz-maker">
-                  <VideoPlayer
+                  <VideoPlayer case-study
                     class="case-media-video"
                     src="/videos/quiz_fullscreen_teacher.mp4"
                   />
@@ -340,7 +340,7 @@ onBeforeUnmount(() => {
             <figure class="case-media-figure product-gallery__card">
               <div class="case-media-frame case-media-frame--inset case-media-frame--uniform-video">
                 <div class="case-media-inset case-media-inset--practice">
-                  <VideoPlayer
+                  <VideoPlayer case-study
                     class="case-media-video"
                     src="/videos/nova_practice_V.mp4"
                   />
@@ -354,7 +354,7 @@ onBeforeUnmount(() => {
             <figure class="case-media-figure product-gallery__card">
               <div class="case-media-frame case-media-frame--inset case-media-frame--uniform-video">
                 <div class="case-media-inset case-media-inset--library">
-                  <VideoPlayer
+                  <VideoPlayer case-study
                     class="case-media-video"
                     src="/videos/library.mp4"
                     aria-label="Searchable digital library demonstration"
@@ -552,7 +552,7 @@ onBeforeUnmount(() => {
 
           <figure class="case-media-figure">
             <div class="case-media-frame case-media-frame--video case-media-frame--extra-video">
-              <VideoPlayer
+              <VideoPlayer case-study
                 class="case-media-video"
                 src="/videos/nova_preview_quiz.mp4"
               />

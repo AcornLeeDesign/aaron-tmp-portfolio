@@ -78,7 +78,7 @@ function onUnlocked() {
 
     <div v-else class="case__body">
       <figure v-if="study.heroVideo" class="case__hero">
-        <VideoPlayer :src="study.heroVideo" />
+        <VideoPlayer case-study :src="study.heroVideo" />
       </figure>
 
       <figure v-else-if="study.heroImage" class="case__hero case__media--image">
@@ -121,7 +121,7 @@ function onUnlocked() {
           </p>
 
           <figure v-else-if="block.type === 'video' && block.src" class="case__media">
-            <VideoPlayer :src="block.src" />
+            <VideoPlayer case-study :src="block.src" />
             <figcaption v-if="block.caption">{{ block.caption }}</figcaption>
           </figure>
 
