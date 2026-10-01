@@ -3,7 +3,7 @@ import { ArrowRightIcon, ArrowUpRightIcon } from '@heroicons/vue/24/outline'
 import { projects } from '~/data/projects'
 
 useHead({
-  title: 'Aaron Lee Tmp Portfolio',
+  title: 'Aaron Lee',
   htmlAttrs: { class: 'home-viewport' },
 })
 
