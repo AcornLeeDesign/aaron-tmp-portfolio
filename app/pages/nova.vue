@@ -1007,9 +1007,15 @@ onBeforeUnmount(() => {
   }
 }
 
+@media (max-width: 1023px) {
+  .case-section h2 {
+    font-size: var(--font-size-xl);
+  }
+}
+
 @media (max-width: 767px) {
   .case-section h2 {
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-l);
   }
 
   .case-section h3,
