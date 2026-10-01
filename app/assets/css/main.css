@@ -140,7 +140,7 @@ ol {
   --color-media-background: #262626;
   --color-nav-surface: #292929;
   --color-nav-surface-hover: #383838;
-  --color-sound-overlay-text: var(--color-text);
+  --color-sound-overlay-text: #1c1f24;
   /* Figma link categories used in the Work sheet. */
   --color-link-case-study: #fdf144;
   --color-link-instagram: #ff7add;
@@ -262,6 +262,7 @@ ol {
 
 @media (max-width: 1023px) {
   :root {
+    --color-sound-overlay-text: var(--color-text);
     --layout-footer-bottom: var(--space-xs);
     --layout-footer-control-height: var(--space-12);
   }
