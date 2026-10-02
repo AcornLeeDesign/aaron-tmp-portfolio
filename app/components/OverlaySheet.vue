@@ -92,13 +92,14 @@ defineExpose({ open })
       :id="id"
       ref="dialog"
       class="overlay-sheet"
-      :class="{ 'overlay-sheet--pointer-input': pointerInput }"
+      :class="{ 'overlay-sheet--pointer-input': pointerInput, 'overlay-sheet--decorated': !!$slots.decoration }"
       :aria-label="label"
       @close="restorePage"
       @cancel.prevent="close"
       @pointerdown="pointerStartedOutside = isOutside($event)"
       @click="onBackdropClick"
     >
+      <slot name="decoration" />
       <button class="overlay-sheet__close" type="button" :aria-label="closeLabel" autofocus @click="close">
         <XMarkIcon aria-hidden="true" />
       </button>
@@ -135,6 +136,12 @@ defineExpose({ open })
   display: flex;
   flex-direction: column;
   animation: overlay-sheet-enter 250ms ease-out;
+}
+
+/* Decorations stay in the dialog's top layer but outside its scroll clipping. */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .overlay-sheet--decorated { overflow: visible; }
+  .overlay-sheet--decorated .overlay-sheet__scroller { border-radius: inherit; }
 }
 
 .overlay-sheet__scroller {
