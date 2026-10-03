@@ -77,6 +77,7 @@ function moveCarousel(direction: -1 | 1) {
 function projectCursorText(project: (typeof projects)[number]) {
   if (project.to) return 'View case'
   if (project.href) return 'Live demo'
+  if (project.soon) return 'Coming soon'
   return ''
 }
 
@@ -378,7 +379,7 @@ onBeforeUnmount(() => {
                 @pointerenter="showProjectCursor(
                   $event,
                   projectCursorText(project),
-                  !project.to && !project.href,
+                  !project.to && !project.href && !project.soon,
                 )"
                 @pointermove="moveProjectCursor"
                 @pointerleave="hideProjectCursor"
