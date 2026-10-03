@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRightIcon, ArrowUpRightIcon } from '@heroicons/vue/24/outline'
+import { ArrowRightIcon, ArrowUpRightIcon, NoSymbolIcon } from '@heroicons/vue/24/outline'
 import { projects } from '~/data/projects'
 
 useHead({
@@ -457,6 +457,18 @@ onBeforeUnmount(() => {
                   />
                 </span>
               </HeaderNavButton>
+              <HeaderNavButton
+                v-else
+                as="button"
+                type="button"
+                disabled
+                :aria-label="project.soon ? `${project.title}: coming soon` : `${project.title}: no case study or live demo available`"
+                class="project-card__action project-card__action--disabled"
+                :class="{ 'project-card__action--soon': project.soon, 'project-card__action--unavailable': !project.soon }"
+              >
+                <span v-if="project.soon">Soon</span>
+                <NoSymbolIcon v-else class="project-card__action-icon" aria-hidden="true" />
+              </HeaderNavButton>
             </article>
           </div>
         </div>
@@ -521,7 +533,7 @@ onBeforeUnmount(() => {
   font-weight: var(--font-weight-heading);
   letter-spacing: -0.02em;
   line-height: 1.2;
-  text-align: justify;
+  text-align: left;
 }
 
 .home-about__bio {
@@ -823,6 +835,26 @@ onBeforeUnmount(() => {
   --header-nav-button-color: var(--color-link-case-study);
 }
 
+.project-card__action--disabled {
+  --header-nav-button-color: var(--color-subdued);
+  cursor: default;
+}
+
+.project-card__action--disabled:hover,
+.project-card__action--disabled:active {
+  background-color: transparent;
+  transform: none;
+}
+
+.project-card__action--unavailable {
+  width: var(--control-height);
+  padding: 0;
+}
+
+.project-card__action--unavailable :deep(.header-nav-button__label) {
+  display: flex;
+}
+
 .project-card__action:focus-visible {
   outline: 1px solid currentColor;
   outline-offset: var(--space-xxs);
@@ -840,9 +872,18 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 639px) {
+  .home-about__statement {
+    font-size: var(--font-size-l);
+  }
+
   .project-card__action {
     width: var(--control-height);
     padding: 0;
+  }
+
+  .project-card__action--soon {
+    width: auto;
+    padding-inline: var(--space-l);
   }
 
   .project-card__action :deep(.header-nav-button__label),
