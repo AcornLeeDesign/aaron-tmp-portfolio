@@ -905,12 +905,6 @@ onBeforeUnmount(() => {
   gap: var(--space-10);
 }
 
-.learning-list li > div,
-.next-steps-list li > div {
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-xs);
-}
-
 .learning-list h3 {
   margin: 0;
   font-size: var(--font-size-m);
@@ -933,6 +927,11 @@ onBeforeUnmount(() => {
   padding-bottom: calc(var(--case-study-bottom-blur-height) + var(--space-xxxl));
 }
 
+.learning-list p,
+.next-steps-list p:not(.next-steps-list__action) {
+  color: var(--color-subdued);
+}
+
 .next-steps-list__action {
   font-size: var(--font-size-m);
 }
@@ -951,23 +950,8 @@ onBeforeUnmount(() => {
   }
 }
 
-@media (max-width: 1023px) {
-  .case-section h2 {
-    font-size: var(--font-size-xl);
-  }
-}
-
 @media (max-width: 767px) {
   .case-section {
-    font-size: var(--font-size-s);
-  }
-
-  .case-section h2 {
-    font-size: var(--font-size-l);
-  }
-
-  .learning-list h3,
-  .next-steps-list__action {
     font-size: var(--font-size-s);
   }
 
@@ -977,6 +961,16 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 639px) {
+  .learning-list,
+  .next-steps-list {
+    gap: var(--space-xl);
+  }
+
+  .case-numbered-list li > div {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
   /* Figures 1 and 5–9: larger phones without the wide source-canvas margins. */
   .case-media-placeholder--video {
     aspect-ratio: var(--case-mobile-demo-aspect);
