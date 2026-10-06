@@ -214,6 +214,8 @@ ol {
   --radius-m: 12px;
   --radius-pill: 999px;
   --case-study-surface-radius: var(--radius-xs);
+  /* Shared text-to-media and text-to-quote spacing across case studies. */
+  --case-study-content-gap: var(--space-xl);
   --control-height: 40px;
   --header-nav-collapsed-width: var(--space-18);
   --header-nav-collapsed-height: var(--space-xs);

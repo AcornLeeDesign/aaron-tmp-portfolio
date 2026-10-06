@@ -588,7 +588,7 @@ onBeforeUnmount(() => {
 .case-media-figure--overview,
 .case-media-figure--competitors,
 .case-media-figure--visual-cues {
-  margin-top: var(--case-copy-media-gap);
+  margin-top: var(--case-study-content-gap);
 }
 
 .case-media-caption {
@@ -714,7 +714,7 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   gap: var(--space-m);
-  margin-top: var(--space-xl);
+  margin-top: var(--case-study-content-gap);
 }
 
 .evidence-card {
@@ -808,13 +808,18 @@ onBeforeUnmount(() => {
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: var(--case-copy-media-gap);
+  gap: var(--case-study-content-gap);
   margin-top: var(--case-copy-media-gap);
 }
 
 .visual-cue-details .cue-detail {
   width: min(var(--case-copy-width), 100%);
   margin-inline: auto;
+}
+
+.visual-cue-details > .case-media-figure + .cue-detail {
+  /* Preserve the larger separation before the next topic. */
+  margin-top: calc(var(--case-copy-media-gap) - var(--case-study-content-gap));
 }
 
 .expression-media {
@@ -839,7 +844,7 @@ onBeforeUnmount(() => {
   flex-direction: column;
   align-items: center;
   gap: var(--space-xl);
-  margin-top: var(--case-copy-media-gap);
+  margin-top: var(--case-study-content-gap);
 }
 
 .case-section--product {

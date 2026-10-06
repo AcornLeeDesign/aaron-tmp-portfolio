@@ -273,13 +273,34 @@ onBeforeUnmount(() => {
               </div>
             </div>
 
-            <div class="case-section__heading case-copy-block">
-              <h2>Little room for curiosity on global topics and hands-on experience</h2>
-              <p>
-                Students borrow teachers’ phones just to Google search, despite poor
-                connectivity. Although D-Link routers were available, electrical outages
-                meant internet access was never continuous.
-              </p>
+            <div class="problem-media-story case-copy-block">
+              <div class="case-section__heading">
+                <h2>Little room for curiosity on global topics and hands-on experience</h2>
+                <p>
+                  Students borrow teachers’ phones just to Google search, despite poor
+                  connectivity. Although D-Link routers were available, electrical outages
+                  meant internet access was never continuous.
+                </p>
+                <p>
+                  Existing hardware only supported disorganized hyperlinks to content that
+                  wasn’t culture-relevant and was often outdated.
+                </p>
+              </div>
+
+              <figure class="existing-solution-figure">
+                <div class="case-media-frame existing-solution-media">
+                  <img
+                    class="case-media-content"
+                    src="/images/case-studies/nova/figma/design-image-1-transparent.png"
+                    alt="RACHEL-Plus offline learning device"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption class="case-media-caption">
+                  Fig 5. RACHEL-Plus, an existing offline library with dated, difficult-to-navigate content.
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>
@@ -306,19 +327,64 @@ onBeforeUnmount(() => {
               </figcaption>
             </figure>
 
-            <figure class="case-media-figure product-gallery__card">
-              <div class="case-media-frame case-media-frame--inset case-media-frame--uniform-video">
-                <div class="case-media-inset case-media-inset--quiz-maker">
-                  <VideoPlayer case-study
-                    class="case-media-video"
-                    src="/videos/quiz_fullscreen_teacher.mp4"
-                  />
+            <div class="product-gallery__interlude">
+              <section class="constraint-story case-copy-block">
+                <div class="case-section__heading">
+                  <h2>Trained a locally-run LLM on South Sudan's mandated curriculum for cultural relevance</h2>
                 </div>
-              </div>
-              <figcaption class="case-media-caption">
-                Fig 5. Quiz maker for teachers to adopt new curriculum
-              </figcaption>
-            </figure>
+                <figure class="case-media-figure">
+                  <div class="case-media-frame case-media-frame--hardware">
+                    <img
+                      class="case-media-content case-media-content--contain"
+                      src="/images/case-studies/nova/nova-hardware.png"
+                      alt="Guardian Inc. Nova hardware device used to run the local learning platform"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </figure>
+              </section>
+
+                  <section class="constraint-story">
+                    <div class="case-section__heading case-copy-block">
+                        <h2>Reduced manual work for teachers</h2>
+                        <p>Teachers who’ve never interacted with AI before could easily generate quizzes with single-line prompts.</p>
+                    </div>
+
+                    <figure class="case-media-figure">
+                      <div class="case-media-inset case-media-inset--quiz-maker">
+                        <VideoPlayer case-study
+                          class="case-media-video"
+                          src="/videos/quiz_fullscreen_teacher.mp4"
+                        />
+                      </div>
+                      <figcaption class="case-media-caption">
+                        Fig 6. Quiz maker for teachers to adopt new curriculum
+                      </figcaption>
+                    </figure>
+                  </section>
+
+                  <section class="constraint-story">
+                    <div class="case-section__heading case-copy-block">
+                        <h2>Students learn at their own pace with interactive material</h2>
+                        <p>Students could ask open questions and get curriculum-relevant answers when teachers are overwhelmed or when self-studying.</p>
+                    </div>
+
+                    <figure class="case-media-figure">
+                      <div class="case-media-frame case-media-frame--inset case-media-frame--practice-large">
+                        <div class="case-media-inset case-media-inset--practice">
+                          <VideoPlayer case-study
+                            class="case-media-video"
+                            src="/videos/nova_practice_V.mp4"
+                          />
+                        </div>
+                      </div>
+                      <figcaption class="case-media-caption">
+                        Fig 8. Curriculum-based interactive practice quizzes
+                      </figcaption>
+                    </figure>
+                  </section>
+            </div>
 
             <figure class="case-media-figure product-gallery__card">
               <div class="case-media-frame case-media-frame--inset case-media-frame--uniform-video">
@@ -333,21 +399,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
               <figcaption class="case-media-caption">
-                Fig 6. PhET simulation labs for hands-on activities without equipment costs
-              </figcaption>
-            </figure>
-
-            <figure class="case-media-figure product-gallery__card">
-              <div class="case-media-frame case-media-frame--inset case-media-frame--uniform-video">
-                <div class="case-media-inset case-media-inset--practice">
-                  <VideoPlayer case-study
-                    class="case-media-video"
-                    src="/videos/nova_practice_V.mp4"
-                  />
-                </div>
-              </div>
-              <figcaption class="case-media-caption">
-                Fig 7. Curriculum-based interactive practice quizzes
+                Fig 7. PhET simulation labs for hands-on activities without equipment costs
               </figcaption>
             </figure>
 
@@ -362,7 +414,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
               <figcaption class="case-media-caption">
-                Fig 8. Searchable digital library over hyperlink dumps from other offline providers
+                Fig 9. Searchable digital library over hyperlink dumps from other offline providers
               </figcaption>
             </figure>
           </div>
@@ -373,31 +425,6 @@ onBeforeUnmount(() => {
           class="case-section case-section--constraints"
           data-case-section="constraints"
         >
-          <div class="constraint-story">
-            <div class="case-section__heading">
-              <h2>Existing solutions don’t fuel curiosity</h2>
-              <p>
-                Existing hardware only supported disorganized hyperlinks to content that
-                wasn’t culture-relevant and was often outdated.
-              </p>
-            </div>
-
-            <figure class="existing-solution-figure">
-              <div class="case-media-frame existing-solution-media">
-                <img
-                  class="case-media-content"
-                  src="/images/case-studies/nova/figma/design-image-1-transparent.png"
-                  alt="RACHEL-Plus offline learning device"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <figcaption class="case-media-caption">
-                Fig 9. RACHEL-Plus, an existing offline library with dated, difficult-to-navigate content.
-              </figcaption>
-            </figure>
-          </div>
-
           <div class="constraint-story">
             <div class="case-section__heading">
               <h2>Affordable hardware limited LLM context, so we designed AI behavior to handle mid- to long-length conversations</h2>
@@ -678,7 +705,7 @@ onBeforeUnmount(() => {
 }
 
 .case-media-figure--overview {
-  margin-top: var(--case-copy-media-gap);
+  margin-top: var(--case-study-content-gap);
 }
 
 .case-media-figure--copy-width {
@@ -741,6 +768,10 @@ onBeforeUnmount(() => {
   padding: var(--space-m);
 }
 
+.case-media-frame--hardware {
+  padding: var(--space-xl);
+}
+
 .case-media-frame--inset {
   display: grid;
   aspect-ratio: auto;
@@ -766,6 +797,30 @@ onBeforeUnmount(() => {
 
 .case-media-inset--practice {
   aspect-ratio: var(--nova-practice-video-ratio);
+}
+
+/* Match Fig 6's outer height while fitting the taller practice video inside. */
+@media (min-width: 768px) {
+  .case-media-frame--practice-large {
+    --practice-media-padding: var(--space-10);
+    position: relative;
+    aspect-ratio: var(--nova-product-wide-video-ratio);
+  }
+
+  .case-media-frame--practice-large > .case-media-inset {
+    position: absolute;
+    top: var(--practice-media-padding);
+    left: 50%;
+    width: auto;
+    height: calc(100% - 2 * var(--practice-media-padding));
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .case-media-frame--practice-large {
+    --practice-media-padding: var(--space-xl);
+  }
 }
 
 .case-media-inset--science-lab {
@@ -804,7 +859,7 @@ onBeforeUnmount(() => {
   width: min(var(--case-copy-width), 100%);
   flex-direction: column;
   align-items: center;
-  margin: var(--case-copy-media-gap) auto 0;
+  margin: var(--case-study-content-gap) auto 0;
 }
 
 .problem-details {
@@ -824,11 +879,11 @@ onBeforeUnmount(() => {
 .problem-media-story {
   display: flex;
   flex-direction: column;
-  gap: var(--case-copy-media-gap);
+  gap: var(--case-study-content-gap);
 }
 
 /* Match Nuance's heading-to-quote spacing; quote cards retain the compact gap. */
-.case-evidence-group { gap: var(--space-xl); }
+.case-evidence-group { gap: var(--case-study-content-gap); }
 
 .evidence-card {
   display: flex;
@@ -855,11 +910,21 @@ onBeforeUnmount(() => {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-xl);
-  margin-top: var(--case-copy-media-gap);
+  margin-top: var(--case-study-content-gap);
 }
 
 .product-gallery__wide {
   grid-column: 1 / -1;
+}
+
+.product-gallery__interlude {
+  display: flex;
+  width: 100%;
+  grid-column: 1 / -1;
+  flex-direction: column;
+  gap: var(--case-copy-media-gap);
+  margin-inline: auto;
+  padding-block: var(--space-12);
 }
 
 .product-gallery__card .case-media-caption {
@@ -876,7 +941,7 @@ onBeforeUnmount(() => {
 .constraint-story {
   display: flex;
   flex-direction: column;
-  gap: var(--case-copy-media-gap);
+  gap: var(--case-study-content-gap);
 }
 
 .existing-solution-figure {
@@ -899,7 +964,7 @@ onBeforeUnmount(() => {
 .case-section--result {
   display: flex;
   flex-direction: column;
-  gap: var(--case-copy-media-gap);
+  gap: var(--case-study-content-gap);
   margin-top: var(--case-copy-media-gap);
 }
 
@@ -915,7 +980,7 @@ onBeforeUnmount(() => {
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: var(--case-copy-media-gap);
+  gap: var(--case-study-content-gap);
   margin-top: var(--case-copy-media-gap);
   padding-bottom: calc(var(--case-study-bottom-blur-height) + var(--space-xxxl));
 }
