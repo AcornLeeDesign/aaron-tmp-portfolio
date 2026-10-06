@@ -446,7 +446,7 @@ onBeforeUnmount(() => {
               </p>
             </div>
 
-            <figure class="case-media-figure case-media-figure--copy-width">
+            <figure class="case-media-figure">
               <div class="case-media-frame case-media-frame--diagram">
                 <img
                   class="case-media-content case-media-content--contain"
@@ -472,10 +472,10 @@ onBeforeUnmount(() => {
               </p>
             </div>
 
-            <figure class="case-media-figure case-media-figure--copy-width">
+            <figure class="case-media-figure">
               <div class="case-media-frame case-media-frame--diagram">
                 <img
-                  class="case-media-content case-media-content--contain"
+                  class="case-media-content case-media-content--contain case-media-content--relevance"
                   src="/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent.png"
                   alt="Relevance-checking AI flow that reduces context and generates output faster"
                   loading="lazy"
@@ -596,7 +596,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .nova-case {
-  --case-copy-media-gap: var(--space-18);
+  --case-copy-media-gap: var(--space-24);
   /* Shared narrative measure inherited from the Nuance case-study pattern. */
   --case-copy-width: var(--content-copy-width);
   --case-wide-copy-width: 1200px;
@@ -749,6 +749,10 @@ onBeforeUnmount(() => {
 
 .case-media-content--contain {
   object-fit: contain;
+}
+
+.case-media-content--relevance {
+  transform: scale(calc(1 / 1.2));
 }
 
 .case-media-video {
@@ -933,9 +937,15 @@ onBeforeUnmount(() => {
 
 .case-section--constraints {
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: var(--case-copy-media-gap);
   margin-top: var(--case-copy-media-gap);
+}
+
+.case-section--constraints .case-section__heading {
+  width: min(var(--case-copy-width), 100%);
+  margin-inline: auto;
 }
 
 .constraint-story {

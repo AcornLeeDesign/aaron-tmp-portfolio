@@ -476,7 +476,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .nuance-case {
-  --case-copy-media-gap: var(--space-18);
+  --case-copy-media-gap: var(--space-24);
   /* Shared measure for copy and copy-width media. */
   --case-copy-width: var(--content-copy-width);
   /* Keeps prototype videos immersive without letting them over-expand on ultrawide displays. */
