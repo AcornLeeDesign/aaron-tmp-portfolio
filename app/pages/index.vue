@@ -490,6 +490,9 @@ onBeforeUnmount(() => {
 .home {
   --home-about-start-offset: var(--space-8);
   --home-intro-content-gap: var(--space-8);
+  /* Carousel card widths, enlarged together to preserve relative proportions. */
+  --home-project-card-width: clamp(352px, 44vw, 666px);
+  --home-project-portrait-width: clamp(264px, 33vw, 500px);
   position: relative;
   color: var(--color-text);
 }
@@ -594,14 +597,14 @@ onBeforeUnmount(() => {
 
 .project-card {
   display: flex;
-  flex: 0 0 clamp(320px, 40vw, 605px);
+  flex: 0 0 var(--home-project-card-width);
   min-width: 0;
   flex-direction: column;
   gap: var(--space-s);
 }
 
 .project-card--portrait {
-  flex-basis: clamp(240px, 30vw, 454px);
+  flex-basis: var(--home-project-portrait-width);
 }
 
 .project-card__media {
@@ -870,6 +873,12 @@ onBeforeUnmount(() => {
 .project-card__action-icon {
   width: var(--icon-size-s);
   height: var(--icon-size-s);
+}
+
+@media (min-width: 1024px) {
+  .home {
+    --home-about-start-offset: var(--space-28);
+  }
 }
 
 @media (max-width: 639px) {
