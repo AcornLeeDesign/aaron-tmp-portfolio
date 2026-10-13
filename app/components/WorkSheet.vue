@@ -140,7 +140,7 @@ defineExpose({ open: () => {
 
 .work-sheet__section h2 {
   font-size: var(--font-size-m);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-heading);
   line-height: var(--line-height-tight);
 }
 

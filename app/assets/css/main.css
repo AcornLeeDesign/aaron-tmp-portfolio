@@ -15,54 +15,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-Regular.otf') format('opentype');
-  font-style: normal;
-  font-weight: 400 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-Italic.otf') format('opentype');
-  font-style: italic;
-  font-weight: 400 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-Semibold.otf') format('opentype');
-  font-style: normal;
-  font-weight: 600 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-SemiboldItalic.otf') format('opentype');
-  font-style: italic;
-  font-weight: 600 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-Black.otf') format('opentype');
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-BlackItalic.otf') format('opentype');
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-}
-
 /* ── Reset ── */
 *,
 *::before,
@@ -184,27 +136,29 @@ ol {
   --space-xxxl: var(--space-10);
 
   /* Typography */
-  --font-sans: 'PP Mori', 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'General Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-mono: ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, monospace;
   --font-mono-ui: 'Atkinson Hyperlegible Mono', var(--font-mono);
-  --font-duration: 'Atkinson Hyperlegible', var(--font-mono-ui);
+  --font-duration: var(--font-sans);
 
   --font-size-xxs: 10px;
   --font-size-xs: 12px;
-  --font-size-s: 13px;
-  --font-size-m: 15px;
-  --font-size-l: 20px;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 22px;
   --font-size-xl: 24px;
   --font-size-xxl: 32px;
 
   --font-weight-regular: 400;
-  --font-weight-heading: 450;
+  --font-weight-heading: var(--font-weight-medium);
   --font-weight-medium: 500;
   --font-weight-button-label: var(--font-weight-medium);
   --font-weight-semibold: 600;
 
   --line-height-tight: 1.15;
   --line-height-heading: 1.3;
+  /* Shared leading for font sizes l, xl, and xxl. */
+  --line-height-large: 1.2;
   --line-height-body: 1.5;
   --line-height-relaxed: 1.7;
 
@@ -294,9 +248,9 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: var(--font-size-xxl); }
-h2 { font-size: var(--font-size-xl); }
-h3 { font-size: var(--font-size-l); }
+h1 { line-height: var(--line-height-large); font-size: var(--font-size-xxl); }
+h2 { line-height: var(--line-height-large); font-size: var(--font-size-xl); }
+h3 { line-height: var(--line-height-large); font-size: var(--font-size-l); }
 
 p + p {
   margin-top: var(--space-m);
@@ -324,7 +278,7 @@ p + p {
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-heading);
   letter-spacing: -0.01em;
-  line-height: var(--line-height-heading);
+  line-height: var(--line-height-large);
   margin-top: var(--space-xxl);
   margin-bottom: var(--space-s);
 }

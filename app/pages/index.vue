@@ -536,7 +536,7 @@ onBeforeUnmount(() => {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-heading);
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: var(--line-height-large);
   text-align: left;
 }
 
@@ -883,6 +883,7 @@ onBeforeUnmount(() => {
 
 @media (max-width: 639px) {
   .home-about__statement {
+    line-height: var(--line-height-large);
     font-size: var(--font-size-l);
   }
 

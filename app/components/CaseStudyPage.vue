@@ -170,7 +170,7 @@ function onUnlocked() {
   font-size: var(--font-size-xxl);
   font-weight: var(--font-weight-heading);
   letter-spacing: -0.03em;
-  line-height: var(--line-height-tight);
+  line-height: var(--line-height-large);
   margin-bottom: var(--space-s);
 }
 
@@ -288,7 +288,7 @@ function onUnlocked() {
 .case__stat-value {
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-heading);
+  line-height: var(--line-height-large);
   margin: 0 !important;
 }
 
@@ -312,7 +312,7 @@ function onUnlocked() {
   margin-top: var(--space-xs);
   font-size: var(--font-size-xs);
   font-style: normal;
-  color: inherit;
+  color: var(--color-subdued);
 }
 
 @media (max-width: 639px) {

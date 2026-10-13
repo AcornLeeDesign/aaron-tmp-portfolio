@@ -448,9 +448,9 @@ onBeforeUnmount(() => {
           <ol class="case-numbered-list next-steps-list">
             <li>
               <div>
-                <p class="next-steps-list__action">
+                <h3>
                   Talk with 2-3 engineers and psychologists to understand blindspots.
-                </p>
+                </h3>
                 <p>
                   Emotion-to-color is a foggy area. AI voice → expression is also an
                   experimental concept and may have latency issues.
@@ -459,9 +459,9 @@ onBeforeUnmount(() => {
             </li>
             <li>
               <div>
-                <p class="next-steps-list__action">
+                <h3>
                   Get a working prototype to an excited user and have them use it for 1-2 weeks.
-                </p>
+                </h3>
                 <p>
                   Measure success by satisfaction survey and length of calls compared to past data.
                 </p>
@@ -531,9 +531,9 @@ onBeforeUnmount(() => {
 .case-section--overview h1 {
   margin: 0;
   font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-heading);
   letter-spacing: -0.02em;
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-large);
 }
 
 .case-section__intro,
@@ -549,7 +549,7 @@ onBeforeUnmount(() => {
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-heading);
   letter-spacing: 0;
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-large);
 }
 
 .case-section p {
@@ -725,7 +725,7 @@ onBeforeUnmount(() => {
   padding: var(--space-s) var(--space-m);
   border-radius: var(--case-study-surface-radius);
   background: var(--color-surface);
-  color: var(--color-subdued);
+  color: var(--color-text);
 }
 
 .evidence-card blockquote {
@@ -910,7 +910,7 @@ onBeforeUnmount(() => {
   gap: var(--space-10);
 }
 
-.learning-list h3 {
+.case-numbered-list h3 {
   margin: 0;
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-heading);
@@ -933,13 +933,10 @@ onBeforeUnmount(() => {
 }
 
 .learning-list p,
-.next-steps-list p:not(.next-steps-list__action) {
-  color: var(--color-subdued);
+.next-steps-list p {
+  color: var(--color-text);
 }
 
-.next-steps-list__action {
-  font-size: var(--font-size-m);
-}
 
 @media (max-width: 1023px) {
   .nuance-case {

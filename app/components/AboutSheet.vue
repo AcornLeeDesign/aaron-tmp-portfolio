@@ -45,7 +45,7 @@ defineExpose({ open: () => sheet.value?.open() })
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-heading);
   letter-spacing: 0;
-  line-height: var(--line-height-heading);
+  line-height: var(--line-height-large);
 }
 .about-sheet__section p { margin: 0; }
 .about-sheet__section span { color: var(--color-subdued); }

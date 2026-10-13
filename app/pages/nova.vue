@@ -555,13 +555,13 @@ onBeforeUnmount(() => {
           <ol class="case-numbered-list next-steps-list">
             <li>
               <div>
-                <p class="next-steps-list__action">Match test scores with Nova usage</p>
+                <h3>Match test scores with Nova usage</h3>
                 <p>We had a USB drive that could track usage, but the shipment didn’t follow through. This was passed to the nonprofit tech team.</p>
               </div>
             </li>
             <li>
               <div>
-                <p class="next-steps-list__action">Teacher and student interviews</p>
+                <h3>Teacher and student interviews</h3>
                 <p>This required more on-the-ground coordination and was passed to our nonprofit partner as their responsibility.</p>
               </div>
             </li>
@@ -647,9 +647,9 @@ onBeforeUnmount(() => {
 .case-section--overview h1 {
   margin: 0;
   font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-heading);
   letter-spacing: -0.02em;
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-large);
 }
 
 .case-section__intro,
@@ -668,7 +668,7 @@ onBeforeUnmount(() => {
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-heading);
   letter-spacing: 0;
-  line-height: var(--line-height-heading);
+  line-height: var(--line-height-large);
 }
 
 .case-section h3 {
@@ -897,7 +897,7 @@ onBeforeUnmount(() => {
   padding: var(--space-s) var(--space-m);
   border-radius: var(--case-study-surface-radius);
   background: var(--color-surface);
-  color: var(--color-subdued);
+  color: var(--color-text);
 }
 
 .evidence-card blockquote {
@@ -1057,13 +1057,10 @@ onBeforeUnmount(() => {
 
 .findings-list p,
 .learning-list p,
-.next-steps-list p:not(.next-steps-list__action) {
-  color: var(--color-subdued);
+.next-steps-list p {
+  color: var(--color-text);
 }
 
-.next-steps-list__action {
-  font-size: var(--font-size-m);
-}
 
 @media (max-width: 1023px) {
   .nova-case {
