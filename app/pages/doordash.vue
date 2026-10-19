@@ -171,27 +171,27 @@ onBeforeUnmount(() => {
             <tbody>
               <tr>
                 <th scope="row">1. Printer self-troubleshooting<br /><a class="project-tag" href="#troubleshooting-title">this case study<span class="project-tag__arrow" aria-hidden="true" /></a></th>
-                <td id="project-0-goal"><span class="project-scope__field-label" aria-hidden="true">Goal</span>Help merchants discover fixes for their hardware devices and fix issues themselves, starting with kitchen and receipt printers.</td>
-                <td id="project-0-metric"><span class="project-scope__field-label" aria-hidden="true">Target metric</span><p>Reduced printer failure rate</p><p>Reduced total printer-related support inbound volume.</p></td>
-                <td id="project-0-outcome"><span class="project-scope__field-label" aria-hidden="true">Outcome</span><p>Stat. significant <strong>-40.0%</strong> in printer failure rate and <strong>-48.9%</strong> total printer errors.</p><p>Non stat. significant <strong>-43.5%</strong> printer-related support inbound</p></td>
+                <td>Help merchants discover fixes for their hardware devices and fix issues themselves, starting with kitchen and receipt printers.</td>
+                <td><p>Reduced printer failure rate</p><p>Reduced total printer-related support inbound volume.</p></td>
+                <td><p>Stat. significant <strong>-40.0%</strong> in printer failure rate and <strong>-48.9%</strong> total printer errors.</p><p>Non stat. significant <strong>-43.5%</strong> printer-related support inbound</p></td>
               </tr>
               <tr>
                 <th scope="row">2. Printer self-setup<br /><a class="project-tag project-tag--subdued" href="#printer-setup">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
-                <td id="project-1-goal"><span class="project-scope__field-label" aria-hidden="true">Goal</span>Allow merchants to self-setup their hardware devices without white-glove support, starting with kitchen and receipt printers.</td>
-                <td id="project-1-metric"><span class="project-scope__field-label" aria-hidden="true">Target metric</span>Reduced time spent during on-site setup.</td>
-                <td id="project-1-outcome"><span class="project-scope__field-label" aria-hidden="true">Outcome</span>Handed off to senior designer</td>
+                <td>Allow merchants to self-setup their hardware devices without white-glove support, starting with kitchen and receipt printers.</td>
+                <td>Reduced time spent during on-site setup.</td>
+                <td>Handed off to senior designer</td>
               </tr>
               <tr>
                 <th scope="row">3. Prep station self-setup<br /><a class="project-tag project-tag--subdued" href="#prep-station-setup">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
-                <td id="project-2-goal"><span class="project-scope__field-label" aria-hidden="true">Goal</span>Allow merchants to self-setup kitchen stations for routing orders and prep items using the main POS terminal, since merchants don’t use their laptop.</td>
-                <td id="project-2-metric"><span class="project-scope__field-label" aria-hidden="true">Target metric</span>More than 0 merchants able to self-setup prep stations</td>
-                <td id="project-2-outcome"><span class="project-scope__field-label" aria-hidden="true">Outcome</span><p>Presented to EU brand, Wolt.</p><p>De-prioritized</p></td>
+                <td>Allow merchants to self-setup kitchen stations for routing orders and prep items using the main POS terminal, since merchants don’t use their laptop.</td>
+                <td>More than 0 merchants able to self-setup prep stations</td>
+                <td><p>Presented to EU brand, Wolt.</p><p>De-prioritized</p></td>
               </tr>
               <tr>
                 <th scope="row">4. Art direction<br /><a class="project-tag project-tag--subdued" href="#art-direction">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
-                <td id="project-3-goal"><span class="project-scope__field-label" aria-hidden="true">Goal</span>Capture merchants' attention and build excitement for the point-of-sale stealth exit marketing push.</td>
-                <td id="project-3-metric"><span class="project-scope__field-label" aria-hidden="true">Target metric</span>…</td>
-                <td id="project-3-outcome"><span class="project-scope__field-label" aria-hidden="true">Outcome</span>…</td>
+                <td>Capture merchants' attention and build excitement for the point-of-sale stealth exit marketing push.</td>
+                <td>…</td>
+                <td>…</td>
               </tr>
             </tbody>
           </table>
@@ -444,21 +444,6 @@ blockquote footer { color: var(--doordash-quote-attribution); text-align: right;
 .project-scope__table th:last-child, .project-scope__table td:last-child { padding-right: 0; }
 .project-scope__table th { font-weight: var(--font-weight-medium); }
 .project-scope__table tbody th { font-size: var(--font-size-m); }
-.project-scope__field-label { display: none; }
-@media (max-width: 1023px) {
-  .project-scope__viewport { width: min(var(--content-copy-width), 100%); margin-inline: auto; }
-  .project-scope__viewport::after { display: none; }
-  .project-scope__scroll { overflow: visible; padding-bottom: 0; }
-  .project-scope__track { width: 100%; padding: 0; }
-  .project-scope__table { display: block; width: 100%; }
-  /* Preserve column headings for assistive technology while each card shows field labels. */
-  .project-scope__table thead { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-  .project-scope__table tbody { display: flex; flex-direction: column; gap: var(--space-10); }
-  .project-scope__table tbody tr { display: flex; flex-direction: column; gap: var(--space-l); padding-bottom: var(--space-10); border-bottom: 1px solid var(--color-border); }
-  .project-scope__table tbody tr:last-child { padding-bottom: 0; border-bottom: 0; }
-  .project-scope__table th, .project-scope__table td { display: block; padding: 0; }
-  .project-scope__field-label { display: block; margin-bottom: var(--space-xs); color: var(--color-subdued); font-family: var(--font-mono-ui); font-size: var(--font-size-xs); }
-}
 .project-tag { display: inline-flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-s); margin-bottom: var(--space-xs); height: var(--space-8); padding: var(--space-xxs) var(--space-s); border-radius: var(--radius-pill); background: var(--doordash-number-background); color: var(--doordash-number-text); font-family: var(--font-mono-ui); font-size: var(--font-size-xs); font-weight: var(--font-weight-regular); text-decoration: none; transform: rotate(-3deg); }
 .project-tag--subdued { background: var(--color-border); color: var(--color-subdued); transform: rotate(2deg); }
 .project-tag__arrow { width: var(--icon-size-xs); height: var(--icon-size-xs); background: currentColor; mask: url("/images/case-studies/doordash/arrow-thin.svg") center / contain no-repeat; }
