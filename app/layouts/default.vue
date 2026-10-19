@@ -613,7 +613,7 @@ onBeforeUnmount(() => {
     </main>
 
     <CaseStudyScrollbar v-if="isCaseStudy" />
-    <ProgressiveBottomBlur v-if="isCaseStudy" />
+    <ProgressiveBottomBlur :class="{ 'home-bottom-blur': !isCaseStudy }" />
     <SoundGradientStrip v-if="!isCaseStudy" />
     <AboutSheet ref="aboutSheet" />
     <WorkSheet ref="workSheet" />
@@ -621,6 +621,10 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+@media (min-width: 640px) {
+  .home-bottom-blur { display: none; }
+}
+
 .site {
   position: relative;
   isolation: isolate;

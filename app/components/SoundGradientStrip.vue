@@ -352,6 +352,8 @@ function animate(timestamp: number) {
 
 function startAnimation() {
   window.cancelAnimationFrame(animationFrame)
+  // Mobile uses the progressive footer blur instead of the animated strip.
+  if (window.innerWidth < 640) return
 
   if (motionPreference?.matches) {
     drawStrip(0)
@@ -363,7 +365,8 @@ function startAnimation() {
 }
 
 function handleResize() {
-  resizeCanvas()
+  if (window.innerWidth >= 640) resizeCanvas()
+  startAnimation()
 }
 
 onMounted(() => {
@@ -374,7 +377,7 @@ onMounted(() => {
   motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
   motionPreference.addEventListener('change', startAnimation)
   window.addEventListener('resize', handleResize)
-  resizeCanvas()
+  if (window.innerWidth >= 640) resizeCanvas()
   startAnimation()
 })
 
@@ -415,6 +418,10 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+@media (max-width: 639px) {
+  .sound-gradient { display: none; }
+}
+
 .sound-gradient {
   position: fixed;
   z-index: -1;

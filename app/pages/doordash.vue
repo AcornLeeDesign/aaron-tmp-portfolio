@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { ChevronUpIcon } from '@heroicons/vue/24/outline'
-
-const expandedProjects = ref([false, false, false, false])
 type SectionId = 'overview' | 'problem' | 'approach' | 'alerts' | 'guidance' | 'status' | 'solution' | 'learning' | 'next-steps' | 'extra'
 const sections: Array<{ id: SectionId, label: string }> = [
   { id: 'overview', label: 'Overview' },
@@ -172,26 +169,26 @@ onBeforeUnmount(() => {
           <table class="project-scope__table">
             <thead><tr><th scope="col">Name</th><th scope="col">Goal</th><th scope="col">Target Metric</th><th scope="col">Outcome</th></tr></thead>
             <tbody>
-              <tr :class="{ 'project-scope__row--expanded': expandedProjects[0] }">
-                <th scope="row"><span class="project-scope__desktop-name">1. Printer self-troubleshooting</span><button type="button" class="project-scope__toggle" :aria-expanded="expandedProjects[0]" aria-controls="project-0-goal project-0-metric project-0-outcome" @click="expandedProjects[0] = !expandedProjects[0]"><span>1. Printer self-troubleshooting</span><ChevronUpIcon class="project-scope__chevron" aria-hidden="true" /></button><br class="project-scope__desktop-break" /><a class="project-tag" href="#troubleshooting-title">this case study<span class="project-tag__arrow" aria-hidden="true" /></a></th>
+              <tr>
+                <th scope="row">1. Printer self-troubleshooting<br /><a class="project-tag" href="#troubleshooting-title">this case study<span class="project-tag__arrow" aria-hidden="true" /></a></th>
                 <td id="project-0-goal"><span class="project-scope__field-label" aria-hidden="true">Goal</span>Help merchants discover fixes for their hardware devices and fix issues themselves, starting with kitchen and receipt printers.</td>
                 <td id="project-0-metric"><span class="project-scope__field-label" aria-hidden="true">Target metric</span><p>Reduced printer failure rate</p><p>Reduced total printer-related support inbound volume.</p></td>
                 <td id="project-0-outcome"><span class="project-scope__field-label" aria-hidden="true">Outcome</span><p>Stat. significant <strong>-40.0%</strong> in printer failure rate and <strong>-48.9%</strong> total printer errors.</p><p>Non stat. significant <strong>-43.5%</strong> printer-related support inbound</p></td>
               </tr>
-              <tr :class="{ 'project-scope__row--expanded': expandedProjects[1] }">
-                <th scope="row"><span class="project-scope__desktop-name">2. Printer self-setup</span><button type="button" class="project-scope__toggle" :aria-expanded="expandedProjects[1]" aria-controls="project-1-goal project-1-metric project-1-outcome" @click="expandedProjects[1] = !expandedProjects[1]"><span>2. Printer self-setup</span><ChevronUpIcon class="project-scope__chevron" aria-hidden="true" /></button><br class="project-scope__desktop-break" /><a class="project-tag project-tag--subdued" href="#printer-setup">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
+              <tr>
+                <th scope="row">2. Printer self-setup<br /><a class="project-tag project-tag--subdued" href="#printer-setup">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
                 <td id="project-1-goal"><span class="project-scope__field-label" aria-hidden="true">Goal</span>Allow merchants to self-setup their hardware devices without white-glove support, starting with kitchen and receipt printers.</td>
                 <td id="project-1-metric"><span class="project-scope__field-label" aria-hidden="true">Target metric</span>Reduced time spent during on-site setup.</td>
                 <td id="project-1-outcome"><span class="project-scope__field-label" aria-hidden="true">Outcome</span>Handed off to senior designer</td>
               </tr>
-              <tr :class="{ 'project-scope__row--expanded': expandedProjects[2] }">
-                <th scope="row"><span class="project-scope__desktop-name">3. Prep station self-setup</span><button type="button" class="project-scope__toggle" :aria-expanded="expandedProjects[2]" aria-controls="project-2-goal project-2-metric project-2-outcome" @click="expandedProjects[2] = !expandedProjects[2]"><span>3. Prep station self-setup</span><ChevronUpIcon class="project-scope__chevron" aria-hidden="true" /></button><br class="project-scope__desktop-break" /><a class="project-tag project-tag--subdued" href="#prep-station-setup">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
+              <tr>
+                <th scope="row">3. Prep station self-setup<br /><a class="project-tag project-tag--subdued" href="#prep-station-setup">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
                 <td id="project-2-goal"><span class="project-scope__field-label" aria-hidden="true">Goal</span>Allow merchants to self-setup kitchen stations for routing orders and prep items using the main POS terminal, since merchants don’t use their laptop.</td>
                 <td id="project-2-metric"><span class="project-scope__field-label" aria-hidden="true">Target metric</span>More than 0 merchants able to self-setup prep stations</td>
                 <td id="project-2-outcome"><span class="project-scope__field-label" aria-hidden="true">Outcome</span><p>Presented to EU brand, Wolt.</p><p>De-prioritized</p></td>
               </tr>
-              <tr :class="{ 'project-scope__row--expanded': expandedProjects[3] }">
-                <th scope="row"><span class="project-scope__desktop-name">4. Art direction</span><button type="button" class="project-scope__toggle" :aria-expanded="expandedProjects[3]" aria-controls="project-3-goal project-3-metric project-3-outcome" @click="expandedProjects[3] = !expandedProjects[3]"><span>4. Art direction</span><ChevronUpIcon class="project-scope__chevron" aria-hidden="true" /></button><br class="project-scope__desktop-break" /><a class="project-tag project-tag--subdued" href="#art-direction">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
+              <tr>
+                <th scope="row">4. Art direction<br /><a class="project-tag project-tag--subdued" href="#art-direction">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
                 <td id="project-3-goal"><span class="project-scope__field-label" aria-hidden="true">Goal</span>Capture merchants' attention and build excitement for the point-of-sale stealth exit marketing push.</td>
                 <td id="project-3-metric"><span class="project-scope__field-label" aria-hidden="true">Target metric</span>…</td>
                 <td id="project-3-outcome"><span class="project-scope__field-label" aria-hidden="true">Outcome</span>…</td>
@@ -462,16 +459,6 @@ blockquote footer { color: var(--doordash-quote-attribution); text-align: right;
   .project-scope__table th, .project-scope__table td { display: block; padding: 0; }
   .project-scope__field-label { display: block; margin-bottom: var(--space-xs); color: var(--color-subdued); font-family: var(--font-mono-ui); font-size: var(--font-size-xs); }
 }
-.project-scope__toggle { display: none; }
-@media (max-width: 639px) {
-  .project-scope__desktop-name, .project-scope__desktop-break { display: none; }
-  .project-scope__toggle { display: flex; align-items: center; justify-content: space-between; gap: var(--space-m); width: 100%; min-height: var(--space-11); padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
-  .project-scope__chevron { width: var(--icon-size-xs); height: var(--icon-size-xs); flex-shrink: 0; transform: rotate(180deg); transition: transform var(--transition-fast); }
-  .project-scope__toggle[aria-expanded="true"] .project-scope__chevron { transform: rotate(0); }
-  .project-scope__table tbody tr:not(.project-scope__row--expanded) td { display: none; }
-  .project-scope__toggle:focus-visible { outline: 1px solid var(--color-text); outline-offset: var(--space-xxs); }
-}
-@media (prefers-reduced-motion: reduce) { .project-scope__chevron { transition: none; } }
 .project-tag { display: inline-flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-s); margin-bottom: var(--space-xs); height: var(--space-8); padding: var(--space-xxs) var(--space-s); border-radius: var(--radius-pill); background: var(--doordash-number-background); color: var(--doordash-number-text); font-family: var(--font-mono-ui); font-size: var(--font-size-xs); font-weight: var(--font-weight-regular); text-decoration: none; transform: rotate(-3deg); }
 .project-tag--subdued { background: var(--color-border); color: var(--color-subdued); transform: rotate(2deg); }
 .project-tag__arrow { width: var(--icon-size-xs); height: var(--icon-size-xs); background: currentColor; mask: url("/images/case-studies/doordash/arrow-thin.svg") center / contain no-repeat; }
