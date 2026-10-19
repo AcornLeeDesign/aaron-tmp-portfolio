@@ -142,10 +142,20 @@ function syncPlayback() {
         .slice(0, [...videoRegistrations.values()].some(item => item.caseStudy) ? 1 : MAX_PLAYING_VIDEOS)
     : []
 
+  // Explicit comparison groups may play together while both are visible.
+  const group = candidates[0]?.video.dataset.playbackGroup
+  if (group) {
+    const partner = [...videoRegistrations.values()].find(item =>
+      item !== candidates[0] && item.video.dataset.playbackGroup === group
+      && item.video.isConnected && viewportVisibilityRatio(item.video) > 0
+    )
+    if (partner) candidates.push(partner)
+  }
+
   // Prepare only the nearest upcoming case-study video, and only once the
   // current clip is fully buffered so it does not compete with initial playback.
   const active = candidates[0]
-  const upcoming = document.visibilityState === 'visible' && (!active || fullyBuffered(active.video))
+  const upcoming = document.visibilityState === 'visible' && candidates.every(item => fullyBuffered(item.video))
     ? [...videoRegistrations.values()]
         .filter(item => item.caseStudy && item !== active
           && item.video.getBoundingClientRect().top >= window.innerHeight
@@ -154,7 +164,7 @@ function syncPlayback() {
     : undefined
 
   for (const item of videoRegistrations.values()) {
-    if (item.caseStudy) item.prepare(item === active || item === upcoming, item === active)
+    if (item.caseStudy) item.prepare(candidates.includes(item) || item === upcoming, candidates.includes(item))
   }
 
   const selectedIds = new Set(candidates.map(registration => registration.id))
@@ -257,6 +267,7 @@ const props = defineProps<{
   src: string
   poster?: string
   caseStudy?: boolean
+  playbackGroup?: string
 }>()
 
 const videoRef = ref<HTMLVideoElement | null>(null)
@@ -399,6 +410,7 @@ onBeforeUnmount(() => {
 <template>
   <video
     ref="videoRef"
+    :data-playback-group="playbackGroup"
     loop
     muted
     playsinline

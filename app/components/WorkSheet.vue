@@ -31,7 +31,7 @@ function trackLinkPointer(event: PointerEvent) {
 
 const sections: { title: string, entries: WorkEntry[] }[] = [
   { title: 'Work', entries: [
-    { year: '2026', name: 'DoorDash', role: 'Product design intern', soon: true },
+    { year: '2026', name: 'DoorDash', role: 'Product design intern', project: 'DoorDash' },
     { year: '2026', name: 'Fleetline', role: 'Product designer', soon: true },
     { year: '2026', name: 'Innovative Design @ USC', role: 'Co president', instagram: true },
     { year: '2025', name: 'Innovative Design @ USC', role: 'VP of Design', continuation: true },
@@ -200,17 +200,7 @@ defineExpose({ open: () => {
 @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
   .work-sheet__glow {
     /* Twice the original diameter, beneath all scrolling content. */
-    --work-link-glow-size: calc(var(--space-30) * 4);
-    /* Compact opaque center with a long, eased falloff instead of a solid disk. */
-    --work-link-glow-mask: radial-gradient(circle closest-side,
-      #000 0%,
-      rgb(0 0 0 / 98%) 8%,
-      rgb(0 0 0 / 88%) 20%,
-      rgb(0 0 0 / 60%) 38%,
-      rgb(0 0 0 / 28%) 56%,
-      rgb(0 0 0 / 9%) 74%,
-      rgb(0 0 0 / 2%) 88%,
-      transparent 100%);
+    --work-link-glow-size: var(--pointer-glow-size);
     display: block;
     position: absolute;
     z-index: -1;
@@ -219,11 +209,12 @@ defineExpose({ open: () => {
     width: var(--work-link-glow-size);
     height: var(--work-link-glow-size);
     background-color: var(--work-link-color);
-    /* Higher-contrast monochrome grain shares the glow's fade. */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='3' intercept='-1'/%3E%3CfeFuncG type='linear' slope='3' intercept='-1'/%3E%3CfeFuncB type='linear' slope='3' intercept='-1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.55'/%3E%3C/svg%3E");
+    /* Half-size tiles and softer contrast produce fine grain without coarse specks. */
+    background-image: var(--pointer-glow-texture);
+    background-size: var(--space-16) var(--space-16);
     background-blend-mode: multiply;
-    -webkit-mask-image: var(--work-link-glow-mask);
-    mask-image: var(--work-link-glow-mask);
+    -webkit-mask-image: var(--pointer-glow-mask);
+    mask-image: var(--pointer-glow-mask);
     pointer-events: none;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);

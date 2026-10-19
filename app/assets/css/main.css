@@ -162,6 +162,9 @@ ol {
   --line-height-body: 1.5;
   --line-height-relaxed: 1.7;
 
+  /* Horizontal scrollbars use half the standard 12px track height. */
+  --scrollbar-height: calc(var(--space-3) / 2);
+
   /* Shape and component sizing */
   --radius-xs: 4px;
   --radius-s: 8px;
@@ -170,6 +173,8 @@ ol {
   --case-study-surface-radius: var(--radius-xs);
   /* Shared text-to-media and text-to-quote spacing across case studies. */
   --case-study-content-gap: var(--space-xl);
+  /* Consecutive media rows need twice the standard gap for captions. */
+  --case-study-media-stack-gap: var(--space-12);
   --control-height: 40px;
   --header-nav-collapsed-width: var(--space-18);
   --header-nav-collapsed-height: var(--space-xs);
@@ -179,6 +184,32 @@ ol {
   --case-study-bottom-blur-height: var(--space-25);
   --icon-size-s: 16px;
   --icon-size-m: 20px;
+
+  /* Shared pointer glow: fine grain and eased radial falloff. */
+  --pointer-glow-size: calc(var(--space-30) * 4);
+  --pointer-glow-mask: radial-gradient(circle closest-side,
+      #000 0%,
+      rgb(0 0 0 / 99%) 5%,
+      rgb(0 0 0 / 96%) 10%,
+      rgb(0 0 0 / 92%) 15%,
+      rgb(0 0 0 / 86%) 20%,
+      rgb(0 0 0 / 79%) 25%,
+      rgb(0 0 0 / 71%) 30%,
+      rgb(0 0 0 / 62%) 35%,
+      rgb(0 0 0 / 53%) 40%,
+      rgb(0 0 0 / 44%) 45%,
+      rgb(0 0 0 / 35%) 50%,
+      rgb(0 0 0 / 27%) 55%,
+      rgb(0 0 0 / 20%) 60%,
+      rgb(0 0 0 / 14%) 65%,
+      rgb(0 0 0 / 9%) 70%,
+      rgb(0 0 0 / 5.5%) 75%,
+      rgb(0 0 0 / 3%) 80%,
+      rgb(0 0 0 / 1.4%) 85%,
+      rgb(0 0 0 / .5%) 90%,
+      rgb(0 0 0 / .1%) 95%,
+      transparent 100%);
+  --pointer-glow-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.8' intercept='-.4'/%3E%3CfeFuncG type='linear' slope='1.8' intercept='-.4'/%3E%3CfeFuncB type='linear' slope='1.8' intercept='-.4'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.4'/%3E%3C/svg%3E");
 
   /* Shared About and Work overlay surface, sized to the Figma sheet. */
   --overlay-sheet-width: 680px;
@@ -351,3 +382,7 @@ p + p {
     scroll-behavior: auto;
   }
 }
+
+/* Shared horizontal scrollbar convention. */
+::-webkit-scrollbar { height: var(--scrollbar-height); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: var(--radius-pill); }

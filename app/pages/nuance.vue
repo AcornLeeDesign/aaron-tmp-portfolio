@@ -843,7 +843,7 @@ onBeforeUnmount(() => {
   width: 100%;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-xl);
+  gap: var(--case-study-media-stack-gap);
   margin-top: var(--case-study-content-gap);
 }
 

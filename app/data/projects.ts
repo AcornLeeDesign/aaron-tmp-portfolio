@@ -20,7 +20,7 @@ export interface Project {
 
 // Shared project order across homepage layout variants.
 export const projects: Project[] = [
-  { id: 13, title: 'Doordash', soon: true, description: ['Product design and Art direction', 'Intern'], duration: '2026', aspect: '1024 / 607', src: '/images/doordash.png', type: 'image', mediaBackgroundColor: '#ff3008', border: true },
+  { id: 13, title: 'DoorDash', to: '/doordash', description: ['Product design and Art direction', 'Intern'], duration: '2026', aspect: '1024 / 607', src: '/images/doordash.png', type: 'image', mediaBackgroundColor: '#ff3008', border: true },
   { id: 1, title: 'Nuance', description: ['Product design and 3D art', 'Concept'], duration: '2025', aspect: '3 / 4', contentAspect: '450 / 920', src: '/videos/asl-feature.mp4', mediaBackgroundImage: '/images/case-studies/nuance/fig-1-clouds.jpg', to: '/nuance' },
   { id: 6, title: 'Nova', description: ['Product design and Design PM', 'Full-time'], duration: '2024-2025', aspect: '1588 / 1288', src: '/videos/nova_practice_V.mp4', mediaBackgroundImage: '/images/home/media-backgrounds/nova.jpg', border: true, to: '/nova' },
   { id: 3, title: 'Manta', description: ['3D art and web design', 'Artwork'], duration: '2025', aspect: '3418 / 2032', src: '/videos/manta.mp4', mediaBackgroundImage: '/images/home/media-backgrounds/manta.jpg', mediaBackgroundBlur: true, mediaBackgroundBrightness: 1.25, href: 'https://manta-one.vercel.app/' },

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { animate, springValue, type MotionValue } from 'motion'
 
-type HeaderNavPhase = 'expanded' | 'collapsing' | 'collapsed' | 'expanding' | 'settling'
+type HeaderNavPhase = 'expanded' | 'collapsing' | 'collapsed' | 'expanding'
 type BlobCoreController = {
   x: MotionValue<number>
   y: MotionValue<number>
@@ -14,13 +14,15 @@ type BlobCoreController = {
 const route = useRoute()
 const aboutSheet = ref<{ open: () => void } | null>(null)
 const workSheet = ref<{ open: () => void } | null>(null)
-const isCaseStudy = computed(() => route.path === '/nuance' || route.path === '/nova')
+const isCaseStudy = computed(() => ['/nuance', '/nova', '/doordash'].includes(route.path))
 const pacificTime = ref('--:--:-- PST')
 const headerNavPhase = ref<HeaderNavPhase>('expanded')
 const headerNavRef = ref<HTMLElement | null>(null)
 const headerNavItemsRef = ref<HTMLElement | null>(null)
 const headerNavLiquidRef = ref<SVGSVGElement | null>(null)
-const isHeaderNavUnavailable = computed(() => headerNavPhase.value !== 'expanded')
+const isHeaderNavUnavailable = computed(() =>
+  headerNavPhase.value === 'collapsed' || headerNavPhase.value === 'collapsing',
+)
 let clockTimer: ReturnType<typeof setInterval> | undefined
 let blobIdleTimer: ReturnType<typeof setTimeout> | undefined
 let previousScrollY = 0
@@ -276,9 +278,9 @@ function animateLiquidBlob(blob: SVGGElement, progress: number, expanding = fals
 
   const animation = animate(state, { progress }, {
     type: 'spring',
-    stiffness: expanding ? 210 : 190,
-    damping: expanding ? 29 : 26,
-    mass: expanding ? 0.95 : 1.05,
+    stiffness: expanding ? 420 : 190,
+    damping: expanding ? 36 : 26,
+    mass: expanding ? 0.75 : 1.05,
     onUpdate: () => renderLiquidBlob(blob, state.progress),
   })
   navAnimations.add(animation)
@@ -287,6 +289,10 @@ function animateLiquidBlob(blob: SVGGElement, progress: number, expanding = fals
 
 async function collapseHeaderNav() {
   if (!desktopNavQuery?.matches) return
+  // Keep navigation usable while the pointer or keyboard focus is inside it.
+  const nav = headerNavRef.value
+  if (nav?.contains(document.activeElement)) return
+  if (window.matchMedia('(any-hover: hover)').matches && nav?.matches(':hover')) return
   if (headerNavPhase.value !== 'expanded' || !measureLiquidBlobs()) return
 
   const version = navAnimationVersion
@@ -321,6 +327,12 @@ async function collapseHeaderNav() {
   scheduleBlobIdle()
 }
 
+function handleNavRestorePointerEnter(event: PointerEvent) {
+  // Touch-generated pointerenter must leave activation to the tap/click fallback.
+  if (event.pointerType === 'touch' || event.buttons !== 0) return
+  void expandHeaderNav()
+}
+
 async function expandHeaderNav() {
   if (!desktopNavQuery?.matches) return
   if (headerNavPhase.value !== 'collapsed') return
@@ -348,20 +360,15 @@ async function expandHeaderNav() {
 
   const morphAnimations = blobs.map(blob => animateLiquidBlob(blob, 0, true))
 
-  await Promise.all(morphAnimations)
-  if (version !== navAnimationVersion) return
-  headerNavPhase.value = 'settling'
-  await nextTick()
-  if (version !== navAnimationVersion) return
-
+  // Reveal labels during the morph; the buttons are already interactive.
   const contentAnimations = content.map(element => animate(
     element,
     { opacity: 1 },
-    { duration: 0.16, ease: 'easeOut' },
+    { duration: 0.1, delay: 0.04, ease: 'easeOut' },
   ))
   contentAnimations.forEach(animation => navAnimations.add(animation))
 
-  await Promise.all(contentAnimations)
+  await Promise.all([...morphAnimations, ...contentAnimations])
   if (version !== navAnimationVersion) return
   navAnimations.clear()
   headerNavPhase.value = 'expanded'
@@ -586,9 +593,10 @@ onBeforeUnmount(() => {
           type="button"
           aria-label="Show primary navigation"
           aria-controls="primary-nav-items"
-          :aria-expanded="headerNavPhase === 'expanded'"
+          :aria-expanded="!isHeaderNavUnavailable"
           :aria-hidden="headerNavPhase !== 'collapsed'"
           :tabindex="headerNavPhase === 'collapsed' ? 0 : -1"
+          @pointerenter="handleNavRestorePointerEnter"
           @click="expandHeaderNav"
         />
       </nav>
@@ -657,9 +665,7 @@ onBeforeUnmount(() => {
 }
 
 .header__nav--collapsing .header__nav-items,
-.header__nav--collapsed .header__nav-items,
-.header__nav--expanding .header__nav-items,
-.header__nav--settling .header__nav-items {
+.header__nav--collapsed .header__nav-items {
   pointer-events: none;
 }
 
@@ -677,8 +683,7 @@ onBeforeUnmount(() => {
 
 .header__nav--collapsing .header__nav-liquid,
 .header__nav--collapsed .header__nav-liquid,
-.header__nav--expanding .header__nav-liquid,
-.header__nav--settling .header__nav-liquid {
+.header__nav--expanding .header__nav-liquid {
   opacity: 1;
 }
 
@@ -699,12 +704,20 @@ onBeforeUnmount(() => {
   transition: fill var(--transition-fast);
 }
 
-.header__nav--collapsing .header__mark-link,
-.header__nav--collapsed .header__mark-link,
-.header__nav--expanding .header__mark-link,
-.header__nav--collapsing :deep(.header-nav-button),
-.header__nav--collapsed :deep(.header-nav-button),
-.header__nav--expanding :deep(.header-nav-button) {
+/* Keep a fully opaque surface beneath the fading SVG at the handoff.
+   Animating both backgrounds at once creates a visible dip in opacity. */
+.header__nav .header__mark-link,
+.header__nav :deep(.header-nav-button) {
+  transition: color var(--transition-theme), transform 100ms ease-out;
+}
+
+/* Hover must not paint a rectangular button surface during the liquid morph. */
+.header__nav.header__nav--collapsing .header__mark-link,
+.header__nav.header__nav--collapsed .header__mark-link,
+.header__nav.header__nav--expanding .header__mark-link,
+.header__nav.header__nav--collapsing :deep(.header-nav-button),
+.header__nav.header__nav--collapsed :deep(.header-nav-button),
+.header__nav.header__nav--expanding :deep(.header-nav-button) {
   background-color: transparent;
 }
 
@@ -734,6 +747,13 @@ onBeforeUnmount(() => {
 
 .header__nav:has(.header__nav-restore:hover) .header__nav-blob-shape,
 .header__nav:has(.header__nav-restore:focus-visible) .header__nav-blob-shape {
+  fill: var(--color-nav-surface-hover);
+}
+
+/* Match the hovered button's color before handing over its surface. */
+.header__nav--expanding:has([data-nav-blob]:nth-child(1):hover) .header__nav-blob:nth-child(1) .header__nav-blob-shape,
+.header__nav--expanding:has([data-nav-blob]:nth-child(2):hover) .header__nav-blob:nth-child(2) .header__nav-blob-shape,
+.header__nav--expanding:has([data-nav-blob]:nth-child(3):hover) .header__nav-blob:nth-child(3) .header__nav-blob-shape {
   fill: var(--color-nav-surface-hover);
 }
 

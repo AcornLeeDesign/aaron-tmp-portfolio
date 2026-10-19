@@ -153,11 +153,13 @@ onBeforeUnmount(() => {
         </section>
 
         <figure class="case-media-figure case-media-figure--overview">
-          <div class="case-media-frame case-media-frame--video case-media-frame--overview-video">
-            <VideoPlayer case-study
-              class="case-media-video"
-              src="/videos/nova_walkthrough.mp4"
-            />
+          <div class="case-media-frame case-media-frame--product-demo case-media-frame--overview-video">
+            <div class="product-demo-media">
+              <VideoPlayer case-study
+                class="case-media-video"
+                src="/videos/nova_walkthrough.mp4"
+              />
+            </div>
           </div>
           <figcaption class="case-media-caption">
             Fig 1. Nova product walkthrough across the offline learning platform.
@@ -298,7 +300,7 @@ onBeforeUnmount(() => {
                   />
                 </div>
                 <figcaption class="case-media-caption">
-                  Fig 5. RACHEL-Plus, an existing offline library with dated, difficult-to-navigate content.
+                  RACHEL-Plus, an existing offline library with dated, difficult-to-navigate content.
                 </figcaption>
               </figure>
             </div>
@@ -316,11 +318,13 @@ onBeforeUnmount(() => {
 
           <div class="product-gallery" aria-label="Nova product demonstrations">
             <figure class="case-media-figure product-gallery__wide">
-              <div class="case-media-frame case-media-frame--video case-media-frame--product-wide-video">
-                <VideoPlayer case-study
-                  class="case-media-video"
-                  src="/videos/quiz_fullscreen_student.mp4"
-                />
+              <div class="case-media-frame case-media-frame--product-demo">
+                <div class="product-demo-media">
+                  <VideoPlayer case-study
+                    class="case-media-video"
+                    src="/videos/quiz_fullscreen_student.mp4"
+                  />
+                </div>
               </div>
               <figcaption class="case-media-caption">
                 Fig 4. Curriculum-trained AI tutor to enhance student independent learning
@@ -342,6 +346,9 @@ onBeforeUnmount(() => {
                       decoding="async"
                     />
                   </div>
+                  <figcaption class="case-media-caption">
+                    Fig 5. Nova hardware running a local LLM trained on South Sudan’s mandated curriculum.
+                  </figcaption>
                 </figure>
               </section>
 
@@ -352,11 +359,13 @@ onBeforeUnmount(() => {
                     </div>
 
                     <figure class="case-media-figure">
-                      <div class="case-media-inset case-media-inset--quiz-maker">
-                        <VideoPlayer case-study
-                          class="case-media-video"
-                          src="/videos/quiz_fullscreen_teacher.mp4"
-                        />
+                      <div class="case-media-frame case-media-frame--product-demo">
+                        <div class="product-demo-media">
+                          <VideoPlayer case-study
+                            class="case-media-video"
+                            src="/videos/quiz_fullscreen_teacher.mp4"
+                          />
+                        </div>
                       </div>
                       <figcaption class="case-media-caption">
                         Fig 6. Quiz maker for teachers to adopt new curriculum
@@ -371,8 +380,8 @@ onBeforeUnmount(() => {
                     </div>
 
                     <figure class="case-media-figure">
-                      <div class="case-media-frame case-media-frame--inset case-media-frame--practice-large">
-                        <div class="case-media-inset case-media-inset--practice">
+                      <div class="case-media-frame case-media-frame--product-demo case-media-frame--practice-large">
+                        <div class="product-demo-media">
                           <VideoPlayer case-study
                             class="case-media-video"
                             src="/videos/nova_practice_V.mp4"
@@ -380,7 +389,7 @@ onBeforeUnmount(() => {
                         </div>
                       </div>
                       <figcaption class="case-media-caption">
-                        Fig 8. Curriculum-based interactive practice quizzes
+                        Fig 7. Curriculum-based interactive practice quizzes
                       </figcaption>
                     </figure>
                   </section>
@@ -399,7 +408,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
               <figcaption class="case-media-caption">
-                Fig 7. PhET simulation labs for hands-on activities without equipment costs
+                Fig 8. PhET simulation labs for hands-on activities without equipment costs
               </figcaption>
             </figure>
 
@@ -604,6 +613,10 @@ onBeforeUnmount(() => {
   --nova-overview-video-ratio: 3456 / 1940;
   --nova-problem-media-ratio: 2150 / 933;
   --nova-product-wide-video-ratio: 3454 / 1940;
+  /* Let tutor demos fill the screen while retaining a viewport height cap. */
+  --nova-product-demo-viewport-height: 90svh;
+  --nova-product-demo-padding: var(--space-m);
+  --nova-product-demo-background-shade: rgb(0 0 0 / 15%);
   --nova-product-video-card-ratio: 706 / 607;
   --nova-practice-video-ratio: 1588 / 1288;
   --nova-science-lab-image-ratio: 3456 / 1944;
@@ -721,7 +734,6 @@ onBeforeUnmount(() => {
   isolation: isolate;
   border-radius: var(--case-study-surface-radius);
   background: var(--color-media-background);
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .case-media-frame--problem {
@@ -732,8 +744,40 @@ onBeforeUnmount(() => {
   aspect-ratio: var(--nova-overview-video-ratio);
 }
 
-.case-media-frame--product-wide-video {
+.case-media-frame--product-demo {
+  position: relative;
   aspect-ratio: var(--nova-product-wide-video-ratio);
+  max-height: var(--nova-product-demo-viewport-height);
+}
+
+.case-media-frame--product-demo {
+  background-image:
+    linear-gradient(var(--nova-product-demo-background-shade), var(--nova-product-demo-background-shade)),
+    url('/images/home/media-backgrounds/nova.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.product-demo-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: var(--nova-product-demo-padding);
+  width: calc(100% - 2 * var(--nova-product-demo-padding));
+  height: calc(100% - 2 * var(--nova-product-demo-padding));
+}
+
+.product-demo-media > .case-media-video {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: var(--case-study-surface-radius);
+}
+
+.case-media-frame--product-demo.case-media-frame--overview-video {
+  aspect-ratio: var(--nova-overview-video-ratio);
 }
 
 .case-media-frame--extra-video {
@@ -792,39 +836,11 @@ onBeforeUnmount(() => {
   overflow: hidden;
   isolation: isolate;
   border-radius: var(--case-study-surface-radius);
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
-.case-media-inset--quiz-maker {
-  aspect-ratio: var(--nova-product-wide-video-ratio);
-}
-
-.case-media-inset--practice {
-  aspect-ratio: var(--nova-practice-video-ratio);
-}
-
-/* Match Fig 6's outer height while fitting the taller practice video inside. */
-@media (min-width: 768px) {
-  .case-media-frame--practice-large {
-    --practice-media-padding: var(--space-10);
-    position: relative;
-    aspect-ratio: var(--nova-product-wide-video-ratio);
-  }
-
-  .case-media-frame--practice-large > .case-media-inset {
-    position: absolute;
-    top: var(--practice-media-padding);
-    left: 50%;
-    width: auto;
-    height: calc(100% - 2 * var(--practice-media-padding));
-    transform: translateX(-50%);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .case-media-frame--practice-large {
-    --practice-media-padding: var(--space-xl);
-  }
+/* A little extra breathing room for the taller practice interface. */
+.case-media-frame--practice-large {
+  --nova-product-demo-padding: var(--space-10);
 }
 
 .case-media-inset--science-lab {
@@ -913,7 +929,7 @@ onBeforeUnmount(() => {
 .product-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-xl);
+  gap: var(--case-study-media-stack-gap) var(--space-xl);
   margin-top: var(--case-study-content-gap);
 }
 
@@ -1097,6 +1113,14 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 639px) {
+  .nova-case {
+    --nova-product-demo-padding: var(--space-xs);
+  }
+
+  .case-media-frame--practice-large {
+    --nova-product-demo-padding: var(--space-m);
+  }
+
   .findings-list,
   .learning-list,
   .next-steps-list {
