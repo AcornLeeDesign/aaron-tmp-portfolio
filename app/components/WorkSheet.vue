@@ -150,7 +150,11 @@ defineExpose({ open: () => {
   gap: var(--space-xs);
 }
 
-.work-sheet__divider { margin-bottom: var(--space-xs); }
+.work-sheet__divider {
+  display: block;
+  width: 100%;
+  margin-bottom: var(--space-xs);
+}
 
 .work-sheet__row {
   display: grid;

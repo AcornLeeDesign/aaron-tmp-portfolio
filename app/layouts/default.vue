@@ -608,10 +608,11 @@ onBeforeUnmount(() => {
       </address>
     </header>
 
-    <main class="main">
+    <main id="main-content" class="main">
       <slot />
     </main>
 
+    <CaseStudyScrollbar v-if="isCaseStudy" />
     <ProgressiveBottomBlur v-if="isCaseStudy" />
     <SoundGradientStrip v-if="!isCaseStudy" />
     <AboutSheet ref="aboutSheet" />

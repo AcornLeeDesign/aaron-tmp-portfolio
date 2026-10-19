@@ -583,7 +583,7 @@ onBeforeUnmount(() => {
           data-case-section="extra"
         >
           <div class="case-section__heading case-copy-block">
-            <h2>Extra</h2>
+            <h2 class="extra-heading">Extra</h2>
           </div>
 
           <figure class="case-media-figure">
@@ -683,6 +683,8 @@ onBeforeUnmount(() => {
   letter-spacing: 0;
   line-height: var(--line-height-large);
 }
+
+.case-section .extra-heading { font-size: var(--font-size-xxl); }
 
 .case-section h3 {
   margin: 0;

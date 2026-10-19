@@ -1,185 +1,167 @@
 <script setup lang="ts" generic="T extends string">
-defineProps<{
+import { ChevronUpIcon } from '@heroicons/vue/24/outline'
+
+const props = defineProps<{
   sections: Array<{ id: T, label: string }>
   activeSection: T
   label: string
 }>()
 const emit = defineEmits<{ select: [id: T] }>()
 const navRef = ref<HTMLElement | null>(null)
-const glowStyle = ref<Record<string, string>>({})
-let pointerX = 0
-let pointerY = 0
-let hasPointer = false
-let frame: number | undefined
-let hoverQuery: MediaQueryList | undefined
+const isOpen = ref(false)
+const panelId = useId()
+const activeLabel = computed(() => props.sections.find(section => section.id === props.activeSection)?.label ?? 'Sections')
 
-function updateGlow() {
-  frame = undefined
-  const nav = navRef.value
-  if (!nav || !hasPointer || !hoverQuery?.matches) {
-    glowStyle.value = { opacity: '0' }
+function close(restoreFocus = false) {
+  isOpen.value = false
+  if (restoreFocus) navRef.value?.querySelector<HTMLButtonElement>('button')?.focus()
+}
+
+async function openWithKeyboard() {
+  isOpen.value = true
+  await nextTick()
+  const panel = navRef.value?.querySelector('nav')
+  ;(panel?.querySelector<HTMLAnchorElement>('[aria-current]') ?? panel?.querySelector('a'))?.focus()
+}
+
+function handleKeydown(event: KeyboardEvent) {
+  if (event.key === 'Escape' && isOpen.value) {
+    event.preventDefault()
+    close(true)
     return
   }
-  const bounds = nav.getBoundingClientRect()
-  const reach = Number.parseFloat(getComputedStyle(nav).getPropertyValue('--case-section-nav-proximity'))
-  const dx = Math.max(bounds.left - pointerX, 0, pointerX - bounds.right)
-  const dy = Math.max(bounds.top - pointerY, 0, pointerY - bounds.bottom)
-  const proximity = Math.max(0, 1 - Math.hypot(dx, dy) / reach)
-  glowStyle.value = {
-    '--case-nav-pointer-x': `${pointerX}px`,
-    '--case-nav-pointer-y': `${pointerY}px`,
-    opacity: String(proximity * proximity * (3 - 2 * proximity)),
-  }
+  if (!['ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return
+  event.preventDefault()
+  const links = Array.from(navRef.value?.querySelectorAll<HTMLAnchorElement>('nav a') ?? [])
+  const index = links.indexOf(document.activeElement as HTMLAnchorElement)
+  if (index < 0) { void openWithKeyboard(); return }
+  const next = event.key === 'Home' ? 0 : event.key === 'End' ? links.length - 1
+    : (index + (event.key === 'ArrowUp' ? -1 : 1) + links.length) % links.length
+  links[next]?.focus()
 }
 
-function scheduleGlow() {
-  if (frame === undefined) frame = requestAnimationFrame(updateGlow)
+function handleOutsidePointer(event: PointerEvent) {
+  if (!navRef.value?.contains(event.target as Node)) close()
 }
 
-function trackPointer(event: PointerEvent) {
-  hasPointer = event.pointerType !== 'touch'
-  pointerX = event.clientX
-  pointerY = event.clientY
-  scheduleGlow()
+function handleFocusout(event: FocusEvent) {
+  if (!navRef.value?.contains(event.relatedTarget as Node | null)) close()
 }
 
-function hideGlow() {
-  hasPointer = false
-  scheduleGlow()
+function selectSection(id: T) {
+  emit('select', id)
+  close(true)
 }
 
-onMounted(() => {
-  hoverQuery = window.matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine)')
-  hoverQuery.addEventListener('change', hideGlow)
-  window.addEventListener('pointermove', trackPointer, { passive: true })
-  window.addEventListener('scroll', scheduleGlow, { passive: true })
-  window.addEventListener('resize', scheduleGlow, { passive: true })
-  window.addEventListener('blur', hideGlow)
-  document.documentElement.addEventListener('pointerleave', hideGlow)
-})
-
-onBeforeUnmount(() => {
-  hoverQuery?.removeEventListener('change', hideGlow)
-  window.removeEventListener('pointermove', trackPointer)
-  window.removeEventListener('scroll', scheduleGlow)
-  window.removeEventListener('resize', scheduleGlow)
-  window.removeEventListener('blur', hideGlow)
-  document.documentElement.removeEventListener('pointerleave', hideGlow)
-  if (frame !== undefined) cancelAnimationFrame(frame)
-})
+onMounted(() => document.addEventListener('pointerdown', handleOutsidePointer))
+onBeforeUnmount(() => document.removeEventListener('pointerdown', handleOutsidePointer))
 </script>
 
 <template>
   <Teleport to="body">
-    <div class="case-section-nav-glow" :style="glowStyle" aria-hidden="true" />
-    <div ref="navRef" class="case-section-nav">
-      <nav class="case-section-nav__links" :aria-label="label">
-        <a
-          v-for="section in sections"
-          :key="section.id"
-          :href="`#${section.id}`"
-          class="case-section-nav__link"
-          :aria-current="activeSection === section.id ? 'location' : undefined"
-          @click="emit('select', section.id)"
-        >
-          {{ section.label }}
-        </a>
-      </nav>
+    <div ref="navRef" class="case-section-nav" @keydown="handleKeydown" @focusout="handleFocusout">
+      <Transition name="section-menu">
+        <nav v-if="isOpen" :id="panelId" class="case-section-nav__links" :aria-label="label">
+          <HeaderNavButton
+            as="a"
+            v-for="section in sections"
+            :key="section.id"
+            :href="`#${section.id}`"
+            class="case-section-nav__link"
+            :aria-current="activeSection === section.id ? 'location' : undefined"
+            @click="selectSection(section.id)"
+          >
+            {{ section.label }}
+          </HeaderNavButton>
+        </nav>
+      </Transition>
+      <HeaderNavButton
+        as="button"
+        type="button"
+        class="case-section-nav__trigger"
+        :aria-expanded="isOpen"
+        :aria-controls="panelId"
+        :aria-label="`${label}: ${activeLabel}`"
+        @click="isOpen = !isOpen"
+      >
+        <span class="case-section-nav__trigger-content">
+          {{ activeLabel }}
+          <ChevronUpIcon class="case-section-nav__chevron" :class="{ 'case-section-nav__chevron--open': isOpen }" aria-hidden="true" />
+        </span>
+      </HeaderNavButton>
     </div>
   </Teleport>
 </template>
 
 <style scoped>
-.case-section-nav-glow { display: none; }
-
-@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
-  .case-section-nav-glow {
-    /* Outside the scrolling, difference-blended nav so the white glow stays white. */
-    --case-section-nav-glow-size: calc(var(--pointer-glow-size) * 1.6);
-    display: block;
-    position: fixed;
-    z-index: 3;
-    left: var(--case-nav-pointer-x, 0);
-    top: var(--case-nav-pointer-y, 0);
-    width: var(--case-section-nav-glow-size);
-    height: var(--case-section-nav-glow-size);
-    background-color: var(--color-text);
-    background-image: var(--pointer-glow-texture);
-    background-size: var(--space-16) var(--space-16);
-    background-blend-mode: multiply;
-    -webkit-mask-image: var(--pointer-glow-mask);
-    mask-image: var(--pointer-glow-mask);
-    pointer-events: none;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    transition: opacity var(--transition-fast);
-  }
-}
-
 .case-section-nav {
-  /* Equal 32px inset from the bottom and left edges. */
-  --case-section-nav-edge: var(--space-8);
-  --case-section-nav-proximity: var(--space-24);
-  --case-section-nav-active-offset: var(--space-2);
+  --control-height: var(--space-8);
   position: fixed;
   z-index: 4;
-  bottom: var(--case-section-nav-edge);
-  left: var(--case-section-nav-edge);
-  /* Reserve room for the active link inside the scroll container. */
-  width: calc(var(--project-metadata-width) + var(--case-section-nav-active-offset));
-  max-height: calc(100dvh - var(--layout-header-clearance) - var(--space-m) - var(--case-section-nav-edge));
-  overflow-y: auto;
-  scrollbar-width: none;
-  /* Blend against page media, matching the carousel hover cursor. */
-  mix-blend-mode: difference;
+  bottom: var(--layout-footer-bottom);
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100vw - var(--layout-content-edge) * 2);
 }
 
-.case-section-nav::-webkit-scrollbar { display: none; }
+.case-section-nav .case-section-nav__trigger,
+.case-section-nav .case-section-nav__link {
+  font-size: var(--font-size-xs);
+  padding-block: var(--space-xxs);
+}
 
-.case-section-nav__links {
+.case-section-nav__trigger { padding-left: var(--space-m); padding-right: var(--space-m); }
+
+.case-section-nav__trigger-content {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-xs);
 }
 
-.case-section-nav__link {
+.case-section-nav__chevron {
+  width: var(--icon-size-xs);
+  height: var(--icon-size-xs);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+.case-section-nav__chevron--open { transform: rotate(180deg); }
+.case-section-nav__trigger:focus-visible { outline: 1px solid currentColor; outline-offset: var(--space-xxs); }
+
+.case-section-nav__links {
+  position: absolute;
+  bottom: calc(100% + var(--space-xxs));
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  /* White gives difference blending the strongest inversion. */
-  color: var(--color-text);
-  opacity: 0.85;
-  font-family: var(--font-sans);
-  font-size: var(--font-size-s);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-body);
-  white-space: nowrap;
-  transform: translateX(0);
-  transition:
-    opacity var(--transition-fast),
-    transform var(--transition-base),
-    font-size var(--transition-base),
-    font-weight var(--transition-base),
-    line-height var(--transition-base);
+  flex-direction: column;
+  gap: var(--space-xxs);
+  width: max-content;
+  min-width: 100%;
+  max-width: calc(100vw - var(--layout-content-edge) * 2);
+  max-height: calc(100dvh - var(--layout-header-clearance) - var(--layout-footer-bottom) - var(--control-height) - var(--space-m));
+  overflow-y: auto;
+  padding: var(--space-xxs);
+  border-radius: var(--radius-panel);
+  background: var(--color-nav-surface);
+  transform-origin: bottom center;
 }
 
-.case-section-nav__link:hover,
-.case-section-nav__link:focus-visible,
-.case-section-nav__link[aria-current="location"] { opacity: 1; }
-.case-section-nav__link[aria-current="location"] {
-  transform: translateX(var(--case-section-nav-active-offset));
-  font-size: var(--font-size-m);
-  font-weight: var(--font-weight-medium);
+.case-section-nav__link {
+  flex-shrink: 0;
+  justify-content: flex-start;
 }
-.case-section-nav__link:focus-visible { outline: 1px solid currentColor; outline-offset: var(--space-xxs); }
+.case-section-nav__link[aria-current="location"] { background: var(--color-nav-surface-hover); }
+.case-section-nav__link:focus-visible { outline: 1px solid currentColor; outline-offset: -1px; }
 
-@media (max-width: 1023px) {
-  .case-section-nav { display: none; }
-}
+.section-menu-enter-active,
+.section-menu-leave-active { transition: opacity var(--transition-fast), transform var(--transition-fast); }
+.section-menu-enter-from,
+.section-menu-leave-to { opacity: 0; transform: translate(-50%, var(--space-xs)) scale(.98); }
+.section-menu-leave-active { pointer-events: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .case-section-nav__link,
-  .case-section-nav-glow { transition: none; }
+  .case-section-nav__chevron,
+  .section-menu-enter-active,
+  .section-menu-leave-active { transition: none; }
 }
 </style>

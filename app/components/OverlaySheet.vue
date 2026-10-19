@@ -123,7 +123,7 @@ defineExpose({ open })
   padding: 0;
   overflow: hidden;
   border: 0;
-  border-radius: var(--radius-xs);
+  border-radius: var(--radius-overlay-sheet);
   background: var(--overlay-sheet-background);
   color: var(--color-text);
   font-family: var(--font-sans);
@@ -159,7 +159,7 @@ defineExpose({ open })
   display: flex;
   flex-direction: column;
   gap: var(--space-10);
-  padding: var(--space-10);
+  padding: var(--space-xxl);
 }
 
 .overlay-sheet__fade {
@@ -195,15 +195,15 @@ defineExpose({ open })
 .overlay-sheet__close {
   position: absolute;
   z-index: 2;
-  top: var(--space-xs);
-  right: var(--space-xs);
+  top: var(--overlay-sheet-close-inset);
+  right: var(--overlay-sheet-close-inset);
   display: grid;
   place-items: center;
   width: var(--control-height);
   height: var(--control-height);
   padding: 0;
   border: 0;
-  border-radius: var(--radius-xs);
+  border-radius: var(--radius-panel);
   background: var(--overlay-sheet-background);
   color: inherit;
   cursor: pointer;
@@ -213,9 +213,6 @@ defineExpose({ open })
 .overlay-sheet__close:hover { background: var(--color-nav-surface-hover); }
 .overlay-sheet__close:focus-visible { outline: 1px solid currentColor; }
 .overlay-sheet--pointer-input .overlay-sheet__close:focus { outline: none; }
-@media (max-width: 639px) {
-  .overlay-sheet__content { padding: var(--space-10) var(--space-xl) var(--space-xl); }
-}
 
 @keyframes overlay-sheet-enter {
   from { opacity: 0; transform: translateY(var(--space-xl)); }

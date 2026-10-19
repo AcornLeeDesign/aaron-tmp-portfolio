@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type SectionId = 'overview' | 'problem' | 'approach' | 'alerts' | 'guidance' | 'status' | 'solution' | 'learning' | 'next-steps'
+type SectionId = 'overview' | 'problem' | 'approach' | 'alerts' | 'guidance' | 'status' | 'solution' | 'learning' | 'next-steps' | 'extra'
 const sections: Array<{ id: SectionId, label: string }> = [
   { id: 'overview', label: 'Overview' },
   { id: 'problem', label: 'Problem' },
@@ -10,6 +10,7 @@ const sections: Array<{ id: SectionId, label: string }> = [
   { id: 'solution', label: 'End-to-end' },
   { id: 'learning', label: 'Learnings' },
   { id: 'next-steps', label: 'Next steps' },
+  { id: 'extra', label: 'Extra' },
 ]
 
 const route = useRoute()
@@ -41,7 +42,7 @@ watch(() => route.hash, (hash) => {
   }
 }, { immediate: true })
 
-useHead({ title: 'DoorDash POS — Aaron Lee' })
+useHead({ title: 'DoorDash Point of Sale — Aaron Lee' })
 
 function updateActiveSection() {
   scrollFrame = undefined
@@ -136,7 +137,7 @@ onBeforeUnmount(() => {
     <CaseStudySectionNav :sections="sections" :active-section="activeSection" label="DoorDash case study sections" @select="activeSection = $event" />
     <div class="case-content">
       <section id="overview" class="copy overview" data-case-section="overview">
-        <h1>DoorDash POS</h1>
+        <h1>DoorDash Point of Sale</h1>
         <div class="text-group">
           <h2>Designing a self-serve POS hardware experience for merchants</h2>
           <p>DoorDash’s point of sale initiative needed to shift from white-glove setup and support to a scalable self-serve experience. I worked alongside the infrastructure team to design device self-troubleshooting and setup experiences to reduce support inbound for easy-fix issues and reduce onsite setup time.</p>
@@ -169,22 +170,28 @@ onBeforeUnmount(() => {
             <thead><tr><th scope="col">Name</th><th scope="col">Goal</th><th scope="col">Target Metric</th><th scope="col">Outcome</th></tr></thead>
             <tbody>
               <tr>
-                <th scope="row">1. Printer self-troubleshooting</th>
+                <th scope="row">1. Printer self-troubleshooting<br /><a class="project-tag" href="#troubleshooting-title">this case study<span class="project-tag__arrow" aria-hidden="true" /></a></th>
                 <td>Help merchants discover fixes for their hardware devices and fix issues themselves, starting with kitchen and receipt printers.</td>
                 <td><p>Reduced printer failure rate</p><p>Reduced total printer-related support inbound volume.</p></td>
                 <td><p>Stat. significant <strong>-40.0%</strong> in printer failure rate and <strong>-48.9%</strong> total printer errors.</p><p>Non stat. significant <strong>-43.5%</strong> printer-related support inbound</p></td>
               </tr>
               <tr>
-                <th scope="row">2. Printer self-setup</th>
+                <th scope="row">2. Printer self-setup<br /><a class="project-tag project-tag--subdued" href="#printer-setup">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
                 <td>Allow merchants to self-setup their hardware devices without white-glove support, starting with kitchen and receipt printers.</td>
                 <td>Reduced time spent during on-site setup.</td>
                 <td>Handed off to senior designer</td>
               </tr>
               <tr>
-                <th scope="row">3. Prep station self-setup</th>
+                <th scope="row">3. Prep station self-setup<br /><a class="project-tag project-tag--subdued" href="#prep-station-setup">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
                 <td>Allow merchants to self-setup kitchen stations for routing orders and prep items using the main POS terminal, since merchants don’t use their laptop.</td>
                 <td>More than 0 merchants able to self-setup prep stations</td>
                 <td><p>Presented to EU brand, Wolt.</p><p>De-prioritized</p></td>
+              </tr>
+              <tr>
+                <th scope="row">4. Art direction<br /><a class="project-tag project-tag--subdued" href="#art-direction">extra<span class="project-tag__arrow" aria-hidden="true" /></a></th>
+                <td>Capture merchants' attention and build excitement for the point-of-sale stealth exit marketing push.</td>
+                <td>…</td>
+                <td>…</td>
               </tr>
             </tbody>
           </table>
@@ -195,7 +202,7 @@ onBeforeUnmount(() => {
 
       <section class="story" aria-labelledby="troubleshooting-title">
         <div class="copy text-group">
-          <h2 id="troubleshooting-title">Printer self-troubleshooting experience</h2>
+          <h2 id="troubleshooting-title" class="project-anchor">Printer self-troubleshooting experience</h2>
           <p>This case study focuses on printer self-troubleshooting, one of three self-serve hardware initiatives alongside printer setup and prep station setup.</p>
         </div>
         <DoorDashPrototype class="first-prototype" clip="status-bar-entry" caption="Fig. 1. Printer self-troubleshooting, from issue discovery to resolution." />
@@ -325,6 +332,26 @@ onBeforeUnmount(() => {
           <li><div><h3>Continue toward self-serve setup</h3><p>Develop the printer setup wizard and prep station setup explorations so merchants can configure hardware and kitchen routing from the POS.</p></div></li>
         </ol>
       </section>
+
+      <section id="extra" class="story" data-case-section="extra">
+        <div class="copy text-group">
+          <h2 class="extra-heading">Extra</h2>
+        </div>
+        <div class="copy text-group"><h2>First build on Legacy POS</h2></div>
+        <DoorDashPrototype class="extra-legacy" clip="legacy-feature-flag" caption="Fig. 14. Troubleshooting behind a feature flag on Legacy POS, intended to track support volume, issues resolved, and time saved." />
+        <div class="copy text-group">
+          <h2 id="printer-setup" class="project-anchor">Printer setup wizard</h2>
+          <p>A first step toward self-serve, plug-and-play printer setup.</p>
+        </div>
+        <DoorDashPrototype clip="printer-setup" caption="Fig. 15. Adding and setting up a printer from the POS." />
+        <div class="copy text-group">
+          <h2 id="prep-station-setup" class="project-anchor">Prep station setup</h2>
+          <p>Merchants rarely have a laptop on hand. This exploration brings kitchen routing setup directly to the POS.</p>
+        </div>
+        <DoorDashPrototype clip="prep-station" caption="Fig. 16. Configuring prep stations and kitchen routing on the POS." />
+        <div class="copy text-group"><h2 id="art-direction" class="project-anchor">Art direction</h2></div>
+        <DoorDashArtCarousel />
+      </section>
     </div>
   </article>
 </template>
@@ -371,6 +398,7 @@ onBeforeUnmount(() => {
 .overview { display: flex; flex-direction: column; gap: var(--space-7); }
 h1 { font-size: var(--font-size-xxl); font-weight: var(--font-weight-heading); }
 h2 { font-size: var(--font-size-l); font-weight: var(--font-weight-heading); }
+.extra-heading { font-size: var(--font-size-xxl); }
 h3 { font-size: var(--font-size-m); font-weight: var(--font-weight-heading); }
 .text-group { display: flex; flex-direction: column; gap: var(--space-m); }
 .text-group p, blockquote p { margin: 0; }
@@ -412,10 +440,15 @@ blockquote footer { color: var(--doordash-quote-attribution); text-align: right;
 .project-scope__track { width: max-content; padding-left: max(var(--layout-content-edge), calc((100vw - var(--content-copy-width)) / 2)); padding-right: var(--space-50); }
 .project-scope__scroll:focus-visible { outline: 1px solid var(--color-subdued); }
 .project-scope__table { width: var(--doordash-project-table-width); table-layout: fixed; border-collapse: collapse; text-align: left; }
-.project-scope__table th, .project-scope__table td { vertical-align: top; padding: 0 var(--space-10) var(--space-m) 0; }
+.project-scope__table th, .project-scope__table td { vertical-align: top; padding: 0 var(--space-10) var(--space-l) 0; }
 .project-scope__table th:last-child, .project-scope__table td:last-child { padding-right: 0; }
 .project-scope__table th { font-weight: var(--font-weight-medium); }
 .project-scope__table tbody th { font-size: var(--font-size-m); }
+.project-tag { display: inline-flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-s); margin-bottom: var(--space-xs); height: var(--space-8); padding: var(--space-xxs) var(--space-s); border-radius: var(--radius-pill); background: var(--doordash-number-background); color: var(--doordash-number-text); font-family: var(--font-mono-ui); font-size: var(--font-size-xs); font-weight: var(--font-weight-regular); text-decoration: none; transform: rotate(-3deg); }
+.project-tag--subdued { background: var(--color-border); color: var(--color-subdued); transform: rotate(2deg); }
+.project-tag__arrow { width: var(--icon-size-xs); height: var(--icon-size-xs); background: currentColor; mask: url("/images/case-studies/doordash/arrow-thin.svg") center / contain no-repeat; }
+.project-tag:focus-visible { outline: 1px solid var(--color-text); outline-offset: var(--space-1); }
+.project-anchor { scroll-margin-top: calc(var(--layout-header-clearance) + var(--space-m)); }
 .project-scope__table strong { font-weight: var(--font-weight-semibold); }
 .paired { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--case-study-media-stack-gap) var(--space-xl); }
 figure { margin: 0; min-width: 0; }
@@ -458,6 +491,7 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
   .paired.alert-comparison { --comparison-direction: 180deg; grid-template-columns: 1fr; }
   .alert-comparison__arrow { transform: translate(-50%, -50%) rotate(90deg); }
 }
+.extra-legacy :deep(.prototype__stage) { background: var(--doordash-legacy-background); }
 .closing-section p { margin: 0; }
 .exploration-label li::before { content: attr(data-label); }
 .exploration-comparison__stage { align-items: end; padding: var(--space-xl) var(--space-xl) 0; background: var(--doordash-flow-background); border-radius: var(--case-study-surface-radius); overflow: hidden; }
