@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <figure class="prototype" :class="{ 'prototype--current': (clip && clip !== 'before') || screenImage?.endsWith('/alert-after.png') }">
+  <figure class="prototype" :class="{ 'prototype--large-video': clip && !hideCaption, 'prototype--current': (clip && clip !== 'before') || screenImage?.endsWith('/alert-after.png') }">
     <div class="prototype__stage">
       <div class="prototype__device">
         <img class="prototype__shell" src="/images/case-studies/doordash/pos-mockup-transparent.svg" alt="" loading="lazy" width="1530" height="1008" />
@@ -44,6 +44,11 @@ defineProps<{
 .prototype--current { --prototype-background: #f7f7f7; }
 .prototype__stage { display: flex; justify-content: center; padding: var(--prototype-inset) var(--prototype-inset) 0; overflow: hidden; background: var(--prototype-background); border-radius: var(--case-study-surface-radius); }
 .prototype__device { position: relative; width: min(100%, calc(var(--prototype-device-height) * 1530 / 1008)); }
+/* Match Nova's large product demos: the same frame ratio and 90svh cap.
+   Container units scale the complete mockup without changing its screen geometry. */
+.prototype--large-video { container-type: inline-size; --prototype-large-height: min(90svh, calc(100cqw * 1940 / 3454)); }
+.prototype--large-video .prototype__stage { height: var(--prototype-large-height); align-items: flex-end; }
+.prototype--large-video .prototype__device { flex-shrink: 0; width: min(100%, calc((var(--prototype-large-height) - var(--prototype-inset)) * 1530 / 1008)); }
 .prototype__shell { width: 100%; height: auto; }
 /* Screen aperture measured from the exported Figma mockup, node 22216:14933.
    Percentage geometry keeps the original bezel and stand intact at every size. */
