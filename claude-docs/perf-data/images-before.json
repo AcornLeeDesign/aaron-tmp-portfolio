@@ -1,0 +1,219 @@
+[
+  {
+    "path": "/images/doordash.png",
+    "bytes": 26264,
+    "width": 1024,
+    "height": 607,
+    "format": "png"
+  },
+  {
+    "path": "/images/evtol.png",
+    "bytes": 790316,
+    "width": 3274,
+    "height": 1454,
+    "format": "png"
+  },
+  {
+    "path": "/images/haven.png",
+    "bytes": 481194,
+    "width": 1678,
+    "height": 1080,
+    "format": "png"
+  },
+  {
+    "path": "/images/watch_3_4_view.png",
+    "bytes": 3225778,
+    "width": 1920,
+    "height": 1080,
+    "format": "png"
+  },
+  {
+    "path": "/images/home/media-backgrounds/evtol.jpg",
+    "bytes": 90040,
+    "width": 1600,
+    "height": 685,
+    "format": "jpeg"
+  },
+  {
+    "path": "/images/home/media-backgrounds/fleetline.jpg",
+    "bytes": 179236,
+    "width": 1600,
+    "height": 900,
+    "format": "jpeg"
+  },
+  {
+    "path": "/images/home/media-backgrounds/haven-video.jpg",
+    "bytes": 200498,
+    "width": 1600,
+    "height": 900,
+    "format": "jpeg"
+  },
+  {
+    "path": "/images/home/media-backgrounds/manta.jpg",
+    "bytes": 176736,
+    "width": 1600,
+    "height": 900,
+    "format": "jpeg"
+  },
+  {
+    "path": "/images/home/media-backgrounds/nova.jpg",
+    "bytes": 352940,
+    "width": 1600,
+    "height": 900,
+    "format": "jpeg"
+  },
+  {
+    "path": "/images/home/media-backgrounds/watch.jpg",
+    "bytes": 539511,
+    "width": 1600,
+    "height": 900,
+    "format": "jpeg"
+  },
+  {
+    "path": "/images/case-studies/nuance/fig-1-clouds.jpg",
+    "bytes": 1778472,
+    "width": 5723,
+    "height": 3815,
+    "format": "jpeg"
+  },
+  {
+    "path": "/images/case-studies/nuance/iphone-16-pro.png",
+    "bytes": 376552,
+    "width": 1350,
+    "height": 2760,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/alert-after.png",
+    "bytes": 536232,
+    "width": 2758,
+    "height": 1913,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/alert-before.png",
+    "bytes": 390711,
+    "width": 2758,
+    "height": 1913,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/flow-adapted-detail.png",
+    "bytes": 37347,
+    "width": 1629,
+    "height": 454,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/flow-ideal-detail.png",
+    "bytes": 30382,
+    "width": 1629,
+    "height": 325,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/handheld-status-bar.png",
+    "bytes": 118917,
+    "width": 435,
+    "height": 600,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/hardware-icons.png",
+    "bytes": 13047,
+    "width": 443,
+    "height": 195,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/pos-mockup.png",
+    "bytes": 250501,
+    "width": 1530,
+    "height": 1008,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/printer-flow-comparison.png",
+    "bytes": 102752,
+    "width": 1661,
+    "height": 1454,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/printer-flow-ideal.png",
+    "bytes": 3643692,
+    "width": 1920,
+    "height": 1080,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/printer-flow.png",
+    "bytes": 3668843,
+    "width": 1920,
+    "height": 1080,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/printer-illustrations.png",
+    "bytes": 3569454,
+    "width": 1920,
+    "height": 1080,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/status-actions.png",
+    "bytes": 3019904,
+    "width": 1920,
+    "height": 1080,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/status-logic-doc.png",
+    "bytes": 232430,
+    "width": 1201,
+    "height": 815,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/unused-illustrations.png",
+    "bytes": 2719761,
+    "width": 1920,
+    "height": 1080,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/art-direction/render_3.png",
+    "bytes": 4162970,
+    "width": 2160,
+    "height": 2700,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/art-direction/render_4.png",
+    "bytes": 5470966,
+    "width": 2160,
+    "height": 2700,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/art-direction/render_5.png",
+    "bytes": 5046257,
+    "width": 2560,
+    "height": 1920,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/art-direction/render_7.png",
+    "bytes": 4988078,
+    "width": 2160,
+    "height": 2700,
+    "format": "png"
+  },
+  {
+    "path": "/images/case-studies/doordash/art-direction/render_8.png",
+    "bytes": 5070709,
+    "width": 2160,
+    "height": 2700,
+    "format": "png"
+  }
+]
