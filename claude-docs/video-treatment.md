@@ -105,15 +105,68 @@ for f in *.mp4; do
 done
 ```
 
+## Case-study videos
+
+Case-study media uses a separate presentation profile (see `AGENTS.md`), encoded with
+`scripts/encode-case-study-video.sh`. Prefer the untouched export in `public/videos/originals/`
+when it exists; re-encoding an already-compressed delivery file is a last resort.
+
+```bash
+# Desktop only: <=2560px wide, source frame rate, H.264 CRF 20 + VP9 CRF 25, poster
+scripts/encode-case-study-video.sh public/videos/originals/clip.mov public/videos/doordash/clip.mp4
+
+# Also generate clip-mobile.mp4/.webm/.jpg (1280px wide, <=60fps) for phones
+scripts/encode-case-study-video.sh --mobile public/videos/originals/clip.mov public/videos/doordash/clip.mp4
+
+# Text-heavy mobile clip (keep glyphs crisp)
+MOBILE_CRF=18 MOBILE_VP9_CRF=25 scripts/encode-case-study-video.sh --mobile-only \
+  public/videos/originals/clip.mov public/videos/doordash/clip.mp4
+```
+
+Pass `mobile-variant` to `VideoPlayer` when the `-mobile` files exist. `VideoPlayer`
+JS-selects the 1280px files at `max-width: 639px` and attaches only that rendition
+(H.264 first, VP9 fallback). Do **not** list desktop and mobile `<source>` elements
+together and do **not** rely on `<source media>` — it is not in the HTML spec for
+`<video>` and browsers that ignore it will download the first playable (desktop) file.
+
+Skip the mobile variant when the video is CSS-cropped or zoomed on mobile (the crop
+needs the extra source pixels) or when the source is already ≤1280px. Use `CRF=18`
+/ `MOBILE_CRF=18` for text-heavy clips. Keep source frame timing on desktop
+(`-fps_mode passthrough`); mobile caps at 60fps.
+
+Do not downscale a desktop case-study file that is already compact and sharper than
+2560px if the re-encode would inflate size or soften UI text. The 2560px cap applies
+when encoding from a large original, not as a mandate to re-encode a good delivery.
+
+If the current delivery is already browser-compatible H.264 at the right size,
+prefer `-c:v copy -an -movflags +faststart` over another CRF pass. Same-resolution
+re-encodes of text-heavy clips (for example the status-logic doc) drop SSIM well
+below 0.99 and soften glyphs. Mobile fps caps must use `avg_frame_rate`, not
+`r_frame_rate` — screen recordings often declare 120fps while averaging ~50fps.
+
 ## 7. Loading optimization (handled by `VideoPlayer` component)
 
 The `app/components/VideoPlayer.vue` component handles:
 
-- **Lazy loading** via IntersectionObserver (75px root margin) — video sources are attached once shortly before entering the viewport
-- **`preload="none"`** — browser won't buffer until needed
-- **Poster image** — auto-derived from video path (`/videos/foo.mp4` -> `/videos/posters/foo.jpg`)
-- **Dual format** — browser-compatible H.264 MP4 first, WebM as fallback
-- **Viewport playback** — a persistent observer pauses offscreen videos and a global coordinator plays at most three visible videos
+- **Lazy loading** via IntersectionObserver — homepage sources attach 200px before
+  the viewport; case-study posters attach within one viewport, and case-study
+  media data is attached only for the visible clip plus the nearest upcoming clip
+- **`preload="none"`** until attach, then `metadata` (homepage) or `auto` (active /
+  upcoming case-study clip)
+- **Poster image** — auto-derived from the active rendition
+  (`/videos/foo.mp4` → `/videos/posters/foo.jpg`, or `foo-mobile.jpg` on mobile);
+  case-study posters are only requested once the video is within one viewport
+- **JS source selection** — only the matching desktop or mobile MP4+WebM pair is
+  in the DOM, so a phone cannot fetch the 2560px file
+- **Source release** — sources detach after leaving the load range: 30s on desktop,
+  5s at 1023px and below. Release is skipped while the playback coordinator still
+  wants the clip loaded (visible or nearest upcoming)
+- **Dual format** — H.264 MP4 first, WebM as fallback, for the selected rendition only
+- **Viewport playback** — offscreen videos pause; at most one decoder runs on case
+  studies and on viewports ≤1023px; the homepage may play two clips on desktop.
+  A `data-playback-group` pair may play together when both are visible
+- **Caching** — `/videos/**` is served with `Cache-Control: public, max-age=31536000, immutable`
+  so a released clip can re-attach from disk cache instead of the network
 - **Autoplay/loop/muted** — background video behavior with page-visibility pausing
 
 ## File structure after treatment

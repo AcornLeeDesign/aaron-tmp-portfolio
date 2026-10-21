@@ -17,7 +17,7 @@ defineProps<{
         <img class="prototype__shell" src="/images/case-studies/doordash/pos-mockup-transparent.svg" alt="" loading="lazy" width="1530" height="1008" />
         <div v-if="clip" class="prototype__screen prototype__screen--video">
           <div class="prototype__video-content">
-            <VideoPlayer case-study :playback-group="playbackGroup" class="prototype__video" :src="`/videos/doordash/${clip}.mp4`" :aria-label="caption" />
+            <VideoPlayer case-study mobile-variant :playback-group="playbackGroup" class="prototype__video" :src="`/videos/doordash/${clip}.mp4`" :aria-label="caption" />
           </div>
         </div>
         <!-- Display the screen region of the original export without its baked-in white surround. -->
