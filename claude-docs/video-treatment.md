@@ -105,13 +105,32 @@ for f in *.mp4; do
 done
 ```
 
+## Case-study videos
+
+Case-study media uses a separate presentation profile (see `AGENTS.md`), encoded with
+`scripts/encode-case-study-video.sh`:
+
+```bash
+# Desktop only: <=2560px wide, source frame rate, H.264 CRF 20 + VP9 CRF 25, poster
+scripts/encode-case-study-video.sh public/videos/originals/clip.mov public/videos/doordash/clip.mp4
+
+# Also generate clip-mobile.mp4/.webm/.jpg (1280px wide, <=60fps) for phones
+scripts/encode-case-study-video.sh --mobile public/videos/originals/clip.mov public/videos/doordash/clip.mp4
+```
+
+Pass `mobile-variant` to `VideoPlayer` when the `-mobile` files exist. Viewports up to 639px
+choose the mobile source through `<source media>`; larger viewports keep the full-resolution file.
+Skip the mobile variant when the video is cropped or zoomed on mobile, or when it does not shrink
+the file meaningfully (for example, scrolling text documents). Use `CRF=18` for text-heavy clips.
+
 ## 7. Loading optimization (handled by `VideoPlayer` component)
 
 The `app/components/VideoPlayer.vue` component handles:
 
 - **Lazy loading** via IntersectionObserver (75px root margin) — video sources are attached once shortly before entering the viewport
 - **`preload="none"`** — browser won't buffer until needed
-- **Poster image** — auto-derived from video path (`/videos/foo.mp4` -> `/videos/posters/foo.jpg`)
+- **Poster image** — auto-derived from video path (`/videos/foo.mp4` -> `/videos/posters/foo.jpg`); case-study posters are only requested once the video is within one viewport
+- **Source release** — case-study sources are detached after leaving the load range: 30s on desktop, 5s at 1023px and below
 - **Dual format** — browser-compatible H.264 MP4 first, WebM as fallback
 - **Viewport playback** — a persistent observer pauses offscreen videos and a global coordinator plays at most three visible videos
 - **Autoplay/loop/muted** — background video behavior with page-visibility pausing
