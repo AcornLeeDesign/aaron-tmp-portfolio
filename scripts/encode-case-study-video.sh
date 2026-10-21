@@ -26,9 +26,10 @@ fps_cap=$(python3 -c "n,d='$fps'.split('/');print(',fps=60' if int(n)/int(d)>60 
 encode() { # <scale+fps filter> <crf> <vp9-crf> <output base> <poster quality>
   local vf=$1 crf=$2 vp9_crf=$3 dest=$4 pq=$5 tmp
   tmp=$(mktemp -d)
-  ffmpeg -v error -y -i "$src" -vf "$vf" -c:v libx264 -preset slow -crf "$crf" -profile:v high \
+  # Screen recordings are variable frame rate; passthrough keeps their timing instead of padding to a constant rate.
+  ffmpeg -v error -y -i "$src" -vf "$vf" -fps_mode passthrough -c:v libx264 -preset slow -crf "$crf" -profile:v high \
     -pix_fmt yuv420p -an -movflags +faststart "$tmp/out.mp4"
-  ffmpeg -v error -y -i "$src" -vf "$vf" -c:v libvpx-vp9 -crf "$vp9_crf" -b:v 0 -row-mt 1 \
+  ffmpeg -v error -y -i "$src" -vf "$vf" -fps_mode passthrough -c:v libvpx-vp9 -crf "$vp9_crf" -b:v 0 -row-mt 1 \
     -cpu-used 4 -pix_fmt yuv420p -an "$tmp/out.webm"
   ffmpeg -v error -y -i "$src" -vf "${vf%%,fps=*}" -frames:v 1 -q:v "$pq" "$tmp/poster.jpg"
   mv "$tmp/out.mp4" "$dest.mp4"
