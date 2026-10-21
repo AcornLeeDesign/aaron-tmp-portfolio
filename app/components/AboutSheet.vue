@@ -17,10 +17,6 @@ defineExpose({ open: () => sheet.value?.open() })
         <h2>Sustaining curiosity</h2>
         <p>Through being in creative communities and content I interact with, I believe too much emphasis is placed on sparking curiosity and too little is placed on <em>sustaining</em> it. Some children can discover a spatula and go on to discover all sorts of dishes naturally. Others find passion by connecting with people consistently. <span>There is room for design.</span></p>
       </section>
-      <section class="about-sheet__section">
-        <h2>Building up people to build cities</h2>
-        <p>“People systems” are the structures that sustain how people interact and behave together. I design each iMessage text to build confidence. I listen with my eyes and how I sit. I enable people to collaborate when the default is asking for approval. I serve a 55 person design org to build people-first leaders and get creatives employed. Cities are built through intentional conversations and systems that enable them. <span>There is room for design.</span></p>
-      </section>
     </div>
   </OverlaySheet>
 </template>
