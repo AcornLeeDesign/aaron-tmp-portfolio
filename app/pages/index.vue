@@ -533,7 +533,7 @@ onBeforeUnmount(() => {
 
 .home-about__bio {
   width: 100%;
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-heading);
   letter-spacing: -0.02em;
   line-height: var(--line-height-large);
@@ -883,8 +883,7 @@ onBeforeUnmount(() => {
 
 @media (max-width: 639px) {
   .home-about__bio {
-    font-size: var(--font-size-m);
-    line-height: var(--line-height-heading);
+    font-size: var(--font-size-l);
   }
 
   .project-card__action {
