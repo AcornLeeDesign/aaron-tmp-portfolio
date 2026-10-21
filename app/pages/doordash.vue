@@ -260,7 +260,7 @@ onBeforeUnmount(() => {
         <figure class="status-system">
           <div class="status-system__stage">
           <div class="status-system__media">
-            <VideoPlayer case-study class="status-system__video" src="/videos/doordash/status-logic-doc.mp4" aria-label="Walkthrough of the Troubleshoot-forward Status Bar Logic Doc" />
+            <VideoPlayer case-study mobile-variant class="status-system__video" src="/videos/doordash/status-logic-doc.mp4" aria-label="Walkthrough of the Troubleshoot-forward Status Bar Logic Doc" />
             <div class="status-system__examples">
               <img src="/images/case-studies/doordash/handheld-status-bar.png" alt="Handheld status bar explorations for printer issues, POS disconnection, and offline mode" loading="lazy" />
               <img src="/images/case-studies/doordash/hardware-icons.png" alt="Custom hardware icons for device types and error states" loading="lazy" />

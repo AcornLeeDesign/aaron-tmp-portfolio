@@ -395,6 +395,7 @@ onBeforeUnmount(() => {
                         <VideoPlayer
                           class="project-card__phone-video"
                           :src="project.src"
+                          :mobile-variant="project.mobileVariant"
                           @loadedmetadata="syncProjectMediaAspect"
                         />
                       </div>
@@ -421,6 +422,7 @@ onBeforeUnmount(() => {
                   <VideoPlayer
                     v-else
                     :src="project.src"
+                    :mobile-variant="project.mobileVariant"
                     @loadedmetadata="syncProjectMediaAspect"
                   />
                 </div>

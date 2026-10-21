@@ -382,7 +382,7 @@ onBeforeUnmount(() => {
                     <figure class="case-media-figure">
                       <div class="case-media-frame case-media-frame--product-demo case-media-frame--practice-large">
                         <div class="product-demo-media">
-                          <VideoPlayer case-study
+                          <VideoPlayer case-study mobile-variant
                             class="case-media-video"
                             src="/videos/nova_practice_V.mp4"
                           />

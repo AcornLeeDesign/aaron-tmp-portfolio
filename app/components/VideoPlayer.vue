@@ -18,10 +18,22 @@ interface VideoRegistration {
 }
 
 const MAX_PLAYING_VIDEOS = 2
+const COMPACT_VIEWPORT = '(max-width: 1023px)'
 const videoRegistrations = new Map<number, VideoRegistration>()
 let nextRegistrationId = 0
 let playbackTimer: number | undefined
 let coordinatorListenersAttached = false
+
+function compactViewport() {
+  return window.matchMedia(COMPACT_VIEWPORT).matches
+}
+
+function maxConcurrentPlaying() {
+  const hasCaseStudy = [...videoRegistrations.values()].some(item => item.caseStudy)
+  // Phones/tablets keep a single decoder hot. Desktop case studies do the same;
+  // the homepage may play two waterfall clips side by side.
+  return hasCaseStudy || compactViewport() ? 1 : MAX_PLAYING_VIDEOS
+}
 
 function viewportVisibilityRatio(video: HTMLVideoElement) {
   const rect = video.getBoundingClientRect()
@@ -139,7 +151,7 @@ function syncPlayback() {
           || a.viewportTop - b.viewportTop
           || a.id - b.id
         )
-        .slice(0, [...videoRegistrations.values()].some(item => item.caseStudy) ? 1 : MAX_PLAYING_VIDEOS)
+        .slice(0, maxConcurrentPlaying())
     : []
 
   // Explicit comparison groups may play together while both are visible.
@@ -272,11 +284,7 @@ const props = defineProps<{
   mobileVariant?: boolean
 }>()
 
-/* Browsers that ignore <source media> fall through to the first, full-resolution source. */
-const DESKTOP_SOURCE_MEDIA = '(min-width: 640px)'
 const MOBILE_VIEWPORT = '(max-width: 639px)'
-/* Phones and tablets release offscreen decoders sooner to limit memory pressure. */
-const COMPACT_VIEWPORT = '(max-width: 1023px)'
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const sourcesAttached = ref(false)
@@ -284,9 +292,12 @@ const sourcesAttached = ref(false)
 const posterReady = ref(!props.caseStudy)
 const isMobileViewport = ref(false)
 let isCompactViewport = false
+let wantsLoad = false
 const preload = ref<'none' | 'metadata' | 'auto'>('none')
 const showControls = ref(false)
 let slowLoadTimer: number | undefined
+let mobileQuery: MediaQueryList | undefined
+let compactQuery: MediaQueryList | undefined
 
 function clearSlowLoadTimer() {
   if (slowLoadTimer === undefined) return
@@ -295,8 +306,14 @@ function clearSlowLoadTimer() {
 }
 
 function prepareCaseStudy(load: boolean, active: boolean) {
+  wantsLoad = load
   preload.value = load ? 'auto' : 'none'
-  if (load) attachSources()
+  if (load) {
+    clearSourceRelease()
+    attachSources()
+  } else if (!isWithinSourceRange) {
+    scheduleSourceRelease()
+  }
   if (active && videoRef.value?.paused && !showControls.value) {
     if (slowLoadTimer === undefined) {
       slowLoadTimer = window.setTimeout(() => {
@@ -308,24 +325,31 @@ function prepareCaseStudy(load: boolean, active: boolean) {
     clearSlowLoadTimer()
   }
 }
+
 const mobileSrc = computed(() => props.src.replace(/\.mp4$/, '-mobile.mp4'))
+/* `<source media>` is not in the HTML spec for video; only attach the matching rendition. */
+const activeSrc = computed(() =>
+  props.mobileVariant && isMobileViewport.value ? mobileSrc.value : props.src
+)
 const sources = computed(() => {
-  const webm = (src: string) => src.replace(/\.mp4$/, '.webm')
-  if (!props.mobileVariant) {
-    return [{ src: props.src, type: 'video/mp4' }, { src: webm(props.src), type: 'video/webm' }]
-  }
+  const src = activeSrc.value
   return [
-    { src: props.src, type: 'video/mp4', media: DESKTOP_SOURCE_MEDIA },
-    { src: mobileSrc.value, type: 'video/mp4' },
-    { src: webm(props.src), type: 'video/webm', media: DESKTOP_SOURCE_MEDIA },
-    { src: webm(mobileSrc.value), type: 'video/webm' },
+    { src, type: 'video/mp4' },
+    { src: src.replace(/\.mp4$/, '.webm'), type: 'video/webm' },
   ]
 })
 const posterSrc = computed(() => {
   if (!posterReady.value) return undefined
   if (props.poster) return props.poster
-  const src = props.mobileVariant && isMobileViewport.value ? mobileSrc.value : props.src
-  return src.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
+  return activeSrc.value.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
+})
+
+watch(activeSrc, () => {
+  if (!sourcesAttached.value || !videoRef.value) return
+  nextTick(() => {
+    videoRef.value?.load()
+    schedulePlaybackSync()
+  })
 })
 
 let sourceObserver: IntersectionObserver | undefined
@@ -363,7 +387,7 @@ function attachSources() {
 
 function releaseSources() {
   const video = videoRef.value
-  if (!video || isWithinSourceRange || !sourcesAttached.value) return
+  if (!video || wantsLoad || isWithinSourceRange || !sourcesAttached.value) return
 
   if (registration) pauseVideo(registration)
   const transition = ++sourceTransition
@@ -379,7 +403,7 @@ function releaseSources() {
 }
 
 function scheduleSourceRelease() {
-  if (!sourcesAttached.value || sourceReleaseTimer !== undefined) return
+  if (!sourcesAttached.value || sourceReleaseTimer !== undefined || wantsLoad || isWithinSourceRange) return
   const caseStudyDelay = isCompactViewport ? CASE_STUDY_COMPACT_RELEASE_DELAY : CASE_STUDY_RELEASE_DELAY
   sourceReleaseTimer = window.setTimeout(() => {
     sourceReleaseTimer = undefined
@@ -387,12 +411,21 @@ function scheduleSourceRelease() {
   }, props.caseStudy ? caseStudyDelay : SOURCE_RELEASE_DELAY)
 }
 
+function syncViewportQueries() {
+  if (!mobileQuery || !compactQuery) return
+  isMobileViewport.value = mobileQuery.matches
+  isCompactViewport = compactQuery.matches
+}
+
 onMounted(() => {
   const video = videoRef.value
   if (!video) return
 
-  isMobileViewport.value = window.matchMedia(MOBILE_VIEWPORT).matches
-  isCompactViewport = window.matchMedia(COMPACT_VIEWPORT).matches
+  mobileQuery = window.matchMedia(MOBILE_VIEWPORT)
+  compactQuery = window.matchMedia(COMPACT_VIEWPORT)
+  syncViewportQueries()
+  mobileQuery.addEventListener('change', syncViewportQueries)
+  compactQuery.addEventListener('change', syncViewportQueries)
   registration = registerVideo(video, Boolean(props.caseStudy), prepareCaseStudy)
 
   sourceObserver = new IntersectionObserver(
@@ -428,9 +461,12 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   isWithinSourceRange = false
+  wantsLoad = false
   sourceTransition += 1
   clearSourceRelease()
   clearSlowLoadTimer()
+  mobileQuery?.removeEventListener('change', syncViewportQueries)
+  compactQuery?.removeEventListener('change', syncViewportQueries)
   sourceObserver?.disconnect()
   viewportObserver?.disconnect()
 
@@ -455,7 +491,7 @@ onBeforeUnmount(() => {
     :poster="posterSrc"
   >
     <template v-if="sourcesAttached">
-      <source v-for="source in sources" :key="source.src" :src="source.src" :type="source.type" :media="source.media" />
+      <source v-for="source in sources" :key="source.src" :src="source.src" :type="source.type" />
     </template>
   </video>
 </template>

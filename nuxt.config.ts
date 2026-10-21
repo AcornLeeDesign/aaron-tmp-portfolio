@@ -12,6 +12,16 @@ export default defineNuxtConfig({
     },
   },
 
+  // Immutable video/poster caching so offscreen source release can re-attach
+  // from the disk cache instead of re-downloading.
+  routeRules: {
+    '/videos/**': {
+      headers: {
+        'Cache-Control': 'public, max-age=31536000, immutable',
+      },
+    },
+  },
+
   app: {
     head: {
       title: 'Aaron Lee',
