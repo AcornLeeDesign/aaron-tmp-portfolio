@@ -428,6 +428,7 @@ h3 { font-size: var(--font-size-m); font-weight: var(--font-weight-heading); }
 .outcomes__metric--secondary p { font-size: var(--font-size-s); }
 .outcomes__quotes { display: flex; flex-direction: column; gap: var(--space-s); width: 100%; max-width: var(--doordash-quote-width); justify-self: center; }
 blockquote { display: flex; flex-direction: column; gap: var(--space-s); padding: var(--space-m); background: var(--doordash-quote-bg); color: var(--doordash-quote-text); border-radius: var(--radius-m); box-shadow: var(--doordash-quote-shadow); }
+blockquote p { font-weight: var(--font-weight-medium); }
 blockquote footer { color: var(--doordash-quote-attribution); text-align: right; font-size: var(--font-size-xs); }
 /* The scroll viewport reaches the screen edges; only the initial table position is inset. */
 .project-scope { width: 100%; min-width: 0; display: flex; flex-direction: column; gap: var(--case-study-content-gap); }
