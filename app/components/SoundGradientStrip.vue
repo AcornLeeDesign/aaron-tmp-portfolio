@@ -48,6 +48,7 @@ const isAudioEnabled = ref(false)
 let context: CanvasRenderingContext2D | null = null
 let animationFrame = 0
 let motionPreference: MediaQueryList | undefined
+let mobileQuery: MediaQueryList | undefined
 let playbackRequest = 0
 let isPlaybackPending = false
 let decodedProfile = new Uint8Array()
@@ -71,9 +72,32 @@ function removePlaybackFallback() {
   window.removeEventListener('keydown', startAudioOnInteraction)
 }
 
+function addPlaybackFallback() {
+  window.addEventListener('pointerup', startAudioOnInteraction)
+  window.addEventListener('keydown', startAudioOnInteraction)
+}
+
+function stopAudio() {
+  playbackRequest += 1
+  isPlaybackPending = false
+  audioRef.value?.pause()
+  isAudioEnabled.value = false
+}
+
+// Mobile has no sound control, so it never plays audio.
+function syncAudioAvailability() {
+  removePlaybackFallback()
+  if (mobileQuery?.matches) {
+    stopAudio()
+    return
+  }
+  addPlaybackFallback()
+  void playAudio()
+}
+
 async function playAudio() {
   const audio = audioRef.value
-  if (!audio) return
+  if (!audio || mobileQuery?.matches) return
 
   const request = ++playbackRequest
   isPlaybackPending = true
@@ -105,10 +129,7 @@ function startAudioOnInteraction(event: Event) {
 function toggleAudio() {
   removePlaybackFallback()
   if (isAudioEnabled.value || isPlaybackPending) {
-    playbackRequest += 1
-    isPlaybackPending = false
-    audioRef.value?.pause()
-    isAudioEnabled.value = false
+    stopAudio()
     return
   }
   void playAudio()
@@ -371,9 +392,9 @@ function handleResize() {
 
 onMounted(() => {
   decodeProfile()
-  window.addEventListener('pointerup', startAudioOnInteraction)
-  window.addEventListener('keydown', startAudioOnInteraction)
-  void playAudio()
+  mobileQuery = window.matchMedia('(max-width: 639px)')
+  mobileQuery.addEventListener('change', syncAudioAvailability)
+  syncAudioAvailability()
   motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
   motionPreference.addEventListener('change', startAnimation)
   window.addEventListener('resize', handleResize)
@@ -383,6 +404,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   removePlaybackFallback()
+  mobileQuery?.removeEventListener('change', syncAudioAvailability)
   playbackRequest += 1
   audioRef.value?.pause()
   window.cancelAnimationFrame(animationFrame)
@@ -409,7 +431,7 @@ onBeforeUnmount(() => {
   <audio
     ref="audioRef"
     src="/audio/ylang-ylang-quiet.m4a"
-    preload="metadata"
+    preload="none"
     loop
     @playing="isAudioEnabled = true"
     @pause="isAudioEnabled = false"
@@ -418,10 +440,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@media (max-width: 639px) {
-  .sound-gradient { display: none; }
-}
-
 .sound-gradient {
   position: fixed;
   z-index: -1;
@@ -517,6 +535,11 @@ onBeforeUnmount(() => {
   border-radius: 2px;
   outline: 1px solid currentColor;
   outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+  .sound-gradient,
+  .sound-gradient__credit { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

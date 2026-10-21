@@ -893,17 +893,7 @@ onBeforeUnmount(() => {
   }
 
   .header__info {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    gap: var(--space-s);
-    padding: var(--space-m) var(--layout-content-edge) 0;
-  }
-
-  .header__identity,
-  .header__location {
-    position: relative;
-    inset: auto;
+    display: none;
   }
 
   .site:not(.site--case-study) .header__nav {
@@ -911,7 +901,7 @@ onBeforeUnmount(() => {
     z-index: 2147483647;
     top: var(--space-m);
     width: fit-content;
-    margin: var(--space-xl) auto 0;
+    margin: var(--space-m) auto 0;
   }
 
   .header__contacts {

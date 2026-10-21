@@ -328,8 +328,8 @@ onBeforeUnmount(() => {
         id="about"
         class="home-about text-primary"
       >
-        <p class="home-about__statement">Design scales experiments from scraps to people. It is the intentional creation of systems for intelligent beings to operate within and understand the world.</p>
         <p class="home-about__bio">Aaron is a product designer that builds surfaces and systems for scaling complex technologies, allowing products to change lives sustainably</p>
+        <p class="home-about__statement">Design scales experiments from scraps to people. It is the intentional creation of systems for intelligent beings to operate within and understand the world.</p>
         <div class="home-about__status">
           <p class="home-about__status-label">Currently</p>
           <p>Open to work</p>
@@ -531,16 +531,16 @@ onBeforeUnmount(() => {
   margin: 0;
 }
 
-.home-about__statement {
+.home-about__bio {
   width: 100%;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-l);
   font-weight: var(--font-weight-heading);
   letter-spacing: -0.02em;
   line-height: var(--line-height-large);
   text-align: left;
 }
 
-.home-about__bio {
+.home-about__statement {
   width: 100%;
 }
 
@@ -882,9 +882,9 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 639px) {
-  .home-about__statement {
-    line-height: var(--line-height-large);
-    font-size: var(--font-size-l);
+  .home-about__bio {
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-heading);
   }
 
   .project-card__action {

@@ -90,6 +90,9 @@ ol {
   --color-media-background: #262626;
   --color-nav-surface: #292929;
   --color-nav-surface-hover: #383838;
+  /* Floating nav surfaces over scrolling content, paired with --blur-nav-surface. */
+  --color-nav-surface-translucent: color-mix(in srgb, var(--color-nav-surface) 72%, transparent);
+  --color-nav-surface-hover-translucent: color-mix(in srgb, var(--color-nav-surface-hover) 80%, transparent);
   --color-sound-overlay-text: #1c1f24;
   /* Figma link categories used in the Work sheet. */
   --color-link-case-study: #fdf144;
@@ -225,6 +228,7 @@ ol {
   --blur-progressive-3: 0.231rem;
   --blur-progressive-4: 0.402rem;
   --blur-progressive-5: 0.7rem;
+  --blur-nav-surface: 16px;
 
   /* Layout */
   --page-padding: var(--space-m);
