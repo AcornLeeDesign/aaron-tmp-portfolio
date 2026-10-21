@@ -244,7 +244,7 @@ onBeforeUnmount(() => {
         </section>
         <figure class="logical-prototype">
           <div class="logical-prototype__stage">
-            <VideoPlayer case-study src="/videos/doordash/status-bar.mp4" class="logical-prototype__video" />
+            <VideoPlayer case-study mobile-variant src="/videos/doordash/status-bar.mp4" class="logical-prototype__video" />
           </div>
           <figcaption>Fig. 5. Configuring device states to demonstrate status bar logic and issue prioritization.</figcaption>
         </figure>

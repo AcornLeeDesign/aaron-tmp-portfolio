@@ -268,10 +268,22 @@ const props = defineProps<{
   poster?: string
   caseStudy?: boolean
   playbackGroup?: string
+  /** `name-mobile.mp4/.webm` and `posters/name-mobile.jpg` exist for the mobile breakpoint. */
+  mobileVariant?: boolean
 }>()
+
+/* Browsers that ignore <source media> fall through to the first, full-resolution source. */
+const DESKTOP_SOURCE_MEDIA = '(min-width: 640px)'
+const MOBILE_VIEWPORT = '(max-width: 639px)'
+/* Phones and tablets release offscreen decoders sooner to limit memory pressure. */
+const COMPACT_VIEWPORT = '(max-width: 1023px)'
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const sourcesAttached = ref(false)
+/* Case-study posters are full-resolution, so fetch them only once the video is near the viewport. */
+const posterReady = ref(!props.caseStudy)
+const isMobileViewport = ref(false)
+let isCompactViewport = false
 const preload = ref<'none' | 'metadata' | 'auto'>('none')
 const showControls = ref(false)
 let slowLoadTimer: number | undefined
@@ -296,10 +308,25 @@ function prepareCaseStudy(load: boolean, active: boolean) {
     clearSlowLoadTimer()
   }
 }
-const webmSrc = computed(() => props.src.replace(/\.mp4$/, '.webm'))
-const posterSrc = computed(() =>
-  props.poster ?? props.src.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
-)
+const mobileSrc = computed(() => props.src.replace(/\.mp4$/, '-mobile.mp4'))
+const sources = computed(() => {
+  const webm = (src: string) => src.replace(/\.mp4$/, '.webm')
+  if (!props.mobileVariant) {
+    return [{ src: props.src, type: 'video/mp4' }, { src: webm(props.src), type: 'video/webm' }]
+  }
+  return [
+    { src: props.src, type: 'video/mp4', media: DESKTOP_SOURCE_MEDIA },
+    { src: mobileSrc.value, type: 'video/mp4' },
+    { src: webm(props.src), type: 'video/webm', media: DESKTOP_SOURCE_MEDIA },
+    { src: webm(mobileSrc.value), type: 'video/webm' },
+  ]
+})
+const posterSrc = computed(() => {
+  if (!posterReady.value) return undefined
+  if (props.poster) return props.poster
+  const src = props.mobileVariant && isMobileViewport.value ? mobileSrc.value : props.src
+  return src.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
+})
 
 let sourceObserver: IntersectionObserver | undefined
 let viewportObserver: IntersectionObserver | undefined
@@ -309,6 +336,8 @@ let isWithinSourceRange = false
 let sourceTransition = 0
 
 const SOURCE_RELEASE_DELAY = 2500
+const CASE_STUDY_RELEASE_DELAY = 30000
+const CASE_STUDY_COMPACT_RELEASE_DELAY = 5000
 
 function clearSourceRelease() {
   if (sourceReleaseTimer === undefined) return
@@ -351,16 +380,19 @@ function releaseSources() {
 
 function scheduleSourceRelease() {
   if (!sourcesAttached.value || sourceReleaseTimer !== undefined) return
+  const caseStudyDelay = isCompactViewport ? CASE_STUDY_COMPACT_RELEASE_DELAY : CASE_STUDY_RELEASE_DELAY
   sourceReleaseTimer = window.setTimeout(() => {
     sourceReleaseTimer = undefined
     releaseSources()
-  }, props.caseStudy ? 30000 : SOURCE_RELEASE_DELAY)
+  }, props.caseStudy ? caseStudyDelay : SOURCE_RELEASE_DELAY)
 }
 
 onMounted(() => {
   const video = videoRef.value
   if (!video) return
 
+  isMobileViewport.value = window.matchMedia(MOBILE_VIEWPORT).matches
+  isCompactViewport = window.matchMedia(COMPACT_VIEWPORT).matches
   registration = registerVideo(video, Boolean(props.caseStudy), prepareCaseStudy)
 
   sourceObserver = new IntersectionObserver(
@@ -368,6 +400,7 @@ onMounted(() => {
       isWithinSourceRange = Boolean(entry?.isIntersecting)
 
       if (isWithinSourceRange) {
+        posterReady.value = true
         clearSourceRelease()
         if (!props.caseStudy) attachSources()
       } else {
@@ -422,8 +455,7 @@ onBeforeUnmount(() => {
     :poster="posterSrc"
   >
     <template v-if="sourcesAttached">
-      <source :src="src" type="video/mp4" />
-      <source :src="webmSrc" type="video/webm" />
+      <source v-for="source in sources" :key="source.src" :src="source.src" :type="source.type" :media="source.media" />
     </template>
   </video>
 </template>
