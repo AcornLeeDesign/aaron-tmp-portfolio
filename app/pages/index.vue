@@ -31,6 +31,8 @@ let canUseProjectCursor = false
 let finePointerQuery: MediaQueryList | undefined
 let reducedMotionQuery: MediaQueryList | undefined
 let desktopCarouselQuery: MediaQueryList | undefined
+let mediaObserver: IntersectionObserver | undefined
+const nearbyMedia = ref(new Set<number>())
 
 const CURSOR_FOLLOW_STRENGTH = 0.24
 const CURSOR_SETTLE_THRESHOLD = 0.1
@@ -97,7 +99,7 @@ function projectMediaStyle(project: (typeof projects)[number]) {
   return {
     '--project-media-background-color': project.mediaBackgroundColor
       ?? 'var(--color-media-background)',
-    '--project-media-background-image': project.mediaBackgroundImage
+    '--project-media-background-image': project.mediaBackgroundImage && nearbyMedia.value.has(project.id)
       ? `url("${project.mediaBackgroundImage}")`
       : 'none',
     '--project-media-background-brightness': project.mediaBackgroundBrightness ?? 1,
@@ -282,6 +284,14 @@ onMounted(() => {
   nextTick(() => {
     updateCarouselLayout()
     if (carouselRef.value) {
+      mediaObserver = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue
+          nearbyMedia.value.add(Number(entry.target.id.replace('project-', '')))
+          mediaObserver?.unobserve(entry.target)
+        }
+      }, { rootMargin: '400px' })
+      carouselRef.value.querySelectorAll('.project-card__media').forEach(media => mediaObserver?.observe(media))
       carouselResizeObserver = new ResizeObserver(updateCarouselLayout)
       carouselResizeObserver.observe(carouselRef.value)
       if (homeIntroRef.value) {
@@ -307,6 +317,7 @@ onBeforeUnmount(() => {
   reducedMotionQuery?.removeEventListener('change', syncProjectCursorAvailability)
   desktopCarouselQuery?.removeEventListener('change', syncCarouselMode)
   carouselResizeObserver?.disconnect()
+  mediaObserver?.disconnect()
   if (carouselScrollFrame !== undefined) {
     window.cancelAnimationFrame(carouselScrollFrame)
   }
@@ -404,11 +415,11 @@ onBeforeUnmount(() => {
                       src="/images/case-studies/nuance/iphone-16-pro.png"
                       alt=""
                       aria-hidden="true"
-                      loading="eager"
+                      loading="lazy"
                       decoding="async"
                     />
                   </template>
-                  <img
+                  <OptimizedImage
                     v-else-if="project.type === 'image'"
                     :src="project.src"
                     :alt="project.title"

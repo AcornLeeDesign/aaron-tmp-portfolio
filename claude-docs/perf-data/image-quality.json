@@ -1,0 +1,172 @@
+[
+  {
+    "source": "/images/doordash.png",
+    "output": "/images/doordash.lossless.webp",
+    "width": 1024,
+    "height": 607,
+    "sourceBytes": 26264,
+    "outputBytes": 11106,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/evtol.png",
+    "output": "/images/evtol.lossless.webp",
+    "width": 3274,
+    "height": 1454,
+    "sourceBytes": 790316,
+    "outputBytes": 246378,
+    "ssim": 0.999917,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/haven.png",
+    "output": "/images/haven.lossless.webp",
+    "width": 1678,
+    "height": 1080,
+    "sourceBytes": 481194,
+    "outputBytes": 270132,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/watch_3_4_view.png",
+    "output": "/images/watch_3_4_view.lossless.webp",
+    "width": 1920,
+    "height": 1080,
+    "sourceBytes": 3225778,
+    "outputBytes": 1734884,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/alert-after.png",
+    "output": "/images/case-studies/doordash/alert-after.lossless.webp",
+    "width": 2758,
+    "height": 1913,
+    "sourceBytes": 536232,
+    "outputBytes": 257724,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/alert-before.png",
+    "output": "/images/case-studies/doordash/alert-before.lossless.webp",
+    "width": 2758,
+    "height": 1913,
+    "sourceBytes": 390711,
+    "outputBytes": 181948,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/flow-adapted-detail.png",
+    "output": "/images/case-studies/doordash/flow-adapted-detail.lossless.webp",
+    "width": 1629,
+    "height": 454,
+    "sourceBytes": 37347,
+    "outputBytes": 12902,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/flow-ideal-detail.png",
+    "output": "/images/case-studies/doordash/flow-ideal-detail.lossless.webp",
+    "width": 1629,
+    "height": 325,
+    "sourceBytes": 30382,
+    "outputBytes": 11130,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/handheld-status-bar.png",
+    "output": "/images/case-studies/doordash/handheld-status-bar.lossless.webp",
+    "width": 435,
+    "height": 600,
+    "sourceBytes": 118917,
+    "outputBytes": 68828,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/hardware-icons.png",
+    "output": "/images/case-studies/doordash/hardware-icons.lossless.webp",
+    "width": 443,
+    "height": 195,
+    "sourceBytes": 13047,
+    "outputBytes": 5798,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/printer-illustrations.png",
+    "output": "/images/case-studies/doordash/printer-illustrations.lossless.webp",
+    "width": 1920,
+    "height": 1080,
+    "sourceBytes": 3569454,
+    "outputBytes": 2476206,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/status-actions.png",
+    "output": "/images/case-studies/doordash/status-actions.lossless.webp",
+    "width": 1920,
+    "height": 1080,
+    "sourceBytes": 3019904,
+    "outputBytes": 1963546,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/art-direction/render_3.png",
+    "output": "/images/case-studies/doordash/art-direction/render_3.lossless.webp",
+    "width": 2160,
+    "height": 2700,
+    "sourceBytes": 4162970,
+    "outputBytes": 1858044,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/art-direction/render_4.png",
+    "output": "/images/case-studies/doordash/art-direction/render_4.lossless.webp",
+    "width": 2160,
+    "height": 2700,
+    "sourceBytes": 5470966,
+    "outputBytes": 2268470,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/art-direction/render_5.png",
+    "output": "/images/case-studies/doordash/art-direction/render_5.lossless.webp",
+    "width": 2560,
+    "height": 1920,
+    "sourceBytes": 5046257,
+    "outputBytes": 2250072,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/art-direction/render_7.png",
+    "output": "/images/case-studies/doordash/art-direction/render_7.lossless.webp",
+    "width": 2160,
+    "height": 2700,
+    "sourceBytes": 4988078,
+    "outputBytes": 2130322,
+    "ssim": 1,
+    "rgbaIdentical": true
+  },
+  {
+    "source": "/images/case-studies/doordash/art-direction/render_8.png",
+    "output": "/images/case-studies/doordash/art-direction/render_8.lossless.webp",
+    "width": 2160,
+    "height": 2700,
+    "sourceBytes": 5070709,
+    "outputBytes": 2160076,
+    "ssim": 1,
+    "rgbaIdentical": true
+  }
+]

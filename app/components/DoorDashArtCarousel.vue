@@ -21,7 +21,7 @@ function goTo(index: number) {
   <figure class="art-carousel" aria-label="DoorDash art direction renders" aria-roledescription="carousel">
     <div ref="track" class="art-carousel__track" tabindex="0" aria-label="Scroll through five renders" @scroll.passive="updateActive" @keydown.right.prevent="goTo(Math.min(active + 1, renders.length - 1))" @keydown.left.prevent="goTo(Math.max(active - 1, 0))">
       <div v-for="(render, index) in renders" :key="render" class="art-carousel__slide" role="group" aria-roledescription="slide" :aria-label="`${index + 1} of ${renders.length}`">
-        <img :src="`/images/case-studies/doordash/art-direction/render_${render}.png`" :alt="`DoorDash POS art direction — Blender render ${render}`" :width="render === 5 ? 2560 : 2160" :height="render === 5 ? 1920 : 2700" loading="lazy" />
+        <OptimizedImage :src="`/images/case-studies/doordash/art-direction/render_${render}.png`" :alt="`DoorDash POS art direction — Blender render ${render}`" :width="render === 5 ? 2560 : 2160" :height="render === 5 ? 1920 : 2700" loading="lazy" />
       </div>
     </div>
     <figcaption class="art-carousel__footer">
