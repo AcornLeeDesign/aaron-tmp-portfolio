@@ -389,8 +389,12 @@ onBeforeUnmount(() => {
   --doordash-project-table-width: 1152px;
   --doordash-quote-text: #1c1f24;
   --doordash-quote-attribution: #5e3707;
-  padding: calc(var(--layout-header-clearance) + var(--space-m)) var(--layout-content-edge) var(--space-40);
+  /* Match Nova/Nuance case-study page chrome. */
+  padding: calc(var(--layout-header-clearance) + var(--space-m)) var(--layout-content-edge) var(--space-30);
+  color: var(--color-text);
   font-size: var(--font-size-s);
+  /* Body inherits medium from global styles; case studies use regular. */
+  font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
 }
 .case-content { display: flex; flex-direction: column; align-items: center; gap: var(--case-copy-media-gap); max-width: var(--doordash-media-width); margin-inline: auto; }
@@ -500,10 +504,10 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
 .numbered-heading__number { position: absolute; right: calc(100% + var(--space-m)); top: 0; margin-top: calc(-1 * var(--space-xs)); display: flex; align-items: center; justify-content: center; width: var(--doordash-number-size); height: var(--doordash-number-size); border-radius: var(--doordash-number-radius); background: var(--doordash-number-background); color: var(--doordash-number-text); font-family: var(--font-mono-ui); font-size: inherit; font-weight: var(--font-weight-regular); line-height: 1.2; transform: rotate(-6deg); }
 #guidance .numbered-heading__number { transform: rotate(5deg); }
 @media (max-width: 1023px) {
+  /* Drop the desktop offset under the sticky header, same as Nova/Nuance. */
+  .doordash-case { padding-top: var(--layout-header-clearance); }
   .numbered-heading { display: flex; align-items: flex-start; gap: var(--space-m); }
   .numbered-heading__number { position: static; flex-shrink: 0; }
-}
-@media (max-width: 1023px) {
   .outcomes__panel { grid-template-columns: 1fr; padding: var(--space-10) var(--space-m); gap: var(--space-10); }
   .paired { grid-template-columns: 1fr; }
 }
