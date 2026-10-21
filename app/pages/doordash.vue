@@ -388,7 +388,8 @@ onBeforeUnmount(() => {
   /* Four readable columns at the Figma overview table's intended scale. */
   --doordash-project-table-width: 1152px;
   --doordash-quote-text: #1c1f24;
-  --doordash-quote-attribution: #5e3707;
+  /* Neutral gray that keeps AA contrast on the white quote cards. */
+  --doordash-quote-attribution: #6b6b6b;
   /* Match Nova/Nuance case-study page chrome. */
   padding: calc(var(--layout-header-clearance) + var(--space-m)) var(--layout-content-edge) var(--space-30);
   color: var(--color-text);
