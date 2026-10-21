@@ -132,7 +132,6 @@ function syncPlayback() {
         .filter(registration =>
           registration.visibilityRatio > 0
           && registration.video.isConnected
-          && (registration.caseStudy || registration.video.querySelector('source') !== null)
         )
         .sort((a, b) =>
           b.visibilityRatio - a.visibilityRatio
@@ -155,17 +154,14 @@ function syncPlayback() {
   // Prepare only the nearest upcoming case-study video, and only once the
   // current clip is fully buffered so it does not compete with initial playback.
   const active = candidates[0]
-  const upcoming = document.visibilityState === 'visible' && candidates.every(item => fullyBuffered(item.video))
+  const upcoming = document.visibilityState === 'visible' && candidates.length < MAX_PLAYING_VIDEOS
+    && candidates.every(item => fullyBuffered(item.video))
     ? [...videoRegistrations.values()]
         .filter(item => item.caseStudy && item !== active
           && item.video.getBoundingClientRect().top >= window.innerHeight
           && item.video.getBoundingClientRect().top < window.innerHeight * 2)
         .sort((a, b) => a.video.getBoundingClientRect().top - b.video.getBoundingClientRect().top)[0]
     : undefined
-
-  for (const item of videoRegistrations.values()) {
-    if (item.caseStudy) item.prepare(candidates.includes(item) || item === upcoming, candidates.includes(item))
-  }
 
   const selectedIds = new Set(candidates.map(registration => registration.id))
 
@@ -174,6 +170,10 @@ function syncPlayback() {
     if (!selectedIds.has(registration.id)) {
       pauseVideo(registration)
     }
+  }
+
+  for (const item of videoRegistrations.values()) {
+    item.prepare(candidates.includes(item) || item === upcoming, candidates.includes(item))
   }
 
   for (const registration of candidates) {
@@ -272,6 +272,7 @@ const props = defineProps<{
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const sourcesAttached = ref(false)
+const posterReady = ref(false)
 const preload = ref<'none' | 'metadata' | 'auto'>('none')
 const showControls = ref(false)
 let slowLoadTimer: number | undefined
@@ -282,10 +283,19 @@ function clearSlowLoadTimer() {
   slowLoadTimer = undefined
 }
 
-function prepareCaseStudy(load: boolean, active: boolean) {
+function prepareMedia(load: boolean, active: boolean) {
   preload.value = load ? 'auto' : 'none'
-  if (load) attachSources()
-  if (active && videoRef.value?.paused && !showControls.value) {
+  if (load) {
+    clearSourceRelease()
+    attachSources()
+  } else if (sourcesAttached.value) {
+    // Changing preload alone does not cancel an in-flight media request.
+    // Release unfinished, deselected downloads immediately; retain complete
+    // nearby buffers briefly so small scroll reversals do not restart playback.
+    if (videoRef.value && !fullyBuffered(videoRef.value)) releaseSources()
+    else scheduleSourceRelease()
+  }
+  if (props.caseStudy && active && videoRef.value?.paused && !showControls.value) {
     if (slowLoadTimer === undefined) {
       slowLoadTimer = window.setTimeout(() => {
         slowLoadTimer = undefined
@@ -318,12 +328,12 @@ function clearSourceRelease() {
 
 function attachSources() {
   const video = videoRef.value
-  if (!video || (!props.caseStudy && !isWithinSourceRange) || sourcesAttached.value) return
+  if (!video || sourcesAttached.value) return
 
   clearSourceRelease()
   const transition = ++sourceTransition
   sourcesAttached.value = true
-  if (!props.caseStudy) preload.value = 'metadata'
+  posterReady.value = true
 
   nextTick(() => {
     if (transition !== sourceTransition || !sourcesAttached.value) return
@@ -334,11 +344,12 @@ function attachSources() {
 
 function releaseSources() {
   const video = videoRef.value
-  if (!video || isWithinSourceRange || !sourcesAttached.value) return
+  if (!video || !sourcesAttached.value) return
 
   if (registration) pauseVideo(registration)
   const transition = ++sourceTransition
   sourcesAttached.value = false
+  preload.value = 'none'
   showControls.value = false
   if (registration) registration.userPaused = false
 
@@ -354,28 +365,27 @@ function scheduleSourceRelease() {
   sourceReleaseTimer = window.setTimeout(() => {
     sourceReleaseTimer = undefined
     releaseSources()
-  }, props.caseStudy ? 30000 : SOURCE_RELEASE_DELAY)
+  }, SOURCE_RELEASE_DELAY)
 }
 
 onMounted(() => {
   const video = videoRef.value
   if (!video) return
 
-  registration = registerVideo(video, Boolean(props.caseStudy), prepareCaseStudy)
+  registration = registerVideo(video, Boolean(props.caseStudy), prepareMedia)
 
   sourceObserver = new IntersectionObserver(
     ([entry]) => {
       isWithinSourceRange = Boolean(entry?.isIntersecting)
 
       if (isWithinSourceRange) {
-        clearSourceRelease()
-        if (!props.caseStudy) attachSources()
+        posterReady.value = true
       } else {
         scheduleSourceRelease()
       }
       schedulePlaybackSync()
     },
-    { rootMargin: props.caseStudy ? '100% 0px' : '200px 75%' }
+    { rootMargin: props.caseStudy ? '100% 0px' : '200px' }
   )
 
   viewportObserver = new IntersectionObserver(
@@ -404,6 +414,13 @@ onBeforeUnmount(() => {
   if (registration) {
     unregisterVideo(registration)
   }
+  // A detached element can otherwise keep downloading after route navigation.
+  const video = videoRef.value
+  if (video) {
+    video.querySelectorAll('source').forEach(source => source.removeAttribute('src'))
+    video.removeAttribute('src')
+    video.load()
+  }
 })
 </script>
 
@@ -419,7 +436,7 @@ onBeforeUnmount(() => {
     :controls="showControls"
     :preload="preload"
     @playing="clearSlowLoadTimer"
-    :poster="posterSrc"
+    :poster="posterReady ? posterSrc : undefined"
   >
     <template v-if="sourcesAttached">
       <source :src="src" type="video/mp4" />
