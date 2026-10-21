@@ -328,7 +328,7 @@ onBeforeUnmount(() => {
         id="about"
         class="home-about text-primary"
       >
-        <p class="home-about__bio">Aaron is a product designer that builds surfaces and systems for scaling complex technologies, allowing products to change lives sustainably</p>
+        <p class="home-about__bio">Aaron is a product designer who builds surfaces and systems for scaling complex technologies, allowing products to change lives sustainably</p>
         <p class="home-about__statement">Design scales experiments from scraps to people. It is the intentional creation of systems for intelligent beings to operate within and understand the world.</p>
         <div class="home-about__status">
           <p class="home-about__status-label">Currently</p>
