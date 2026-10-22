@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/gameboy-mobile.mp4",
+  "source": "public/videos/originals/gameboy.mp4",
+  "sourceRef": "862de9d",
+  "sourceBytes": 719690,
+  "bytes": 719706,
+  "width": 1080,
+  "height": 1472,
+  "sourceWidth": 1080,
+  "sourceHeight": 1472,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 827,
+  "sourceFrames": 827,
+  "duration": "13.783333",
+  "sourceDuration": "13.783333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.998846,
+      "bytes": 1787973
+    }
+  ],
+  "sha256": "8a25a8d34e18ce990e0041cc1107eec90b1ac89fb83248883f140d4a2e534701"
+}

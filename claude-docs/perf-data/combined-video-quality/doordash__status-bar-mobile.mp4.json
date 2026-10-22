@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/status-bar-mobile.mp4",
+  "source": "public/videos/originals/doordash/status-bar.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 16574167,
+  "bytes": 6038866,
+  "width": 1280,
+  "height": 792,
+  "sourceWidth": 2910,
+  "sourceHeight": 1802,
+  "ssim": 0.999956,
+  "vmaf": null,
+  "frames": 1957,
+  "sourceFrames": 1957,
+  "duration": "44.408021",
+  "sourceDuration": "44.408021",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.999956,
+      "bytes": 6038866
+    }
+  ],
+  "sha256": "a684dd532e90dd82a042b104a1d8e5cbb9cda604b673048233c9f67fece715b0"
+}

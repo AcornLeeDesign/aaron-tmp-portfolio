@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/prep-station.mp4",
+  "source": "public/videos/originals/doordash/prep-station.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 9940791,
+  "bytes": 10188420,
+  "width": 1920,
+  "height": 1074,
+  "sourceWidth": 2740,
+  "sourceHeight": 1534,
+  "ssim": 0.999961,
+  "vmaf": null,
+  "frames": 1762,
+  "sourceFrames": 1762,
+  "duration": "40.358021",
+  "sourceDuration": "40.358021",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999961,
+      "bytes": 10188420
+    }
+  ],
+  "sha256": "8f86827a9ad1f57e3b28aa8ca95b6c217a3536fd600fb1783a126143a08dafd9"
+}

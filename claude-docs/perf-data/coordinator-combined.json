@@ -1,0 +1,34 @@
+[
+  {
+    "width": 390,
+    "selected": [
+      "http://127.0.0.1:3104/videos/doordash/iteration-banner-mobile.mp4"
+    ],
+    "peakPlaying": 1,
+    "failures": []
+  },
+  {
+    "width": 640,
+    "selected": [
+      "http://127.0.0.1:3104/videos/doordash/iteration-banner.mp4"
+    ],
+    "peakPlaying": 1,
+    "failures": []
+  },
+  {
+    "width": 1023,
+    "selected": [
+      "http://127.0.0.1:3104/videos/doordash/iteration-banner.mp4"
+    ],
+    "peakPlaying": 1,
+    "failures": []
+  },
+  {
+    "width": 1440,
+    "selected": [
+      "http://127.0.0.1:3104/videos/doordash/iteration-banner.mp4"
+    ],
+    "peakPlaying": 1,
+    "failures": []
+  }
+]

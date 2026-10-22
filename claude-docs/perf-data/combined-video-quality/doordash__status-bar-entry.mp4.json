@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/status-bar-entry.mp4",
+  "source": "public/videos/originals/doordash/status-bar-entry.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 11442549,
+  "bytes": 5242425,
+  "width": 1920,
+  "height": 1080,
+  "sourceWidth": 2726,
+  "sourceHeight": 1532,
+  "ssim": 0.999783,
+  "vmaf": null,
+  "frames": 1172,
+  "sourceFrames": 1172,
+  "duration": "20.333021",
+  "sourceDuration": "20.333021",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999783,
+      "bytes": 5242425
+    }
+  ],
+  "sha256": "724432d5056307698ab21d5280a9aaf3e237b58ebec01442454bfee189527663"
+}

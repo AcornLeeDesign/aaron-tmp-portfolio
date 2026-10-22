@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/status-footer.mp4",
+  "source": "public/videos/originals/doordash/status-footer.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 6224058,
+  "bytes": 4793686,
+  "width": 1920,
+  "height": 1074,
+  "sourceWidth": 2172,
+  "sourceHeight": 1216,
+  "ssim": 0.999864,
+  "vmaf": null,
+  "frames": 1055,
+  "sourceFrames": 1055,
+  "duration": "18.291667",
+  "sourceDuration": "18.291667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999864,
+      "bytes": 4793686
+    }
+  ],
+  "sha256": "7fd89ca5702a710e0e3ef9d7bd44770575ecdc44b28752a45bd42e92455d7a80"
+}

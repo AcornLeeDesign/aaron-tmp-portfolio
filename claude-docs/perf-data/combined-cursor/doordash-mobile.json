@@ -1,0 +1,8198 @@
+{
+  "route": "doordash",
+  "device": "mobile",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "dpr": 3,
+  "browser": "156.0.8078.4",
+  "initial": {
+    "totalBytes": 1512799,
+    "mediaBytes": 971252,
+    "videoBytes": 0,
+    "imageBytes": 971252,
+    "requests": 13
+  },
+  "fullScroll": {
+    "totalBytes": 45853526,
+    "mediaBytes": 45311979,
+    "videoBytes": 12165482,
+    "imageBytes": 33146497,
+    "requests": 49
+  },
+  "peakDownloads": 10,
+  "peakVideoDownloads": 2,
+  "peakPlaying": 2,
+  "peakAttached": 7,
+  "finalSample": {
+    "time": 84939,
+    "y": 13266,
+    "mounted": 13,
+    "attached": 3,
+    "playing": 1,
+    "offscreenPlaying": 0
+  },
+  "errors": [],
+  "media": [
+    {
+      "id": 0,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/about/aaron-portrait.png",
+      "sources": [],
+      "width": 177,
+      "height": 162,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 1,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/arrow-case-study.svg",
+      "sources": [],
+      "width": 14,
+      "height": 14,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 2,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 3,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 4,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/arrow-instagram.svg",
+      "sources": [],
+      "width": 14,
+      "height": 14,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 5,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 6,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 7,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/arrow-case-study.svg",
+      "sources": [],
+      "width": 14,
+      "height": 14,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 8,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 9,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 10,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 11,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/arrow-case-study.svg",
+      "sources": [],
+      "width": 14,
+      "height": 14,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 12,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 13,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 14,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/arrow-demo.svg",
+      "sources": [],
+      "width": 14,
+      "height": 14,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 15,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 16,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/arrow-demo.svg",
+      "sources": [],
+      "width": 14,
+      "height": 14,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 17,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/arrow-demo.svg",
+      "sources": [],
+      "width": 14,
+      "height": 14,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 18,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/work/divider.svg",
+      "sources": [],
+      "width": 600,
+      "height": 1,
+      "renderedWidth": 0,
+      "renderedHeight": 0,
+      "loading": "auto",
+      "visible": false
+    },
+    {
+      "id": 19,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/icons/header-mark.svg",
+      "sources": [],
+      "width": 35,
+      "height": 12,
+      "renderedWidth": 34.546875,
+      "renderedHeight": 12.140625,
+      "loading": "auto",
+      "visible": true
+    },
+    {
+      "id": 20,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286.984375,
+      "renderedHeight": 189.0625,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 21,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/status-bar-entry-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/status-bar-entry-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/status-bar-entry-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/status-bar-entry-mobile.jpg",
+      "preload": "auto",
+      "paused": false,
+      "readyState": 4,
+      "width": 1280,
+      "height": 720,
+      "renderedWidth": 277.59375,
+      "renderedHeight": 156.046875,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 22,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286.984375,
+      "renderedHeight": 189.0625,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 23,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/before-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/before-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/before-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/before-mobile.jpg",
+      "preload": "auto",
+      "paused": false,
+      "readyState": 4,
+      "width": 1280,
+      "height": 704,
+      "renderedWidth": 277.59375,
+      "renderedHeight": 156.046875,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 24,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286,
+      "renderedHeight": 188.421875,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 25,
+      "tag": "image",
+      "src": "/images/case-studies/doordash/alert-before.png",
+      "sources": [],
+      "renderedWidth": 289.2152099609375,
+      "renderedHeight": 204.9978790283203,
+      "visible": true
+    },
+    {
+      "id": 26,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286,
+      "renderedHeight": 188.421875,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 27,
+      "tag": "image",
+      "src": "/images/case-studies/doordash/alert-after.png",
+      "sources": [],
+      "renderedWidth": 295.941162109375,
+      "renderedHeight": 204.9978790283203,
+      "visible": true
+    },
+    {
+      "id": 28,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286.984375,
+      "renderedHeight": 189.0625,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 29,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/toast-entry-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/toast-entry-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/toast-entry-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/toast-entry-mobile.jpg",
+      "preload": "auto",
+      "paused": false,
+      "readyState": 4,
+      "width": 1280,
+      "height": 720,
+      "renderedWidth": 277.59375,
+      "renderedHeight": 156.046875,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 30,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/status-bar-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/status-bar-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/status-bar-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/status-bar-mobile.jpg",
+      "preload": "none",
+      "paused": true,
+      "readyState": 4,
+      "width": 1280,
+      "height": 792,
+      "renderedWidth": 326,
+      "renderedHeight": 201.859375,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 31,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/status-logic-doc-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/status-logic-doc-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/status-logic-doc-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/status-logic-doc-mobile.jpg",
+      "preload": "auto",
+      "paused": false,
+      "readyState": 4,
+      "width": 1280,
+      "height": 864,
+      "renderedWidth": 262,
+      "renderedHeight": 177,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 32,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/handheld-status-bar.png",
+      "sources": [],
+      "width": 435,
+      "height": 600,
+      "renderedWidth": 262,
+      "renderedHeight": 361.375,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 33,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/hardware-icons.png",
+      "sources": [],
+      "width": 443,
+      "height": 195,
+      "renderedWidth": 262,
+      "renderedHeight": 115.3125,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 34,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/flow-ideal-detail.png",
+      "sources": [],
+      "width": 1629,
+      "height": 325,
+      "renderedWidth": 310,
+      "renderedHeight": 61.84375,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 35,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/flow-connector-line-vertical.svg",
+      "sources": [],
+      "width": 14,
+      "height": 80,
+      "renderedWidth": 14,
+      "renderedHeight": 80,
+      "loading": "auto",
+      "visible": true
+    },
+    {
+      "id": 36,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/flow-connector-arrow-vertical.svg",
+      "sources": [],
+      "width": 14,
+      "height": 80,
+      "renderedWidth": 14,
+      "renderedHeight": 80,
+      "loading": "auto",
+      "visible": true
+    },
+    {
+      "id": 37,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/flow-adapted-detail.png",
+      "sources": [],
+      "width": 1629,
+      "height": 454,
+      "renderedWidth": 310,
+      "renderedHeight": 86.390625,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 38,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/printer-illustrations.png",
+      "sources": [],
+      "width": 1920,
+      "height": 1080,
+      "renderedWidth": 310,
+      "renderedHeight": 174.375,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 39,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286.984375,
+      "renderedHeight": 189.0625,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 40,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/select-printer-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/select-printer-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/select-printer-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/select-printer-mobile.jpg",
+      "preload": "auto",
+      "paused": false,
+      "readyState": 4,
+      "width": 1280,
+      "height": 720,
+      "renderedWidth": 277.59375,
+      "renderedHeight": 156.046875,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 41,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286,
+      "renderedHeight": 188.421875,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 42,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/iteration-banner-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/iteration-banner-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/iteration-banner-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/iteration-banner-mobile.jpg",
+      "preload": "auto",
+      "paused": false,
+      "readyState": 4,
+      "width": 1280,
+      "height": 718,
+      "renderedWidth": 276.640625,
+      "renderedHeight": 155.515625,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 43,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286,
+      "renderedHeight": 188.421875,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 44,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/iteration-toast-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/iteration-toast-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/iteration-toast-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/iteration-toast-mobile.jpg",
+      "preload": "auto",
+      "paused": false,
+      "readyState": 4,
+      "width": 1280,
+      "height": 718,
+      "renderedWidth": 276.640625,
+      "renderedHeight": 155.515625,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 45,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/status-actions.png",
+      "sources": [],
+      "width": 1920,
+      "height": 1080,
+      "renderedWidth": 310,
+      "renderedHeight": 174.375,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 46,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286.984375,
+      "renderedHeight": 189.0625,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 47,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/before-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/before-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/before-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/before-mobile.jpg",
+      "preload": "none",
+      "paused": true,
+      "readyState": 4,
+      "width": 1280,
+      "height": 704,
+      "renderedWidth": 277.59375,
+      "renderedHeight": 156.046875,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 48,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286.984375,
+      "renderedHeight": 189.0625,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 49,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/printer-types-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/printer-types-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/printer-types-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/printer-types-mobile.jpg",
+      "preload": "auto",
+      "paused": false,
+      "readyState": 4,
+      "width": 1280,
+      "height": 720,
+      "renderedWidth": 277.59375,
+      "renderedHeight": 156.046875,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 50,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286.984375,
+      "renderedHeight": 189.0625,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 51,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/legacy-feature-flag-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/legacy-feature-flag-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/legacy-feature-flag-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/legacy-feature-flag-mobile.jpg",
+      "preload": "none",
+      "paused": true,
+      "readyState": 4,
+      "width": 1280,
+      "height": 704,
+      "renderedWidth": 277.59375,
+      "renderedHeight": 156.046875,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 52,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286.984375,
+      "renderedHeight": 189.0625,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 53,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/printer-setup-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/printer-setup-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/printer-setup-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/printer-setup-mobile.jpg",
+      "preload": "auto",
+      "paused": false,
+      "readyState": 4,
+      "width": 1280,
+      "height": 716,
+      "renderedWidth": 277.59375,
+      "renderedHeight": 156.046875,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 54,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "sources": [],
+      "width": 1530,
+      "height": 1008,
+      "renderedWidth": 286.984375,
+      "renderedHeight": 189.0625,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 55,
+      "tag": "VIDEO",
+      "src": "http://127.0.0.1:3102/videos/doordash/prep-station-mobile.mp4",
+      "sources": [
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/prep-station-mobile.mp4",
+          "media": "",
+          "type": "video/mp4"
+        },
+        {
+          "src": "http://127.0.0.1:3102/videos/doordash/prep-station-mobile.webm",
+          "media": "",
+          "type": "video/webm"
+        }
+      ],
+      "poster": "http://127.0.0.1:3102/videos/posters/doordash/prep-station-mobile.jpg",
+      "preload": "auto",
+      "paused": false,
+      "readyState": 4,
+      "width": 1280,
+      "height": 716,
+      "renderedWidth": 277.59375,
+      "renderedHeight": 156.046875,
+      "loading": "eager",
+      "visible": true
+    },
+    {
+      "id": 56,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/art-direction/render_5.png",
+      "sources": [],
+      "width": 2560,
+      "height": 1920,
+      "renderedWidth": 312,
+      "renderedHeight": 234,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 57,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/art-direction/render_7.png",
+      "sources": [],
+      "width": 2160,
+      "height": 2700,
+      "renderedWidth": 187.1875,
+      "renderedHeight": 234,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 58,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/art-direction/render_3.png",
+      "sources": [],
+      "width": 2160,
+      "height": 2700,
+      "renderedWidth": 187.1875,
+      "renderedHeight": 234,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 59,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/art-direction/render_4.png",
+      "sources": [],
+      "width": 2160,
+      "height": 2700,
+      "renderedWidth": 187.1875,
+      "renderedHeight": 234,
+      "loading": "lazy",
+      "visible": true
+    },
+    {
+      "id": 60,
+      "tag": "IMG",
+      "src": "http://127.0.0.1:3102/images/case-studies/doordash/art-direction/render_8.png",
+      "sources": [],
+      "width": 2160,
+      "height": 2700,
+      "renderedWidth": 187.1875,
+      "renderedHeight": 234,
+      "loading": "lazy",
+      "visible": true
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:3102/images/about/aaron-portrait.png",
+      "type": "Image",
+      "bytes": 36132,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/work/arrow-case-study.svg",
+      "type": "Image",
+      "bytes": 587,
+      "pending": false,
+      "status": 200,
+      "mime": "image/svg+xml",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/work/divider.svg",
+      "type": "Image",
+      "bytes": 496,
+      "pending": false,
+      "status": 200,
+      "mime": "image/svg+xml",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/work/arrow-instagram.svg",
+      "type": "Image",
+      "bytes": 594,
+      "pending": false,
+      "status": 200,
+      "mime": "image/svg+xml",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/work/arrow-demo.svg",
+      "type": "Image",
+      "bytes": 592,
+      "pending": false,
+      "status": 200,
+      "mime": "image/svg+xml",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/icons/header-mark.svg",
+      "type": "Image",
+      "bytes": 1131,
+      "pending": false,
+      "status": 200,
+      "mime": "image/svg+xml",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/alert-before.png",
+      "type": "Image",
+      "bytes": 390952,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/alert-after.png",
+      "type": "Image",
+      "bytes": 536473,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/flow-connector-line-vertical.svg",
+      "type": "Image",
+      "bytes": 438,
+      "pending": false,
+      "status": 200,
+      "mime": "image/svg+xml",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/flow-connector-arrow-vertical.svg",
+      "type": "Image",
+      "bytes": 462,
+      "pending": false,
+      "status": 200,
+      "mime": "image/svg+xml",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/arrow-thin.svg",
+      "type": "Image",
+      "bytes": 588,
+      "pending": false,
+      "status": 200,
+      "mime": "image/svg+xml",
+      "cached": false
+    },
+    {
+      "url": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='1.2' numOctaves='3' seed='7' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR intercept='-.4' slope='1.8' type='linear'/%3E%3CfeFuncG intercept='-.4' slope='1.8' type='linear'/%3E%3CfeFuncB intercept='-.4' slope='1.8' type='linear'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='.4'/%3E%3C/svg%3E",
+      "type": "Image",
+      "bytes": 0,
+      "pending": false,
+      "status": 200,
+      "mime": "image/svg+xml",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/pos-mockup-transparent.svg",
+      "type": "Image",
+      "bytes": 2807,
+      "pending": false,
+      "status": 200,
+      "mime": "image/svg+xml",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/status-bar-entry-mobile.jpg",
+      "type": "Image",
+      "bytes": 60205,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/status-bar-entry-mobile.mp4",
+      "type": "Media",
+      "bytes": 713226,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/before-mobile.jpg",
+      "type": "Image",
+      "bytes": 60744,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/before-mobile.mp4",
+      "type": "Media",
+      "bytes": 235490,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/handheld-status-bar.png",
+      "type": "Image",
+      "bytes": 119158,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/hardware-icons.png",
+      "type": "Image",
+      "bytes": 13286,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/toast-entry-mobile.jpg",
+      "type": "Image",
+      "bytes": 61030,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/toast-entry-mobile.mp4",
+      "type": "Media",
+      "bytes": 597554,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/status-bar-mobile.jpg",
+      "type": "Image",
+      "bytes": 60266,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/flow-ideal-detail.png",
+      "type": "Image",
+      "bytes": 30621,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/flow-adapted-detail.png",
+      "type": "Image",
+      "bytes": 37586,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/status-bar-mobile.mp4",
+      "type": "Media",
+      "bytes": 1083398,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/printer-illustrations.png",
+      "type": "Image",
+      "bytes": 3569697,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/status-logic-doc-mobile.jpg",
+      "type": "Image",
+      "bytes": 84302,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/status-logic-doc-mobile.mp4",
+      "type": "Media",
+      "bytes": 5242880,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false,
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/status-actions.png",
+      "type": "Image",
+      "bytes": 3020147,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/select-printer-mobile.jpg",
+      "type": "Image",
+      "bytes": 60386,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/select-printer-mobile.mp4",
+      "type": "Media",
+      "bytes": 586781,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/iteration-banner-mobile.jpg",
+      "type": "Image",
+      "bytes": 32515,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/iteration-banner-mobile.mp4",
+      "type": "Media",
+      "bytes": 28253,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/iteration-toast-mobile.jpg",
+      "type": "Image",
+      "bytes": 47054,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/iteration-toast-mobile.mp4",
+      "type": "Media",
+      "bytes": 113600,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/printer-types-mobile.jpg",
+      "type": "Image",
+      "bytes": 38967,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/before-mobile.mp4",
+      "type": "Media",
+      "bytes": 0,
+      "pending": false,
+      "status": 206,
+      "mime": "video/mp4",
+      "cached": true
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/art-direction/render_5.png",
+      "type": "Image",
+      "bytes": 5046500,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/art-direction/render_7.png",
+      "type": "Image",
+      "bytes": 4988321,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/art-direction/render_3.png",
+      "type": "Image",
+      "bytes": 4163213,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/art-direction/render_4.png",
+      "type": "Image",
+      "bytes": 5471209,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/images/case-studies/doordash/art-direction/render_8.png",
+      "type": "Image",
+      "bytes": 5070952,
+      "pending": false,
+      "status": 200,
+      "mime": "image/png",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/legacy-feature-flag-mobile.jpg",
+      "type": "Image",
+      "bytes": 61006,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/printer-types-mobile.mp4",
+      "type": "Media",
+      "bytes": 868824,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/legacy-feature-flag-mobile.mp4",
+      "type": "Media",
+      "bytes": 794908,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/printer-setup-mobile.jpg",
+      "type": "Image",
+      "bytes": 44607,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/posters/doordash/prep-station-mobile.jpg",
+      "type": "Image",
+      "bytes": 33473,
+      "pending": false,
+      "status": 200,
+      "mime": "image/jpeg",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/printer-setup-mobile.mp4",
+      "type": "Media",
+      "bytes": 819281,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    },
+    {
+      "url": "http://127.0.0.1:3102/videos/doordash/prep-station-mobile.mp4",
+      "type": "Media",
+      "bytes": 1081287,
+      "pending": false,
+      "status": 200,
+      "mime": "video/mp4",
+      "cached": false
+    }
+  ],
+  "samples": [
+    {
+      "time": 153,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 238,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 338,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 439,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 538,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 639,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 739,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 838,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 939,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 1039,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 1139,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 1238,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 1338,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 1438,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 1538,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 1638,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 1739,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 1839,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 1938,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 2039,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 2139,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 2239,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 2339,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 2439,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 2539,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 2638,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 2739,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 2838,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 2939,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 3039,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 3140,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 3239,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 3338,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 3438,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 3538,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 3639,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 3739,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 3839,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 3940,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 4039,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 4139,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 4239,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 4339,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 4439,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 4539,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 4639,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 4741,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 4839,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 4939,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 5039,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 5139,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 5239,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 5338,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 5438,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 5539,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 5638,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 5739,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 5838,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 5944,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 6039,
+      "y": 0,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 6139,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 6240,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 6338,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 6438,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 6539,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 6639,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 6739,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 6838,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 6939,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 7038,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 7139,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 7239,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 7338,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 7440,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 7538,
+      "y": 591,
+      "mounted": 13,
+      "attached": 0,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 7638,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 7739,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 7838,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 7939,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 8040,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 8139,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 8239,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 8338,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 8439,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 8539,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 8638,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 8740,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 8839,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 8938,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 9039,
+      "y": 1182,
+      "mounted": 13,
+      "attached": 1,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 9138,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 9240,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 9338,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 9439,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 9539,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 9639,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 9739,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 9839,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 9939,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 10038,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 10138,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 10239,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 10338,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 10439,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 10538,
+      "y": 1773,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 10638,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 10739,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 10838,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 10938,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 11038,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 11138,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 11238,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 11338,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 11438,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 11538,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 11638,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 11739,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 11839,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 11939,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 12039,
+      "y": 2364,
+      "mounted": 13,
+      "attached": 2,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 12138,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 12238,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 12338,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 12438,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 12540,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 12639,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 12738,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 12838,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 12938,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 13039,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 13139,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 13244,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 13339,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 13438,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 13538,
+      "y": 2955,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 13640,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 13738,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 13839,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 13939,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 14038,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 14138,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 14238,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 14342,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 14439,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 14539,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 14638,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 14740,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 14840,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 14938,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 15039,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 15139,
+      "y": 3546,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 15238,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 15338,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 15438,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 15539,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 15638,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 15739,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 15839,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 15940,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 16038,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 16139,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 16238,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 16338,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 16439,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 16539,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 16638,
+      "y": 4137,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 16746,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 16839,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 16938,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 17038,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 17139,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 17238,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 17340,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 17439,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 17539,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 17638,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 17739,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 17839,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 17939,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 18038,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 18140,
+      "y": 4728,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 18240,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 18338,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 18438,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 18539,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 18639,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 18738,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 18839,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 18938,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 19039,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 19139,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 19238,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 19338,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 19438,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 19538,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 19639,
+      "y": 5319,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 19738,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 19838,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 19938,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 20038,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 20138,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 20238,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 20339,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 20438,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 20538,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 20638,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 20738,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 20838,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 20938,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 21038,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 21139,
+      "y": 5910,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 21239,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 21338,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 21438,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 21539,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 21639,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 21739,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 21839,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 21938,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 22039,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 22138,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 22238,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 22339,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 22438,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 22539,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 22639,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 22739,
+      "y": 6501,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 22838,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 22938,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 23039,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 23139,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 23238,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 23339,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 23439,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 23539,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 23639,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 23739,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 23839,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 23939,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 24039,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 24139,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 24238,
+      "y": 7092,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 24339,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 24439,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 24539,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 24638,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 24739,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 24838,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 24939,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 25039,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 25138,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 25239,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 25339,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 25438,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 25538,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 25638,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 25738,
+      "y": 7683,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 25838,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 25938,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 26038,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 26138,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 26239,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 26339,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 26439,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 26539,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 26638,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 26739,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 26838,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 26938,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 27038,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 27138,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 27238,
+      "y": 8274,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 27338,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 27438,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 27539,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 27638,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 27738,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 27838,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 27939,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 28039,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 28140,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 28238,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 28338,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 28439,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 28539,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 28638,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 28739,
+      "y": 8865,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 2,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 28846,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 28938,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 29038,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 29138,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 29239,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 29338,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 29439,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 29538,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 29639,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 29739,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 29839,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 29938,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 30039,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 30144,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 30238,
+      "y": 9456,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 30341,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 30438,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 30539,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 30639,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 30739,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 30838,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 30941,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 31039,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 31139,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 31239,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 31339,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 31439,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 31538,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 31638,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 31739,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 31839,
+      "y": 10047,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 31938,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 32038,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 32138,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 32238,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 32338,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 32438,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 32538,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 32639,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 32739,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 32839,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 32939,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 33038,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 33138,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 33239,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 33339,
+      "y": 10638,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 33438,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 33538,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 33638,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 33739,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 33838,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 33939,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 34039,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 34139,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 34239,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 34339,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 34439,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 34539,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 34639,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 34739,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 34839,
+      "y": 11229,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 0,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 34938,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 7,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 35038,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 7,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 35140,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 7,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 35239,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 7,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 35339,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 7,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 35439,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 35539,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 35638,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 35739,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 35840,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 35938,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 36038,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 36138,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 36239,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 36340,
+      "y": 11820,
+      "mounted": 13,
+      "attached": 6,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 36444,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 7,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 36538,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 7,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 36639,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 7,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 36739,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 7,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 36838,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 7,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 36938,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 37039,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 37138,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 37239,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 37338,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 37444,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 37538,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 37638,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 37739,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 37839,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 37938,
+      "y": 12411,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 38039,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 38138,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 38238,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 38339,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 38438,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 38539,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 38639,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 38739,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 38839,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 38941,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 39039,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 39139,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 39239,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 39338,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 39438,
+      "y": 13002,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 39538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 39639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 39738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 39840,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 5,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 39939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 40039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 40140,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 40238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 40339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 40440,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 40539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 40639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 40740,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 40839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 40938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 41038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 41138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 41239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 41338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 4,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 41438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 41539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 41638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 41738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 41838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 41939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 42039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 42139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 42239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 42338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 42439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 42540,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 42638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 42738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 42838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 42939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 43039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 43141,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 43242,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 43339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 43438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 43539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 43639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 43739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 43842,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 43938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 44039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 44138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 44238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 44339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 44439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 44539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 44639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 44739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 44838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 44939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 45039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 45139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 45240,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 45338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 45439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 45539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 45638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 45739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 45838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 45938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 46039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 46138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 46248,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 46339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 46438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 46538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 46639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 46739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 46839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 46939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 47039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 47138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 47238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 47338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 47439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 47539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 47638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 47738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 47838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 47938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 48038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 48139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 48240,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 48339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 48439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 48538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 48638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 48739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 48838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 48940,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 49039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 49138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 49238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 49339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 49439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 49539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 49638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 49739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 49839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 49939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 50039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 50139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 50239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 50339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 50438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 50539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 50639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 50739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 50839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 50939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 51039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 51140,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 51239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 51339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 51439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 51539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 51639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 51739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 51839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 51938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 52039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 52139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 52238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 52338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 52439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 52539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 52639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 52739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 52838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 52939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 53039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 53138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 53238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 53339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 53439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 53539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 53639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 53738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 53839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 53938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 54039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 54139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 54239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 54339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 54439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 54539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 54638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 54739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 54839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 54938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 55038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 55139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 55239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 55339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 55438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 55538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 55638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 55738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 55838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 55939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 56038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 56139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 56238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 56339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 56439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 56538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 56638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 56738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 56839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 56938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 57038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 57139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 57238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 57339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 57439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 57539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 57639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 57739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 57838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 57938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 58040,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 58139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 58239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 58339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 58439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 58538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 58638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 58738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 58839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 58940,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 59038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 59138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 59238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 59338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 59439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 59538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 59638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 59739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 59838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 59939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 60039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 60139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 60239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 60338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 60438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 60539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 60638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 60739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 60838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 60938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 61038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 61139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 61238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 61339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 61439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 61538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 61639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 61738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 61838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 61939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 62039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 62138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 62239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 62339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 62438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 62539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 62638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 62738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 62838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 62938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 63039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 63139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 63238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 63338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 63438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 63538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 63639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 63739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 63839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 63939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 64038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 64139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 64239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 64339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 64439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 64538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 64638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 64738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 64839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 64938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 65039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 65139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 65239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 65338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 65439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 65538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 65639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 65738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 65838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 65938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 66038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 66138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 66239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 66340,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 66438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 66538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 66641,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 66739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 66838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 66939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 67039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 67140,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 67239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 67339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 67439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 67539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 67639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 67739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 67838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 67939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 68039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 68139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 68238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 68339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 68439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 68538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 68638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 68739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 68839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 68939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 69039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 69139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 69239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 69338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 69438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 69539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 69639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 69739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 69838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 69938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 70038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 70139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 70239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 70338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 70438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 70539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 70638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 70738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 70840,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 70938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 71039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 71138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 71238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 71339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 71438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 71538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 71638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 71739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 71839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 71939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 72040,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 72139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 72239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 72339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 72441,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 72540,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 72638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 72739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 72839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 72942,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 73039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 73139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 73238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 73339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 73439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 73538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 73639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 73738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 73838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 73938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 74038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 74138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 74238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 74338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 74439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 74539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 74638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 74738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 74838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 74939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 75038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 75139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 75238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 75338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 75439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 75538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 75638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 75739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 75838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 75939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 76039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 76138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 76238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 76338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 76438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 76546,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 76638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 76739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 76839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 76939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 77038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 77139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 77239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 77339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 77438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 77538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 77638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 77739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 77838,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 77939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 78039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 78140,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 78239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 78339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 78439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 78538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 78639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 78739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 78839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 78939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 79038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 79139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 79239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 79339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 79439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 79539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 79638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 79738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 79839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 79938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 80038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 80140,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 80239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 80340,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 80439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 80538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 80639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 80739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 80839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 80940,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 81039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 81139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 81239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 81338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 81440,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 81539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 81639,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 81739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 81839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 81939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 82038,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 82138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 82239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 82339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 82438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 82538,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 82638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 82739,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 82839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 82944,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 83039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 83138,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 83239,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 83339,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 83439,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 83539,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 83638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 83738,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 83839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 83938,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 84039,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 84139,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 84238,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 84338,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 84438,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 84542,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 84638,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 84740,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 84839,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    },
+    {
+      "time": 84939,
+      "y": 13266,
+      "mounted": 13,
+      "attached": 3,
+      "playing": 1,
+      "offscreenPlaying": 0
+    }
+  ]
+}

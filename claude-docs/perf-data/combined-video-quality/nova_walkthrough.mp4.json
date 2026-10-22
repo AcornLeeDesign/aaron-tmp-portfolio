@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/nova_walkthrough.mp4",
+  "source": "public/videos/originals/nova_walkthrough.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 5679880,
+  "bytes": 8862243,
+  "width": 1920,
+  "height": 1078,
+  "sourceWidth": 3456,
+  "sourceHeight": 1940,
+  "ssim": 0.999664,
+  "vmaf": null,
+  "frames": 2114,
+  "sourceFrames": 2114,
+  "duration": "35.233333",
+  "sourceDuration": "35.233333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999664,
+      "bytes": 8862243
+    }
+  ],
+  "sha256": "bf7cf9d6ca56e43da528e8e05480ed2db005da979912fab7e2dadf38fe22b05e"
+}

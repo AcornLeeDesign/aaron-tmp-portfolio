@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/pen-mobile.mp4",
+  "source": "public/videos/originals/pen.mp4",
+  "sourceRef": "862de9d",
+  "sourceBytes": 83584,
+  "bytes": 83600,
+  "width": 1080,
+  "height": 534,
+  "sourceWidth": 1080,
+  "sourceHeight": 534,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 463,
+  "sourceFrames": 463,
+  "duration": "7.716667",
+  "sourceDuration": "7.716667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.999995,
+      "bytes": 1015547
+    }
+  ],
+  "sha256": "b750ebbd3e5e2ec942370736e258eee22787e234ca44f853a277f01a41c8cd55"
+}

@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/doordash/unused-motion-printer.mp4",
+  "source": "public/videos/originals/doordash/unused-motion-printer.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 384840,
+  "bytes": 384856,
+  "width": 1230,
+  "height": 720,
+  "sourceWidth": 1230,
+  "sourceHeight": 720,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 150,
+  "sourceFrames": 150,
+  "duration": "5.000000",
+  "sourceDuration": "5.000000",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999997,
+      "bytes": 392802
+    }
+  ],
+  "sha256": "c1324908bbf78b0b66b7b38c15f8818b7204019ecc6b94bed673d68a9f299150"
+}

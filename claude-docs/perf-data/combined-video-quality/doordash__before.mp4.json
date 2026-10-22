@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/before.mp4",
+  "source": "public/videos/originals/doordash/before.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 4570008,
+  "bytes": 1771604,
+  "width": 1920,
+  "height": 1056,
+  "sourceWidth": 3836,
+  "sourceHeight": 2110,
+  "ssim": 0.99994,
+  "vmaf": null,
+  "frames": 386,
+  "sourceFrames": 386,
+  "duration": "7.653021",
+  "sourceDuration": "7.653021",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.99994,
+      "bytes": 1771604
+    }
+  ],
+  "sha256": "1539d3f8e1aa2cde18bfd6d5c7b803177b0a25c263190cd6c013b94e06ef748c"
+}

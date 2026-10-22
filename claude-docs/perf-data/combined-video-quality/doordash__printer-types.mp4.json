@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/printer-types.mp4",
+  "source": "public/videos/originals/doordash/printer-types.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 13655123,
+  "bytes": 6729938,
+  "width": 1920,
+  "height": 1080,
+  "sourceWidth": 2726,
+  "sourceHeight": 1532,
+  "ssim": 0.999803,
+  "vmaf": null,
+  "frames": 1464,
+  "sourceFrames": 1464,
+  "duration": "25.358333",
+  "sourceDuration": "25.358333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999803,
+      "bytes": 6729938
+    }
+  ],
+  "sha256": "02909e2353b4a0f71f1b8b9f8abad1633c8b84545825b1c8067dbe53a2fb66c8"
+}

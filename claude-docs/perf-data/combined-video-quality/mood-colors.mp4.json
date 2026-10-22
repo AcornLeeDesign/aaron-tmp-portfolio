@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/mood-colors.mp4",
+  "source": "public/videos/originals/mood-colors.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 6535502,
+  "bytes": 3833268,
+  "width": 1840,
+  "height": 1200,
+  "sourceWidth": 2914,
+  "sourceHeight": 1902,
+  "ssim": 0.999974,
+  "vmaf": null,
+  "frames": 655,
+  "sourceFrames": 655,
+  "duration": "13.966667",
+  "sourceDuration": "13.966667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999974,
+      "bytes": 3833268
+    }
+  ],
+  "sha256": "a6f9eb6a7f960de92c3a668a2c2e98c0542ad472334fd01a4f128f626998ec7f"
+}

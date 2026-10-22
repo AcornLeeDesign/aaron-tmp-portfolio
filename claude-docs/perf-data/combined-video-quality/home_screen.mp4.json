@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/home_screen.mp4",
+  "source": "public/videos/originals/home_screen.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 270183,
+  "bytes": 270178,
+  "width": 1200,
+  "height": 1054,
+  "sourceWidth": 1200,
+  "sourceHeight": 1054,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 202,
+  "sourceFrames": 202,
+  "duration": "6.733333",
+  "sourceDuration": "6.733008",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.00032500000000013074,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999949,
+      "bytes": 1706000
+    }
+  ],
+  "sha256": "5662c95b0d404f31f0711d0b0e75f842dddb5e9709ea6674e0778ca9e116606e"
+}

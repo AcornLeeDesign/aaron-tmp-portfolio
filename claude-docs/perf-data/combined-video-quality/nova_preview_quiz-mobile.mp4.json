@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/nova_preview_quiz-mobile.mp4",
+  "source": "public/videos/originals/nova_preview_quiz.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 8053131,
+  "bytes": 1232419,
+  "width": 1280,
+  "height": 720,
+  "sourceWidth": 1920,
+  "sourceHeight": 1080,
+  "ssim": 0.999808,
+  "vmaf": null,
+  "frames": 240,
+  "sourceFrames": 240,
+  "duration": "10.000000",
+  "sourceDuration": "10.000000",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.999808,
+      "bytes": 1232419
+    }
+  ],
+  "sha256": "d0530f2adede01d68eff7080b8e468a001cd651d498c7353eb5544b309f2a15e"
+}

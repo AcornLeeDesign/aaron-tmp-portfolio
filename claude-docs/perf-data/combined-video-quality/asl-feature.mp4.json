@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/asl-feature.mp4",
+  "source": "public/videos/originals/asl-feature.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 1464490,
+  "bytes": 2429586,
+  "width": 1840,
+  "height": 1200,
+  "sourceWidth": 2914,
+  "sourceHeight": 1902,
+  "ssim": 0.999567,
+  "vmaf": null,
+  "frames": 480,
+  "sourceFrames": 480,
+  "duration": "9.316667",
+  "sourceDuration": "9.316667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999567,
+      "bytes": 2429586
+    }
+  ],
+  "sha256": "be6e5e127f5fb4693784e9a2b92322ad52fed220ab15e1092c186700223e47d7"
+}

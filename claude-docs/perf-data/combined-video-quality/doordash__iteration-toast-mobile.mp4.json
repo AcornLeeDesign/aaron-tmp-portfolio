@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/iteration-toast-mobile.mp4",
+  "source": "public/videos/originals/doordash/iteration-toast.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 1201260,
+  "bytes": 375735,
+  "width": 1280,
+  "height": 718,
+  "sourceWidth": 2998,
+  "sourceHeight": 1682,
+  "ssim": 0.999915,
+  "vmaf": null,
+  "frames": 185,
+  "sourceFrames": 185,
+  "duration": "6.658333",
+  "sourceDuration": "6.658333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.999915,
+      "bytes": 375735
+    }
+  ],
+  "sha256": "cd87278c044a6fbb2c8873a3cec79d96d83382a976af4325741a12fc18473541"
+}

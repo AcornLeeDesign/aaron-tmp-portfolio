@@ -1,0 +1,16 @@
+{
+  "checks": [
+    "Video responses carry immutable one-year cache headers",
+    "Initial homepage defers offscreen posters",
+    "Mobile selects only the 1280px ASL MP4 and plays",
+    "Offscreen source children detach and playback pauses within 3.2 seconds",
+    "Video reattaches and resumes after scrolling back",
+    "SPA navigation pauses detached video and clears every source URL",
+    "DoorDash case-study video starts after buffering",
+    "Lazy SVG screenshots select the verified lossless assets",
+    "Failed/unsupported WebP falls back to the original PNG",
+    "All three case studies open in fresh production sessions",
+    "640px / 1023px stay linear; 1024px retains desktop sticky carousel"
+  ],
+  "errors": []
+}

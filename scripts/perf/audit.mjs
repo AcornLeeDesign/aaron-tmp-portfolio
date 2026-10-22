@@ -14,9 +14,6 @@ for (const route of ['doordash', 'homepage']) {
     const context = await browser.newContext({ viewport, deviceScaleFactor: dpr,
       isMobile: device === 'mobile', hasTouch: device === 'mobile' })
     const page = await context.newPage()
-    if (route === 'doordash') {
-      await page.addInitScript(() => sessionStorage.setItem('case-study-unlocked', '1'))
-    }
     const cdp = await context.newCDPSession(page)
     await cdp.send('Network.enable')
     const requests = new Map()
@@ -64,16 +61,10 @@ for (const route of ['doordash', 'homepage']) {
       }, 100)
     })
     await page.goto(`${base}/${route === 'homepage' ? '' : route}`, { waitUntil: 'networkidle' })
-    const gatePresent = await page.locator('#case-study-password').count() > 0
-    if (gatePresent) {
-      await page.locator('#case-study-password').fill('case')
-      await page.getByRole('button', { name: 'Unlock', exact: true }).click()
-      await page.waitForFunction(() => sessionStorage.getItem('case-study-unlocked') === '1')
-    }
     await page.waitForTimeout(5000)
     const totals = () => {
       const media = [...requests.values()].filter(isMedia)
-      return { mediaBytes: media.reduce((n, r) => n + r.bytes, 0),
+      return { totalBytes: [...requests.values()].reduce((n, r) => n + r.bytes, 0), mediaBytes: media.reduce((n, r) => n + r.bytes, 0),
         videoBytes: media.filter(isVideo).reduce((n, r) => n + r.bytes, 0),
         imageBytes: media.filter(r => !isVideo(r)).reduce((n, r) => n + r.bytes, 0),
         requests: media.length }
@@ -124,7 +115,7 @@ for (const route of ['doordash', 'homepage']) {
     // Release check is separate from transfer measurements.
     await page.waitForTimeout(31000)
     const samples = await page.evaluate(() => window.__mediaSamples)
-    const result = { route, device, viewport, dpr, gatePresent, browser: browser.version(), initial, fullScroll,
+    const result = { route, device, viewport, dpr, browser: browser.version(), initial, fullScroll,
       peakDownloads, peakVideoDownloads, peakPlaying: Math.max(...samples.map(s => s.playing)),
       peakAttached: Math.max(...samples.map(s => s.attached)), finalSample: samples.at(-1), errors,
       media: [...mediaStates.values()], requests: [...requests.values()].filter(isMedia), samples }

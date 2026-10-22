@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/status-logic.mp4",
+  "source": "public/videos/originals/doordash/status-logic.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 2613684,
+  "bytes": 3486140,
+  "width": 1920,
+  "height": 1062,
+  "sourceWidth": 2240,
+  "sourceHeight": 1238,
+  "ssim": 0.999987,
+  "vmaf": null,
+  "frames": 728,
+  "sourceFrames": 728,
+  "duration": "36.825000",
+  "sourceDuration": "36.825000",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999987,
+      "bytes": 3486140
+    }
+  ],
+  "sha256": "d1fa13583054f9eaf9c3e1e249e5ed30fcd15a4f61910ee6296170bdaef047a2"
+}
