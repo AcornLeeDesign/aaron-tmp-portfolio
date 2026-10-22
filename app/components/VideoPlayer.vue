@@ -253,14 +253,14 @@ function unregisterVideo(registration: VideoRegistration) {
 </script>
 
 <script setup lang="ts">
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   src: string
   poster?: string
   caseStudy?: boolean
   playbackGroup?: string
   /** Set false only when a media asset has no mobile rendition. */
   mobileVariant?: boolean
-}>()
+}>(), { mobileVariant: true })
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const sourcesAttached = ref(false)

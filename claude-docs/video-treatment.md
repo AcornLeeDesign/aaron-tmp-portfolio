@@ -1,154 +1,37 @@
-# Video Treatment Process
+# Video delivery
 
-Standard process for optimizing video files added to the portfolio site.
+All playback uses `app/components/VideoPlayer.vue`. The player selects one MP4 rendition in JavaScript: `-mobile.mp4` at widths up to 639px, desktop otherwise. Every delivery video has both paths, including sources narrower than 1280px (those are never upscaled). WebM is unnecessary for the current H.264 browser targets and is not shipped.
 
-## 1. Place originals in `public/videos/`
+The shared coordinator permits one playing video on every screen. Comparison groups do not bypass the limit. Posters stay lazy on both the homepage and case studies. Only the selected clip and, after it finishes buffering, the nearest upcoming case-study clip may load. Deselected unfinished downloads are cancelled immediately; completed buffers release after 2.5 seconds. Release callbacks check coordinator ownership. SPA unmount clears source URLs and calls `load()` to cancel detached requests. `/videos/**` gets immutable one-year cache headers in both Nuxt and Vercel configuration.
 
-All video files go in `public/videos/` (Nuxt convention for static assets served at root URL).
+## Reproduce the encodes
 
-## 2. Get video dimensions
-
-Use Python to parse MP4 dimensions from the `stsd` box:
+Use FFmpeg with libx264, ffprobe, and Python 3. Node workflows use npm.
 
 ```bash
-python3 -c "
-import os, struct
-
-def parse_mp4_dims(path):
-    with open(path, 'rb') as f:
-        data = f.read(min(os.path.getsize(path), 20*1024*1024))
-    idx = 0
-    while True:
-        idx = data.find(b'stsd', idx)
-        if idx == -1:
-            break
-        entry_start = idx + 4 + 4 + 4
-        w_offset = entry_start + 4 + 4 + 6 + 2 + 16
-        if w_offset + 4 <= len(data):
-            w = struct.unpack('>H', data[w_offset:w_offset+2])[0]
-            h = struct.unpack('>H', data[w_offset+2:w_offset+4])[0]
-            if w > 0 and h > 0 and w < 8000 and h < 8000:
-                return w, h
-        idx += 4
-    return None, None
-
-base = 'public/videos'
-for v in os.listdir(base):
-    if v.endswith('.mp4'):
-        w, h = parse_mp4_dims(os.path.join(base, v))
-        if w and h:
-            print(f'{v}: {w}x{h} (aspect {w}/{h} = {w/h:.4f})')
-"
+python3 scripts/perf/encode-videos.py
+# Retry a subset; records with matching output hashes are skipped.
+python3 scripts/perf/encode-videos.py --only doordash/before --jobs 1
 ```
 
-Use the width and height values as the `aspect` property in the waterfall grid data (e.g. `aspect: '1588 / 1288'`).
+`scripts/perf/video-sources.json` records the Git revision and path of the best available local source for every clip. The batch driver restores missing sources with `git show` into `public/videos/originals/`. These backups are ignored by Git and excluded from production static assets. They are preserved exports, not necessarily uncompressed masters. Earlier 60fps exports are used for Gameboy, Manta, Pen, and Wiggle instead of the later 30fps derivatives.
 
-## 3. Compress MP4 (H.264)
+The user-requested combined-media recipe supersedes the older CRF/2560px/WebM treatment:
 
-Waterfall videos use aggressive compression for their small display size:
+- H.264 MP4, libx264, 8-bit yuv420p, High profile, Level 4.2, slow preset, two passes, faststart, no audio.
+- x264 options: `qcomp=0.5:aq-mode=2:aq-strength=0.8:bframes=2:b-adapt=2:b-pyramid=none`.
+- Desktop: up to 1920px wide, 2000k target, 3000k maxrate, 6000k buffer.
+- Mobile: up to 1280px wide, 1000k target, 2000k maxrate, 4000k buffer.
+- Even dimensions, square pixels, preserved aspect ratio, Lanczos scaling, no upscaling. Tall clips use a slightly smaller width to fit Level 4.2's 8704 macroblocks/frame limit.
+- Preserve source frames and timestamps with `-fps_mode passthrough` and the source timebase. Never use a blind `fps=60` conversion: VFR recordings can declare 120fps while averaging below 60fps. All selected sources average at most 60fps; the batch driver refuses higher-rate inputs pending an explicit preservation decision.
+- `preserve-video-duration.py` stream-copies after encoding to restore the final held-frame duration that FFmpeg otherwise infers from nominal fps. It explicitly preserves PTS and DTS and uses the video timescale for MP4 movie/edit lists. The zero-hold final frame in missed-call is preserved with a sample-table adjustment, including chunk-offset correction when the table grows.
 
-```bash
-ffmpeg -y -i input.mp4 \
-  -vf "scale='min(1080,iw)':-2" \
-  -c:v libx264 -crf 30 -preset slow \
-  -an -movflags +faststart \
-  output.mp4
-```
+The standalone shell encoder accepts `WIDTH`, `HEIGHT`, `BITRATE`, `MAXRATE`, and `BUFSIZE` overrides. Use the batch driver for conformance and quality validation.
 
-## 4. Generate WebM (VP9)
+## Acceptance checks
 
-Generate a fallback that matches the waterfall scale:
+Every output is compared against the source scaled to its delivered dimensions. SSIM pairs decoded frames by index, while a separate ffprobe comparison checks every presentation timestamp, decoded frame count, and duration. SSIM below 0.98 triggers a fresh two-pass encode from the preserved source at a higher bitrate. The pipeline computes VMAF as well when FFmpeg has `libvmaf`. It never re-encodes a failed output as the next attempt's source.
 
-```bash
-ffmpeg -y -i input.mp4 \
-  -vf "scale='min(1080,iw)':-2" \
-  -c:v libvpx-vp9 -crf 35 -b:v 0 \
-  -an \
-  output.webm
-```
+Quality records in `claude-docs/perf-data/combined-video-quality/` include source provenance, dimensions, bitrate attempts, bytes, SSIM, optional VMAF, frame counts, timing deltas, codec metadata, and output SHA-256. The combined audit documents visual review and any exceptions. Existing desktop posters are retained to preserve the earlier image work; new mobile posters are generated directly from the source.
 
-## 5. Generate poster image
-
-JPEG first-frame for each video, shown before the video loads:
-
-```bash
-ffmpeg -y -i input.mp4 -vframes 1 -q:v 5 poster.jpg
-```
-
-Posters go in `public/videos/posters/` with the same base filename (e.g. `manta.jpg`).
-
-## 6. Batch process all videos
-
-Run from `public/videos/`:
-
-```bash
-cd public/videos
-mkdir -p originals posters
-
-for f in *.mp4; do
-  name="${f%.mp4}"
-
-  # Backup original
-  cp "$f" "originals/$f"
-
-  # Compress MP4
-  ffmpeg -y -i "$f" -vf "scale='min(1080,iw)':-2" -c:v libx264 -crf 30 -preset slow -an -movflags +faststart "compressed_${f}" 2>/dev/null
-  mv "compressed_${f}" "$f"
-
-  # Generate WebM
-  ffmpeg -y -i "$f" -vf "scale='min(1080,iw)':-2" -c:v libvpx-vp9 -crf 35 -b:v 0 -an "${name}.webm" 2>/dev/null
-
-  # Generate poster
-  ffmpeg -y -i "$f" -vframes 1 -q:v 5 "posters/${name}.jpg" 2>/dev/null
-
-  echo "Done: $name"
-done
-```
-
-## 7. Loading optimization (handled by `VideoPlayer` component)
-
-The `app/components/VideoPlayer.vue` component handles:
-
-- **Lazy loading** via IntersectionObserver (75px root margin) — video sources are attached once shortly before entering the viewport
-- **`preload="none"`** — browser won't buffer until needed
-- **Poster image** — auto-derived from video path (`/videos/foo.mp4` -> `/videos/posters/foo.jpg`)
-- **Dual format** — browser-compatible H.264 MP4 first, WebM as fallback
-- **Viewport playback** — a persistent observer pauses offscreen videos and a global coordinator plays at most three visible videos
-- **Autoplay/loop/muted** — background video behavior with page-visibility pausing
-
-## File structure after treatment
-
-```
-public/
-  videos/
-    manta.mp4          # Compressed H.264
-    manta.webm         # VP9 alternative
-    gameboy.mp4
-    gameboy.webm
-    ...
-    posters/
-      manta.jpg         # First-frame poster
-      gameboy.jpg
-      ...
-    originals/          # Uncompressed backups
-      manta.mp4
-      gameboy.mp4
-      ...
-```
-
-## Typical compression results
-
-| Video | Before | After (MP4) | Savings |
-|-------|--------|-------------|---------|
-| manta | 16MB | 1.1MB | 93% |
-| nuance_pure | 2.9MB | 43KB | 98% |
-| gameboy | 1.9MB | 703KB | 64% |
-| nova_practice | 1.1MB | 407KB | 63% |
-
-## Checklist for adding a new video
-
-1. Drop the `.mp4` file into `public/videos/`
-2. Run the dimension parser to get width x height
-3. Run the compression commands (MP4 + WebM + poster)
-4. Add to the waterfall grid in `app/pages/index.vue` with `aspect: 'W / H'`
-5. Verify playback in the browser
+Compact source copies retain decoded pixels losslessly. Their H.264 level and SAR metadata are normalized; `normalize-mp4-sar.py` sets the MP4 pixel-aspect atom exactly to 1:1 because FFmpeg rounds some display-aspect ratios. Final asset verification checks both container and stream metadata.
