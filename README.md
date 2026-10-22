@@ -18,14 +18,9 @@ Start the development server on `http://localhost:3000`:
 npm run dev
 ```
 
-### Local case studies
+### Case studies
 
-The in-progress Nova and Nuance case studies are intentionally available only from the development server. After starting it, open:
-
-- `http://localhost:3000/nova`
-- `http://localhost:3000/nuance`
-
-The default case-study password is `case`. These routes return 404 in production builds and are not linked from the deployed portfolio.
+DoorDash, Nova, and Nuance are public at `/doordash`, `/nova`, and `/nuance` in development and production.
 
 ## Production
 

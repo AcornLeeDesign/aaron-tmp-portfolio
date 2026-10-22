@@ -1,30 +1,14 @@
 <script setup lang="ts">
 import type { CaseStudy } from '~/data/caseStudies'
-import { CASE_STUDY_STORAGE_KEY } from '~/data/caseStudies'
 
 const props = defineProps<{
   study: CaseStudy
 }>()
 
-const unlocked = ref(false)
-const ready = ref(false)
-
 useHead({
   title: `${props.study.title} — Aaron Lee`,
 })
 
-onMounted(() => {
-  try {
-    unlocked.value = sessionStorage.getItem(CASE_STUDY_STORAGE_KEY) === '1'
-  } catch {
-    unlocked.value = false
-  }
-  ready.value = true
-})
-
-function onUnlocked() {
-  unlocked.value = true
-}
 </script>
 
 <template>
@@ -72,11 +56,7 @@ function onUnlocked() {
       </header>
     </div>
 
-    <div v-if="!ready" class="case__loading" aria-hidden="true" />
-
-    <CaseStudyGate v-else-if="!unlocked" @unlocked="onUnlocked" />
-
-    <div v-else class="case__body">
+    <div class="case__body">
       <figure v-if="study.heroVideo" class="case__hero">
         <VideoPlayer case-study :src="study.heroVideo" />
       </figure>
@@ -220,10 +200,6 @@ function onUnlocked() {
   border-radius: var(--radius-pill);
   background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
   color: var(--color-text);
-}
-
-.case__loading {
-  min-height: 120px;
 }
 
 .case__body {

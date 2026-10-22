@@ -24,7 +24,7 @@ Page: `app/pages/doordash.vue`.
 
 Findings:
 
-- **Gate mismatch:** this branch’s custom `doordash.vue` renders its content directly and does not mount `CaseStudyGate`. The shared component accepts `case` and stores `case-study-unlocked=1`, but is not used here. The harness seeds that key and can submit the password if a gate is present. The audit did not add or remove a gate.
+- **Historical access behavior:** DoorDash rendered directly during this earlier audit; shared case-study access restrictions were removed in the subsequent combined audit.
 - Thirteen video elements mount immediately (twelve unique clips; `before.mp4` appears twice). Sources attach on coordinator demand; the video elements themselves stay mounted for layout. Playback is capped at one case-study clip, except the explicit two-clip comparison. Changing offscreen `preload` to `none` did not cancel already-started requests. Case-study sources remained attached for 30 seconds after leaving the extended observer range: up to 12 desktop / 13 mobile source sets were attached.
 - All twelve unique JPEG posters were requested on initial load, along with both eager SVG-embedded alert screenshots. `preload="none"` does not defer a video poster. Initial media transfer was 3.50 MB even though no video was visible or downloaded.
 - **Mobile selection:** Chromium selects the same H.264 MP4 URLs on desktop and mobile. There are no mobile source files or `<source media>` queries in this branch; this is not an ordering bug. MP4 precedes the VP9 WebM fallback. Full native resolution and VFR cadence are retained. Existing WebMs match MP4 dimensions, but many contain duplicated frames at 120 fps; they were not fetched by this Chromium run.

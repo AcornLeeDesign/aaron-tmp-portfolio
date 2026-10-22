@@ -8,7 +8,15 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: 'https://aaronlee.design',
-      caseStudyPassword: 'case',
+    },
+  },
+
+  // Local source backups are never published as static assets.
+  nitro: { ignore: ['**/videos/originals/**'] },
+
+  routeRules: {
+    '/videos/**': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' },
     },
   },
 
