@@ -2,6 +2,7 @@
 import captionMateCallHistoryUrl from '~/assets/images/case-studies/nuance/captionmate-call-history.png'
 import innoCaptionCallUrl from '~/assets/images/case-studies/nuance/innocaption-call-upscaled.png'
 import liveCaptionCallUrl from '~/assets/images/case-studies/nuance/live-caption-call-upscaled.png'
+import homepageClouds from '~/data/homepageClouds.json'
 
 type SectionId =
   | 'overview'
@@ -144,6 +145,17 @@ onBeforeUnmount(() => {
 
         <figure class="case-media-figure case-media-figure--overview">
           <div class="case-media-placeholder case-media-placeholder--video case-media-placeholder--fig-one">
+            <img
+              class="case-clouds"
+              src="/images/case-studies/nuance/fig-1-clouds.jpg"
+              :srcset="`${homepageClouds.jpeg}, /images/case-studies/nuance/fig-1-clouds.jpg 5723w`"
+              sizes="(min-width: 1832px) 1800px, (min-width: 640px) calc(100vw - 32px), calc(200vw - 64px)"
+              width="5723"
+              height="3815"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
             <div class="case-phone-device">
               <div class="case-phone-screen">
                 <div class="case-phone-video-crop">
@@ -617,7 +629,16 @@ onBeforeUnmount(() => {
 }
 
 .case-media-placeholder--fig-one {
-  background-image: url('/images/case-studies/nuance/fig-1-clouds.jpg');
+  position: relative;
+}
+
+.case-clouds {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .case-media-placeholder--mood-colors {

@@ -1,0 +1,6 @@
+{
+  "src": "/images/case-studies/nuance/fig-1-clouds-1200.jpg",
+  "webp": "/images/case-studies/nuance/fig-1-clouds-800.webp 800w, /images/case-studies/nuance/fig-1-clouds-1200.webp 1200w, /images/case-studies/nuance/fig-1-clouds-1760.webp 1760w",
+  "jpeg": "/images/case-studies/nuance/fig-1-clouds-800.jpg 800w, /images/case-studies/nuance/fig-1-clouds-1200.jpg 1200w, /images/case-studies/nuance/fig-1-clouds-1760.jpg 1760w",
+  "sizes": "(min-width: 1516px) 1000px, (min-width: 1024px) 66vw, calc(200vw - 64px)"
+}

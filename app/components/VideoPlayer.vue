@@ -318,9 +318,12 @@ watch(activeSrc, () => {
 function syncViewportQuery() {
   isMobileViewport.value = mobileQuery?.matches ?? false
 }
-const posterSrc = computed(() =>
-  props.poster ?? activeSrc.value.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
-)
+const posterSrc = computed(() => {
+  if (props.poster) return props.poster
+  // Preserve the separate mobile crop and custom posters.
+  if (activeSrc.value === '/videos/asl-feature.mp4') return '/videos/posters/asl-feature.webp'
+  return activeSrc.value.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
+})
 
 let sourceObserver: IntersectionObserver | undefined
 let viewportObserver: IntersectionObserver | undefined
