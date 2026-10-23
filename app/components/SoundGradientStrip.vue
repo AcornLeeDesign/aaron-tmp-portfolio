@@ -51,6 +51,7 @@ let motionPreference: MediaQueryList | undefined
 let mobileQuery: MediaQueryList | undefined
 let playbackRequest = 0
 let isPlaybackPending = false
+let hasAudioGesture = false
 let decodedProfile = new Uint8Array()
 let smoothedAmplitudeProfile = new Float32Array()
 let smoothedFrequencyProfile = new Float32Array()
@@ -68,12 +69,12 @@ function currentProfileTime() {
 }
 
 function removePlaybackFallback() {
-  window.removeEventListener('pointerup', startAudioOnInteraction)
+  window.removeEventListener('click', startAudioOnInteraction)
   window.removeEventListener('keydown', startAudioOnInteraction)
 }
 
 function addPlaybackFallback() {
-  window.addEventListener('pointerup', startAudioOnInteraction)
+  window.addEventListener('click', startAudioOnInteraction)
   window.addEventListener('keydown', startAudioOnInteraction)
 }
 
@@ -92,12 +93,15 @@ function syncAudioAvailability() {
     return
   }
   addPlaybackFallback()
-  void playAudio()
+  if (hasAudioGesture) void playAudio()
 }
 
 async function playAudio() {
   const audio = audioRef.value
-  if (!audio || mobileQuery?.matches) return
+  if (!audio || mobileQuery?.matches || !hasAudioGesture) return
+
+  // Assigning the source is deferred too: no media request before a real gesture.
+  if (!audio.getAttribute('src')) audio.src = '/audio/ylang-ylang-quiet.m4a'
 
   const request = ++playbackRequest
   isPlaybackPending = true
@@ -119,20 +123,31 @@ async function playAudio() {
 }
 
 function startAudioOnInteraction(event: Event) {
+  if (!event.isTrusted || mobileQuery?.matches) return
   // Let the sound button's click handler handle its own gesture.
   if (event.target instanceof Element && event.target.closest('.sound-gradient__credit')) return
   if (event instanceof KeyboardEvent && (event.repeat || event.metaKey || event.ctrlKey || event.altKey)) return
+  hasAudioGesture = true
   removePlaybackFallback()
   void playAudio()
 }
 
-function toggleAudio() {
+function toggleAudio(event: MouseEvent) {
+  if (!event.isTrusted || mobileQuery?.matches) return
+  hasAudioGesture = true
   removePlaybackFallback()
   if (isAudioEnabled.value || isPlaybackPending) {
     stopAudio()
     return
   }
   void playAudio()
+}
+
+function syncAudioTime() {
+  const audio = audioRef.value
+  if (audio && Number.isFinite(audio.duration) && audio.duration > 0) {
+    audio.currentTime = currentProfileTime() % audio.duration
+  }
 }
 
 function decodeProfile() {
@@ -430,9 +445,9 @@ onBeforeUnmount(() => {
   </button>
   <audio
     ref="audioRef"
-    src="/audio/ylang-ylang-quiet.m4a"
     preload="none"
     loop
+    @loadedmetadata="syncAudioTime"
     @playing="isAudioEnabled = true"
     @pause="isAudioEnabled = false"
     @error="isAudioEnabled = false"
