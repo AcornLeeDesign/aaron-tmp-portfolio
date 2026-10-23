@@ -44,6 +44,7 @@ const FREQUENCY_COLOR_STOPS: FrequencyColorStop[] = [
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const audioRef = ref<HTMLAudioElement | null>(null)
 const isAudioEnabled = ref(false)
+const isDesktopAudio = ref(false)
 
 let context: CanvasRenderingContext2D | null = null
 let animationFrame = 0
@@ -51,7 +52,8 @@ let motionPreference: MediaQueryList | undefined
 let mobileQuery: MediaQueryList | undefined
 let playbackRequest = 0
 let isPlaybackPending = false
-let hasAudioGesture = false
+let audioIdleCallback: number | undefined
+let audioTimeout: number | undefined
 let decodedProfile = new Uint8Array()
 let smoothedAmplitudeProfile = new Float32Array()
 let smoothedFrequencyProfile = new Float32Array()
@@ -69,12 +71,12 @@ function currentProfileTime() {
 }
 
 function removePlaybackFallback() {
-  window.removeEventListener('click', startAudioOnInteraction)
+  window.removeEventListener('pointerup', startAudioOnInteraction)
   window.removeEventListener('keydown', startAudioOnInteraction)
 }
 
 function addPlaybackFallback() {
-  window.addEventListener('click', startAudioOnInteraction)
+  window.addEventListener('pointerup', startAudioOnInteraction)
   window.addEventListener('keydown', startAudioOnInteraction)
 }
 
@@ -85,22 +87,46 @@ function stopAudio() {
   isAudioEnabled.value = false
 }
 
-// Mobile has no sound control, so it never plays audio.
+function cancelDeferredAutoplay() {
+  window.removeEventListener('load', scheduleAutoplay)
+  if (audioIdleCallback !== undefined) window.cancelIdleCallback(audioIdleCallback)
+  if (audioTimeout !== undefined) window.clearTimeout(audioTimeout)
+  audioIdleCallback = undefined
+  audioTimeout = undefined
+}
+
+function scheduleAutoplay() {
+  // Keep the automatic audio fetch out of the initial page/media load.
+  if (typeof window.requestIdleCallback === 'function') {
+    audioIdleCallback = window.requestIdleCallback(() => void playAudio(), { timeout: 2000 })
+  } else {
+    audioTimeout = window.setTimeout(() => void playAudio(), 0)
+  }
+}
+
+// Match the sound control's breakpoint; mobile never mounts or loads audio.
 function syncAudioAvailability() {
+  cancelDeferredAutoplay()
   removePlaybackFallback()
+  isDesktopAudio.value = !mobileQuery?.matches
   if (mobileQuery?.matches) {
     stopAudio()
+    // Abort any in-flight download before Vue removes the desktop element.
+    audioRef.value?.removeAttribute('src')
+    audioRef.value?.load()
     return
   }
   addPlaybackFallback()
-  if (hasAudioGesture) void playAudio()
+  if (document.readyState === 'complete') scheduleAutoplay()
+  else window.addEventListener('load', scheduleAutoplay, { once: true })
 }
 
 async function playAudio() {
+  cancelDeferredAutoplay()
   const audio = audioRef.value
-  if (!audio || mobileQuery?.matches || !hasAudioGesture) return
+  if (!audio || mobileQuery?.matches) return
 
-  // Assigning the source is deferred too: no media request before a real gesture.
+  // An early interaction still starts playback immediately, as on main.
   if (!audio.getAttribute('src')) audio.src = '/audio/ylang-ylang-quiet.m4a'
 
   const request = ++playbackRequest
@@ -123,18 +149,15 @@ async function playAudio() {
 }
 
 function startAudioOnInteraction(event: Event) {
-  if (!event.isTrusted || mobileQuery?.matches) return
   // Let the sound button's click handler handle its own gesture.
   if (event.target instanceof Element && event.target.closest('.sound-gradient__credit')) return
   if (event instanceof KeyboardEvent && (event.repeat || event.metaKey || event.ctrlKey || event.altKey)) return
-  hasAudioGesture = true
   removePlaybackFallback()
   void playAudio()
 }
 
-function toggleAudio(event: MouseEvent) {
-  if (!event.isTrusted || mobileQuery?.matches) return
-  hasAudioGesture = true
+function toggleAudio() {
+  cancelDeferredAutoplay()
   removePlaybackFallback()
   if (isAudioEnabled.value || isPlaybackPending) {
     stopAudio()
@@ -418,6 +441,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  cancelDeferredAutoplay()
   removePlaybackFallback()
   mobileQuery?.removeEventListener('change', syncAudioAvailability)
   playbackRequest += 1
@@ -444,6 +468,7 @@ onBeforeUnmount(() => {
     <span>FKJ</span>
   </button>
   <audio
+    v-if="isDesktopAudio"
     ref="audioRef"
     preload="none"
     loop
