@@ -71,3 +71,23 @@ Its byte count still matches the 4.0 MB the unlocked throttled run loads.
 - Homepage desktop LCP is about 35–42 s on every variant, with about 2–3 s TBT. The LCP element arrives late on this connection, and astra and combined are about 5 s faster.
 - On cursor's homepage mobile run, 5.8 MB transfers at load compared with 3.5 MB on main, even though there's less video. That's likely images or posters, since cursor doesn't have Codex's image work.
 - Some runs hit the 120 s scroll cap (noted in the tables).
+
+## Homepage fixes (commits b7508eb..20d1f4b) — Slow 4G + 4x CPU, median of 3
+
+Run with `/tmp/throttle/run.mjs` (autoplay allowed, cache disabled) against a local production build. Lighthouse is mobile, simulated throttling.
+
+| Homepage metric | Before (2f7fa18) | After (20d1f4b) |
+|---|---:|---:|
+| Desktop LCP | 37.1 s | **8.7 s** |
+| Desktop TBT | 2106 ms | **136 ms** |
+| Desktop bytes at load | 8.80 MB | **3.71 MB** |
+| Desktop bytes after full scroll | 12.59 MB | **7.48 MB** |
+| Desktop first video playing | 7.6 s | 8.7 s |
+| Desktop dropped frames (scroll) | 116 | 72 / 522 |
+| Mobile LCP | 3.4 s | 3.5 s |
+| Mobile TBT | 137 ms | 121 ms |
+| Mobile bytes at load | 2.15 MB | 2.08 MB |
+| Mobile first video playing | 7.1 s | 6.7 s |
+| Lighthouse mobile (home) | 77 | 77 (LCP 4.4 s, FCP 3.3 s, TBT 20 ms) |
+
+Desktop LCP element is now the Nuance card `<img>` (`fig-1-clouds-1200.webp`, ~619 KB). The largest remaining desktop transfer is `asl-feature.mp4` (~2.4 MB). DoorDash is unchanged (LCP ~1.7 s, 0.59 MB at load). Lighthouse still flags `entry.css` and `HeaderNavButton.css` as render-blocking; its LCP element on mobile is the DoorDash card image.
