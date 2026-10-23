@@ -63,30 +63,11 @@ function pauseVideo(registration: VideoRegistration) {
   }
 }
 
-function bufferedAhead(video: HTMLVideoElement) {
-  for (let i = 0; i < video.buffered.length; i++) {
-    if (video.buffered.start(i) <= video.currentTime && video.buffered.end(i) > video.currentTime) {
-      return video.buffered.end(i) - video.currentTime
-    }
-  }
-  return 0
-}
-
-function hasStartupBuffer(video: HTMLVideoElement) {
-  return Number.isFinite(video.duration)
-    && bufferedAhead(video) >= Math.min(3, Math.max(0, video.duration - video.currentTime - 0.1))
-}
-
-function fullyBuffered(video: HTMLVideoElement) {
-  return Number.isFinite(video.duration) && video.buffered.length > 0
-    && video.buffered.start(0) === 0 && video.buffered.end(0) >= video.duration - 0.1
-}
-
 function playVideo(registration: VideoRegistration) {
   if (
     registration.playPending
     || registration.userPaused
-    || (registration.caseStudy && !hasStartupBuffer(registration.video))
+    || (registration.caseStudy && registration.video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA)
     || !registration.wantsPlayback
     || document.visibilityState !== 'visible'
     || !registration.video.isConnected
@@ -141,11 +122,11 @@ function syncPlayback() {
         .slice(0, MAX_PLAYING_VIDEOS)
     : []
 
-  // Prepare only the nearest upcoming case-study video, and only once the
-  // current clip is fully buffered so it does not compete with initial playback.
+  // Preload the next clip as soon as playback starts. Waiting for the entire
+  // current file to buffer stalls prefetch on slow connections.
   const active = candidates[0]
   const upcoming = document.visibilityState === 'visible' && candidates.length <= MAX_PLAYING_VIDEOS
-    && candidates.every(item => fullyBuffered(item.video))
+    && active && !active.video.paused && active.video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA
     ? [...videoRegistrations.values()]
         .filter(item => item.caseStudy && item !== active
           && item.video.getBoundingClientRect().top >= window.innerHeight
@@ -222,6 +203,7 @@ function registerVideo(video: HTMLVideoElement, caseStudy: boolean, prepare: Vid
       if (!registration.wantsPlayback || document.visibilityState !== 'visible') {
         video.pause()
       }
+      schedulePlaybackSync()
     },
   }
 
@@ -264,7 +246,6 @@ const props = withDefaults(defineProps<{
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const sourcesAttached = ref(false)
-const posterReady = ref(false)
 const preload = ref<'none' | 'metadata' | 'auto'>('none')
 const showControls = ref(false)
 let slowLoadTimer: number | undefined
@@ -280,16 +261,20 @@ function clearSlowLoadTimer() {
 
 function prepareMedia(load: boolean, active: boolean) {
   wantsLoad = load
-  preload.value = load ? 'auto' : 'none'
-  if (load) {
+  const video = videoRef.value
+  const rect = video?.getBoundingClientRect()
+  // Retain partial buffers for two viewport heights in either direction.
+  // Recheck geometry here (and in the timer) to avoid stale observer releases.
+  const nearby = rect && rect.bottom >= -window.innerHeight * 2
+    && rect.top <= window.innerHeight * 3
+  preload.value = load ? 'auto' : isWithinSourceRange ? 'metadata' : 'none'
+  if (load || isWithinSourceRange) {
     clearSourceRelease()
     attachSources()
+  } else if (nearby) {
+    clearSourceRelease()
   } else if (sourcesAttached.value) {
-    // Changing preload alone does not cancel an in-flight media request.
-    // Release unfinished, deselected downloads immediately; retain complete
-    // nearby buffers briefly so small scroll reversals do not restart playback.
-    if (videoRef.value && !fullyBuffered(videoRef.value)) releaseSources()
-    else scheduleSourceRelease()
+    scheduleSourceRelease()
   }
   if (props.caseStudy && active && videoRef.value?.paused && !showControls.value) {
     if (slowLoadTimer === undefined) {
@@ -347,7 +332,6 @@ function attachSources() {
   clearSourceRelease()
   const transition = ++sourceTransition
   sourcesAttached.value = true
-  posterReady.value = true
 
   nextTick(() => {
     if (transition !== sourceTransition || !sourcesAttached.value) return
@@ -359,6 +343,8 @@ function attachSources() {
 function releaseSources() {
   const video = videoRef.value
   if (!video || wantsLoad || !sourcesAttached.value) return
+  const rect = video.getBoundingClientRect()
+  if (rect.bottom >= -window.innerHeight * 2 && rect.top <= window.innerHeight * 3) return
 
   if (registration) pauseVideo(registration)
   const transition = ++sourceTransition
@@ -382,6 +368,20 @@ function scheduleSourceRelease() {
   }, SOURCE_RELEASE_DELAY)
 }
 
+function observeSourceRange() {
+  sourceObserver?.disconnect()
+  sourceObserver = new IntersectionObserver(
+    ([entry]) => {
+      isWithinSourceRange = Boolean(entry?.isIntersecting)
+      schedulePlaybackSync()
+    },
+    // IO percentages resolve against width, not height. Pixels give one actual
+    // screen ahead on both tall phones and wide desktop viewports.
+    { rootMargin: `${window.innerHeight}px 0px` }
+  )
+  if (videoRef.value) sourceObserver.observe(videoRef.value)
+}
+
 onMounted(() => {
   const video = videoRef.value
   if (!video) return
@@ -391,19 +391,8 @@ onMounted(() => {
   mobileQuery.addEventListener('change', syncViewportQuery)
   registration = registerVideo(video, Boolean(props.caseStudy), prepareMedia)
 
-  sourceObserver = new IntersectionObserver(
-    ([entry]) => {
-      isWithinSourceRange = Boolean(entry?.isIntersecting)
-
-      if (isWithinSourceRange) {
-        posterReady.value = true
-      } else {
-        scheduleSourceRelease()
-      }
-      schedulePlaybackSync()
-    },
-    { rootMargin: props.caseStudy ? '100% 0px' : '200px' }
-  )
+  observeSourceRange()
+  window.addEventListener('resize', observeSourceRange)
 
   viewportObserver = new IntersectionObserver(
     ([entry]) => {
@@ -416,7 +405,6 @@ onMounted(() => {
     }
   )
 
-  sourceObserver.observe(video)
   viewportObserver.observe(video)
 })
 
@@ -428,6 +416,7 @@ onBeforeUnmount(() => {
   clearSourceRelease()
   clearSlowLoadTimer()
   sourceObserver?.disconnect()
+  window.removeEventListener('resize', observeSourceRange)
   viewportObserver?.disconnect()
 
   if (registration) {
@@ -455,7 +444,8 @@ onBeforeUnmount(() => {
     :controls="showControls"
     :preload="preload"
     @playing="clearSlowLoadTimer"
-    :poster="posterReady ? posterSrc : undefined"
+    loading="lazy"
+    :poster="posterSrc"
   >
     <template v-if="sourcesAttached">
       <source :src="activeSrc" type="video/mp4" />
