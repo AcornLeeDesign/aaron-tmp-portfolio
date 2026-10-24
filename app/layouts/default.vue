@@ -557,6 +557,7 @@ onBeforeUnmount(() => {
         >
           <NuxtLink
             to="/"
+            :prefetch="false"
             class="header__mark-link"
             data-nav-blob
             aria-label="Aaron Lee home"

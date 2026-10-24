@@ -34,13 +34,13 @@ const complete = await video.evaluate(v => Number.isFinite(v.duration) && v.buff
 assert.equal(Boolean(complete), false, 'Request remains unfinished')
 const start = Date.now()
 await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }))
-await video.locator('source').waitFor({ state: 'detached', timeout: 1500 })
+await video.locator('source').waitFor({ state: 'detached', timeout: 4500 })
 const detachMs = Date.now() - start
 await page.waitForTimeout(1000)
 assert.equal(await video.evaluate(v => v.paused), true)
 assert.equal([...tracked.values()].some(r => r.failure === 'net::ERR_ABORTED'), true)
 const result = { downloadBytesPerSecond: 65536, detachMs, requests: [...tracked.values()],
-  checks: ['Unfinished scrolled-past MP4 detaches immediately', 'Browser cancels the active network request', 'Deselected video remains paused'] }
-await writeFile('claude-docs/perf-data/cancellation-combined.json', JSON.stringify(result, null, 2) + '\n')
+  checks: ['Unfinished MP4 more than two screens away detaches after the retention delay', 'Browser cancels the active network request', 'Deselected video remains paused'] }
+await writeFile('claude-docs/perf-data/cancellation-slow4g.json', JSON.stringify(result, null, 2) + '\n')
 await browser.close()
 console.log(result)

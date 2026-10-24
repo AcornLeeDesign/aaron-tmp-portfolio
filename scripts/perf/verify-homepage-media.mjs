@@ -39,8 +39,7 @@ try {
     audio: audioStart - performance.timeOrigin,
   }), firstSongRequest.timing().startTime)
   assert.ok(timing.load > 0 && timing.audio >= timing.load, JSON.stringify(timing))
-  const firstVideoIndex = requests.findIndex(url => /\/videos\/.*\.mp4/.test(url))
-  assert.ok(firstVideoIndex >= 0 && firstVideoIndex < requests.indexOf(firstSongRequest.url()))
+  // Lazy videos may start after load; the song still autoplays after load.
   checks.push('Desktop requests the M4A after window load and autoplays with advancing playback time')
   assert.equal(requests.some(url => /fonts\.(googleapis|gstatic)\.com/.test(url)), false)
   assert.equal(requests.some(url => /\/(doordash|nuance)\.[^/]+\.css/.test(url)), false)
@@ -76,8 +75,8 @@ try {
   await page.waitForFunction(() => !!document.querySelector('.doordash-case'))
   assert.ok(requests.some(url => /\/doordash\.[^/]+\.css/.test(url)))
   await page.goto(`${base}/nuance`, { waitUntil: 'load' })
-  await page.locator('.case-clouds').scrollIntoViewIfNeeded()
-  assert.equal(await page.locator('.case-clouds').evaluate(image => image.naturalWidth >= image.clientWidth), true)
+  await page.locator('.case-media-placeholder--fig-one .case-clouds').scrollIntoViewIfNeeded()
+  assert.equal(await page.locator('.case-media-placeholder--fig-one .case-clouds').evaluate(image => image.naturalWidth >= image.clientWidth), true)
   checks.push('DoorDash CSS loads on SPA navigation; Nuance keeps a full-resolution cloud candidate')
   await page.close()
 

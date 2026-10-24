@@ -15,9 +15,9 @@ const context = await browser.newContext({ viewport: { width: 390, height: 844 }
 const page = await context.newPage()
 const errors = []
 page.on('pageerror', error => errors.push(error.message))
-await page.goto(`${base}/`, { waitUntil: 'networkidle' })
-assert.equal(await page.locator('video[poster]').count() < 10, true)
-checks.push('Initial homepage defers offscreen posters')
+await page.goto(`${base}/`, { waitUntil: 'load' })
+assert.equal(await page.locator('video').evaluateAll(videos => videos.every(v => v.poster && v.getAttribute('loading') === 'lazy')), true)
+checks.push('Initial homepage SSR posters use native lazy loading')
 const first = page.locator('#project-1 video')
 await page.locator('#project-1').scrollIntoViewIfNeeded()
 await page.waitForFunction(() => {
@@ -59,7 +59,7 @@ checks.push('Lazy SVG screenshots select the verified lossless assets')
 
 const fallback = await context.newPage()
 await fallback.route('**/doordash.lossless.webp', route => route.abort())
-await fallback.goto(`${base}/`, { waitUntil: 'networkidle' })
+await fallback.goto(`${base}/`, { waitUntil: 'load' })
 await fallback.waitForFunction(() => {
   const image = document.querySelector('#project-13 img')
   return image?.currentSrc.endsWith('/images/doordash.png') && image.naturalWidth === 1024
@@ -69,7 +69,7 @@ assert.deepEqual(errors, [])
 // Fresh production contexts need no saved session state to access any case study.
 for (const route of ['doordash', 'nova', 'nuance']) {
   const publicPage = await browser.newPage()
-  const response = await publicPage.goto(`${base}/${route}`, { waitUntil: 'networkidle' })
+  const response = await publicPage.goto(`${base}/${route}`, { waitUntil: 'load' })
   assert.equal(response.status(), 200)
   assert.equal(await publicPage.locator('main h1').count() > 0, true)
   assert.equal(await publicPage.locator('video').count() > 0, true)
@@ -79,12 +79,12 @@ checks.push('All three case studies open in fresh production sessions')
 
 for (const width of [640, 1023, 1024]) {
   const tablet = await browser.newPage({ viewport: { width, height: 900 } })
-  await tablet.goto(`${base}/`, { waitUntil: 'networkidle' })
+  await tablet.goto(`${base}/`, { waitUntil: 'load' })
   assert.equal(await tablet.locator('.carousel-track__sticky').evaluate(el => getComputedStyle(el).position),
     width < 1024 ? 'relative' : 'sticky')
   await tablet.close()
 }
 checks.push('640px / 1023px stay linear; 1024px retains desktop sticky carousel')
 await browser.close()
-await writeFile('claude-docs/perf-data/verification-combined.json', `${JSON.stringify({ checks, errors }, null, 2)}\n`)
+await writeFile('claude-docs/perf-data/verification-slow4g.json', `${JSON.stringify({ checks, errors }, null, 2)}\n`)
 console.log(checks.join('\n'))

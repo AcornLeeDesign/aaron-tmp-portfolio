@@ -43,5 +43,5 @@ for (const width of [390, 640, 1023, 1440]) {
 }
 await browser.close()
 await mkdir('claude-docs/perf-data', { recursive: true })
-await writeFile('claude-docs/perf-data/coordinator-combined.json', JSON.stringify(results, null, 2) + '\n')
+await writeFile('claude-docs/perf-data/coordinator-slow4g.json', JSON.stringify(results, null, 2) + '\n')
 console.log(results)
