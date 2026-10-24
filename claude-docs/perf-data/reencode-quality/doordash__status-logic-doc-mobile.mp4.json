@@ -1,0 +1,201 @@
+{
+  "file": "doordash/status-logic-doc-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/doordash/status-logic-doc.mp4",
+  "sourceSha256": "e3c0b22a02b0bd95ca521b06d5eb02048f7f129445e05e690c75236ed4ecfaf9",
+  "sha256": "b2f8c89182c44de9e827f1a7f3428087a5f81b3f06d08e29478eb8827aa15a8d",
+  "before": {
+    "bytes": 3714807,
+    "duration": 29.153021,
+    "avgKbps": 1014.4998694989449,
+    "peakKbps": 1774.176
+  },
+  "after": {
+    "bytes": 16315456,
+    "duration": 29.153021,
+    "avgKbps": 4472.246221069165,
+    "peakKbps": 7398.176
+  },
+  "source": {
+    "bytes": 27852563,
+    "duration": 29.153021,
+    "avgKbps": 7637.049758925499,
+    "peakKbps": 17627.184
+  },
+  "width": 1280,
+  "height": 864,
+  "method": "CRF search",
+  "selected": {
+    "crf": 13,
+    "maxrateKbps": 5320,
+    "bufsizeKbits": 5320,
+    "ssim": 0.999044,
+    "bytes": 16315456
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.9956,
+      "bytes": 4754379
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.995639,
+      "bytes": 4807306
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.995771,
+      "bytes": 4849394
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.99569,
+      "bytes": 4875345
+    },
+    {
+      "crf": 12,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.995708,
+      "bytes": 4889857
+    },
+    {
+      "crf": 10,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.995649,
+      "bytes": 4900707
+    },
+    {
+      "crf": 8,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.995718,
+      "bytes": 4917283
+    },
+    {
+      "crf": 6,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.995702,
+      "bytes": 4914339
+    },
+    {
+      "crf": 4,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.995651,
+      "bytes": 4912635
+    },
+    {
+      "crf": 2,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.995694,
+      "bytes": 4914061
+    },
+    {
+      "crf": 1,
+      "maxrateKbps": 1330,
+      "bufsizeKbits": 1330,
+      "ssim": 0.995675,
+      "bytes": 4918252
+    },
+    {
+      "crf": 20,
+      "maxrateKbps": 2660,
+      "bufsizeKbits": 2660,
+      "ssim": 0.997599,
+      "bytes": 7890157
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 2660,
+      "bufsizeKbits": 2660,
+      "ssim": 0.997938,
+      "bytes": 8940100
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 2660,
+      "bufsizeKbits": 2660,
+      "ssim": 0.997977,
+      "bytes": 9189641
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 2660,
+      "bufsizeKbits": 2660,
+      "ssim": 0.998024,
+      "bytes": 9311168
+    },
+    {
+      "crf": 12,
+      "maxrateKbps": 2660,
+      "bufsizeKbits": 2660,
+      "ssim": 0.998053,
+      "bytes": 9377526
+    },
+    {
+      "crf": 10,
+      "maxrateKbps": 2660,
+      "bufsizeKbits": 2660,
+      "ssim": 0.998072,
+      "bytes": 9451481
+    },
+    {
+      "crf": 20,
+      "maxrateKbps": 5320,
+      "bufsizeKbits": 5320,
+      "ssim": 0.997643,
+      "bytes": 7951489
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 5320,
+      "bufsizeKbits": 5320,
+      "ssim": 0.998195,
+      "bytes": 9962674
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 5320,
+      "bufsizeKbits": 5320,
+      "ssim": 0.99861,
+      "bytes": 12333490
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 5320,
+      "bufsizeKbits": 5320,
+      "ssim": 0.998932,
+      "bytes": 15028213
+    },
+    {
+      "crf": 12,
+      "maxrateKbps": 5320,
+      "bufsizeKbits": 5320,
+      "ssim": 0.999126,
+      "bytes": 17231854
+    },
+    {
+      "crf": 13,
+      "maxrateKbps": 5320,
+      "bufsizeKbits": 5320,
+      "ssim": 0.999044,
+      "bytes": 16315456
+    }
+  ],
+  "frames": 1496,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

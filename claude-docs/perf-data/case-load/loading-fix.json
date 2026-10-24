@@ -1,0 +1,1801 @@
+[
+  {
+    "route": "nova",
+    "width": 1440,
+    "load": 36481.5,
+    "idleCapped": false,
+    "fcp": 1920,
+    "lcp": 7152,
+    "firstPlaying": 7469.800000000745,
+    "longtasks": [
+      317,
+      57,
+      60,
+      125,
+      175
+    ],
+    "measuredAt": 76525.10000000149,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4202/images/about/aaron-portrait.png",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 177,
+        "width": 177
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-instagram.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/icons/header-mark.svg",
+        "top": 29.921875,
+        "loading": "auto",
+        "naturalWidth": 35,
+        "width": 35
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/case-studies/nova/field-research-blurred.png",
+        "top": 1774.703125,
+        "loading": "lazy",
+        "naturalWidth": 2150,
+        "width": 600
+      },
+      {
+        "src": "",
+        "top": 2257.84375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 600
+      },
+      {
+        "src": "",
+        "top": 3970.546875,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 230
+      },
+      {
+        "src": "",
+        "top": 5394.921875,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 552
+      },
+      {
+        "src": "",
+        "top": 8029.453125,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 612
+      },
+      {
+        "src": "",
+        "top": 9050.015625,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 1376
+      },
+      {
+        "src": "",
+        "top": 10210.3984375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 1376
+      },
+      {
+        "src": "",
+        "top": 11180.21875,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 600
+      }
+    ],
+    "videos": [
+      {
+        "src": "http://127.0.0.1:4202/videos/nova_walkthrough.mp4",
+        "top": 698.5625,
+        "ready": 4,
+        "time": 4.2911
+      },
+      {
+        "src": "",
+        "top": 4752.734375,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 6359.5,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 7383.703125,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 8032.96875,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 12440.171875,
+        "ready": 0,
+        "time": 0
+      }
+    ],
+    "errors": [],
+    "requests": [
+      {
+        "url": "/videos/nova_walkthrough.mp4",
+        "type": "Media",
+        "bytes": 8862538,
+        "finished": true
+      },
+      {
+        "url": "/images/case-studies/nova/field-research-blurred.png",
+        "type": "Image",
+        "bytes": 2685642,
+        "finished": true
+      },
+      {
+        "url": "/images/home/media-backgrounds/nova.jpg",
+        "type": "Image",
+        "bytes": 353182,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/3b7TwFGh.js",
+        "type": "Script",
+        "bytes": 183096,
+        "finished": true
+      },
+      {
+        "url": "/videos/posters/nova_walkthrough.jpg",
+        "type": "Image",
+        "bytes": 121209,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DzZz6rxt.js",
+        "type": "Script",
+        "bytes": 92775,
+        "finished": true
+      },
+      {
+        "url": "/nova",
+        "type": "Document",
+        "bytes": 69041,
+        "finished": true
+      },
+      {
+        "url": "/fonts/GeneralSans-Variable.woff2",
+        "type": "Font",
+        "bytes": 38372,
+        "finished": true
+      },
+      {
+        "url": "/images/about/aaron-portrait.png",
+        "type": "Image",
+        "bytes": 36132,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/default.DjJKa_Ip.css",
+        "type": "Stylesheet",
+        "bytes": 19360,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/CTT5MzRd.js",
+        "type": "Script",
+        "bytes": 18974,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/nova.FG3Rh726.css",
+        "type": "Stylesheet",
+        "bytes": 11254,
+        "finished": true
+      },
+      {
+        "url": "/fonts/AtkinsonHyperlegibleMono-Regular-latin.woff2",
+        "type": "Font",
+        "bytes": 10296,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/entry.DrkMWFpz.css",
+        "type": "Stylesheet",
+        "bytes": 9098,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DiBniPpj.js",
+        "type": "Script",
+        "bytes": 6652,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/BaFRgNuy.js",
+        "type": "Script",
+        "bytes": 5662,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/CU8RdUAF.js",
+        "type": "Script",
+        "bytes": 3498,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/CaseStudySectionNav.FX8DY5zL.css",
+        "type": "Stylesheet",
+        "bytes": 3186,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/768IwBmt.js",
+        "type": "Script",
+        "bytes": 3070,
+        "finished": true
+      },
+      {
+        "url": "/icons/header-mark.svg",
+        "type": "Image",
+        "bytes": 1131,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/HeaderNavButton.C_ivfDdt.css",
+        "type": "Stylesheet",
+        "bytes": 1077,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/C8zK7Tpr.js",
+        "type": "Script",
+        "bytes": 1053,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/eGdJv6yQ.js",
+        "type": "Script",
+        "bytes": 865,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/BX3efyaZ.js",
+        "type": "Script",
+        "bytes": 841,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-instagram.svg",
+        "type": "Image",
+        "bytes": 594,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-demo.svg",
+        "type": "Image",
+        "bytes": 592,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-case-study.svg",
+        "type": "Image",
+        "bytes": 587,
+        "finished": true
+      },
+      {
+        "url": "/images/work/divider.svg",
+        "type": "Image",
+        "bytes": 496,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DlAUqK2U.js",
+        "type": "Script",
+        "bytes": 398,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/builds/meta/69f8cd84-e13b-4ecf-ba72-aa012626ec50.json",
+        "type": "Fetch",
+        "bytes": 381,
+        "finished": true
+      }
+    ]
+  },
+  {
+    "route": "nova",
+    "width": 390,
+    "load": 93843.80000000075,
+    "idleCapped": false,
+    "fcp": 1644,
+    "lcp": 7548,
+    "firstPlaying": 7978.39999999851,
+    "longtasks": [
+      112,
+      62,
+      54,
+      117,
+      69
+    ],
+    "measuredAt": 99345.09999999776,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4202/images/about/aaron-portrait.png",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 177,
+        "width": 177
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-instagram.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/icons/header-mark.svg",
+        "top": 29.921875,
+        "loading": "auto",
+        "naturalWidth": 35,
+        "width": 35
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/case-studies/nova/field-research-blurred.png",
+        "top": 1300.6875,
+        "loading": "lazy",
+        "naturalWidth": 2150,
+        "width": 358
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/case-studies/nova/computer-lab.jpg",
+        "top": 1726.203125,
+        "loading": "lazy",
+        "naturalWidth": 4000,
+        "width": 358
+      },
+      {
+        "src": "",
+        "top": 3505.734375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 215
+      },
+      {
+        "src": "",
+        "top": 4319.4375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 310
+      },
+      {
+        "src": "",
+        "top": 5649.265625,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 358
+      },
+      {
+        "src": "",
+        "top": 6828.234375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 326
+      },
+      {
+        "src": "",
+        "top": 7435.7255859375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 326
+      },
+      {
+        "src": "",
+        "top": 7925.078125,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 358
+      }
+    ],
+    "videos": [
+      {
+        "src": "http://127.0.0.1:4202/videos/nova_walkthrough-mobile.mp4",
+        "top": 737.5625,
+        "ready": 4,
+        "time": 25.4153
+      },
+      {
+        "src": "",
+        "top": 3945.734375,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 4899.890625,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 5402.734375,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 5948.640625,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 9201.390625,
+        "ready": 0,
+        "time": 0
+      }
+    ],
+    "errors": [],
+    "requests": [
+      {
+        "url": "/images/case-studies/nova/computer-lab.jpg",
+        "type": "Image",
+        "bytes": 8480221,
+        "finished": true
+      },
+      {
+        "url": "/videos/nova_walkthrough-mobile.mp4",
+        "type": "Media",
+        "bytes": 4491802,
+        "finished": true
+      },
+      {
+        "url": "/images/case-studies/nova/field-research-blurred.png",
+        "type": "Image",
+        "bytes": 2685642,
+        "finished": true
+      },
+      {
+        "url": "/images/home/media-backgrounds/nova.jpg",
+        "type": "Image",
+        "bytes": 353182,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/3b7TwFGh.js",
+        "type": "Script",
+        "bytes": 183096,
+        "finished": true
+      },
+      {
+        "url": "/videos/posters/nova_walkthrough.jpg",
+        "type": "Image",
+        "bytes": 121209,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DzZz6rxt.js",
+        "type": "Script",
+        "bytes": 92775,
+        "finished": true
+      },
+      {
+        "url": "/nova",
+        "type": "Document",
+        "bytes": 69041,
+        "finished": true
+      },
+      {
+        "url": "/fonts/GeneralSans-Variable.woff2",
+        "type": "Font",
+        "bytes": 38372,
+        "finished": true
+      },
+      {
+        "url": "/images/about/aaron-portrait.png",
+        "type": "Image",
+        "bytes": 36132,
+        "finished": true
+      },
+      {
+        "url": "/videos/posters/nova_walkthrough-mobile.jpg",
+        "type": "Image",
+        "bytes": 30424,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/default.DjJKa_Ip.css",
+        "type": "Stylesheet",
+        "bytes": 19360,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/CTT5MzRd.js",
+        "type": "Script",
+        "bytes": 18974,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/nova.FG3Rh726.css",
+        "type": "Stylesheet",
+        "bytes": 11254,
+        "finished": true
+      },
+      {
+        "url": "/fonts/AtkinsonHyperlegibleMono-Regular-latin.woff2",
+        "type": "Font",
+        "bytes": 10296,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/entry.DrkMWFpz.css",
+        "type": "Stylesheet",
+        "bytes": 9098,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DiBniPpj.js",
+        "type": "Script",
+        "bytes": 6652,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/BaFRgNuy.js",
+        "type": "Script",
+        "bytes": 5662,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/CU8RdUAF.js",
+        "type": "Script",
+        "bytes": 3498,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/CaseStudySectionNav.FX8DY5zL.css",
+        "type": "Stylesheet",
+        "bytes": 3186,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/768IwBmt.js",
+        "type": "Script",
+        "bytes": 3070,
+        "finished": true
+      },
+      {
+        "url": "/icons/header-mark.svg",
+        "type": "Image",
+        "bytes": 1131,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/HeaderNavButton.C_ivfDdt.css",
+        "type": "Stylesheet",
+        "bytes": 1077,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/C8zK7Tpr.js",
+        "type": "Script",
+        "bytes": 1053,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/eGdJv6yQ.js",
+        "type": "Script",
+        "bytes": 865,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/BX3efyaZ.js",
+        "type": "Script",
+        "bytes": 841,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-instagram.svg",
+        "type": "Image",
+        "bytes": 594,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-demo.svg",
+        "type": "Image",
+        "bytes": 592,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-case-study.svg",
+        "type": "Image",
+        "bytes": 587,
+        "finished": true
+      },
+      {
+        "url": "/images/work/divider.svg",
+        "type": "Image",
+        "bytes": 496,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DlAUqK2U.js",
+        "type": "Script",
+        "bytes": 398,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/builds/meta/69f8cd84-e13b-4ecf-ba72-aa012626ec50.json",
+        "type": "Fetch",
+        "bytes": 381,
+        "finished": true
+      }
+    ]
+  },
+  {
+    "route": "nuance",
+    "width": 1440,
+    "load": 19596.300000000745,
+    "idleCapped": false,
+    "fcp": 1852,
+    "lcp": 19744,
+    "firstPlaying": 8520.800000000745,
+    "longtasks": [
+      277,
+      261,
+      62
+    ],
+    "measuredAt": 41847.699999999255,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4202/images/about/aaron-portrait.png",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 177,
+        "width": 177
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-instagram.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/icons/header-mark.svg",
+        "top": 29.921875,
+        "loading": "auto",
+        "naturalWidth": 35,
+        "width": 35
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/case-studies/nuance/fig-1-clouds-1760.jpg",
+        "top": 453.171875,
+        "loading": "lazy",
+        "naturalWidth": 1408,
+        "width": 1408
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/case-studies/nuance/iphone-16-pro.png",
+        "top": 500.875,
+        "loading": "lazy",
+        "naturalWidth": 1350,
+        "width": 342
+      },
+      {
+        "src": "",
+        "top": 1986.75,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 189
+      },
+      {
+        "src": "",
+        "top": 1986.75,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 189
+      },
+      {
+        "src": "",
+        "top": 1986.75,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 189
+      },
+      {
+        "src": "",
+        "top": 2807.3125,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 552
+      },
+      {
+        "src": "",
+        "top": 3328.875,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 260
+      },
+      {
+        "src": "",
+        "top": 3328.875,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 260
+      },
+      {
+        "src": "",
+        "top": 3908.65625,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 1408
+      },
+      {
+        "src": "",
+        "top": 3956.359375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 342
+      }
+    ],
+    "videos": [
+      {
+        "src": "http://127.0.0.1:4202/videos/nuance-talking.mp4",
+        "top": 454.125,
+        "ready": 4,
+        "time": 5.0749
+      },
+      {
+        "src": "",
+        "top": 3907.734375,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 4879.0625,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 5751.078125,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 6623.09375,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 7495.109375,
+        "ready": 0,
+        "time": 0
+      }
+    ],
+    "errors": [],
+    "requests": [
+      {
+        "url": "/videos/nuance-talking.mp4",
+        "type": "Media",
+        "bytes": 4057717,
+        "finished": true
+      },
+      {
+        "url": "/images/case-studies/nuance/fig-1-clouds-1760.jpg",
+        "type": "Image",
+        "bytes": 1270755,
+        "finished": true
+      },
+      {
+        "url": "/images/case-studies/nuance/iphone-16-pro.png",
+        "type": "Image",
+        "bytes": 376793,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/3b7TwFGh.js",
+        "type": "Script",
+        "bytes": 183096,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DzZz6rxt.js",
+        "type": "Script",
+        "bytes": 92775,
+        "finished": true
+      },
+      {
+        "url": "/nuance",
+        "type": "Document",
+        "bytes": 63478,
+        "finished": true
+      },
+      {
+        "url": "/videos/posters/nuance-talking.jpg",
+        "type": "Image",
+        "bytes": 58045,
+        "finished": true
+      },
+      {
+        "url": "/fonts/GeneralSans-Variable.woff2",
+        "type": "Font",
+        "bytes": 38372,
+        "finished": true
+      },
+      {
+        "url": "/images/about/aaron-portrait.png",
+        "type": "Image",
+        "bytes": 36132,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/default.DjJKa_Ip.css",
+        "type": "Stylesheet",
+        "bytes": 19360,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/eqIbqVQO.js",
+        "type": "Script",
+        "bytes": 13812,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/nuance.CFb3QemP.css",
+        "type": "Stylesheet",
+        "bytes": 10675,
+        "finished": true
+      },
+      {
+        "url": "/fonts/AtkinsonHyperlegibleMono-Regular-latin.woff2",
+        "type": "Font",
+        "bytes": 10296,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/entry.DrkMWFpz.css",
+        "type": "Stylesheet",
+        "bytes": 9098,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DiBniPpj.js",
+        "type": "Script",
+        "bytes": 6652,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/BaFRgNuy.js",
+        "type": "Script",
+        "bytes": 5662,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/CU8RdUAF.js",
+        "type": "Script",
+        "bytes": 3498,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/CaseStudySectionNav.FX8DY5zL.css",
+        "type": "Stylesheet",
+        "bytes": 3186,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/768IwBmt.js",
+        "type": "Script",
+        "bytes": 3070,
+        "finished": true
+      },
+      {
+        "url": "/icons/header-mark.svg",
+        "type": "Image",
+        "bytes": 1131,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/HeaderNavButton.C_ivfDdt.css",
+        "type": "Stylesheet",
+        "bytes": 1077,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/C8zK7Tpr.js",
+        "type": "Script",
+        "bytes": 1053,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/eGdJv6yQ.js",
+        "type": "Script",
+        "bytes": 865,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/BX3efyaZ.js",
+        "type": "Script",
+        "bytes": 841,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-instagram.svg",
+        "type": "Image",
+        "bytes": 594,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-demo.svg",
+        "type": "Image",
+        "bytes": 592,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-case-study.svg",
+        "type": "Image",
+        "bytes": 587,
+        "finished": true
+      },
+      {
+        "url": "/images/work/divider.svg",
+        "type": "Image",
+        "bytes": 496,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/C9VVp9BZ.js",
+        "type": "Script",
+        "bytes": 417,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DlAUqK2U.js",
+        "type": "Script",
+        "bytes": 398,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/builds/meta/69f8cd84-e13b-4ecf-ba72-aa012626ec50.json",
+        "type": "Fetch",
+        "bytes": 381,
+        "finished": true
+      }
+    ]
+  },
+  {
+    "route": "nuance",
+    "width": 390,
+    "load": 25558.300000000745,
+    "idleCapped": false,
+    "fcp": 1640,
+    "lcp": 25824,
+    "firstPlaying": 9304.699999999255,
+    "longtasks": [
+      113,
+      60,
+      170,
+      68
+    ],
+    "measuredAt": 34869.5,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4202/images/about/aaron-portrait.png",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 177,
+        "width": 177
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-instagram.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-case-study.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/arrow-demo.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 14,
+        "width": 14
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/work/divider.svg",
+        "top": 0,
+        "loading": "auto",
+        "naturalWidth": 600,
+        "width": 600
+      },
+      {
+        "src": "http://127.0.0.1:4202/icons/header-mark.svg",
+        "top": 29.921875,
+        "loading": "auto",
+        "naturalWidth": 35,
+        "width": 35
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/case-studies/nuance/fig-1-clouds.jpg",
+        "top": 458.171875,
+        "loading": "lazy",
+        "naturalWidth": 716,
+        "width": 358
+      },
+      {
+        "src": "http://127.0.0.1:4202/images/case-studies/nuance/iphone-16-pro.png",
+        "top": 486.8125,
+        "loading": "lazy",
+        "naturalWidth": 1350,
+        "width": 205
+      },
+      {
+        "src": "",
+        "top": 1852.84375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 111
+      },
+      {
+        "src": "",
+        "top": 1852.84375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 111
+      },
+      {
+        "src": "",
+        "top": 1852.84375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 111
+      },
+      {
+        "src": "",
+        "top": 2547.328125,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 310
+      },
+      {
+        "src": "",
+        "top": 3057.35009765625,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 139
+      },
+      {
+        "src": "",
+        "top": 3057.35009765625,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 139
+      },
+      {
+        "src": "",
+        "top": 3538.21875,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 358
+      },
+      {
+        "src": "",
+        "top": 3566.859375,
+        "loading": "lazy",
+        "naturalWidth": 0,
+        "width": 205
+      }
+    ],
+    "videos": [
+      {
+        "src": "http://127.0.0.1:4202/videos/nuance-talking-mobile.mp4",
+        "top": 458.75,
+        "ready": 4,
+        "time": 2.4218
+      },
+      {
+        "src": "",
+        "top": 3537.671875,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 4190.9375,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 4745.265625,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 5299.59375,
+        "ready": 0,
+        "time": 0
+      },
+      {
+        "src": "",
+        "top": 5874.921875,
+        "ready": 0,
+        "time": 0
+      }
+    ],
+    "errors": [],
+    "requests": [
+      {
+        "url": "/videos/nuance-talking-mobile.mp4",
+        "type": "Media",
+        "bytes": 2253364,
+        "finished": true
+      },
+      {
+        "url": "/images/case-studies/nuance/fig-1-clouds.jpg",
+        "type": "Image",
+        "bytes": 1778716,
+        "finished": true
+      },
+      {
+        "url": "/images/case-studies/nuance/iphone-16-pro.png",
+        "type": "Image",
+        "bytes": 376793,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/3b7TwFGh.js",
+        "type": "Script",
+        "bytes": 183096,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DzZz6rxt.js",
+        "type": "Script",
+        "bytes": 92775,
+        "finished": true
+      },
+      {
+        "url": "/nuance",
+        "type": "Document",
+        "bytes": 63478,
+        "finished": true
+      },
+      {
+        "url": "/videos/posters/nuance-talking.jpg",
+        "type": "Image",
+        "bytes": 58045,
+        "finished": true
+      },
+      {
+        "url": "/videos/posters/nuance-talking-mobile.jpg",
+        "type": "Image",
+        "bytes": 41676,
+        "finished": true
+      },
+      {
+        "url": "/fonts/GeneralSans-Variable.woff2",
+        "type": "Font",
+        "bytes": 38372,
+        "finished": true
+      },
+      {
+        "url": "/images/about/aaron-portrait.png",
+        "type": "Image",
+        "bytes": 36132,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/default.DjJKa_Ip.css",
+        "type": "Stylesheet",
+        "bytes": 19360,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/eqIbqVQO.js",
+        "type": "Script",
+        "bytes": 13812,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/nuance.CFb3QemP.css",
+        "type": "Stylesheet",
+        "bytes": 10675,
+        "finished": true
+      },
+      {
+        "url": "/fonts/AtkinsonHyperlegibleMono-Regular-latin.woff2",
+        "type": "Font",
+        "bytes": 10296,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/entry.DrkMWFpz.css",
+        "type": "Stylesheet",
+        "bytes": 9098,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DiBniPpj.js",
+        "type": "Script",
+        "bytes": 6652,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/BaFRgNuy.js",
+        "type": "Script",
+        "bytes": 5662,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/CU8RdUAF.js",
+        "type": "Script",
+        "bytes": 3498,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/CaseStudySectionNav.FX8DY5zL.css",
+        "type": "Stylesheet",
+        "bytes": 3186,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/768IwBmt.js",
+        "type": "Script",
+        "bytes": 3070,
+        "finished": true
+      },
+      {
+        "url": "/icons/header-mark.svg",
+        "type": "Image",
+        "bytes": 1131,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/HeaderNavButton.C_ivfDdt.css",
+        "type": "Stylesheet",
+        "bytes": 1077,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/C8zK7Tpr.js",
+        "type": "Script",
+        "bytes": 1053,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/eGdJv6yQ.js",
+        "type": "Script",
+        "bytes": 865,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/BX3efyaZ.js",
+        "type": "Script",
+        "bytes": 841,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-instagram.svg",
+        "type": "Image",
+        "bytes": 594,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-demo.svg",
+        "type": "Image",
+        "bytes": 592,
+        "finished": true
+      },
+      {
+        "url": "/images/work/arrow-case-study.svg",
+        "type": "Image",
+        "bytes": 587,
+        "finished": true
+      },
+      {
+        "url": "/images/work/divider.svg",
+        "type": "Image",
+        "bytes": 496,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/C9VVp9BZ.js",
+        "type": "Script",
+        "bytes": 417,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/DlAUqK2U.js",
+        "type": "Script",
+        "bytes": 398,
+        "finished": true
+      },
+      {
+        "url": "/_nuxt/builds/meta/69f8cd84-e13b-4ecf-ba72-aa012626ec50.json",
+        "type": "Fetch",
+        "bytes": 381,
+        "finished": true
+      }
+    ]
+  }
+]

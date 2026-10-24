@@ -1,0 +1,13 @@
+{
+  "outputs": 82,
+  "pending": [
+    "chewsy_createsc-mobile.mp4",
+    "nova_practice_V-mobile.mp4"
+  ],
+  "complete": false,
+  "minSSIM": 0.999,
+  "beforeBytes": 211651455,
+  "afterBytes": 109611340,
+  "maxTimestampDelta": 0.0,
+  "maxDurationDelta": 0.00032500000000013074
+}

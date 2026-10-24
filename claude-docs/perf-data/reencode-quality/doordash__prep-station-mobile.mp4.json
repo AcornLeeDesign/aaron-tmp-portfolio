@@ -1,0 +1,82 @@
+{
+  "file": "doordash/prep-station-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/doordash/prep-station.mp4",
+  "sourceSha256": "2c43dd5bea3c7f64f2b360a253bdc06944f51a72a89c58a5d1c18ba39d0a1351",
+  "sha256": "02b937ae2def4e719b25f74700680240d768a35b4f27b66e074f2243def9b7c7",
+  "before": {
+    "bytes": 5475706,
+    "duration": 40.358021,
+    "avgKbps": 1081.068667861588,
+    "peakKbps": 3611.352
+  },
+  "after": {
+    "bytes": 1361376,
+    "duration": 40.358021,
+    "avgKbps": 265.5152986812708,
+    "peakKbps": 979.504
+  },
+  "source": {
+    "bytes": 9940791,
+    "duration": 40.358021,
+    "avgKbps": 1966.8627458219519,
+    "peakKbps": 6707.6
+  },
+  "width": 1280,
+  "height": 716,
+  "method": "CRF search",
+  "selected": {
+    "crf": 18,
+    "maxrateKbps": 2708,
+    "bufsizeKbits": 2708,
+    "ssim": 0.999144,
+    "bytes": 1361376
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 2708,
+      "bufsizeKbits": 2708,
+      "ssim": 0.998873,
+      "bytes": 1186793
+    },
+    {
+      "crf": 9,
+      "maxrateKbps": 2708,
+      "bufsizeKbits": 2708,
+      "ssim": 0.999786,
+      "bytes": 2717979
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 2708,
+      "bufsizeKbits": 2708,
+      "ssim": 0.999522,
+      "bytes": 1814656
+    },
+    {
+      "crf": 17,
+      "maxrateKbps": 2708,
+      "bufsizeKbits": 2708,
+      "ssim": 0.999241,
+      "bytes": 1458558
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 2708,
+      "bufsizeKbits": 2708,
+      "ssim": 0.999144,
+      "bytes": 1361376
+    },
+    {
+      "crf": 19,
+      "maxrateKbps": 2708,
+      "bufsizeKbits": 2708,
+      "ssim": 0.998994,
+      "bytes": 1280177
+    }
+  ],
+  "frames": 1762,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

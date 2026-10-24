@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/quiz_fullscreen_student-mobile.mp4",
+  "source": "public/videos/originals/quiz_fullscreen_student.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 1783438,
+  "bytes": 2255496,
+  "width": 1280,
+  "height": 718,
+  "sourceWidth": 3454,
+  "sourceHeight": 1940,
+  "ssim": 0.999906,
+  "vmaf": null,
+  "frames": 947,
+  "sourceFrames": 947,
+  "duration": "15.783333",
+  "sourceDuration": "15.783333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.999906,
+      "bytes": 2255496
+    }
+  ],
+  "sha256": "1222323899c0773c72893403e17d9f85a9f3ad2e5017b2b02a0acd9c2b45169d"
+}

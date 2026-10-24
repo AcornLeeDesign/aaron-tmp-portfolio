@@ -1,0 +1,38 @@
+{
+  "file": "gameboy.mp4",
+  "sourceRef": "862de9d",
+  "sourcePath": "public/videos/gameboy.mp4",
+  "sourceSha256": "7bd4737457012575c86527a8fd0ff46119029f9424135dd86a7dc914186992a0",
+  "sha256": "dc062a97de4916ac510e3e0c9eb197b4d583650d64e082216621bc4ac743bd6c",
+  "before": {
+    "bytes": 719706,
+    "duration": 13.783333,
+    "avgKbps": 411.50221067719974,
+    "peakKbps": 688.544
+  },
+  "after": {
+    "bytes": 719686,
+    "duration": 13.783333,
+    "avgKbps": 411.50221067719974,
+    "peakKbps": 688.544
+  },
+  "source": {
+    "bytes": 719690,
+    "duration": 13.783333,
+    "avgKbps": 411.50221067719974,
+    "peakKbps": 688.544
+  },
+  "width": 1080,
+  "height": 1472,
+  "method": "Stream copy (compact original)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [],
+  "frames": 827,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

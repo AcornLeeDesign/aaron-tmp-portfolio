@@ -1,0 +1,212 @@
+[
+  {
+    "file": "asl-feature.mp4",
+    "ref": "596990b",
+    "path": "public/videos/asl-feature.mp4"
+  },
+  {
+    "file": "chewsy_createsc.mp4",
+    "ref": "596990b",
+    "path": "public/videos/chewsy_createsc.mp4"
+  },
+  {
+    "file": "doordash/before.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/before.mp4"
+  },
+  {
+    "file": "doordash/guide.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/guide.mp4"
+  },
+  {
+    "file": "doordash/iteration-banner.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/iteration-banner.mp4"
+  },
+  {
+    "file": "doordash/iteration-toast.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/iteration-toast.mp4"
+  },
+  {
+    "file": "doordash/legacy-feature-flag.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/legacy-feature-flag.mp4"
+  },
+  {
+    "file": "doordash/prep-station.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/prep-station.mp4"
+  },
+  {
+    "file": "doordash/printer-setup.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/printer-setup.mp4"
+  },
+  {
+    "file": "doordash/printer-types.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/printer-types.mp4"
+  },
+  {
+    "file": "doordash/select-printer.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/select-printer.mp4"
+  },
+  {
+    "file": "doordash/status-bar-entry.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/status-bar-entry.mp4"
+  },
+  {
+    "file": "doordash/status-bar.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/status-bar.mp4"
+  },
+  {
+    "file": "doordash/status-footer.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/status-footer.mp4"
+  },
+  {
+    "file": "doordash/status-logic-doc.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/status-logic-doc.mp4"
+  },
+  {
+    "file": "doordash/status-logic.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/status-logic.mp4"
+  },
+  {
+    "file": "doordash/toast-entry.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/toast-entry.mp4"
+  },
+  {
+    "file": "doordash/unused-motion-cutter.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/unused-motion-cutter.mp4"
+  },
+  {
+    "file": "doordash/unused-motion-printer.mp4",
+    "ref": "596990b",
+    "path": "public/videos/doordash/unused-motion-printer.mp4"
+  },
+  {
+    "file": "fleetline.mp4",
+    "ref": "596990b",
+    "path": "public/videos/fleetline.mp4"
+  },
+  {
+    "file": "gameboy.mp4",
+    "ref": "862de9d",
+    "path": "public/videos/gameboy.mp4"
+  },
+  {
+    "file": "haven_3d.mp4",
+    "ref": "596990b",
+    "path": "public/videos/haven_3d.mp4"
+  },
+  {
+    "file": "home_screen.mp4",
+    "ref": "596990b",
+    "path": "public/videos/home_screen.mp4"
+  },
+  {
+    "file": "library.mp4",
+    "ref": "596990b",
+    "path": "public/videos/library.mp4"
+  },
+  {
+    "file": "manta.mp4",
+    "ref": "862de9d",
+    "path": "public/videos/manta.mp4"
+  },
+  {
+    "file": "missed-call.mp4",
+    "ref": "596990b",
+    "path": "public/videos/missed-call.mp4"
+  },
+  {
+    "file": "mock_call.mp4",
+    "ref": "596990b",
+    "path": "public/videos/mock_call.mp4"
+  },
+  {
+    "file": "mood-colors.mp4",
+    "ref": "596990b",
+    "path": "public/videos/mood-colors.mp4"
+  },
+  {
+    "file": "mood_set.mp4",
+    "ref": "596990b",
+    "path": "public/videos/mood_set.mp4"
+  },
+  {
+    "file": "multi-line.mp4",
+    "ref": "596990b",
+    "path": "public/videos/multi-line.mp4"
+  },
+  {
+    "file": "nova_practice_V.mp4",
+    "ref": "596990b",
+    "path": "public/videos/nova_practice_V.mp4"
+  },
+  {
+    "file": "nova_preview_quiz.mp4",
+    "ref": "596990b",
+    "path": "public/videos/nova_preview_quiz.mp4"
+  },
+  {
+    "file": "nova_walkthrough.mp4",
+    "ref": "596990b",
+    "path": "public/videos/nova_walkthrough.mp4"
+  },
+  {
+    "file": "nuance-talking.mp4",
+    "ref": "596990b",
+    "path": "public/videos/nuance-talking.mp4"
+  },
+  {
+    "file": "nuance_pure.mp4",
+    "ref": "596990b",
+    "path": "public/videos/nuance_pure.mp4"
+  },
+  {
+    "file": "pen.mp4",
+    "ref": "862de9d",
+    "path": "public/videos/pen.mp4"
+  },
+  {
+    "file": "quiz_fullscreen_student.mp4",
+    "ref": "596990b",
+    "path": "public/videos/quiz_fullscreen_student.mp4"
+  },
+  {
+    "file": "quiz_fullscreen_teacher.mp4",
+    "ref": "596990b",
+    "path": "public/videos/quiz_fullscreen_teacher.mp4"
+  },
+  {
+    "file": "rabbithole.mp4",
+    "ref": "596990b",
+    "path": "public/videos/rabbithole.mp4"
+  },
+  {
+    "file": "recent_call.mp4",
+    "ref": "596990b",
+    "path": "public/videos/recent_call.mp4"
+  },
+  {
+    "file": "transcript.mp4",
+    "ref": "596990b",
+    "path": "public/videos/transcript.mp4"
+  },
+  {
+    "file": "wiggle.mp4",
+    "ref": "862de9d",
+    "path": "public/videos/wiggle.mp4"
+  }
+]

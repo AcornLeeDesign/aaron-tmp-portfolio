@@ -1,0 +1,240 @@
+[
+  {
+    "file": "chewsy_createsc-mobile.mp4",
+    "status": "unchanged, awaiting constraint decision",
+    "source": {
+      "bytes": 295736,
+      "duration": 8.733333,
+      "avgKbps": 267.2500865362628,
+      "peakKbps": 795.448
+    },
+    "before": {
+      "bytes": 1102548,
+      "duration": 8.733333,
+      "avgKbps": 1006.8174430082993,
+      "peakKbps": 2825.24
+    },
+    "after": {
+      "bytes": 1102548,
+      "duration": 8.733333,
+      "avgKbps": 1006.8174430082993,
+      "peakKbps": 2825.24
+    },
+    "ssim": 0.999622,
+    "width": 1280,
+    "height": 796,
+    "sourceWidth": 1440,
+    "bestPassingAttempt": {
+      "crf": 19,
+      "maxrateKbps": 2118,
+      "bufsizeKbits": 2118,
+      "ssim": 0.999042,
+      "bytes": 607616
+    },
+    "attempts": [
+      {
+        "crf": 20,
+        "maxrateKbps": 2118,
+        "bufsizeKbits": 2118,
+        "ssim": 0.998908,
+        "bytes": 548060
+      },
+      {
+        "crf": 18,
+        "maxrateKbps": 2118,
+        "bufsizeKbits": 2118,
+        "ssim": 0.999167,
+        "bytes": 671759
+      },
+      {
+        "crf": 19,
+        "maxrateKbps": 2118,
+        "bufsizeKbits": 2118,
+        "ssim": 0.999042,
+        "bytes": 607616
+      },
+      {
+        "crf": 20,
+        "maxrateKbps": 4236,
+        "bufsizeKbits": 4236,
+        "ssim": 0.998908,
+        "bytes": 548060
+      },
+      {
+        "crf": 18,
+        "maxrateKbps": 4236,
+        "bufsizeKbits": 4236,
+        "ssim": 0.999167,
+        "bytes": 671759
+      },
+      {
+        "crf": 19,
+        "maxrateKbps": 4236,
+        "bufsizeKbits": 4236,
+        "ssim": 0.999042,
+        "bytes": 607616
+      }
+    ]
+  },
+  {
+    "file": "nova_practice_V-mobile.mp4",
+    "status": "unchanged, awaiting constraint decision",
+    "source": {
+      "bytes": 1129973,
+      "duration": 8.366667,
+      "avgKbps": 1074.4436225321267,
+      "peakKbps": 4135.032
+    },
+    "before": {
+      "bytes": 1145826,
+      "duration": 8.366667,
+      "avgKbps": 1090.0550960137414,
+      "peakKbps": 3244.48
+    },
+    "after": {
+      "bytes": 1145826,
+      "duration": 8.366667,
+      "avgKbps": 1090.0550960137414,
+      "peakKbps": 3244.48
+    },
+    "ssim": 0.997479,
+    "width": 1280,
+    "height": 1038,
+    "sourceWidth": 1588,
+    "bestPassingAttempt": {
+      "crf": 10,
+      "maxrateKbps": 2433,
+      "bufsizeKbits": 2433,
+      "ssim": 0.999018,
+      "bytes": 1969371
+    },
+    "attempts": [
+      {
+        "crf": 20,
+        "maxrateKbps": 2433,
+        "bufsizeKbits": 2433,
+        "ssim": 0.997665,
+        "bytes": 1108014
+      },
+      {
+        "crf": 18,
+        "maxrateKbps": 2433,
+        "bufsizeKbits": 2433,
+        "ssim": 0.998153,
+        "bytes": 1279174
+      },
+      {
+        "crf": 16,
+        "maxrateKbps": 2433,
+        "bufsizeKbits": 2433,
+        "ssim": 0.998494,
+        "bytes": 1478237
+      },
+      {
+        "crf": 14,
+        "maxrateKbps": 2433,
+        "bufsizeKbits": 2433,
+        "ssim": 0.998844,
+        "bytes": 1686830
+      },
+      {
+        "crf": 12,
+        "maxrateKbps": 2433,
+        "bufsizeKbits": 2433,
+        "ssim": 0.99893,
+        "bytes": 1864008
+      },
+      {
+        "crf": 10,
+        "maxrateKbps": 2433,
+        "bufsizeKbits": 2433,
+        "ssim": 0.999029,
+        "bytes": 1974918
+      },
+      {
+        "crf": 11,
+        "maxrateKbps": 2433,
+        "bufsizeKbits": 2433,
+        "ssim": 0.998975,
+        "bytes": 1920017
+      },
+      {
+        "crf": 9,
+        "maxrateKbps": 2433,
+        "bufsizeKbits": 2433,
+        "ssim": 0.999049,
+        "bytes": 2016241
+      },
+      {
+        "crf": 10,
+        "maxrateKbps": 2433,
+        "bufsizeKbits": 2433,
+        "ssim": 0.999018,
+        "bytes": 1969371
+      },
+      {
+        "crf": 20,
+        "maxrateKbps": 4866,
+        "bufsizeKbits": 4866,
+        "ssim": 0.997716,
+        "bytes": 1131608
+      },
+      {
+        "crf": 18,
+        "maxrateKbps": 4866,
+        "bufsizeKbits": 4866,
+        "ssim": 0.998291,
+        "bytes": 1397938
+      },
+      {
+        "crf": 16,
+        "maxrateKbps": 4866,
+        "bufsizeKbits": 4866,
+        "ssim": 0.99868,
+        "bytes": 1708592
+      },
+      {
+        "crf": 14,
+        "maxrateKbps": 4866,
+        "bufsizeKbits": 4866,
+        "ssim": 0.999,
+        "bytes": 1977355
+      },
+      {
+        "crf": 15,
+        "maxrateKbps": 4866,
+        "bufsizeKbits": 4866,
+        "ssim": 0.99885,
+        "bytes": 1850832
+      },
+      {
+        "crf": 13,
+        "maxrateKbps": 4866,
+        "bufsizeKbits": 4866,
+        "ssim": 0.999118,
+        "bytes": 2124806
+      },
+      {
+        "crf": 14,
+        "maxrateKbps": 4866,
+        "bufsizeKbits": 4866,
+        "ssim": 0.998988,
+        "bytes": 1983715
+      },
+      {
+        "crf": 12,
+        "maxrateKbps": 4866,
+        "bufsizeKbits": 4866,
+        "ssim": 0.999216,
+        "bytes": 2280169
+      },
+      {
+        "crf": 13,
+        "maxrateKbps": 4866,
+        "bufsizeKbits": 4866,
+        "ssim": 0.999105,
+        "bytes": 2122276
+      }
+    ]
+  }
+]

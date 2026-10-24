@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/iteration-banner.mp4",
+  "source": "public/videos/originals/doordash/iteration-banner.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 97996,
+  "bytes": 251445,
+  "width": 1920,
+  "height": 1078,
+  "sourceWidth": 2998,
+  "sourceHeight": 1682,
+  "ssim": 0.999995,
+  "vmaf": null,
+  "frames": 108,
+  "sourceFrames": 108,
+  "duration": "3.600000",
+  "sourceDuration": "3.600000",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999995,
+      "bytes": 251445
+    }
+  ],
+  "sha256": "f0fe3415323c853a9e89c50c2192b85db07b2494d475f4a11656fdb9a9de3413"
+}

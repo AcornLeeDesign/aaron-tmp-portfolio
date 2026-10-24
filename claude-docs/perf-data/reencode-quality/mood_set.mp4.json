@@ -1,0 +1,38 @@
+{
+  "file": "mood_set.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/mood_set.mp4",
+  "sourceSha256": "faba7f8f56b35d9334076428545d2d308c53bdc09cbe10b3533c5929f64f13c1",
+  "sha256": "4b8397d600e982afede92129bb493b080fc9c0b87ab0896b3bd95b87673a9ef4",
+  "before": {
+    "bytes": 519667,
+    "duration": 17.566667,
+    "avgKbps": 233.4689898772488,
+    "peakKbps": 610.832
+  },
+  "after": {
+    "bytes": 519667,
+    "duration": 17.566667,
+    "avgKbps": 233.4689898772488,
+    "peakKbps": 610.832
+  },
+  "source": {
+    "bytes": 519668,
+    "duration": 17.566667,
+    "avgKbps": 233.4689898772488,
+    "peakKbps": 610.832
+  },
+  "width": 1200,
+  "height": 994,
+  "method": "Stream copy (compact original)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [],
+  "frames": 527,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

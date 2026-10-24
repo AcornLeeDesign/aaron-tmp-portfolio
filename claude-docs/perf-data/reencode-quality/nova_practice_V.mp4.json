@@ -1,0 +1,67 @@
+{
+  "file": "nova_practice_V.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/nova_practice_V.mp4",
+  "sourceSha256": "b9ac370fae619fe65f6da16bf26da6ffe766b7b98176e6e959126f0065bed16f",
+  "sha256": "7a1e6a555bb0c9120cf7e305fd73047b4ae75628269b4e5a361275f6c61d247a",
+  "before": {
+    "bytes": 1129989,
+    "duration": 8.366667,
+    "avgKbps": 1074.4436225321267,
+    "peakKbps": 4135.032
+  },
+  "after": {
+    "bytes": 1129969,
+    "duration": 8.366667,
+    "avgKbps": 1074.4436225321267,
+    "peakKbps": 4135.032
+  },
+  "source": {
+    "bytes": 1129973,
+    "duration": 8.366667,
+    "avgKbps": 1074.4436225321267,
+    "peakKbps": 4135.032
+  },
+  "width": 1588,
+  "height": 1288,
+  "method": "Stream copy (source preserves quality within size limit)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 3101,
+      "bufsizeKbits": 3101,
+      "ssim": 0.998769,
+      "bytes": 1162989
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 3101,
+      "bufsizeKbits": 3101,
+      "ssim": 0.998974,
+      "bytes": 1280783
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 3101,
+      "bufsizeKbits": 3101,
+      "ssim": 0.999142,
+      "bytes": 1411999
+    },
+    {
+      "crf": 17,
+      "maxrateKbps": 3101,
+      "bufsizeKbits": 3101,
+      "ssim": 0.99908,
+      "bytes": 1336921
+    }
+  ],
+  "frames": 502,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

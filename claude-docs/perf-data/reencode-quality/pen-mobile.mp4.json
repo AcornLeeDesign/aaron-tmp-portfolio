@@ -1,0 +1,38 @@
+{
+  "file": "pen-mobile.mp4",
+  "sourceRef": "862de9d",
+  "sourcePath": "public/videos/pen.mp4",
+  "sourceSha256": "7091237e7114628aeabfbadae7d1f8678cc470d04cc1ae19fd903d76af931c56",
+  "sha256": "8c7e0b93de44fbd1f99b607df6553152fcbd91f989d98973beb90bff97decf6f",
+  "before": {
+    "bytes": 83600,
+    "duration": 7.716667,
+    "avgKbps": 80.41295548972116,
+    "peakKbps": 138.232
+  },
+  "after": {
+    "bytes": 83580,
+    "duration": 7.716667,
+    "avgKbps": 80.41295548972116,
+    "peakKbps": 138.232
+  },
+  "source": {
+    "bytes": 83584,
+    "duration": 7.716667,
+    "avgKbps": 80.41295548972116,
+    "peakKbps": 138.232
+  },
+  "width": 1080,
+  "height": 534,
+  "method": "Stream copy (compact original)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [],
+  "frames": 463,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

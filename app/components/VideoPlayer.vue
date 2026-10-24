@@ -17,7 +17,7 @@ interface VideoRegistration {
   onPlaying: () => void
 }
 
-const MAX_PLAYING_VIDEOS = 2
+const MAX_PLAYING_VIDEOS = 1
 const videoRegistrations = new Map<number, VideoRegistration>()
 let nextRegistrationId = 0
 let playbackTimer: number | undefined
@@ -63,30 +63,11 @@ function pauseVideo(registration: VideoRegistration) {
   }
 }
 
-function bufferedAhead(video: HTMLVideoElement) {
-  for (let i = 0; i < video.buffered.length; i++) {
-    if (video.buffered.start(i) <= video.currentTime && video.buffered.end(i) > video.currentTime) {
-      return video.buffered.end(i) - video.currentTime
-    }
-  }
-  return 0
-}
-
-function hasStartupBuffer(video: HTMLVideoElement) {
-  return Number.isFinite(video.duration)
-    && bufferedAhead(video) >= Math.min(3, Math.max(0, video.duration - video.currentTime - 0.1))
-}
-
-function fullyBuffered(video: HTMLVideoElement) {
-  return Number.isFinite(video.duration) && video.buffered.length > 0
-    && video.buffered.start(0) === 0 && video.buffered.end(0) >= video.duration - 0.1
-}
-
 function playVideo(registration: VideoRegistration) {
   if (
     registration.playPending
     || registration.userPaused
-    || (registration.caseStudy && !hasStartupBuffer(registration.video))
+    || (registration.caseStudy && registration.video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA)
     || !registration.wantsPlayback
     || document.visibilityState !== 'visible'
     || !registration.video.isConnected
@@ -132,40 +113,26 @@ function syncPlayback() {
         .filter(registration =>
           registration.visibilityRatio > 0
           && registration.video.isConnected
-          && (registration.caseStudy || registration.video.querySelector('source') !== null)
         )
         .sort((a, b) =>
           b.visibilityRatio - a.visibilityRatio
           || a.viewportTop - b.viewportTop
           || a.id - b.id
         )
-        .slice(0, [...videoRegistrations.values()].some(item => item.caseStudy) ? 1 : MAX_PLAYING_VIDEOS)
+        .slice(0, MAX_PLAYING_VIDEOS)
     : []
 
-  // Explicit comparison groups may play together while both are visible.
-  const group = candidates[0]?.video.dataset.playbackGroup
-  if (group) {
-    const partner = [...videoRegistrations.values()].find(item =>
-      item !== candidates[0] && item.video.dataset.playbackGroup === group
-      && item.video.isConnected && viewportVisibilityRatio(item.video) > 0
-    )
-    if (partner) candidates.push(partner)
-  }
-
-  // Prepare only the nearest upcoming case-study video, and only once the
-  // current clip is fully buffered so it does not compete with initial playback.
+  // Preload the next clip as soon as playback starts. Waiting for the entire
+  // current file to buffer stalls prefetch on slow connections.
   const active = candidates[0]
-  const upcoming = document.visibilityState === 'visible' && candidates.every(item => fullyBuffered(item.video))
+  const upcoming = document.visibilityState === 'visible' && candidates.length <= MAX_PLAYING_VIDEOS
+    && active && !active.video.paused && active.video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA
     ? [...videoRegistrations.values()]
         .filter(item => item.caseStudy && item !== active
           && item.video.getBoundingClientRect().top >= window.innerHeight
           && item.video.getBoundingClientRect().top < window.innerHeight * 2)
         .sort((a, b) => a.video.getBoundingClientRect().top - b.video.getBoundingClientRect().top)[0]
     : undefined
-
-  for (const item of videoRegistrations.values()) {
-    if (item.caseStudy) item.prepare(candidates.includes(item) || item === upcoming, candidates.includes(item))
-  }
 
   const selectedIds = new Set(candidates.map(registration => registration.id))
 
@@ -174,6 +141,10 @@ function syncPlayback() {
     if (!selectedIds.has(registration.id)) {
       pauseVideo(registration)
     }
+  }
+
+  for (const item of videoRegistrations.values()) {
+    item.prepare(candidates.includes(item) || item === upcoming, candidates.includes(item))
   }
 
   for (const registration of candidates) {
@@ -232,6 +203,7 @@ function registerVideo(video: HTMLVideoElement, caseStudy: boolean, prepare: Vid
       if (!registration.wantsPlayback || document.visibilityState !== 'visible') {
         video.pause()
       }
+      schedulePlaybackSync()
     },
   }
 
@@ -263,18 +235,23 @@ function unregisterVideo(registration: VideoRegistration) {
 </script>
 
 <script setup lang="ts">
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   src: string
   poster?: string
   caseStudy?: boolean
   playbackGroup?: string
-}>()
+  /** Set false only when a media asset has no mobile rendition. */
+  mobileVariant?: boolean
+}>(), { mobileVariant: true })
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const sourcesAttached = ref(false)
 const preload = ref<'none' | 'metadata' | 'auto'>('none')
 const showControls = ref(false)
 let slowLoadTimer: number | undefined
+let wantsLoad = false
+const isMobileViewport = ref(false)
+let mobileQuery: MediaQueryList | undefined
 
 function clearSlowLoadTimer() {
   if (slowLoadTimer === undefined) return
@@ -282,10 +259,24 @@ function clearSlowLoadTimer() {
   slowLoadTimer = undefined
 }
 
-function prepareCaseStudy(load: boolean, active: boolean) {
-  preload.value = load ? 'auto' : 'none'
-  if (load) attachSources()
-  if (active && videoRef.value?.paused && !showControls.value) {
+function prepareMedia(load: boolean, active: boolean) {
+  wantsLoad = load
+  const video = videoRef.value
+  const rect = video?.getBoundingClientRect()
+  // Retain partial buffers for two viewport heights in either direction.
+  // Recheck geometry here (and in the timer) to avoid stale observer releases.
+  const nearby = rect && rect.bottom >= -window.innerHeight * 2
+    && rect.top <= window.innerHeight * 3
+  preload.value = load ? 'auto' : isWithinSourceRange ? 'metadata' : 'none'
+  if (load || isWithinSourceRange) {
+    clearSourceRelease()
+    attachSources()
+  } else if (nearby) {
+    clearSourceRelease()
+  } else if (sourcesAttached.value) {
+    scheduleSourceRelease()
+  }
+  if (props.caseStudy && active && videoRef.value?.paused && !showControls.value) {
     if (slowLoadTimer === undefined) {
       slowLoadTimer = window.setTimeout(() => {
         slowLoadTimer = undefined
@@ -296,10 +287,28 @@ function prepareCaseStudy(load: boolean, active: boolean) {
     clearSlowLoadTimer()
   }
 }
-const webmSrc = computed(() => props.src.replace(/\.mp4$/, '.webm'))
-const posterSrc = computed(() =>
-  props.poster ?? props.src.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
-)
+// Select in JS so the browser never fetches both desktop and mobile sources.
+const activeSrc = computed(() => props.mobileVariant !== false && isMobileViewport.value
+  ? props.src.replace(/\.mp4$/, '-mobile.mp4') : props.src)
+
+watch(activeSrc, () => {
+  if (!sourcesAttached.value || !videoRef.value) return
+  if (registration) pauseVideo(registration)
+  nextTick(() => {
+    videoRef.value?.load()
+    schedulePlaybackSync()
+  })
+})
+
+function syncViewportQuery() {
+  isMobileViewport.value = mobileQuery?.matches ?? false
+}
+const posterSrc = computed(() => {
+  if (props.poster) return props.poster
+  // Preserve the separate mobile crop and custom posters.
+  if (activeSrc.value === '/videos/asl-feature.mp4') return '/videos/posters/asl-feature.webp'
+  return activeSrc.value.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
+})
 
 let sourceObserver: IntersectionObserver | undefined
 let viewportObserver: IntersectionObserver | undefined
@@ -318,12 +327,11 @@ function clearSourceRelease() {
 
 function attachSources() {
   const video = videoRef.value
-  if (!video || (!props.caseStudy && !isWithinSourceRange) || sourcesAttached.value) return
+  if (!video || sourcesAttached.value) return
 
   clearSourceRelease()
   const transition = ++sourceTransition
   sourcesAttached.value = true
-  if (!props.caseStudy) preload.value = 'metadata'
 
   nextTick(() => {
     if (transition !== sourceTransition || !sourcesAttached.value) return
@@ -334,11 +342,14 @@ function attachSources() {
 
 function releaseSources() {
   const video = videoRef.value
-  if (!video || isWithinSourceRange || !sourcesAttached.value) return
+  if (!video || wantsLoad || !sourcesAttached.value) return
+  const rect = video.getBoundingClientRect()
+  if (rect.bottom >= -window.innerHeight * 2 && rect.top <= window.innerHeight * 3) return
 
   if (registration) pauseVideo(registration)
   const transition = ++sourceTransition
   sourcesAttached.value = false
+  preload.value = 'none'
   showControls.value = false
   if (registration) registration.userPaused = false
 
@@ -350,33 +361,38 @@ function releaseSources() {
 }
 
 function scheduleSourceRelease() {
-  if (!sourcesAttached.value || sourceReleaseTimer !== undefined) return
+  if (wantsLoad || !sourcesAttached.value || sourceReleaseTimer !== undefined) return
   sourceReleaseTimer = window.setTimeout(() => {
     sourceReleaseTimer = undefined
     releaseSources()
-  }, props.caseStudy ? 30000 : SOURCE_RELEASE_DELAY)
+  }, SOURCE_RELEASE_DELAY)
+}
+
+function observeSourceRange() {
+  sourceObserver?.disconnect()
+  sourceObserver = new IntersectionObserver(
+    ([entry]) => {
+      isWithinSourceRange = Boolean(entry?.isIntersecting)
+      schedulePlaybackSync()
+    },
+    // IO percentages resolve against width, not height. Pixels give one actual
+    // screen ahead on both tall phones and wide desktop viewports.
+    { rootMargin: `${window.innerHeight}px 0px` }
+  )
+  if (videoRef.value) sourceObserver.observe(videoRef.value)
 }
 
 onMounted(() => {
   const video = videoRef.value
   if (!video) return
 
-  registration = registerVideo(video, Boolean(props.caseStudy), prepareCaseStudy)
+  mobileQuery = window.matchMedia('(max-width: 639px)')
+  syncViewportQuery()
+  mobileQuery.addEventListener('change', syncViewportQuery)
+  registration = registerVideo(video, Boolean(props.caseStudy), prepareMedia)
 
-  sourceObserver = new IntersectionObserver(
-    ([entry]) => {
-      isWithinSourceRange = Boolean(entry?.isIntersecting)
-
-      if (isWithinSourceRange) {
-        clearSourceRelease()
-        if (!props.caseStudy) attachSources()
-      } else {
-        scheduleSourceRelease()
-      }
-      schedulePlaybackSync()
-    },
-    { rootMargin: props.caseStudy ? '100% 0px' : '200px 75%' }
-  )
+  observeSourceRange()
+  window.addEventListener('resize', observeSourceRange)
 
   viewportObserver = new IntersectionObserver(
     ([entry]) => {
@@ -389,20 +405,29 @@ onMounted(() => {
     }
   )
 
-  sourceObserver.observe(video)
   viewportObserver.observe(video)
 })
 
 onBeforeUnmount(() => {
+  wantsLoad = false
+  mobileQuery?.removeEventListener('change', syncViewportQuery)
   isWithinSourceRange = false
   sourceTransition += 1
   clearSourceRelease()
   clearSlowLoadTimer()
   sourceObserver?.disconnect()
+  window.removeEventListener('resize', observeSourceRange)
   viewportObserver?.disconnect()
 
   if (registration) {
     unregisterVideo(registration)
+  }
+  // A detached element can otherwise keep downloading after route navigation.
+  const video = videoRef.value
+  if (video) {
+    video.querySelectorAll('source').forEach(source => source.removeAttribute('src'))
+    video.removeAttribute('src')
+    video.load()
   }
 })
 </script>
@@ -419,11 +444,11 @@ onBeforeUnmount(() => {
     :controls="showControls"
     :preload="preload"
     @playing="clearSlowLoadTimer"
+    loading="lazy"
     :poster="posterSrc"
   >
     <template v-if="sourcesAttached">
-      <source :src="src" type="video/mp4" />
-      <source :src="webmSrc" type="video/webm" />
+      <source :src="activeSrc" type="video/mp4" />
     </template>
   </video>
 </template>

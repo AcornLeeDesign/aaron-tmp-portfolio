@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/guide-mobile.mp4",
+  "source": "public/videos/originals/doordash/guide.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 9398658,
+  "bytes": 2353412,
+  "width": 1280,
+  "height": 720,
+  "sourceWidth": 2540,
+  "sourceHeight": 1430,
+  "ssim": 0.999186,
+  "vmaf": null,
+  "frames": 982,
+  "sourceFrames": 982,
+  "duration": "16.975000",
+  "sourceDuration": "16.975000",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.999186,
+      "bytes": 2353412
+    }
+  ],
+  "sha256": "827bc3ee992efc06fe1ae1304209fb961d947f17a502e9e4c4ea2eca00be5a89"
+}

@@ -8,7 +8,15 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: 'https://aaronlee.design',
-      caseStudyPassword: 'case',
+    },
+  },
+
+  // Local source backups are never published as static assets.
+  nitro: { ignore: ['**/videos/originals/**'] },
+
+  routeRules: {
+    '/videos/**': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' },
     },
   },
 
@@ -20,9 +28,6 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
         { rel: 'apple-touch-icon', href: '/favicon.png' },
         { rel: 'preload', href: '/fonts/GeneralSans-Variable.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400&display=swap' },
       ],
     },
   },

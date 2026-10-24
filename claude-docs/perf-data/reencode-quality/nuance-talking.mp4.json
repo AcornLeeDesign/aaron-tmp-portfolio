@@ -1,0 +1,47 @@
+{
+  "file": "nuance-talking.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/nuance-talking.mp4",
+  "sourceSha256": "9a0ea03c90d34db3048d8a3c4b9f3969337c5fa7122be5ea9465790441614581",
+  "sha256": "ec75f5c145c3c92a8b244138a1f7fc1f066ea62e21f25aa895564048ce012940",
+  "before": {
+    "bytes": 4057422,
+    "duration": 17.433333,
+    "avgKbps": 1858.571966703097,
+    "peakKbps": 3538.24
+  },
+  "after": {
+    "bytes": 847434,
+    "duration": 17.433333,
+    "avgKbps": 386.0117855833993,
+    "peakKbps": 712.144
+  },
+  "source": {
+    "bytes": 4057406,
+    "duration": 17.433333,
+    "avgKbps": 1858.571966703097,
+    "peakKbps": 3538.24
+  },
+  "width": 1654,
+  "height": 1080,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 2653,
+    "bufsizeKbits": 2653,
+    "ssim": 0.999477,
+    "bytes": 847434
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 2653,
+      "bufsizeKbits": 2653,
+      "ssim": 0.999477,
+      "bytes": 847434
+    }
+  ],
+  "frames": 523,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

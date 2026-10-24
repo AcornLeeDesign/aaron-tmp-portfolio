@@ -1,0 +1,44 @@
+[
+  {
+    "crf": 20,
+    "maxrateKbps": 2118,
+    "bufsizeKbits": 2118,
+    "ssim": 0.998908,
+    "bytes": 548060
+  },
+  {
+    "crf": 18,
+    "maxrateKbps": 2118,
+    "bufsizeKbits": 2118,
+    "ssim": 0.999167,
+    "bytes": 671759
+  },
+  {
+    "crf": 19,
+    "maxrateKbps": 2118,
+    "bufsizeKbits": 2118,
+    "ssim": 0.999042,
+    "bytes": 607616
+  },
+  {
+    "crf": 20,
+    "maxrateKbps": 4236,
+    "bufsizeKbits": 4236,
+    "ssim": 0.998908,
+    "bytes": 548060
+  },
+  {
+    "crf": 18,
+    "maxrateKbps": 4236,
+    "bufsizeKbits": 4236,
+    "ssim": 0.999167,
+    "bytes": 671759
+  },
+  {
+    "crf": 19,
+    "maxrateKbps": 4236,
+    "bufsizeKbits": 4236,
+    "ssim": 0.999042,
+    "bytes": 607616
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/printer-setup.mp4",
+  "source": "public/videos/originals/doordash/printer-setup.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 7847182,
+  "bytes": 8836701,
+  "width": 1920,
+  "height": 1074,
+  "sourceWidth": 2740,
+  "sourceHeight": 1534,
+  "ssim": 0.999962,
+  "vmaf": null,
+  "frames": 1450,
+  "sourceFrames": 1450,
+  "duration": "33.883021",
+  "sourceDuration": "33.883021",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999962,
+      "bytes": 8836701
+    }
+  ],
+  "sha256": "5388d34c301d456d02d2db719572b880306f679c20168ca48b265b32230e4a8f"
+}

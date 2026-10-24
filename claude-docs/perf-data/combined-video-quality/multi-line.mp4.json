@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/multi-line.mp4",
+  "source": "public/videos/originals/multi-line.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 1270781,
+  "bytes": 5148815,
+  "width": 1840,
+  "height": 1200,
+  "sourceWidth": 2914,
+  "sourceHeight": 1902,
+  "ssim": 0.999962,
+  "vmaf": null,
+  "frames": 729,
+  "sourceFrames": 729,
+  "duration": "18.516667",
+  "sourceDuration": "18.516667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999962,
+      "bytes": 5148815
+    }
+  ],
+  "sha256": "86286999a50599171d5007fa4311bbbaba79186e38d0065c8d0283ec5f5c4f62"
+}

@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/transcript.mp4",
+  "source": "public/videos/originals/transcript.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 1668208,
+  "bytes": 5861175,
+  "width": 1840,
+  "height": 1200,
+  "sourceWidth": 2914,
+  "sourceHeight": 1902,
+  "ssim": 0.999954,
+  "vmaf": null,
+  "frames": 885,
+  "sourceFrames": 885,
+  "duration": "22.183333",
+  "sourceDuration": "22.183333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999954,
+      "bytes": 5861175
+    }
+  ],
+  "sha256": "81f4d7cc3c4bf60f50e34132c2c794c23573c3996a0fe89879e9c0030ba89979"
+}

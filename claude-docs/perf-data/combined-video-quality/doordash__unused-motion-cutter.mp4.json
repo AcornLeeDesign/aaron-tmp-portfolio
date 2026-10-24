@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/doordash/unused-motion-cutter.mp4",
+  "source": "public/videos/originals/doordash/unused-motion-cutter.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 138431,
+  "bytes": 138447,
+  "width": 1126,
+  "height": 720,
+  "sourceWidth": 1126,
+  "sourceHeight": 720,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 121,
+  "sourceFrames": 121,
+  "duration": "4.033333",
+  "sourceDuration": "4.033333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999995,
+      "bytes": 242459
+    }
+  ],
+  "sha256": "7d6206569eab48135f5d67c01ebc6b50ba7229d742d59906831c609350d3dada"
+}

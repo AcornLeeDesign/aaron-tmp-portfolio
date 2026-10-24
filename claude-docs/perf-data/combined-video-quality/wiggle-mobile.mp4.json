@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/wiggle-mobile.mp4",
+  "source": "public/videos/originals/wiggle.mp4",
+  "sourceRef": "862de9d",
+  "sourceBytes": 160629,
+  "bytes": 160645,
+  "width": 1080,
+  "height": 622,
+  "sourceWidth": 1080,
+  "sourceHeight": 622,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 734,
+  "sourceFrames": 734,
+  "duration": "12.233333",
+  "sourceDuration": "12.233333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.999987,
+      "bytes": 1800281
+    }
+  ],
+  "sha256": "c6a534d1ed73fe5538265e42271b4bf68208d9bcf7e0e8a857aa0bb489d72d32"
+}

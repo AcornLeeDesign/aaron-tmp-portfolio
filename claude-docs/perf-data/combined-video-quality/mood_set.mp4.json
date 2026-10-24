@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/mood_set.mp4",
+  "source": "public/videos/originals/mood_set.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 519668,
+  "bytes": 519667,
+  "width": 1200,
+  "height": 994,
+  "sourceWidth": 1200,
+  "sourceHeight": 994,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 527,
+  "sourceFrames": 527,
+  "duration": "17.566667",
+  "sourceDuration": "17.566667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999984,
+      "bytes": 3891019
+    }
+  ],
+  "sha256": "4b8397d600e982afede92129bb493b080fc9c0b87ab0896b3bd95b87673a9ef4"
+}

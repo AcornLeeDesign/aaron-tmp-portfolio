@@ -1,0 +1,64 @@
+[
+  {
+    "path": "desktop-alerts.png",
+    "width": 1408,
+    "height": 462,
+    "sameDimensions": true,
+    "identical": true,
+    "differentChannels": 0,
+    "meanAbsoluteChannelError": 0
+  },
+  {
+    "path": "desktop-illustrations.png",
+    "width": 1408,
+    "height": 663,
+    "sameDimensions": true,
+    "identical": false,
+    "differentChannels": 327586,
+    "meanAbsoluteChannelError": 1.5097369695255725,
+    "unobscuredRegion": {
+      "left": 184,
+      "top": 25,
+      "width": 1040,
+      "height": 520
+    },
+    "unobscuredRegionIdentical": true,
+    "note": "Baseline element screenshot overlaps fixed bottom blur and section navigation. After screenshot aligns above the overlay; unobscured artwork is identical."
+  },
+  {
+    "path": "desktop-art.png",
+    "width": 780,
+    "height": 585,
+    "sameDimensions": true,
+    "identical": true,
+    "differentChannels": 0,
+    "meanAbsoluteChannelError": 0
+  },
+  {
+    "path": "mobile-alerts.png",
+    "width": 1074,
+    "height": 1422,
+    "sameDimensions": true,
+    "identical": true,
+    "differentChannels": 0,
+    "meanAbsoluteChannelError": 0
+  },
+  {
+    "path": "mobile-illustrations.png",
+    "width": 1074,
+    "height": 819,
+    "sameDimensions": true,
+    "identical": true,
+    "differentChannels": 0,
+    "meanAbsoluteChannelError": 0
+  },
+  {
+    "path": "mobile-art.png",
+    "width": 936,
+    "height": 705,
+    "sameDimensions": true,
+    "identical": true,
+    "differentChannels": 0,
+    "meanAbsoluteChannelError": 0
+  }
+]

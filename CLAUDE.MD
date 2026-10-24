@@ -14,12 +14,11 @@ Personal portfolio website for ACAD 275. Built with Nuxt 4 and Vue 3. Uses npm a
       app.vue                    # Root component — <NuxtLayout> + <NuxtPage />
       pages/
         index.vue                # Home (/) — waterfall video grid
-        nova.vue                 # Gated Nova case study (/nova)
-        nuance.vue               # Gated Nuance case study (/nuance)
+        nova.vue                 # Nova case study (/nova)
+        nuance.vue               # Nuance case study (/nuance)
       components/
-        VideoPlayer.vue          # Lazy-loading video with WebM/MP4 sources + poster
-        CaseStudyGate.vue        # Password form for case studies
-        CaseStudyPage.vue        # Shared case study layout + gated body
+        VideoPlayer.vue          # Lazy-loading video with responsive MP4 sources + poster
+        CaseStudyPage.vue        # Shared case study layout + body
       data/
         caseStudies.ts           # Structured Nova / Nuance case study content
       layouts/
@@ -53,12 +52,9 @@ Personal portfolio website for ACAD 275. Built with Nuxt 4 and Vue 3. Uses npm a
 - Aspect ratios can be manually overridden (e.g. `1 / 1`) — `object-fit: cover` handles cropping.
 
 ## Case-study Routes
-- `/nova` and `/nuance` are password-gated case studies (shared `sessionStorage` key `case-study-unlocked`).
-- Default password is `case` via `runtimeConfig.public.caseStudyPassword`.
-- Content lives in `app/data/caseStudies.ts` (sourced from Framer dumps in `content/case-studies/`).
-- Shared UI: `CaseStudyGate.vue` (password form) + `CaseStudyPage.vue` (layout/body).
-- These routes are development-only and return 404 in production builds.
-- Home waterfall cards remain unlinked and retain the "Case study soon" label.
+- `/doordash`, `/nova`, and `/nuance` are public, linked case studies in development and production.
+- Content lives in the page components and `app/data/caseStudies.ts` (sourced from Framer dumps in `content/case-studies/`).
+- `CaseStudyPage.vue` provides a shared layout/body.
 - Do not invent case-study facts beyond the Framer text package.
 
 ## Key CSS Variables (defined in main.css :root)

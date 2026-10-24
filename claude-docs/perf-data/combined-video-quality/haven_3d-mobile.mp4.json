@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/haven_3d-mobile.mp4",
+  "source": "public/videos/originals/haven_3d.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 2379774,
+  "bytes": 1045568,
+  "width": 1080,
+  "height": 1920,
+  "sourceWidth": 1080,
+  "sourceHeight": 1920,
+  "ssim": 0.990614,
+  "vmaf": null,
+  "frames": 200,
+  "sourceFrames": 200,
+  "duration": "8.333333",
+  "sourceDuration": "8.333333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.990614,
+      "bytes": 1045568
+    }
+  ],
+  "sha256": "d679dcf4d752be6f93db1e1fb48f03ccc413de449281bae012a37d04baca2222"
+}

@@ -1,0 +1,47 @@
+{
+  "file": "multi-line.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/multi-line.mp4",
+  "sourceSha256": "d142efa3c9c09c151e4554b20eea8bad51103a5372ab07ad8d36bc840ee9c089",
+  "sha256": "8f271f539bc03cddcc0efa8bbd5932e554739e581131b2125554756c8807bf71",
+  "before": {
+    "bytes": 5148815,
+    "duration": 18.516667,
+    "avgKbps": 2220.206476683951,
+    "peakKbps": 5412.344
+  },
+  "after": {
+    "bytes": 735151,
+    "duration": 18.516667,
+    "avgKbps": 313.3410564655075,
+    "peakKbps": 740.432
+  },
+  "source": {
+    "bytes": 1270781,
+    "duration": 18.516667,
+    "avgKbps": 544.0577399809588,
+    "peakKbps": 1352.784
+  },
+  "width": 1840,
+  "height": 1200,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 4059,
+    "bufsizeKbits": 4059,
+    "ssim": 0.999533,
+    "bytes": 735151
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 4059,
+      "bufsizeKbits": 4059,
+      "ssim": 0.999533,
+      "bytes": 735151
+    }
+  ],
+  "frames": 729,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

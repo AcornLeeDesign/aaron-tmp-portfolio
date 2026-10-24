@@ -1,0 +1,16 @@
+{
+  "downloadBytesPerSecond": 65536,
+  "detachMs": 8,
+  "requests": [
+    {
+      "url": "http://127.0.0.1:3104/videos/doordash/legacy-feature-flag-mobile.mp4",
+      "bytes": 0,
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "checks": [
+    "Unfinished scrolled-past MP4 detaches immediately",
+    "Browser cancels the active network request",
+    "Deselected video remains paused"
+  ]
+}

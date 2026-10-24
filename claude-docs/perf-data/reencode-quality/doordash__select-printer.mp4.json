@@ -1,0 +1,75 @@
+{
+  "file": "doordash/select-printer.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/doordash/select-printer.mp4",
+  "sourceSha256": "dc3cdf3745cf2b35f8b67f71fb2f416529d63bff28429df0213f02011ab625bb",
+  "sha256": "b90b208539ee76c6f0b194971d04590114a439a360b53d6f701039f0625f6fc2",
+  "before": {
+    "bytes": 5052260,
+    "duration": 19.233333,
+    "avgKbps": 2095.7058248822505,
+    "peakKbps": 4286.904
+  },
+  "after": {
+    "bytes": 1680776,
+    "duration": 19.233333,
+    "avgKbps": 693.3754019649117,
+    "peakKbps": 2243.976
+  },
+  "source": {
+    "bytes": 8833094,
+    "duration": 19.233333,
+    "avgKbps": 3667.277845186791,
+    "peakKbps": 8239.392
+  },
+  "width": 1920,
+  "height": 1080,
+  "method": "CRF search",
+  "selected": {
+    "crf": 17,
+    "maxrateKbps": 3215,
+    "bufsizeKbits": 3215,
+    "ssim": 0.999037,
+    "bytes": 1680776
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 3215,
+      "bufsizeKbits": 3215,
+      "ssim": 0.998632,
+      "bytes": 1287065
+    },
+    {
+      "crf": 9,
+      "maxrateKbps": 3215,
+      "bufsizeKbits": 3215,
+      "ssim": 0.999641,
+      "bytes": 3415503
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 3215,
+      "bufsizeKbits": 3215,
+      "ssim": 0.999313,
+      "bytes": 2175959
+    },
+    {
+      "crf": 17,
+      "maxrateKbps": 3215,
+      "bufsizeKbits": 3215,
+      "ssim": 0.999037,
+      "bytes": 1680776
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 3215,
+      "bufsizeKbits": 3215,
+      "ssim": 0.998932,
+      "bytes": 1534114
+    }
+  ],
+  "frames": 1109,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

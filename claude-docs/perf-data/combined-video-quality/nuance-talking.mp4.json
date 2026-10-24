@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/nuance-talking.mp4",
+  "source": "public/videos/originals/nuance-talking.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 4057406,
+  "bytes": 4057422,
+  "width": 1654,
+  "height": 1080,
+  "sourceWidth": 1654,
+  "sourceHeight": 1080,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 523,
+  "sourceFrames": 523,
+  "duration": "17.433333",
+  "sourceDuration": "17.433333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999943,
+      "bytes": 4681494
+    }
+  ],
+  "sha256": "71d0baa9b858d71301e1ec7ef6b4a44ab26e703687c0a63c628a3d3f7b27910e"
+}

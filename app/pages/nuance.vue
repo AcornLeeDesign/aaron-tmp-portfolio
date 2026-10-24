@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import captionMateCallHistoryUrl from '~/assets/images/case-studies/nuance/captionmate-call-history.png'
-import innoCaptionCallUrl from '~/assets/images/case-studies/nuance/innocaption-call-upscaled.png'
-import liveCaptionCallUrl from '~/assets/images/case-studies/nuance/live-caption-call-upscaled.png'
+// Public copies are byte-identical; asset imports trigger Nuxt’s eager SSR prefetch.
+const captionMateCallHistoryUrl = '/images/case-studies/nuance/captionmate-call-history.png'
+const innoCaptionCallUrl = '/images/case-studies/nuance/innocaption-call-upscaled.png'
+const liveCaptionCallUrl = '/images/case-studies/nuance/live-caption-call-upscaled.png'
+import homepageClouds from '~/data/homepageClouds.json'
 
 type SectionId =
   | 'overview'
@@ -144,6 +146,17 @@ onBeforeUnmount(() => {
 
         <figure class="case-media-figure case-media-figure--overview">
           <div class="case-media-placeholder case-media-placeholder--video case-media-placeholder--fig-one">
+            <img
+              class="case-clouds"
+              src="/images/case-studies/nuance/fig-1-clouds.jpg"
+              :srcset="`${homepageClouds.jpeg}, /images/case-studies/nuance/fig-1-clouds.jpg 5723w`"
+              sizes="(min-width: 1832px) 1800px, (min-width: 640px) calc(100vw - 32px), calc(200vw - 64px)"
+              width="5723"
+              height="3815"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
             <div class="case-phone-device">
               <div class="case-phone-screen">
                 <div class="case-phone-video-crop">
@@ -158,7 +171,7 @@ onBeforeUnmount(() => {
                 src="/images/case-studies/nuance/iphone-16-pro.png"
                 alt=""
                 aria-hidden="true"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -209,25 +222,25 @@ onBeforeUnmount(() => {
 
             <figure class="case-media-figure case-media-figure--competitors case-media-figure--copy-width">
               <div class="phone-placeholders" aria-label="Current captioning service interfaces">
-                <img
+                <NearViewportImage
                   class="phone-placeholder"
                   :src="captionMateCallHistoryUrl"
                   alt="CaptionMate call history showing captioned conversation bubbles"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                 />
-                <img
+                <NearViewportImage
                   class="phone-placeholder"
                   :src="innoCaptionCallUrl"
                   alt="InnoCaption conference call with live captions"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                 />
-                <img
+                <NearViewportImage
                   class="phone-placeholder"
                   :src="liveCaptionCallUrl"
                   alt="Live caption calling app displaying a transcribed conversation"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                 />
               </div>
@@ -258,7 +271,7 @@ onBeforeUnmount(() => {
 
           <figure class="case-media-figure case-media-figure--visual-cues case-media-figure--copy-width">
             <div class="case-media-placeholder visual-cues-media">
-              <img
+              <NearViewportImage
                 class="visual-cues-diagram"
                 src="/images/case-studies/nuance/visual-cues.png"
                 alt="Diagram showing captions, avatars, expression, color, brightness, and depth as complementary visual cues"
@@ -289,13 +302,13 @@ onBeforeUnmount(() => {
                 role="group"
                 aria-label="Two expressive Nuance avatars"
               >
-                <img
+                <NearViewportImage
                   src="/images/case-studies/nuance/avatar-listening-blue.png"
                   alt="Blue Nuance avatar with a concerned expression"
                   loading="lazy"
                   decoding="async"
                 />
-                <img
+                <NearViewportImage
                   src="/images/case-studies/nuance/avatar-listening-pink.png"
                   alt="Pink Nuance avatar with an attentive expression"
                   loading="lazy"
@@ -318,7 +331,10 @@ onBeforeUnmount(() => {
 
           <div class="case-media-stack" aria-label="Visual cue media">
             <figure class="case-media-figure">
-              <div class="case-media-placeholder case-media-placeholder--video case-media-placeholder--mood-colors">
+              <NearViewportBackground
+                class="case-media-placeholder case-media-placeholder--video case-media-placeholder--mood-colors"
+                src="/images/case-studies/nuance/mood-colors-clouds.jpg"
+              >
                 <div class="case-phone-device">
                   <div class="case-phone-screen">
                     <div class="case-phone-video-crop">
@@ -328,7 +344,7 @@ onBeforeUnmount(() => {
                       />
                     </div>
                   </div>
-                  <img
+                  <NearViewportImage
                     class="case-phone-frame"
                     src="/images/case-studies/nuance/iphone-16-pro.png"
                     alt=""
@@ -337,7 +353,7 @@ onBeforeUnmount(() => {
                     decoding="async"
                   />
                 </div>
-              </div>
+              </NearViewportBackground>
               <figcaption class="case-media-caption">Fig 5. Mood color pairs.</figcaption>
             </figure>
           </div>
@@ -617,11 +633,16 @@ onBeforeUnmount(() => {
 }
 
 .case-media-placeholder--fig-one {
-  background-image: url('/images/case-studies/nuance/fig-1-clouds.jpg');
+  position: relative;
 }
 
-.case-media-placeholder--mood-colors {
-  background-image: url('/images/case-studies/nuance/mood-colors-clouds.jpg');
+.case-clouds {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .case-phone-device {

@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/quiz_fullscreen_teacher.mp4",
+  "source": "public/videos/originals/quiz_fullscreen_teacher.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 1500041,
+  "bytes": 4018810,
+  "width": 1920,
+  "height": 1078,
+  "sourceWidth": 3454,
+  "sourceHeight": 1940,
+  "ssim": 0.999941,
+  "vmaf": null,
+  "frames": 920,
+  "sourceFrames": 920,
+  "duration": "15.333008",
+  "sourceDuration": "15.333008",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999941,
+      "bytes": 4018810
+    }
+  ],
+  "sha256": "a0491b777c7813cc3b34325fe8cb438b18ab197980156e7592c6034d1a9868c5"
+}

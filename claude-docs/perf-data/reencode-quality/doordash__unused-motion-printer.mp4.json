@@ -1,0 +1,47 @@
+{
+  "file": "doordash/unused-motion-printer.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/doordash/unused-motion-printer.mp4",
+  "sourceSha256": "91e8f4f01864ffa781c61dc4e4f1fdff6d0c17f697fca0936f5f0152ac676c5f",
+  "sha256": "873ace535ee54f2fde42064175f51df721a44abc1690664820c9a2330aa08977",
+  "before": {
+    "bytes": 384856,
+    "duration": 5.0,
+    "avgKbps": 613.4064000000001,
+    "peakKbps": 1352.128
+  },
+  "after": {
+    "bytes": 59241,
+    "duration": 5.0,
+    "avgKbps": 90.95360000000001,
+    "peakKbps": 187.664
+  },
+  "source": {
+    "bytes": 384840,
+    "duration": 5.0,
+    "avgKbps": 613.4064000000001,
+    "peakKbps": 1352.128
+  },
+  "width": 1230,
+  "height": 720,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 1014,
+    "bufsizeKbits": 1014,
+    "ssim": 0.999782,
+    "bytes": 59241
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 1014,
+      "bufsizeKbits": 1014,
+      "ssim": 0.999782,
+      "bytes": 59241
+    }
+  ],
+  "frames": 150,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

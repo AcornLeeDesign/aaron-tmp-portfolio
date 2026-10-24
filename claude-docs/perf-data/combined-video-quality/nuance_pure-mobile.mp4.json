@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/nuance_pure-mobile.mp4",
+  "source": "public/videos/originals/nuance_pure.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 133304,
+  "bytes": 133303,
+  "width": 600,
+  "height": 600,
+  "sourceWidth": 600,
+  "sourceHeight": 600,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 120,
+  "sourceFrames": 120,
+  "duration": "5.000000",
+  "sourceDuration": "5.000000",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.998583,
+      "bytes": 635355
+    }
+  ],
+  "sha256": "90f84ec825921a2aa385d1ddf701524663e6d370747d541a8a302beae5c8fb9d"
+}

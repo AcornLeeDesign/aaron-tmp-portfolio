@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/recent_call-mobile.mp4",
+  "source": "public/videos/originals/recent_call.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 386340,
+  "bytes": 386335,
+  "width": 1200,
+  "height": 1044,
+  "sourceWidth": 1200,
+  "sourceHeight": 1044,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 387,
+  "sourceFrames": 387,
+  "duration": "12.900000",
+  "sourceDuration": "12.900000",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.999922,
+      "bytes": 1735664
+    }
+  ],
+  "sha256": "ca189e00311c8af9ba702fc9f70bef65c952ba32898744375181cedfdb73f6ad"
+}

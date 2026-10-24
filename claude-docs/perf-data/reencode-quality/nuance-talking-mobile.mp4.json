@@ -1,0 +1,47 @@
+{
+  "file": "nuance-talking-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/nuance-talking.mp4",
+  "sourceSha256": "9a0ea03c90d34db3048d8a3c4b9f3969337c5fa7122be5ea9465790441614581",
+  "sha256": "cff5561aad9971f7ebf3044995b727e487743fc7c8e0da31d951f8f4033d7042",
+  "before": {
+    "bytes": 2253069,
+    "duration": 17.433333,
+    "avgKbps": 1031.0234996371605,
+    "peakKbps": 1882.288
+  },
+  "after": {
+    "bytes": 572716,
+    "duration": 17.433333,
+    "avgKbps": 259.93927839272044,
+    "peakKbps": 507.752
+  },
+  "source": {
+    "bytes": 4057406,
+    "duration": 17.433333,
+    "avgKbps": 1858.571966703097,
+    "peakKbps": 3538.24
+  },
+  "width": 1280,
+  "height": 836,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 1411,
+    "bufsizeKbits": 1411,
+    "ssim": 0.999368,
+    "bytes": 572716
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 1411,
+      "bufsizeKbits": 1411,
+      "ssim": 0.999368,
+      "bytes": 572716
+    }
+  ],
+  "frames": 523,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}
