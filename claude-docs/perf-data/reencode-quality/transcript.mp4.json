@@ -1,0 +1,47 @@
+{
+  "file": "transcript.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/transcript.mp4",
+  "sourceSha256": "575a04f1d534de592892b1559e65a884d283ca01e2c1008bb4066e0868093a54",
+  "sha256": "e7d750efde8bdac8b74b63bce5777bba3b416200f916f8ff4da48173edb41883",
+  "before": {
+    "bytes": 5861175,
+    "duration": 22.183333,
+    "avgKbps": 2109.374997886927,
+    "peakKbps": 5311.904
+  },
+  "after": {
+    "bytes": 950903,
+    "duration": 22.183333,
+    "avgKbps": 338.6073679730634,
+    "peakKbps": 805.12
+  },
+  "source": {
+    "bytes": 1668208,
+    "duration": 22.183333,
+    "avgKbps": 596.6111584765013,
+    "peakKbps": 1464.352
+  },
+  "width": 1840,
+  "height": 1200,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 3983,
+    "bufsizeKbits": 3983,
+    "ssim": 0.999525,
+    "bytes": 950903
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 3983,
+      "bufsizeKbits": 3983,
+      "ssim": 0.999525,
+      "bytes": 950903
+    }
+  ],
+  "frames": 885,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

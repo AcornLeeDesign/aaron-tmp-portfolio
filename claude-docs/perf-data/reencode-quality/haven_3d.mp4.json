@@ -1,0 +1,116 @@
+{
+  "file": "haven_3d.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/haven_3d.mp4",
+  "sourceSha256": "28c046fb1a939bc14da314b34526a9b98024af2025d31bd66196c2abe76852e2",
+  "sha256": "a4e542235bed2a6f613562fe8fc24acae8b5420c278a40388ddebdb89e456ee9",
+  "before": {
+    "bytes": 2098103,
+    "duration": 8.333333,
+    "avgKbps": 2011.1511204460448,
+    "peakKbps": 2695.928
+  },
+  "after": {
+    "bytes": 2379773,
+    "duration": 8.333333,
+    "avgKbps": 2282.8628113145123,
+    "peakKbps": 3092.312
+  },
+  "source": {
+    "bytes": 2379774,
+    "duration": 8.333333,
+    "avgKbps": 2282.8628113145123,
+    "peakKbps": 3092.312
+  },
+  "width": 1080,
+  "height": 1920,
+  "method": "Stream copy (source preserves quality within size limit)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.992236,
+      "bytes": 1866805
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.9927,
+      "bytes": 2163493
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.992706,
+      "bytes": 2165319
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.992688,
+      "bytes": 2166423
+    },
+    {
+      "crf": 12,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.992689,
+      "bytes": 2165128
+    },
+    {
+      "crf": 10,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.992708,
+      "bytes": 2164731
+    },
+    {
+      "crf": 8,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.992693,
+      "bytes": 2165244
+    },
+    {
+      "crf": 6,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.992693,
+      "bytes": 2165762
+    },
+    {
+      "crf": 4,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.992711,
+      "bytes": 2166088
+    },
+    {
+      "crf": 2,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.992697,
+      "bytes": 2164924
+    },
+    {
+      "crf": 1,
+      "maxrateKbps": 2021,
+      "bufsizeKbits": 2021,
+      "ssim": 0.992684,
+      "bytes": 2164834
+    }
+  ],
+  "frames": 200,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

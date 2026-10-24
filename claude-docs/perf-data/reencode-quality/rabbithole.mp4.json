@@ -1,0 +1,38 @@
+{
+  "file": "rabbithole.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/rabbithole.mp4",
+  "sourceSha256": "1eea36a9d3057de855aeb422a93948ae349c77ea7a5e1c746a0a9edb53ece6e3",
+  "sha256": "d59c4a30ef1a22cee98562e47ef8926eb001b2f437c58a83a03ec32ffcf25bd0",
+  "before": {
+    "bytes": 1371446,
+    "duration": 23.966667,
+    "avgKbps": 454.65345681984064,
+    "peakKbps": 1747.432
+  },
+  "after": {
+    "bytes": 1371446,
+    "duration": 23.966667,
+    "avgKbps": 454.65345681984064,
+    "peakKbps": 1747.432
+  },
+  "source": {
+    "bytes": 1371451,
+    "duration": 23.966667,
+    "avgKbps": 454.65345681984064,
+    "peakKbps": 1747.432
+  },
+  "width": 1200,
+  "height": 778,
+  "method": "Stream copy (compact original)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [],
+  "frames": 719,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

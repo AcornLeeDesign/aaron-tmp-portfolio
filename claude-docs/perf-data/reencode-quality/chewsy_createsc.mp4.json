@@ -1,0 +1,81 @@
+{
+  "file": "chewsy_createsc.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/chewsy_createsc.mp4",
+  "sourceSha256": "e0aa85d81b1b8edbcf4f962cba7df08d79fd8f404a80db5faddb79f3ad928789",
+  "sha256": "6767b1acb9cec3a4b3d4e38d4503a5606d7b0d0ae5aaf23574e11ab84e9928ac",
+  "before": {
+    "bytes": 295731,
+    "duration": 8.733333,
+    "avgKbps": 267.2500865362628,
+    "peakKbps": 795.448
+  },
+  "after": {
+    "bytes": 295731,
+    "duration": 8.733333,
+    "avgKbps": 267.2500865362628,
+    "peakKbps": 795.448
+  },
+  "source": {
+    "bytes": 295736,
+    "duration": 8.733333,
+    "avgKbps": 267.2500865362628,
+    "peakKbps": 795.448
+  },
+  "width": 1440,
+  "height": 896,
+  "method": "Stream copy (encoding would exceed source size)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 596,
+      "bufsizeKbits": 596,
+      "ssim": 0.998753,
+      "bytes": 358428
+    },
+    {
+      "crf": 9,
+      "maxrateKbps": 596,
+      "bufsizeKbits": 596,
+      "ssim": 0.99903,
+      "bytes": 433503
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 596,
+      "bufsizeKbits": 596,
+      "ssim": 0.999043,
+      "bytes": 434522
+    },
+    {
+      "crf": 17,
+      "maxrateKbps": 596,
+      "bufsizeKbits": 596,
+      "ssim": 0.998946,
+      "bytes": 399749
+    },
+    {
+      "crf": 15,
+      "maxrateKbps": 596,
+      "bufsizeKbits": 596,
+      "ssim": 0.999017,
+      "bytes": 426451
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 596,
+      "bufsizeKbits": 596,
+      "ssim": 0.999008,
+      "bytes": 414994
+    }
+  ],
+  "frames": 262,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

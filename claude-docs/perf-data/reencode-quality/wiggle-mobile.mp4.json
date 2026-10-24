@@ -1,0 +1,38 @@
+{
+  "file": "wiggle-mobile.mp4",
+  "sourceRef": "862de9d",
+  "sourcePath": "public/videos/wiggle.mp4",
+  "sourceSha256": "5d230bc74cd6c74df9278e9de55ab2a627a223fe3877633e4350f25a369b411e",
+  "sha256": "c94974056e8e47966646caa99b610e571934eca4df82ec28d736d846a8bd3012",
+  "before": {
+    "bytes": 160645,
+    "duration": 12.233333,
+    "avgKbps": 99.10953948527356,
+    "peakKbps": 233.152
+  },
+  "after": {
+    "bytes": 160625,
+    "duration": 12.233333,
+    "avgKbps": 99.10953948527356,
+    "peakKbps": 233.152
+  },
+  "source": {
+    "bytes": 160629,
+    "duration": 12.233333,
+    "avgKbps": 99.10953948527356,
+    "peakKbps": 233.152
+  },
+  "width": 1080,
+  "height": 622,
+  "method": "Stream copy (compact original)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [],
+  "frames": 734,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

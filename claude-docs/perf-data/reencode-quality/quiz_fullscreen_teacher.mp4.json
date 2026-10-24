@@ -1,0 +1,47 @@
+{
+  "file": "quiz_fullscreen_teacher.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/quiz_fullscreen_teacher.mp4",
+  "sourceSha256": "e637f560bf630ddf60db6142e9b0f9b4aca35c98703ab4f75cfdcf737c6382a1",
+  "sha256": "b7012571d23118afcbb736fae012f4830b4a2a2aff99890b40ce20a3a169009c",
+  "before": {
+    "bytes": 4018810,
+    "duration": 15.333008,
+    "avgKbps": 2091.604204471817,
+    "peakKbps": 7942.28
+  },
+  "after": {
+    "bytes": 1102581,
+    "duration": 15.333008,
+    "avgKbps": 570.0783564451281,
+    "peakKbps": 1839.872
+  },
+  "source": {
+    "bytes": 1500041,
+    "duration": 15.333008,
+    "avgKbps": 776.6924793882583,
+    "peakKbps": 2616.792
+  },
+  "width": 1920,
+  "height": 1078,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 5956,
+    "bufsizeKbits": 5956,
+    "ssim": 0.99931,
+    "bytes": 1102581
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 5956,
+      "bufsizeKbits": 5956,
+      "ssim": 0.99931,
+      "bytes": 1102581
+    }
+  ],
+  "frames": 920,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

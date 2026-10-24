@@ -1,0 +1,47 @@
+{
+  "file": "quiz_fullscreen_student-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/quiz_fullscreen_student.mp4",
+  "sourceSha256": "b2f22397771c70e7a488625eff1828e6e7bccd8cba14ecf22d4de7f520869d3e",
+  "sha256": "aca41745bef01b93cc3ef26cda037a95c265e4a586f3cf63eb0fa8de0df5f018",
+  "before": {
+    "bytes": 2255496,
+    "duration": 15.783333,
+    "avgKbps": 1138.094723085422,
+    "peakKbps": 5183.84
+  },
+  "after": {
+    "bytes": 618288,
+    "duration": 15.783333,
+    "avgKbps": 308.26948908700086,
+    "peakKbps": 1434.88
+  },
+  "source": {
+    "bytes": 1783438,
+    "duration": 15.783333,
+    "avgKbps": 898.0541689134988,
+    "peakKbps": 6079.48
+  },
+  "width": 1280,
+  "height": 718,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 3887,
+    "bufsizeKbits": 3887,
+    "ssim": 0.99914,
+    "bytes": 618288
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 3887,
+      "bufsizeKbits": 3887,
+      "ssim": 0.99914,
+      "bytes": 618288
+    }
+  ],
+  "frames": 947,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

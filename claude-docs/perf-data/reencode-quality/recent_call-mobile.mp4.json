@@ -1,0 +1,38 @@
+{
+  "file": "recent_call-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/recent_call.mp4",
+  "sourceSha256": "f61d4314c2433e7e5a0c705efc911e12b33b99abf3681213baa6b2a75561a5e8",
+  "sha256": "ca189e00311c8af9ba702fc9f70bef65c952ba32898744375181cedfdb73f6ad",
+  "before": {
+    "bytes": 386335,
+    "duration": 12.9,
+    "avgKbps": 236.271007751938,
+    "peakKbps": 626.88
+  },
+  "after": {
+    "bytes": 386335,
+    "duration": 12.9,
+    "avgKbps": 236.271007751938,
+    "peakKbps": 626.88
+  },
+  "source": {
+    "bytes": 386340,
+    "duration": 12.9,
+    "avgKbps": 236.271007751938,
+    "peakKbps": 626.88
+  },
+  "width": 1200,
+  "height": 1044,
+  "method": "Stream copy (compact original)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [],
+  "frames": 387,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

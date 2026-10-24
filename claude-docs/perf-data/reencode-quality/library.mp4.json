@@ -1,0 +1,82 @@
+{
+  "file": "library.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/library.mp4",
+  "sourceSha256": "074308f9761d72e28686b5251c9465ef922d59f2500e587130f23e7f5589f7b0",
+  "sha256": "0e49abb2c89d1283ccbc0f090a251a8a0c0e4abee059c94d6685236185949e30",
+  "before": {
+    "bytes": 1414559,
+    "duration": 5.466667,
+    "avgKbps": 2066.2959715673187,
+    "peakKbps": 3922.024
+  },
+  "after": {
+    "bytes": 1810558,
+    "duration": 5.466667,
+    "avgKbps": 2645.8066679386175,
+    "peakKbps": 4314.168
+  },
+  "source": {
+    "bytes": 2665049,
+    "duration": 5.466667,
+    "avgKbps": 3895.8392746439463,
+    "peakKbps": 6905.76
+  },
+  "width": 1920,
+  "height": 1058,
+  "method": "CRF search",
+  "selected": {
+    "crf": 13,
+    "maxrateKbps": 2941,
+    "bufsizeKbits": 2941,
+    "ssim": 0.999038,
+    "bytes": 1810558
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 2941,
+      "bufsizeKbits": 2941,
+      "ssim": 0.998155,
+      "bytes": 829676
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 2941,
+      "bufsizeKbits": 2941,
+      "ssim": 0.998507,
+      "bytes": 1065881
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 2941,
+      "bufsizeKbits": 2941,
+      "ssim": 0.998791,
+      "bytes": 1353318
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 2941,
+      "bufsizeKbits": 2941,
+      "ssim": 0.998973,
+      "bytes": 1697652
+    },
+    {
+      "crf": 12,
+      "maxrateKbps": 2941,
+      "bufsizeKbits": 2941,
+      "ssim": 0.99909,
+      "bytes": 1914913
+    },
+    {
+      "crf": 13,
+      "maxrateKbps": 2941,
+      "bufsizeKbits": 2941,
+      "ssim": 0.999038,
+      "bytes": 1810558
+    }
+  ],
+  "frames": 164,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

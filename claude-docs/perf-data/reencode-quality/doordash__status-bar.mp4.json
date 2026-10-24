@@ -1,0 +1,47 @@
+{
+  "file": "doordash/status-bar.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/doordash/status-bar.mp4",
+  "sourceSha256": "a4bd7dd4737286b7ffbf2e55afb413c9aefc13e0baf8761a5340858b334d53d6",
+  "sha256": "b16a6da171a796c4bfd611cf73b820fece5c57d332a162cfccbbcd17f9dc0ed6",
+  "before": {
+    "bytes": 11420464,
+    "duration": 44.408021,
+    "avgKbps": 2053.0190255494613,
+    "peakKbps": 6490.6
+  },
+  "after": {
+    "bytes": 2137827,
+    "duration": 44.408021,
+    "avgKbps": 380.8000361015862,
+    "peakKbps": 1206.176
+  },
+  "source": {
+    "bytes": 16574167,
+    "duration": 44.408021,
+    "avgKbps": 2980.6420781507018,
+    "peakKbps": 6446.632
+  },
+  "width": 1886,
+  "height": 1168,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 4867,
+    "bufsizeKbits": 4867,
+    "ssim": 0.999379,
+    "bytes": 2137827
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 4867,
+      "bufsizeKbits": 4867,
+      "ssim": 0.999379,
+      "bytes": 2137827
+    }
+  ],
+  "frames": 1957,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

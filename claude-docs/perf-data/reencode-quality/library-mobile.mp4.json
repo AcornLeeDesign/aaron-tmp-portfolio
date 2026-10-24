@@ -1,0 +1,89 @@
+{
+  "file": "library-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/library.mp4",
+  "sourceSha256": "074308f9761d72e28686b5251c9465ef922d59f2500e587130f23e7f5589f7b0",
+  "sha256": "135b99c9001167531f2270102be3611037087bd3055ef4b798fcd9269204de00",
+  "before": {
+    "bytes": 720104,
+    "duration": 5.466667,
+    "avgKbps": 1050.043838411961,
+    "peakKbps": 2085.8
+  },
+  "after": {
+    "bytes": 1038108,
+    "duration": 5.466667,
+    "avgKbps": 1515.4155173527124,
+    "peakKbps": 2483.864
+  },
+  "source": {
+    "bytes": 2665049,
+    "duration": 5.466667,
+    "avgKbps": 3895.8392746439463,
+    "peakKbps": 6905.76
+  },
+  "width": 1280,
+  "height": 706,
+  "method": "CRF search",
+  "selected": {
+    "crf": 11,
+    "maxrateKbps": 1564,
+    "bufsizeKbits": 1564,
+    "ssim": 0.999028,
+    "bytes": 1038108
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 1564,
+      "bufsizeKbits": 1564,
+      "ssim": 0.997752,
+      "bytes": 447454
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 1564,
+      "bufsizeKbits": 1564,
+      "ssim": 0.998223,
+      "bytes": 553966
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 1564,
+      "bufsizeKbits": 1564,
+      "ssim": 0.998566,
+      "bytes": 696090
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 1564,
+      "bufsizeKbits": 1564,
+      "ssim": 0.998852,
+      "bytes": 862361
+    },
+    {
+      "crf": 12,
+      "maxrateKbps": 1564,
+      "bufsizeKbits": 1564,
+      "ssim": 0.998977,
+      "bytes": 989013
+    },
+    {
+      "crf": 10,
+      "maxrateKbps": 1564,
+      "bufsizeKbits": 1564,
+      "ssim": 0.999044,
+      "bytes": 1073773
+    },
+    {
+      "crf": 11,
+      "maxrateKbps": 1564,
+      "bufsizeKbits": 1564,
+      "ssim": 0.999028,
+      "bytes": 1038108
+    }
+  ],
+  "frames": 164,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

@@ -1,0 +1,38 @@
+{
+  "file": "mock_call-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/mock_call.mp4",
+  "sourceSha256": "5f981fc688707619213db568392135fe87b6d0459ab3325b4c504848e8b1a5ac",
+  "sha256": "92d4355c64c478fc7909286a42586e4ec464e013a149e2bbcb0cc1eb636444b2",
+  "before": {
+    "bytes": 189743,
+    "duration": 17.083333,
+    "avgKbps": 86.14478216867867,
+    "peakKbps": 207.64
+  },
+  "after": {
+    "bytes": 189743,
+    "duration": 17.083333,
+    "avgKbps": 86.14478216867867,
+    "peakKbps": 207.64
+  },
+  "source": {
+    "bytes": 189748,
+    "duration": 17.083333,
+    "avgKbps": 86.14478216867867,
+    "peakKbps": 207.64
+  },
+  "width": 1200,
+  "height": 676,
+  "method": "Stream copy (compact original)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [],
+  "frames": 410,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

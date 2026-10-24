@@ -1,0 +1,47 @@
+{
+  "file": "mood-colors-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/mood-colors.mp4",
+  "sourceSha256": "51b9357105fd2171159e2a8da73b149e7f31d230c77ac8b51eb849dd34d67197",
+  "sha256": "edcad1bcfd79f4c9bc54381b93396746d1b7efd2b9b186e929bf96b4f24bf392",
+  "before": {
+    "bytes": 1954454,
+    "duration": 13.966667,
+    "avgKbps": 1114.7988278090972,
+    "peakKbps": 2922.984
+  },
+  "after": {
+    "bytes": 570350,
+    "duration": 13.966667,
+    "avgKbps": 322.00381093069666,
+    "peakKbps": 836.448
+  },
+  "source": {
+    "bytes": 6535502,
+    "duration": 13.966667,
+    "avgKbps": 3738.0027747493373,
+    "peakKbps": 9686.4
+  },
+  "width": 1280,
+  "height": 836,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 2192,
+    "bufsizeKbits": 2192,
+    "ssim": 0.999564,
+    "bytes": 570350
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 2192,
+      "bufsizeKbits": 2192,
+      "ssim": 0.999564,
+      "bytes": 570350
+    }
+  ],
+  "frames": 655,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

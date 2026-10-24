@@ -1,0 +1,47 @@
+{
+  "file": "doordash/status-logic.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/doordash/status-logic.mp4",
+  "sourceSha256": "eb5768e22fcedc7923c09ad8e5c47359a37a688008aad2002d680e945d0ca183",
+  "sha256": "ae48d51c5fd4427789759ab499a589c1b1a47b2341e2fec0224eaf83c850b453",
+  "before": {
+    "bytes": 3486140,
+    "duration": 36.825,
+    "avgKbps": 755.2419280380176,
+    "peakKbps": 4178.472
+  },
+  "after": {
+    "bytes": 547955,
+    "duration": 36.825,
+    "avgKbps": 116.9503326544467,
+    "peakKbps": 677.952
+  },
+  "source": {
+    "bytes": 2613684,
+    "duration": 36.825,
+    "avgKbps": 565.3031364562117,
+    "peakKbps": 2485.336
+  },
+  "width": 1920,
+  "height": 1062,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 3133,
+    "bufsizeKbits": 3133,
+    "ssim": 0.99962,
+    "bytes": 547955
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 3133,
+      "bufsizeKbits": 3133,
+      "ssim": 0.99962,
+      "bytes": 547955
+    }
+  ],
+  "frames": 728,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

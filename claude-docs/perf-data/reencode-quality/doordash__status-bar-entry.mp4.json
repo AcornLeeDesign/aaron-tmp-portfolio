@@ -1,0 +1,68 @@
+{
+  "file": "doordash/status-bar-entry.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/doordash/status-bar-entry.mp4",
+  "sourceSha256": "4f56f1142bea7f8aa0c3c6c8fd2deb471a1be211d45985666e9a046413a8b5ca",
+  "sha256": "704119822f3f89dbb0c896c5f8f6b207ca38fd8a430a42fedc67a58a118df900",
+  "before": {
+    "bytes": 5242425,
+    "duration": 20.333021,
+    "avgKbps": 2056.916185745345,
+    "peakKbps": 5997.496
+  },
+  "after": {
+    "bytes": 1911409,
+    "duration": 20.333021,
+    "avgKbps": 746.3575629022367,
+    "peakKbps": 2737.128
+  },
+  "source": {
+    "bytes": 11442549,
+    "duration": 20.333021,
+    "avgKbps": 4495.608203030923,
+    "peakKbps": 13704.512
+  },
+  "width": 1920,
+  "height": 1080,
+  "method": "CRF search",
+  "selected": {
+    "crf": 17,
+    "maxrateKbps": 4498,
+    "bufsizeKbits": 4498,
+    "ssim": 0.999036,
+    "bytes": 1911409
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 4498,
+      "bufsizeKbits": 4498,
+      "ssim": 0.998584,
+      "bytes": 1500349
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 4498,
+      "bufsizeKbits": 4498,
+      "ssim": 0.998902,
+      "bytes": 1759699
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 4498,
+      "bufsizeKbits": 4498,
+      "ssim": 0.99914,
+      "bytes": 2069438
+    },
+    {
+      "crf": 17,
+      "maxrateKbps": 4498,
+      "bufsizeKbits": 4498,
+      "ssim": 0.999036,
+      "bytes": 1911409
+    }
+  ],
+  "frames": 1172,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}
