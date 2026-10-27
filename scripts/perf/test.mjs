@@ -21,7 +21,7 @@ try {
     }
     if (!ready) throw new Error('Production server did not start')
   }
-  for (const script of ['verify-case-loading', 'verify-coordinator', 'verify-cancellation', 'verify', 'verify-homepage-media']) {
+  for (const script of ['verify-video-controls', 'verify-case-loading', 'verify-coordinator', 'verify-cancellation', 'verify', 'verify-homepage-media']) {
     await run([`scripts/perf/${script}.mjs`])
   }
 } finally { server?.kill('SIGTERM') }

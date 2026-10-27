@@ -2,10 +2,8 @@
 interface VideoRegistration {
   id: number
   caseStudy: boolean
-  userPaused: boolean
-  prepare: (load: boolean, active: boolean) => void
+  prepare: (load: boolean) => void
   onPause: () => void
-  onPlay: () => void
   video: HTMLVideoElement
   visibilityRatio: number
   viewportTop: number
@@ -66,7 +64,6 @@ function pauseVideo(registration: VideoRegistration) {
 function playVideo(registration: VideoRegistration) {
   if (
     registration.playPending
-    || registration.userPaused
     || (registration.caseStudy && registration.video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA)
     || !registration.wantsPlayback
     || document.visibilityState !== 'visible'
@@ -77,6 +74,12 @@ function playVideo(registration: VideoRegistration) {
     return
   }
 
+  clearPlaybackRetry(registration)
+  // Set the DOM properties before every attempt, including delayed retries.
+  registration.video.muted = true
+  registration.video.defaultMuted = true
+  registration.video.playsInline = true
+  registration.video.controls = false
   registration.playPending = true
   const playAttempt = registration.video.play()
 
@@ -144,7 +147,7 @@ function syncPlayback() {
   }
 
   for (const item of videoRegistrations.values()) {
-    item.prepare(candidates.includes(item) || item === upcoming, candidates.includes(item))
+    item.prepare(candidates.includes(item) || item === upcoming)
   }
 
   for (const registration of candidates) {
@@ -186,11 +189,11 @@ function registerVideo(video: HTMLVideoElement, caseStudy: boolean, prepare: Vid
     id: nextRegistrationId++,
     caseStudy,
     prepare,
-    userPaused: false,
     onPause: () => {
-      if (registration.caseStudy && registration.wantsPlayback && video.controls) registration.userPaused = true
+      // Presentation media has no manual pause UI. Recover from browser pauses
+      // while leaving offscreen/hidden videos under coordinator control.
+      if (registration.wantsPlayback) schedulePlaybackSync()
     },
-    onPlay: () => { registration.userPaused = false },
     video,
     visibilityRatio: 0,
     viewportTop: Number.POSITIVE_INFINITY,
@@ -211,7 +214,6 @@ function registerVideo(video: HTMLVideoElement, caseStudy: boolean, prepare: Vid
   video.addEventListener('canplay', registration.onCanPlay)
   video.addEventListener('progress', registration.onCanPlay)
   video.addEventListener('pause', registration.onPause)
-  video.addEventListener('play', registration.onPlay)
   video.addEventListener('playing', registration.onPlaying)
   attachCoordinatorListeners()
   return registration
@@ -222,7 +224,6 @@ function unregisterVideo(registration: VideoRegistration) {
   registration.video.removeEventListener('canplay', registration.onCanPlay)
   registration.video.removeEventListener('progress', registration.onCanPlay)
   registration.video.removeEventListener('pause', registration.onPause)
-  registration.video.removeEventListener('play', registration.onPlay)
   registration.video.removeEventListener('playing', registration.onPlaying)
   videoRegistrations.delete(registration.id)
 
@@ -235,6 +236,9 @@ function unregisterVideo(registration: VideoRegistration) {
 </script>
 
 <script setup lang="ts">
+// Apply caller attributes first so they cannot enable native media controls.
+defineOptions({ inheritAttrs: false })
+
 const props = withDefaults(defineProps<{
   src: string
   poster?: string
@@ -247,19 +251,11 @@ const props = withDefaults(defineProps<{
 const videoRef = ref<HTMLVideoElement | null>(null)
 const sourcesAttached = ref(false)
 const preload = ref<'none' | 'metadata' | 'auto'>('none')
-const showControls = ref(false)
-let slowLoadTimer: number | undefined
 let wantsLoad = false
 const isMobileViewport = ref(false)
 let mobileQuery: MediaQueryList | undefined
 
-function clearSlowLoadTimer() {
-  if (slowLoadTimer === undefined) return
-  window.clearTimeout(slowLoadTimer)
-  slowLoadTimer = undefined
-}
-
-function prepareMedia(load: boolean, active: boolean) {
+function prepareMedia(load: boolean) {
   wantsLoad = load
   const video = videoRef.value
   const rect = video?.getBoundingClientRect()
@@ -275,16 +271,6 @@ function prepareMedia(load: boolean, active: boolean) {
     clearSourceRelease()
   } else if (sourcesAttached.value) {
     scheduleSourceRelease()
-  }
-  if (props.caseStudy && active && videoRef.value?.paused && !showControls.value) {
-    if (slowLoadTimer === undefined) {
-      slowLoadTimer = window.setTimeout(() => {
-        slowLoadTimer = undefined
-        if (videoRef.value?.paused) showControls.value = true
-      }, 8000)
-    }
-  } else {
-    clearSlowLoadTimer()
   }
 }
 // Select in JS so the browser never fetches both desktop and mobile sources.
@@ -350,8 +336,6 @@ function releaseSources() {
   const transition = ++sourceTransition
   sourcesAttached.value = false
   preload.value = 'none'
-  showControls.value = false
-  if (registration) registration.userPaused = false
 
   nextTick(() => {
     if (transition !== sourceTransition || sourcesAttached.value) return
@@ -414,7 +398,6 @@ onBeforeUnmount(() => {
   isWithinSourceRange = false
   sourceTransition += 1
   clearSourceRelease()
-  clearSlowLoadTimer()
   sourceObserver?.disconnect()
   window.removeEventListener('resize', observeSourceRange)
   viewportObserver?.disconnect()
@@ -434,16 +417,21 @@ onBeforeUnmount(() => {
 
 <template>
   <video
+    v-bind="$attrs"
     ref="videoRef"
     :data-playback-group="playbackGroup"
     loop
     muted
     playsinline
-    :aria-hidden="showControls ? undefined : true"
-    :aria-label="showControls ? 'Case study video' : undefined"
-    :controls="showControls"
+    aria-hidden="true"
+    tabindex="-1"
+    :controls="false"
+    disableremoteplayback
+    disablepictureinpicture
+    controlslist="nodownload nofullscreen noremoteplayback"
     :preload="preload"
-    @playing="clearSlowLoadTimer"
+    @click.prevent
+    @contextmenu.prevent
     loading="lazy"
     :poster="posterSrc"
   >
@@ -452,3 +440,8 @@ onBeforeUnmount(() => {
     </template>
   </video>
 </template>
+
+<style scoped>
+/* Let touch gestures scroll the page without invoking native video UI. */
+video { pointer-events: none; }
+</style>
