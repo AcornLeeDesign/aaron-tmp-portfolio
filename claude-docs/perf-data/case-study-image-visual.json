@@ -1,0 +1,79 @@
+{
+  "viewport": 1440,
+  "dpr": 1,
+  "method": "Chromium image-element screenshots, original vs delivered at identical CSS geometry; navigation and scroll blur hidden; FFmpeg YUV444 All SSIM (diagnostic, includes resizing)",
+  "results": [
+    {
+      "name": "avatar-listening-blue",
+      "ssim": 0.911028
+    },
+    {
+      "name": "avatar-listening-pink",
+      "ssim": 0.998068
+    },
+    {
+      "name": "captionmate-call-history",
+      "ssim": 0.9865
+    },
+    {
+      "name": "computer-lab",
+      "ssim": 0.971218
+    },
+    {
+      "name": "design-image-1-transparent",
+      "ssim": 0.992211
+    },
+    {
+      "name": "field-research-blurred",
+      "ssim": 0.990938
+    },
+    {
+      "name": "innocaption-call-upscaled",
+      "ssim": 0.990331
+    },
+    {
+      "name": "live-caption-call-upscaled",
+      "ssim": 0.994374
+    },
+    {
+      "name": "nova-hardware",
+      "ssim": 0.998148
+    },
+    {
+      "name": "oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent",
+      "ssim": 0.997557
+    },
+    {
+      "name": "printer-illustrations",
+      "ssim": 0.988895
+    },
+    {
+      "name": "render_3",
+      "ssim": 0.99766
+    },
+    {
+      "name": "render_4",
+      "ssim": 0.996905
+    },
+    {
+      "name": "render_5",
+      "ssim": 0.993951
+    },
+    {
+      "name": "render_7",
+      "ssim": 0.996488
+    },
+    {
+      "name": "render_8",
+      "ssim": 0.996487
+    },
+    {
+      "name": "status-actions",
+      "ssim": 0.990043
+    },
+    {
+      "name": "u4vE6oS3396MmsZs0nLjVr396d8",
+      "ssim": 0.992534
+    }
+  ]
+}

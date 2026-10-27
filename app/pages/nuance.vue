@@ -1,9 +1,8 @@
 <script setup lang="ts">
-// Public copies are byte-identical; asset imports trigger Nuxt’s eager SSR prefetch.
+// Public asset keys resolve through CaseStudyImage; imports would trigger SSR prefetch.
 const captionMateCallHistoryUrl = '/images/case-studies/nuance/captionmate-call-history.png'
 const innoCaptionCallUrl = '/images/case-studies/nuance/innocaption-call-upscaled.png'
 const liveCaptionCallUrl = '/images/case-studies/nuance/live-caption-call-upscaled.png'
-import homepageClouds from '~/data/homepageClouds.json'
 
 type SectionId =
   | 'overview'
@@ -146,13 +145,10 @@ onBeforeUnmount(() => {
 
         <figure class="case-media-figure case-media-figure--overview">
           <div class="case-media-placeholder case-media-placeholder--video case-media-placeholder--fig-one">
-            <img
+            <CaseStudyImage
               class="case-clouds"
               src="/images/case-studies/nuance/fig-1-clouds.jpg"
-              :srcset="`${homepageClouds.jpeg}, /images/case-studies/nuance/fig-1-clouds.jpg 5723w`"
               sizes="(min-width: 1832px) 1800px, (min-width: 640px) calc(100vw - 32px), calc(200vw - 64px)"
-              width="5723"
-              height="3815"
               alt=""
               loading="lazy"
               decoding="async"
@@ -166,7 +162,7 @@ onBeforeUnmount(() => {
                   />
                 </div>
               </div>
-              <img
+              <CaseStudyImage
                 class="case-phone-frame"
                 src="/images/case-studies/nuance/iphone-16-pro.png"
                 alt=""
@@ -222,21 +218,21 @@ onBeforeUnmount(() => {
 
             <figure class="case-media-figure case-media-figure--competitors case-media-figure--copy-width">
               <div class="phone-placeholders" aria-label="Current captioning service interfaces">
-                <NearViewportImage
+                <CaseStudyImage deferred
                   class="phone-placeholder"
                   :src="captionMateCallHistoryUrl"
                   alt="CaptionMate call history showing captioned conversation bubbles"
                   loading="lazy"
                   decoding="async"
                 />
-                <NearViewportImage
+                <CaseStudyImage deferred
                   class="phone-placeholder"
                   :src="innoCaptionCallUrl"
                   alt="InnoCaption conference call with live captions"
                   loading="lazy"
                   decoding="async"
                 />
-                <NearViewportImage
+                <CaseStudyImage deferred
                   class="phone-placeholder"
                   :src="liveCaptionCallUrl"
                   alt="Live caption calling app displaying a transcribed conversation"
@@ -302,13 +298,13 @@ onBeforeUnmount(() => {
                 role="group"
                 aria-label="Two expressive Nuance avatars"
               >
-                <NearViewportImage
+                <CaseStudyImage deferred
                   src="/images/case-studies/nuance/avatar-listening-blue.png"
                   alt="Blue Nuance avatar with a concerned expression"
                   loading="lazy"
                   decoding="async"
                 />
-                <NearViewportImage
+                <CaseStudyImage deferred
                   src="/images/case-studies/nuance/avatar-listening-pink.png"
                   alt="Pink Nuance avatar with an attentive expression"
                   loading="lazy"
@@ -331,10 +327,16 @@ onBeforeUnmount(() => {
 
           <div class="case-media-stack" aria-label="Visual cue media">
             <figure class="case-media-figure">
-              <NearViewportBackground
+              <div
                 class="case-media-placeholder case-media-placeholder--video case-media-placeholder--mood-colors"
-                src="/images/case-studies/nuance/mood-colors-clouds.jpg"
               >
+                <CaseStudyImage deferred
+                  class="case-clouds"
+                  src="/images/case-studies/nuance/mood-colors-clouds.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div class="case-phone-device">
                   <div class="case-phone-screen">
                     <div class="case-phone-video-crop">
@@ -344,7 +346,7 @@ onBeforeUnmount(() => {
                       />
                     </div>
                   </div>
-                  <NearViewportImage
+                  <CaseStudyImage deferred
                     class="case-phone-frame"
                     src="/images/case-studies/nuance/iphone-16-pro.png"
                     alt=""
@@ -353,7 +355,7 @@ onBeforeUnmount(() => {
                     decoding="async"
                   />
                 </div>
-              </NearViewportBackground>
+              </div>
               <figcaption class="case-media-caption">Fig 5. Mood color pairs.</figcaption>
             </figure>
           </div>
@@ -632,7 +634,8 @@ onBeforeUnmount(() => {
   background-size: cover;
 }
 
-.case-media-placeholder--fig-one {
+.case-media-placeholder--fig-one,
+.case-media-placeholder--mood-colors {
   position: relative;
 }
 

@@ -183,7 +183,7 @@ onBeforeUnmount(() => {
 
           <figure class="research-figure">
             <div class="case-media-frame case-media-frame--problem">
-              <NearViewportImage
+              <CaseStudyImage deferred
                 class="case-media-content case-media-content--cover"
                 src="/images/case-studies/nova/field-research-blurred.png"
                 alt="Nova field researchers speaking with an educator in a school office"
@@ -204,7 +204,7 @@ onBeforeUnmount(() => {
 
               <figure class="case-media-figure">
                 <div class="case-media-frame case-media-frame--problem">
-                  <NearViewportImage
+                  <CaseStudyImage deferred
                     class="case-media-content case-media-content--cover"
                     src="/images/case-studies/nova/computer-lab.jpg"
                     alt="An empty school computer lab with bare walls and no computers"
@@ -291,7 +291,7 @@ onBeforeUnmount(() => {
 
               <figure class="existing-solution-figure">
                 <div class="case-media-frame existing-solution-media">
-                  <NearViewportImage
+                  <CaseStudyImage deferred
                     class="case-media-content"
                     src="/images/case-studies/nova/figma/design-image-1-transparent.png"
                     alt="RACHEL-Plus offline learning device"
@@ -338,7 +338,7 @@ onBeforeUnmount(() => {
                 </div>
                 <figure class="case-media-figure">
                   <div class="case-media-frame case-media-frame--hardware">
-                    <NearViewportImage
+                    <CaseStudyImage deferred
                       class="case-media-content case-media-content--contain"
                       src="/images/case-studies/nova/nova-hardware.png"
                       alt="Guardian Inc. Nova hardware device used to run the local learning platform"
@@ -483,7 +483,7 @@ onBeforeUnmount(() => {
 
             <figure class="case-media-figure">
               <div class="case-media-frame case-media-frame--diagram">
-                <NearViewportImage
+                <CaseStudyImage deferred
                   class="case-media-content case-media-content--contain case-media-content--relevance"
                   src="/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent.png"
                   alt="Relevance-checking AI flow that reduces context and generates output faster"
@@ -513,7 +513,7 @@ onBeforeUnmount(() => {
 
           <figure class="case-media-figure case-media-figure--copy-width">
             <div class="case-media-frame">
-              <NearViewportImage
+              <CaseStudyImage deferred
                 class="case-media-content case-media-content--cover"
                 src="/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8.png"
                 alt="Students in South Sudan gathered around a laptop running Nova"

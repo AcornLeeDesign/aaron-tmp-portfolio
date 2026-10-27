@@ -288,7 +288,7 @@ onBeforeUnmount(() => {
           </div>
           <figcaption>Fig. 7. Ideal flow and adapted flow with manual printer identification.</figcaption>
         </figure>
-        <figure class="status-actions status-actions--illustrations"><div class="status-actions__stage"><OptimizedImage src="/images/case-studies/doordash/printer-illustrations.png" alt="Visual guide for TSP100IV and TSP100III printers, floor kiosks, and counter kiosks, showing switches, cables, and opening mechanisms" loading="lazy" /></div><figcaption>Fig. 8. Visual guide for printer models and kiosk hardware.</figcaption></figure>
+        <figure class="status-actions status-actions--illustrations"><div class="status-actions__stage"><CaseStudyImage src="/images/case-studies/doordash/printer-illustrations.png" alt="Visual guide for TSP100IV and TSP100III printers, floor kiosks, and counter kiosks, showing switches, cables, and opening mechanisms" loading="lazy" /></div><figcaption>Fig. 8. Visual guide for printer models and kiosk hardware.</figcaption></figure>
         <DoorDashPrototype clip="select-printer" caption="Fig. 9. Illustrated printer selection." />
       </section>
 
@@ -306,7 +306,7 @@ onBeforeUnmount(() => {
           <figcaption>Fig. 10. Status banner (A) and floating status toast (B) explorations.</figcaption>
         </figure>
         <div class="copy text-group"><h2>One footer component, a consistent status-action pattern</h2><p>The final component keeps secondary and primary actions in a stable location. Distinct status treatments and action swaps make warnings, critical errors, and success easy to tell apart.</p></div>
-        <figure class="status-actions"><div class="status-actions__stage"><OptimizedImage src="/images/case-studies/doordash/status-actions.png" alt="Final footer patterns for printer success, device success, warnings, and critical errors" loading="lazy" /></div><figcaption>Fig. 11. Footer states for success, warnings, and critical errors.</figcaption></figure>
+        <figure class="status-actions"><div class="status-actions__stage"><CaseStudyImage src="/images/case-studies/doordash/status-actions.png" alt="Final footer patterns for printer success, device success, warnings, and critical errors" loading="lazy" /></div><figcaption>Fig. 11. Footer states for success, warnings, and critical errors.</figcaption></figure>
       </section>
 
       <section id="solution" class="story" data-case-section="solution">
