@@ -1,0 +1,75 @@
+{
+  "file": "nova_walkthrough-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/nova_walkthrough.mp4",
+  "sourceSha256": "470e213242149c9be6540f54477d62f7ea27fe138fb624e064e4e0c4c7a91040",
+  "sha256": "03de734994194e6072a92045da8163f9b8b5c29e60b8c66a2d7b9cd298b726d1",
+  "before": {
+    "bytes": 4491507,
+    "duration": 35.233333,
+    "avgKbps": 1014.9518355246153,
+    "peakKbps": 4099.4
+  },
+  "after": {
+    "bytes": 2853518,
+    "duration": 35.233333,
+    "avgKbps": 643.041065686292,
+    "peakKbps": 3347.56
+  },
+  "source": {
+    "bytes": 5679880,
+    "duration": 35.233333,
+    "avgKbps": 1283.882623310148,
+    "peakKbps": 7668.048
+  },
+  "width": 1280,
+  "height": 718,
+  "method": "CRF search",
+  "selected": {
+    "crf": 17,
+    "maxrateKbps": 3074,
+    "bufsizeKbits": 3074,
+    "ssim": 0.999045,
+    "bytes": 2853518
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 3074,
+      "bufsizeKbits": 3074,
+      "ssim": 0.99856,
+      "bytes": 2185233
+    },
+    {
+      "crf": 9,
+      "maxrateKbps": 3074,
+      "bufsizeKbits": 3074,
+      "ssim": 0.999676,
+      "bytes": 5245849
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 3074,
+      "bufsizeKbits": 3074,
+      "ssim": 0.999355,
+      "bytes": 3694844
+    },
+    {
+      "crf": 17,
+      "maxrateKbps": 3074,
+      "bufsizeKbits": 3074,
+      "ssim": 0.999045,
+      "bytes": 2853518
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 3074,
+      "bufsizeKbits": 3074,
+      "ssim": 0.998897,
+      "bytes": 2611232
+    }
+  ],
+  "frames": 2114,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

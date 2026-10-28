@@ -1,0 +1,642 @@
+{
+  "results": [
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/computer-lab.jpg",
+      "src": "/images/case-studies/nova/computer-lab-1200.webp",
+      "width": 358,
+      "height": 155,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/field-research-blurred.png",
+      "src": "/images/case-studies/nova/field-research-blurred-800.webp",
+      "width": 358,
+      "height": 155,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/figma/design-image-1-transparent.png",
+      "src": "/images/case-studies/nova/figma/design-image-1-transparent-640.webp",
+      "width": 215,
+      "height": 215,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/nova-hardware.png",
+      "src": "/images/case-studies/nova/nova-hardware-920.webp",
+      "width": 310,
+      "height": 154,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent.png",
+      "src": "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-800.webp",
+      "width": 326,
+      "height": 170,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8.png",
+      "src": "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8-1200.webp",
+      "width": 358,
+      "height": 202,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/avatar-listening-blue.png",
+      "src": "/images/case-studies/nuance/avatar-listening-blue-640.webp",
+      "width": 139,
+      "height": 139,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/avatar-listening-pink.png",
+      "src": "/images/case-studies/nuance/avatar-listening-pink-640.webp",
+      "width": 139,
+      "height": 139,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/captionmate-call-history.png",
+      "src": "/images/case-studies/nuance/captionmate-call-history-640.webp",
+      "width": 111,
+      "height": 202,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/innocaption-call-upscaled.png",
+      "src": "/images/case-studies/nuance/innocaption-call-upscaled-320.webp",
+      "width": 111,
+      "height": 202,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/live-caption-call-upscaled.png",
+      "src": "/images/case-studies/nuance/live-caption-call-upscaled-640.webp",
+      "width": 111,
+      "height": 202,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/mood-colors-clouds.jpg",
+      "src": "/images/case-studies/nuance/mood-colors-clouds-800.webp",
+      "width": 358,
+      "height": 477,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/fig-1-clouds.jpg",
+      "src": "/images/case-studies/nuance/fig-1-clouds-1760.webp",
+      "width": 358,
+      "height": 477,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/iphone-16-pro.png",
+      "src": "/images/case-studies/nuance/iphone-16-pro-820.webp",
+      "width": 205,
+      "height": 420,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/printer-illustrations.png",
+      "src": "/images/case-studies/doordash/printer-illustrations-800.webp",
+      "width": 310,
+      "height": 174,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/status-actions.png",
+      "src": "/images/case-studies/doordash/status-actions-800.webp",
+      "width": 310,
+      "height": 174,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/art-direction/render_3.png",
+      "src": "/images/case-studies/doordash/art-direction/render_3-640.webp",
+      "width": 187,
+      "height": 234,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/art-direction/render_4.png",
+      "src": "/images/case-studies/doordash/art-direction/render_4-640.webp",
+      "width": 187,
+      "height": 234,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/art-direction/render_5.png",
+      "src": "/images/case-studies/doordash/art-direction/render_5-800.webp",
+      "width": 312,
+      "height": 234,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/art-direction/render_7.png",
+      "src": "/images/case-studies/doordash/art-direction/render_7-640.webp",
+      "width": 187,
+      "height": 234,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 390,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/art-direction/render_8.png",
+      "src": "/images/case-studies/doordash/art-direction/render_8-640.webp",
+      "width": 187,
+      "height": 234,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/computer-lab.jpg",
+      "src": "/images/case-studies/nova/computer-lab-1200.webp",
+      "width": 600,
+      "height": 260,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/field-research-blurred.png",
+      "src": "/images/case-studies/nova/field-research-blurred-1200.webp",
+      "width": 600,
+      "height": 260,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/figma/design-image-1-transparent.png",
+      "src": "/images/case-studies/nova/figma/design-image-1-transparent-640.webp",
+      "width": 230,
+      "height": 230,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/nova-hardware.png",
+      "src": "/images/case-studies/nova/nova-hardware-920.webp",
+      "width": 552,
+      "height": 291,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent.png",
+      "src": "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-1800.webp",
+      "width": 704,
+      "height": 384,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8.png",
+      "src": "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8-1200.webp",
+      "width": 600,
+      "height": 339,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/avatar-listening-blue.png",
+      "src": "/images/case-studies/nuance/avatar-listening-blue-640.webp",
+      "width": 260,
+      "height": 260,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/avatar-listening-pink.png",
+      "src": "/images/case-studies/nuance/avatar-listening-pink-640.webp",
+      "width": 260,
+      "height": 260,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/captionmate-call-history.png",
+      "src": "/images/case-studies/nuance/captionmate-call-history-640.webp",
+      "width": 189,
+      "height": 339,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/innocaption-call-upscaled.png",
+      "src": "/images/case-studies/nuance/innocaption-call-upscaled-640.webp",
+      "width": 189,
+      "height": 339,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/live-caption-call-upscaled.png",
+      "src": "/images/case-studies/nuance/live-caption-call-upscaled-900.webp",
+      "width": 189,
+      "height": 339,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/mood-colors-clouds.jpg",
+      "src": "/images/case-studies/nuance/mood-colors-clouds-1800.webp",
+      "width": 736,
+      "height": 416,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/fig-1-clouds.jpg",
+      "src": "/images/case-studies/nuance/fig-1-clouds-1760.webp",
+      "width": 736,
+      "height": 416,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/nuance/iphone-16-pro.png",
+      "src": "/images/case-studies/nuance/iphone-16-pro-820.webp",
+      "width": 179,
+      "height": 366,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/printer-illustrations.png",
+      "src": "/images/case-studies/doordash/printer-illustrations-1920.webp",
+      "width": 688,
+      "height": 387,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/status-actions.png",
+      "src": "/images/case-studies/doordash/status-actions-1920.webp",
+      "width": 688,
+      "height": 387,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/art-direction/render_3.png",
+      "src": "/images/case-studies/doordash/art-direction/render_3-960.webp",
+      "width": 369,
+      "height": 461,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/art-direction/render_4.png",
+      "src": "/images/case-studies/doordash/art-direction/render_4-960.webp",
+      "width": 369,
+      "height": 461,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/art-direction/render_5.png",
+      "src": "/images/case-studies/doordash/art-direction/render_5-1920.webp",
+      "width": 614,
+      "height": 461,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/art-direction/render_7.png",
+      "src": "/images/case-studies/doordash/art-direction/render_7-960.webp",
+      "width": 369,
+      "height": 461,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 768,
+      "dpr": 2,
+      "original": "/images/case-studies/doordash/art-direction/render_8.png",
+      "src": "/images/case-studies/doordash/art-direction/render_8-960.webp",
+      "width": 369,
+      "height": 461,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nova/computer-lab.jpg",
+      "src": "/images/case-studies/nova/computer-lab-1200.webp",
+      "width": 600,
+      "height": 260,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nova/field-research-blurred.png",
+      "src": "/images/case-studies/nova/field-research-blurred-800.webp",
+      "width": 600,
+      "height": 260,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nova/figma/design-image-1-transparent.png",
+      "src": "/images/case-studies/nova/figma/design-image-1-transparent-640.webp",
+      "width": 230,
+      "height": 230,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nova/nova-hardware.png",
+      "src": "/images/case-studies/nova/nova-hardware-920.webp",
+      "width": 552,
+      "height": 291,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent.png",
+      "src": "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-1800.webp",
+      "width": 1376,
+      "height": 763,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8.png",
+      "src": "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8-1200.webp",
+      "width": 600,
+      "height": 339,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nuance/avatar-listening-blue.png",
+      "src": "/images/case-studies/nuance/avatar-listening-blue-640.webp",
+      "width": 260,
+      "height": 260,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nuance/avatar-listening-pink.png",
+      "src": "/images/case-studies/nuance/avatar-listening-pink-640.webp",
+      "width": 260,
+      "height": 260,
+      "loading": "lazy",
+      "fit": "contain"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nuance/captionmate-call-history.png",
+      "src": "/images/case-studies/nuance/captionmate-call-history-640.webp",
+      "width": 189,
+      "height": 339,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nuance/innocaption-call-upscaled.png",
+      "src": "/images/case-studies/nuance/innocaption-call-upscaled-320.webp",
+      "width": 189,
+      "height": 339,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nuance/live-caption-call-upscaled.png",
+      "src": "/images/case-studies/nuance/live-caption-call-upscaled-640.webp",
+      "width": 189,
+      "height": 339,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nuance/mood-colors-clouds.jpg",
+      "src": "/images/case-studies/nuance/mood-colors-clouds-1800.webp",
+      "width": 1408,
+      "height": 795,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nuance/fig-1-clouds.jpg",
+      "src": "/images/case-studies/nuance/fig-1-clouds-1760.webp",
+      "width": 1408,
+      "height": 795,
+      "loading": "lazy",
+      "fit": "cover"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/nuance/iphone-16-pro.png",
+      "src": "/images/case-studies/nuance/iphone-16-pro-820.webp",
+      "width": 342,
+      "height": 700,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/doordash/printer-illustrations.png",
+      "src": "/images/case-studies/doordash/printer-illustrations-1920.webp",
+      "width": 1040,
+      "height": 585,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/doordash/status-actions.png",
+      "src": "/images/case-studies/doordash/status-actions-1920.webp",
+      "width": 1040,
+      "height": 585,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/doordash/art-direction/render_3.png",
+      "src": "/images/case-studies/doordash/art-direction/render_3-640.webp",
+      "width": 468,
+      "height": 585,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/doordash/art-direction/render_4.png",
+      "src": "/images/case-studies/doordash/art-direction/render_4-640.webp",
+      "width": 468,
+      "height": 585,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/doordash/art-direction/render_5.png",
+      "src": "/images/case-studies/doordash/art-direction/render_5-800.webp",
+      "width": 780,
+      "height": 585,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/doordash/art-direction/render_7.png",
+      "src": "/images/case-studies/doordash/art-direction/render_7-640.webp",
+      "width": 468,
+      "height": 585,
+      "loading": "lazy",
+      "fit": "fill"
+    },
+    {
+      "viewport": 1440,
+      "dpr": 1,
+      "original": "/images/case-studies/doordash/art-direction/render_8.png",
+      "src": "/images/case-studies/doordash/art-direction/render_8-640.webp",
+      "width": 468,
+      "height": 585,
+      "loading": "lazy",
+      "fit": "fill"
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "390px DPR2, 768px DPR2, 1440px DPR1: responsive WebP decodes",
+    "Offscreen src and srcset stay deferred",
+    "No archival originals requested",
+    "JPEG/PNG fallback decodes when WebP fails",
+    "No browser page errors"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/mock_call.mp4",
+  "source": "public/videos/originals/mock_call.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 189748,
+  "bytes": 189743,
+  "width": 1200,
+  "height": 676,
+  "sourceWidth": 1200,
+  "sourceHeight": 676,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 410,
+  "sourceFrames": 410,
+  "duration": "17.083333",
+  "sourceDuration": "17.083333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999986,
+      "bytes": 2086284
+    }
+  ],
+  "sha256": "92d4355c64c478fc7909286a42586e4ec464e013a149e2bbcb0cc1eb636444b2"
+}

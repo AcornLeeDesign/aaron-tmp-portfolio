@@ -1,0 +1,60 @@
+{
+  "file": "haven_3d-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/haven_3d.mp4",
+  "sourceSha256": "28c046fb1a939bc14da314b34526a9b98024af2025d31bd66196c2abe76852e2",
+  "sha256": "a4e542235bed2a6f613562fe8fc24acae8b5420c278a40388ddebdb89e456ee9",
+  "before": {
+    "bytes": 1045568,
+    "duration": 8.333333,
+    "avgKbps": 1000.7328400293137,
+    "peakKbps": 1585.032
+  },
+  "after": {
+    "bytes": 2379773,
+    "duration": 8.333333,
+    "avgKbps": 2282.8628113145123,
+    "peakKbps": 3092.312
+  },
+  "source": {
+    "bytes": 2379774,
+    "duration": 8.333333,
+    "avgKbps": 2282.8628113145123,
+    "peakKbps": 3092.312
+  },
+  "width": 1080,
+  "height": 1920,
+  "method": "Stream copy (source preserves quality within size limit)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 1188,
+      "bufsizeKbits": 1188,
+      "ssim": 0.990893,
+      "bytes": 1201763
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 1188,
+      "bufsizeKbits": 1188,
+      "ssim": 0.99089,
+      "bytes": 1201996
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 1188,
+      "bufsizeKbits": 1188,
+      "ssim": 0.990895,
+      "bytes": 1205342
+    }
+  ],
+  "frames": 200,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

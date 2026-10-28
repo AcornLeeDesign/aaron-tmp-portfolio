@@ -1,0 +1,116 @@
+[
+  {
+    "source": "public/images/case-studies/nuance/fig-1-clouds.jpg",
+    "output": "public/images/case-studies/nuance/fig-1-clouds-800.webp",
+    "width": 800,
+    "display": [
+      338,
+      451
+    ],
+    "lossless": true,
+    "sourceBytes": 1778472,
+    "outputBytes": 303038,
+    "dimensions": [
+      800,
+      533
+    ],
+    "alpha": false,
+    "resizedVisiblePixelsIdentical": true,
+    "displaySsim": 0.995829
+  },
+  {
+    "source": "public/images/case-studies/nuance/fig-1-clouds.jpg",
+    "output": "public/images/case-studies/nuance/fig-1-clouds-1200.webp",
+    "width": 1200,
+    "display": [
+      475,
+      634
+    ],
+    "lossless": true,
+    "sourceBytes": 1778472,
+    "outputBytes": 618772,
+    "dimensions": [
+      1200,
+      800
+    ],
+    "alpha": false,
+    "resizedVisiblePixelsIdentical": true,
+    "displaySsim": 0.992901
+  },
+  {
+    "source": "public/images/case-studies/nuance/fig-1-clouds.jpg",
+    "output": "public/images/case-studies/nuance/fig-1-clouds-1760.webp",
+    "width": 1760,
+    "display": [
+      736,
+      981
+    ],
+    "lossless": true,
+    "sourceBytes": 1778472,
+    "outputBytes": 1410740,
+    "dimensions": [
+      1760,
+      1173
+    ],
+    "alpha": false,
+    "resizedVisiblePixelsIdentical": true,
+    "displaySsim": 0.993423
+  },
+  {
+    "source": "public/images/case-studies/nuance/iphone-16-pro.png",
+    "output": "public/images/case-studies/nuance/iphone-16-pro-820.webp",
+    "width": 820,
+    "display": [
+      273,
+      558
+    ],
+    "lossless": true,
+    "sourceBytes": 376552,
+    "outputBytes": 72172,
+    "dimensions": [
+      820,
+      1676
+    ],
+    "alpha": true,
+    "resizedVisiblePixelsIdentical": true,
+    "displaySsim": 0.999215
+  },
+  {
+    "source": "public/images/case-studies/nuance/iphone-16-pro.png",
+    "output": "public/images/case-studies/nuance/iphone-16-pro-1350.webp",
+    "width": 1350,
+    "display": [
+      422,
+      863
+    ],
+    "lossless": true,
+    "sourceBytes": 376552,
+    "outputBytes": 163602,
+    "dimensions": [
+      1350,
+      2760
+    ],
+    "alpha": true,
+    "resizedVisiblePixelsIdentical": true,
+    "displaySsim": 0.999252
+  },
+  {
+    "source": "public/videos/posters/asl-feature.jpg",
+    "output": "public/videos/posters/asl-feature.webp",
+    "width": 2914,
+    "display": [
+      1092,
+      713
+    ],
+    "lossless": false,
+    "sourceBytes": 133245,
+    "outputBytes": 57292,
+    "dimensions": [
+      2914,
+      1902
+    ],
+    "alpha": false,
+    "resizedVisiblePixelsIdentical": false,
+    "displaySsim": 0.998162
+  }
+]

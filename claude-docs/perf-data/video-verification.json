@@ -1,0 +1,10 @@
+{
+  "outputs": 84,
+  "sources": 42,
+  "minSSIM": 0.990614,
+  "maxDurationDelta": 0.00032500000000013074,
+  "maxTimestampDelta": 0.0,
+  "frames": 64888,
+  "losslessCopies": 29,
+  "checks": "Inventory, SHA-256, SSIM records, frame/timing records, codec, profile, level, pixel format, SAR, dimensions, no audio, faststart, poster presence, no WebM"
+}

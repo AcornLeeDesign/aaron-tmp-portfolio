@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/missed-call.mp4",
+  "source": "public/videos/originals/missed-call.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 1527949,
+  "bytes": 4156235,
+  "width": 1840,
+  "height": 1200,
+  "sourceWidth": 2914,
+  "sourceHeight": 1902,
+  "ssim": 0.999955,
+  "vmaf": null,
+  "frames": 769,
+  "sourceFrames": 769,
+  "duration": "14.866667",
+  "sourceDuration": "14.866667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999955,
+      "bytes": 4156235
+    }
+  ],
+  "sha256": "f72231382097e4b4d001e507aaa812db85d94551f031e6480b23d814c1eba7ee"
+}

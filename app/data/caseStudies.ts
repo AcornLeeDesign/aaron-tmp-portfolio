@@ -33,7 +33,6 @@ export interface CaseStudy {
   sections: CaseStudySection[]
 }
 
-export const CASE_STUDY_STORAGE_KEY = 'case-study-unlocked'
 
 export const caseStudies: Record<string, CaseStudy> = {
   nova: {

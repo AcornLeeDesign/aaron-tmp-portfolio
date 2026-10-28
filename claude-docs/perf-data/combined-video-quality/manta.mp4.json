@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/manta.mp4",
+  "source": "public/videos/originals/manta.mp4",
+  "sourceRef": "862de9d",
+  "sourceBytes": 1164737,
+  "bytes": 1164753,
+  "width": 1080,
+  "height": 642,
+  "sourceWidth": 1080,
+  "sourceHeight": 642,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 1286,
+  "sourceFrames": 1286,
+  "duration": "21.433333",
+  "sourceDuration": "21.433008",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.00032500000000013074,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999448,
+      "bytes": 5320333
+    }
+  ],
+  "sha256": "4f6d373def7d0bef164a2221008e6394ed7b0be5e511de7240e48558b640c6f4"
+}

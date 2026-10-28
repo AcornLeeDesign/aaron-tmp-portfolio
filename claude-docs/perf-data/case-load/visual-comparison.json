@@ -1,0 +1,92 @@
+[
+  {
+    "route": "nova",
+    "width": 1440,
+    "selector": ".research-figure img",
+    "imageWidth": 600,
+    "imageHeight": 260,
+    "differingPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "route": "nova",
+    "width": 1440,
+    "selector": ".problem-media-story img",
+    "imageWidth": 600,
+    "imageHeight": 260,
+    "differingPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "route": "nuance",
+    "width": 1440,
+    "selector": ".phone-placeholders",
+    "imageWidth": 600,
+    "imageHeight": 338,
+    "differingPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "route": "nuance",
+    "width": 1440,
+    "selector": ".expression-media",
+    "imageWidth": 600,
+    "imageHeight": 338,
+    "differingPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "route": "nuance",
+    "width": 1440,
+    "selector": ".case-media-placeholder--mood-colors",
+    "imageWidth": 1408,
+    "imageHeight": 795,
+    "differingPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "route": "nova",
+    "width": 390,
+    "selector": ".research-figure img",
+    "imageWidth": 358,
+    "imageHeight": 155,
+    "differingPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "route": "nova",
+    "width": 390,
+    "selector": ".problem-media-story img",
+    "imageWidth": 358,
+    "imageHeight": 155,
+    "differingPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "route": "nuance",
+    "width": 390,
+    "selector": ".phone-placeholders",
+    "imageWidth": 358,
+    "imageHeight": 202,
+    "differingPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "route": "nuance",
+    "width": 390,
+    "selector": ".expression-media",
+    "imageWidth": 358,
+    "imageHeight": 202,
+    "differingPixels": 0,
+    "meanChannelDifference": 0
+  },
+  {
+    "route": "nuance",
+    "width": 390,
+    "selector": ".case-media-placeholder--mood-colors",
+    "imageWidth": 358,
+    "imageHeight": 477,
+    "differingPixels": 0,
+    "meanChannelDifference": 0
+  }
+]

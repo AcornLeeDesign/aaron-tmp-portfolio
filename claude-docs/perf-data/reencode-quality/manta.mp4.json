@@ -1,0 +1,38 @@
+{
+  "file": "manta.mp4",
+  "sourceRef": "862de9d",
+  "sourcePath": "public/videos/manta.mp4",
+  "sourceSha256": "5abe73ec8358c8bbdff61a4a7362169a5bcb927ba770452eee18c1afa71f4b77",
+  "sha256": "61f21aa6e99c01c0ba5a62c79ec726adf95d98d40972b447e504b18075b0d1a3",
+  "before": {
+    "bytes": 1164753,
+    "duration": 21.433333,
+    "avgKbps": 428.72809375937936,
+    "peakKbps": 745.04
+  },
+  "after": {
+    "bytes": 1164733,
+    "duration": 21.433333,
+    "avgKbps": 428.72809375937936,
+    "peakKbps": 745.04
+  },
+  "source": {
+    "bytes": 1164737,
+    "duration": 21.433008,
+    "avgKbps": 428.73459478949474,
+    "peakKbps": 745.04
+  },
+  "width": 1080,
+  "height": 642,
+  "method": "Stream copy (compact original)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [],
+  "frames": 1286,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.00032500000000013074
+}

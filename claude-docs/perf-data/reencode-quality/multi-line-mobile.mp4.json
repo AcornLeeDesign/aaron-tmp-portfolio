@@ -1,0 +1,47 @@
+{
+  "file": "multi-line-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/multi-line.mp4",
+  "sourceSha256": "d142efa3c9c09c151e4554b20eea8bad51103a5372ab07ad8d36bc840ee9c089",
+  "sha256": "958d444b44d17785accd22162a32547e724c79379cff6a2b3efe2056d63832ec",
+  "before": {
+    "bytes": 2639451,
+    "duration": 18.516667,
+    "avgKbps": 1136.0217257241811,
+    "peakKbps": 2873.664
+  },
+  "after": {
+    "bytes": 464515,
+    "duration": 18.516667,
+    "avgKbps": 196.36968143348906,
+    "peakKbps": 473.624
+  },
+  "source": {
+    "bytes": 1270781,
+    "duration": 18.516667,
+    "avgKbps": 544.0577399809588,
+    "peakKbps": 1352.784
+  },
+  "width": 1280,
+  "height": 836,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 2155,
+    "bufsizeKbits": 2155,
+    "ssim": 0.99949,
+    "bytes": 464515
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 2155,
+      "bufsizeKbits": 2155,
+      "ssim": 0.99949,
+      "bytes": 464515
+    }
+  ],
+  "frames": 729,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

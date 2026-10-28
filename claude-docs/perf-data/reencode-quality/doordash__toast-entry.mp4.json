@@ -1,0 +1,68 @@
+{
+  "file": "doordash/toast-entry.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/doordash/toast-entry.mp4",
+  "sourceSha256": "d63f7ad3b0db03f457391a8298f558bf993b4734c2cb62493401a0edbabb1b90",
+  "sha256": "1b76260afad7d3e371fa58c1f7350682b9e082a10c45f4dc5d415e167a0b334b",
+  "before": {
+    "bytes": 4396105,
+    "duration": 16.683021,
+    "avgKbps": 2102.151163149648,
+    "peakKbps": 7694.248
+  },
+  "after": {
+    "bytes": 1708118,
+    "duration": 16.683021,
+    "avgKbps": 813.2052342318577,
+    "peakKbps": 2903.808
+  },
+  "source": {
+    "bytes": 10510825,
+    "duration": 16.683021,
+    "avgKbps": 5033.34929567013,
+    "peakKbps": 13828.952
+  },
+  "width": 1920,
+  "height": 1080,
+  "method": "CRF search",
+  "selected": {
+    "crf": 17,
+    "maxrateKbps": 5770,
+    "bufsizeKbits": 5770,
+    "ssim": 0.999045,
+    "bytes": 1708118
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 5770,
+      "bufsizeKbits": 5770,
+      "ssim": 0.998649,
+      "bytes": 1326500
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 5770,
+      "bufsizeKbits": 5770,
+      "ssim": 0.998925,
+      "bytes": 1572648
+    },
+    {
+      "crf": 16,
+      "maxrateKbps": 5770,
+      "bufsizeKbits": 5770,
+      "ssim": 0.999164,
+      "bytes": 1846090
+    },
+    {
+      "crf": 17,
+      "maxrateKbps": 5770,
+      "bufsizeKbits": 5770,
+      "ssim": 0.999045,
+      "bytes": 1708118
+    }
+  ],
+  "frames": 963,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

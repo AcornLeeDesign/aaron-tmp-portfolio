@@ -44,6 +44,7 @@ const FREQUENCY_COLOR_STOPS: FrequencyColorStop[] = [
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const audioRef = ref<HTMLAudioElement | null>(null)
 const isAudioEnabled = ref(false)
+const isDesktopAudio = ref(false)
 
 let context: CanvasRenderingContext2D | null = null
 let animationFrame = 0
@@ -51,6 +52,8 @@ let motionPreference: MediaQueryList | undefined
 let mobileQuery: MediaQueryList | undefined
 let playbackRequest = 0
 let isPlaybackPending = false
+let audioIdleCallback: number | undefined
+let audioTimeout: number | undefined
 let decodedProfile = new Uint8Array()
 let smoothedAmplitudeProfile = new Float32Array()
 let smoothedFrequencyProfile = new Float32Array()
@@ -84,20 +87,47 @@ function stopAudio() {
   isAudioEnabled.value = false
 }
 
-// Mobile has no sound control, so it never plays audio.
+function cancelDeferredAutoplay() {
+  window.removeEventListener('load', scheduleAutoplay)
+  if (audioIdleCallback !== undefined) window.cancelIdleCallback(audioIdleCallback)
+  if (audioTimeout !== undefined) window.clearTimeout(audioTimeout)
+  audioIdleCallback = undefined
+  audioTimeout = undefined
+}
+
+function scheduleAutoplay() {
+  // Keep the automatic audio fetch out of the initial page/media load.
+  if (typeof window.requestIdleCallback === 'function') {
+    audioIdleCallback = window.requestIdleCallback(() => void playAudio(), { timeout: 2000 })
+  } else {
+    audioTimeout = window.setTimeout(() => void playAudio(), 0)
+  }
+}
+
+// Match the sound control's breakpoint; mobile never mounts or loads audio.
 function syncAudioAvailability() {
+  cancelDeferredAutoplay()
   removePlaybackFallback()
+  isDesktopAudio.value = !mobileQuery?.matches
   if (mobileQuery?.matches) {
     stopAudio()
+    // Abort any in-flight download before Vue removes the desktop element.
+    audioRef.value?.removeAttribute('src')
+    audioRef.value?.load()
     return
   }
   addPlaybackFallback()
-  void playAudio()
+  if (document.readyState === 'complete') scheduleAutoplay()
+  else window.addEventListener('load', scheduleAutoplay, { once: true })
 }
 
 async function playAudio() {
+  cancelDeferredAutoplay()
   const audio = audioRef.value
   if (!audio || mobileQuery?.matches) return
+
+  // An early interaction still starts playback immediately, as on main.
+  if (!audio.getAttribute('src')) audio.src = '/audio/ylang-ylang-quiet.m4a'
 
   const request = ++playbackRequest
   isPlaybackPending = true
@@ -127,12 +157,20 @@ function startAudioOnInteraction(event: Event) {
 }
 
 function toggleAudio() {
+  cancelDeferredAutoplay()
   removePlaybackFallback()
   if (isAudioEnabled.value || isPlaybackPending) {
     stopAudio()
     return
   }
   void playAudio()
+}
+
+function syncAudioTime() {
+  const audio = audioRef.value
+  if (audio && Number.isFinite(audio.duration) && audio.duration > 0) {
+    audio.currentTime = currentProfileTime() % audio.duration
+  }
 }
 
 function decodeProfile() {
@@ -403,6 +441,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  cancelDeferredAutoplay()
   removePlaybackFallback()
   mobileQuery?.removeEventListener('change', syncAudioAvailability)
   playbackRequest += 1
@@ -429,10 +468,11 @@ onBeforeUnmount(() => {
     <span>FKJ</span>
   </button>
   <audio
+    v-if="isDesktopAudio"
     ref="audioRef"
-    src="/audio/ylang-ylang-quiet.m4a"
     preload="none"
     loop
+    @loadedmetadata="syncAudioTime"
     @playing="isAudioEnabled = true"
     @pause="isAudioEnabled = false"
     @error="isAudioEnabled = false"

@@ -1,0 +1,47 @@
+{
+  "file": "missed-call-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/missed-call.mp4",
+  "sourceSha256": "d782c8aa8a545605e1ccf9fef2e2f4e296cc97a38ee2c2c22ecb97108646586b",
+  "sha256": "68673b2e5493dc91a4af7cd5ebd0e45ab2c4845cafa64273250447cc1e6d03b0",
+  "before": {
+    "bytes": 2168440,
+    "duration": 14.866667,
+    "avgKbps": 1161.8340546673978,
+    "peakKbps": 3644.4
+  },
+  "after": {
+    "bytes": 538827,
+    "duration": 14.866667,
+    "avgKbps": 284.92950033790356,
+    "peakKbps": 828.608
+  },
+  "source": {
+    "bytes": 1527949,
+    "duration": 14.866667,
+    "avgKbps": 816.3481431312075,
+    "peakKbps": 2327.872
+  },
+  "width": 1280,
+  "height": 836,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 2733,
+    "bufsizeKbits": 2733,
+    "ssim": 0.999403,
+    "bytes": 538827
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 2733,
+      "bufsizeKbits": 2733,
+      "ssim": 0.999403,
+      "bytes": 538827
+    }
+  ],
+  "frames": 769,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

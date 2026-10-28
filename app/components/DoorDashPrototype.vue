@@ -1,5 +1,7 @@
 <script setup lang="ts">
-defineProps<{
+import images from '~/data/losslessImages.json'
+
+const props = defineProps<{
   clip?: string
   screenImage?: string
   screenAlt?: string
@@ -8,10 +10,27 @@ defineProps<{
   hideCaption?: boolean
   playbackGroup?: string
 }>()
+const figureRef = ref<HTMLElement>()
+const imageReady = ref(false)
+const imageFailed = ref(false)
+const screenSource = computed(() => imageFailed.value ? props.screenImage
+  : images[props.screenImage as keyof typeof images]?.src ?? props.screenImage)
+let imageObserver: IntersectionObserver | undefined
+onMounted(() => {
+  if (!props.screenImage || !figureRef.value) return
+  // SVG <image> does not support native loading="lazy".
+  imageObserver = new IntersectionObserver(([entry]) => {
+    if (!entry?.isIntersecting) return
+    imageReady.value = true
+    imageObserver?.disconnect()
+  }, { rootMargin: '400px' })
+  imageObserver.observe(figureRef.value)
+})
+onBeforeUnmount(() => imageObserver?.disconnect())
 </script>
 
 <template>
-  <figure class="prototype" :class="{ 'prototype--large-video': clip && !hideCaption, 'prototype--current': (clip && clip !== 'before') || screenImage?.endsWith('/alert-after.png') }">
+  <figure ref="figureRef" class="prototype" :class="{ 'prototype--large-video': clip && !hideCaption, 'prototype--current': (clip && clip !== 'before') || screenImage?.endsWith('/alert-after.png') }">
     <div class="prototype__stage">
       <div class="prototype__device">
         <img class="prototype__shell" src="/images/case-studies/doordash/pos-mockup-transparent.svg" alt="" loading="lazy" width="1530" height="1008" />
@@ -22,7 +41,7 @@ defineProps<{
         </div>
         <!-- Display the screen region of the original export without its baked-in white surround. -->
         <svg v-else-if="screenImage" class="prototype__screen" :viewBox="screenViewBox" preserveAspectRatio="none" role="img" :aria-label="screenAlt || caption">
-          <image :href="screenImage" width="920" height="638" />
+          <image :href="imageReady ? screenSource : undefined" width="920" height="638" @error="imageFailed = true" />
         </svg>
       </div>
     </div>

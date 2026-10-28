@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/nova_practice_V-mobile.mp4",
+  "source": "public/videos/originals/nova_practice_V.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 1129973,
+  "bytes": 1145826,
+  "width": 1280,
+  "height": 1038,
+  "sourceWidth": 1588,
+  "sourceHeight": 1288,
+  "ssim": 0.997479,
+  "vmaf": null,
+  "frames": 502,
+  "sourceFrames": 502,
+  "duration": "8.366667",
+  "sourceDuration": "8.366667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.997479,
+      "bytes": 1145826
+    }
+  ],
+  "sha256": "10760cd2fe320c12488ca610b80d815c586eef84c82cef6d912d49af2dd78ff1"
+}

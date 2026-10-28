@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/fleetline.mp4",
+  "source": "public/videos/originals/fleetline.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 702748,
+  "bytes": 702743,
+  "width": 1080,
+  "height": 744,
+  "sourceWidth": 1080,
+  "sourceHeight": 744,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 1032,
+  "sourceFrames": 1032,
+  "duration": "34.400000",
+  "sourceDuration": "34.400000",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999936,
+      "bytes": 5580503
+    }
+  ],
+  "sha256": "71f938f1bf3824baacd2183455adf9fb18ee40e9d26e56d80bf1da1e05a7f77f"
+}

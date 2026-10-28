@@ -1,10 +1,20 @@
 <script setup lang="ts">
 import { ArrowRightIcon, ArrowUpRightIcon, NoSymbolIcon } from '@heroicons/vue/24/outline'
 import { projects } from '~/data/projects'
+import homepageClouds from '~/data/homepageClouds.json'
 
 useHead({
   title: 'Aaron Lee',
   htmlAttrs: { class: 'home-viewport' },
+  link: [{
+    rel: 'preload',
+    as: 'image',
+    type: 'image/webp',
+    media: '(min-width: 1024px)',
+    imagesrcset: homepageClouds.webp,
+    imagesizes: homepageClouds.sizes,
+    fetchpriority: 'high',
+  }],
 })
 
 const carouselRef = ref<HTMLElement | null>(null)
@@ -31,6 +41,8 @@ let canUseProjectCursor = false
 let finePointerQuery: MediaQueryList | undefined
 let reducedMotionQuery: MediaQueryList | undefined
 let desktopCarouselQuery: MediaQueryList | undefined
+let mediaObserver: IntersectionObserver | undefined
+const nearbyMedia = ref(new Set<number>())
 
 const CURSOR_FOLLOW_STRENGTH = 0.24
 const CURSOR_SETTLE_THRESHOLD = 0.1
@@ -97,7 +109,7 @@ function projectMediaStyle(project: (typeof projects)[number]) {
   return {
     '--project-media-background-color': project.mediaBackgroundColor
       ?? 'var(--color-media-background)',
-    '--project-media-background-image': project.mediaBackgroundImage
+    '--project-media-background-image': project.mediaBackgroundImage && nearbyMedia.value.has(project.id)
       ? `url("${project.mediaBackgroundImage}")`
       : 'none',
     '--project-media-background-brightness': project.mediaBackgroundBrightness ?? 1,
@@ -282,6 +294,14 @@ onMounted(() => {
   nextTick(() => {
     updateCarouselLayout()
     if (carouselRef.value) {
+      mediaObserver = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue
+          nearbyMedia.value.add(Number(entry.target.id.replace('project-', '')))
+          mediaObserver?.unobserve(entry.target)
+        }
+      }, { rootMargin: '400px' })
+      carouselRef.value.querySelectorAll('.project-card__media').forEach(media => mediaObserver?.observe(media))
       carouselResizeObserver = new ResizeObserver(updateCarouselLayout)
       carouselResizeObserver.observe(carouselRef.value)
       if (homeIntroRef.value) {
@@ -307,6 +327,7 @@ onBeforeUnmount(() => {
   reducedMotionQuery?.removeEventListener('change', syncProjectCursorAvailability)
   desktopCarouselQuery?.removeEventListener('change', syncCarouselMode)
   carouselResizeObserver?.disconnect()
+  mediaObserver?.disconnect()
   if (carouselScrollFrame !== undefined) {
     window.cancelAnimationFrame(carouselScrollFrame)
   }
@@ -365,6 +386,7 @@ onBeforeUnmount(() => {
                 :is="project.to ? NuxtLink : project.href ? 'a' : 'div'"
                 :id="`project-${project.id}`"
                 :to="project.to || undefined"
+                :prefetch="false"
                 :href="project.href || undefined"
                 :target="project.href ? '_blank' : undefined"
                 :rel="project.href ? 'noopener noreferrer' : undefined"
@@ -385,6 +407,24 @@ onBeforeUnmount(() => {
                 @pointerleave="hideProjectCursor"
                 @pointercancel="hideProjectCursor"
               >
+                <picture v-if="project.mediaBackgroundSources" class="project-card__background">
+                  <source
+                    type="image/webp"
+                    :srcset="project.mediaBackgroundSources.webp"
+                    :sizes="project.mediaBackgroundSources.sizes"
+                  />
+                  <img
+                    :src="project.mediaBackgroundSources.src"
+                    :srcset="project.mediaBackgroundSources.jpeg"
+                    :sizes="project.mediaBackgroundSources.sizes"
+                    alt=""
+                    width="5723"
+                    height="3815"
+                    loading="lazy"
+                    :fetchpriority="isDesktopCarousel ? 'high' : 'auto'"
+                    decoding="async"
+                  />
+                </picture>
                 <div
                   class="project-card__media-inset"
                   :style="projectMediaInsetStyle(project)"
@@ -399,16 +439,23 @@ onBeforeUnmount(() => {
                         />
                       </div>
                     </div>
-                    <img
-                      class="project-card__phone-frame"
-                      src="/images/case-studies/nuance/iphone-16-pro.png"
-                      alt=""
-                      aria-hidden="true"
-                      loading="eager"
-                      decoding="async"
-                    />
+                    <picture class="project-card__phone-picture">
+                      <source
+                        type="image/webp"
+                        srcset="/images/case-studies/nuance/iphone-16-pro-820.webp 820w, /images/case-studies/nuance/iphone-16-pro-1350.webp 1350w"
+                        sizes="(min-width: 1516px) 287px, (min-width: 1024px) 19vw, 58vw"
+                      />
+                      <img
+                        class="project-card__phone-frame"
+                        src="/images/case-studies/nuance/iphone-16-pro.png"
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
                   </template>
-                  <img
+                  <OptimizedImage
                     v-else-if="project.type === 'image'"
                     :src="project.src"
                     :alt="project.title"
@@ -441,6 +488,7 @@ onBeforeUnmount(() => {
               <HeaderNavButton
                 v-if="project.to || project.href"
                 :to="project.to || undefined"
+                :prefetch="false"
                 :as="project.to ? undefined : 'a'"
                 :href="project.href || undefined"
                 :target="project.href ? '_blank' : undefined"
@@ -640,6 +688,24 @@ onBeforeUnmount(() => {
   filter:
     blur(var(--space-l))
     brightness(var(--project-media-background-brightness, 1));
+}
+
+.project-card__background {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+}
+
+.project-card__background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-card__phone-picture {
+  display: contents;
 }
 
 .project-card__media--compact-padding {
@@ -988,6 +1054,7 @@ onBeforeUnmount(() => {
   }
 
   .project-card__media::before,
+  .project-card__background,
   #project-3 .project-card__media-inset::after,
   #project-4::after,
   #project-7::after,

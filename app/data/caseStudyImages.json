@@ -1,0 +1,191 @@
+{
+  "/images/case-studies/nova/computer-lab.jpg": {
+    "src": "/images/case-studies/nova/computer-lab-1200.jpg",
+    "webpSrc": "/images/case-studies/nova/computer-lab-1200.webp",
+    "webp": "/images/case-studies/nova/computer-lab-1200.webp 1200w, /images/case-studies/nova/computer-lab-1800.webp 1800w",
+    "fallback": "/images/case-studies/nova/computer-lab-1200.jpg 1200w, /images/case-studies/nova/computer-lab-1800.jpg 1800w",
+    "width": 1200,
+    "height": 521,
+    "sizes": "(min-width: 640px) 600px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/nova/field-research-blurred.png": {
+    "src": "/images/case-studies/nova/field-research-blurred-1200.png",
+    "webpSrc": "/images/case-studies/nova/field-research-blurred-1200.webp",
+    "webp": "/images/case-studies/nova/field-research-blurred-800.webp 800w, /images/case-studies/nova/field-research-blurred-1200.webp 1200w, /images/case-studies/nova/field-research-blurred-1800.webp 1800w",
+    "fallback": "/images/case-studies/nova/field-research-blurred-800.png 800w, /images/case-studies/nova/field-research-blurred-1200.png 1200w, /images/case-studies/nova/field-research-blurred-1800.png 1800w",
+    "width": 1200,
+    "height": 521,
+    "sizes": "(min-width: 640px) 600px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/nova/figma/design-image-1-transparent.png": {
+    "src": "/images/case-studies/nova/figma/design-image-1-transparent-640.png",
+    "webpSrc": "/images/case-studies/nova/figma/design-image-1-transparent-640.webp",
+    "webp": "/images/case-studies/nova/figma/design-image-1-transparent-640.webp 640w, /images/case-studies/nova/figma/design-image-1-transparent-1254.webp 1254w",
+    "fallback": "/images/case-studies/nova/figma/design-image-1-transparent-640.png 640w, /images/case-studies/nova/figma/design-image-1-transparent-1254.png 1254w",
+    "width": 640,
+    "height": 640,
+    "sizes": "(min-width: 640px) 230px, 60vw"
+  },
+  "/images/case-studies/nova/nova-hardware.png": {
+    "src": "/images/case-studies/nova/nova-hardware-920.png",
+    "webpSrc": "/images/case-studies/nova/nova-hardware-920.webp",
+    "webp": "/images/case-studies/nova/nova-hardware-920.webp 920w",
+    "fallback": "/images/case-studies/nova/nova-hardware-920.png 920w",
+    "width": 920,
+    "height": 691,
+    "sizes": "(min-width: 640px) 400px, 60vw"
+  },
+  "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent.png": {
+    "src": "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-1200.png",
+    "webpSrc": "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-1200.webp",
+    "webp": "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-800.webp 800w, /images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-1200.webp 1200w, /images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-1800.webp 1800w",
+    "fallback": "/images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-800.png 800w, /images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-1200.png 1200w, /images/case-studies/nova/oLkabsfhAzIBPjfCo4MF1C9NrqQ-transparent-1800.png 1800w",
+    "width": 1200,
+    "height": 414,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8.png": {
+    "src": "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8-1200.jpg",
+    "webpSrc": "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8-1200.webp",
+    "webp": "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8-1200.webp 1200w",
+    "fallback": "/images/case-studies/nova/u4vE6oS3396MmsZs0nLjVr396d8-1200.jpg 1200w",
+    "width": 1200,
+    "height": 677,
+    "sizes": "(min-width: 640px) 600px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/nuance/avatar-listening-blue.png": {
+    "src": "/images/case-studies/nuance/avatar-listening-blue-640.png",
+    "webpSrc": "/images/case-studies/nuance/avatar-listening-blue-640.webp",
+    "webp": "/images/case-studies/nuance/avatar-listening-blue-640.webp 640w, /images/case-studies/nuance/avatar-listening-blue-1040.webp 1040w",
+    "fallback": "/images/case-studies/nuance/avatar-listening-blue-640.png 640w, /images/case-studies/nuance/avatar-listening-blue-1040.png 1040w",
+    "width": 640,
+    "height": 640,
+    "sizes": "(min-width: 640px) 300px, 40vw"
+  },
+  "/images/case-studies/nuance/avatar-listening-pink.png": {
+    "src": "/images/case-studies/nuance/avatar-listening-pink-640.png",
+    "webpSrc": "/images/case-studies/nuance/avatar-listening-pink-640.webp",
+    "webp": "/images/case-studies/nuance/avatar-listening-pink-640.webp 640w, /images/case-studies/nuance/avatar-listening-pink-1040.webp 1040w",
+    "fallback": "/images/case-studies/nuance/avatar-listening-pink-640.png 640w, /images/case-studies/nuance/avatar-listening-pink-1040.png 1040w",
+    "width": 640,
+    "height": 640,
+    "sizes": "(min-width: 640px) 300px, 40vw"
+  },
+  "/images/case-studies/nuance/captionmate-call-history.png": {
+    "src": "/images/case-studies/nuance/captionmate-call-history-640.png",
+    "webpSrc": "/images/case-studies/nuance/captionmate-call-history-640.webp",
+    "webp": "/images/case-studies/nuance/captionmate-call-history-640.webp 640w, /images/case-studies/nuance/captionmate-call-history-900.webp 900w",
+    "fallback": "/images/case-studies/nuance/captionmate-call-history-640.png 640w, /images/case-studies/nuance/captionmate-call-history-900.png 900w",
+    "width": 640,
+    "height": 800,
+    "sizes": "(min-width: 640px) 300px, 45vw"
+  },
+  "/images/case-studies/nuance/innocaption-call-upscaled.png": {
+    "src": "/images/case-studies/nuance/innocaption-call-upscaled-640.jpg",
+    "webpSrc": "/images/case-studies/nuance/innocaption-call-upscaled-640.webp",
+    "webp": "/images/case-studies/nuance/innocaption-call-upscaled-320.webp 320w, /images/case-studies/nuance/innocaption-call-upscaled-640.webp 640w, /images/case-studies/nuance/innocaption-call-upscaled-900.webp 900w",
+    "fallback": "/images/case-studies/nuance/innocaption-call-upscaled-320.jpg 320w, /images/case-studies/nuance/innocaption-call-upscaled-640.jpg 640w, /images/case-studies/nuance/innocaption-call-upscaled-900.jpg 900w",
+    "width": 640,
+    "height": 1137,
+    "sizes": "(min-width: 640px) 200px, 33vw"
+  },
+  "/images/case-studies/nuance/live-caption-call-upscaled.png": {
+    "src": "/images/case-studies/nuance/live-caption-call-upscaled-640.jpg",
+    "webpSrc": "/images/case-studies/nuance/live-caption-call-upscaled-640.webp",
+    "webp": "/images/case-studies/nuance/live-caption-call-upscaled-320.webp 320w, /images/case-studies/nuance/live-caption-call-upscaled-640.webp 640w, /images/case-studies/nuance/live-caption-call-upscaled-900.webp 900w",
+    "fallback": "/images/case-studies/nuance/live-caption-call-upscaled-320.jpg 320w, /images/case-studies/nuance/live-caption-call-upscaled-640.jpg 640w, /images/case-studies/nuance/live-caption-call-upscaled-900.jpg 900w",
+    "width": 640,
+    "height": 512,
+    "sizes": "(min-width: 640px) 430px, 70vw"
+  },
+  "/images/case-studies/nuance/mood-colors-clouds.jpg": {
+    "src": "/images/case-studies/nuance/mood-colors-clouds-1200.jpg",
+    "webpSrc": "/images/case-studies/nuance/mood-colors-clouds-1200.webp",
+    "webp": "/images/case-studies/nuance/mood-colors-clouds-800.webp 800w, /images/case-studies/nuance/mood-colors-clouds-1200.webp 1200w, /images/case-studies/nuance/mood-colors-clouds-1800.webp 1800w",
+    "fallback": "/images/case-studies/nuance/mood-colors-clouds-800.jpg 800w, /images/case-studies/nuance/mood-colors-clouds-1200.jpg 1200w, /images/case-studies/nuance/mood-colors-clouds-1800.jpg 1800w",
+    "width": 1200,
+    "height": 1800,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/doordash/printer-illustrations.png": {
+    "src": "/images/case-studies/doordash/printer-illustrations-800.jpg",
+    "webpSrc": "/images/case-studies/doordash/printer-illustrations-800.webp",
+    "webp": "/images/case-studies/doordash/printer-illustrations-800.webp 800w, /images/case-studies/doordash/printer-illustrations-1920.webp 1920w",
+    "fallback": "/images/case-studies/doordash/printer-illustrations-800.jpg 800w, /images/case-studies/doordash/printer-illustrations-1920.jpg 1920w",
+    "width": 800,
+    "height": 450,
+    "sizes": "(min-width: 1136px) 1040px, calc(100vw - 96px)"
+  },
+  "/images/case-studies/doordash/status-actions.png": {
+    "src": "/images/case-studies/doordash/status-actions-800.jpg",
+    "webpSrc": "/images/case-studies/doordash/status-actions-800.webp",
+    "webp": "/images/case-studies/doordash/status-actions-800.webp 800w, /images/case-studies/doordash/status-actions-1920.webp 1920w",
+    "fallback": "/images/case-studies/doordash/status-actions-800.jpg 800w, /images/case-studies/doordash/status-actions-1920.jpg 1920w",
+    "width": 800,
+    "height": 450,
+    "sizes": "(min-width: 1136px) 1040px, calc(100vw - 96px)"
+  },
+  "/images/case-studies/doordash/art-direction/render_3.png": {
+    "src": "/images/case-studies/doordash/art-direction/render_3-960.jpg",
+    "webpSrc": "/images/case-studies/doordash/art-direction/render_3-960.webp",
+    "webp": "/images/case-studies/doordash/art-direction/render_3-640.webp 640w, /images/case-studies/doordash/art-direction/render_3-960.webp 960w, /images/case-studies/doordash/art-direction/render_3-1440.webp 1440w",
+    "fallback": "/images/case-studies/doordash/art-direction/render_3-640.jpg 640w, /images/case-studies/doordash/art-direction/render_3-960.jpg 960w, /images/case-studies/doordash/art-direction/render_3-1440.jpg 1440w",
+    "width": 960,
+    "height": 1200,
+    "sizes": "min(52svh, 48vw)"
+  },
+  "/images/case-studies/doordash/art-direction/render_4.png": {
+    "src": "/images/case-studies/doordash/art-direction/render_4-960.jpg",
+    "webpSrc": "/images/case-studies/doordash/art-direction/render_4-960.webp",
+    "webp": "/images/case-studies/doordash/art-direction/render_4-640.webp 640w, /images/case-studies/doordash/art-direction/render_4-960.webp 960w, /images/case-studies/doordash/art-direction/render_4-1440.webp 1440w",
+    "fallback": "/images/case-studies/doordash/art-direction/render_4-640.jpg 640w, /images/case-studies/doordash/art-direction/render_4-960.jpg 960w, /images/case-studies/doordash/art-direction/render_4-1440.jpg 1440w",
+    "width": 960,
+    "height": 1200,
+    "sizes": "min(52svh, 48vw)"
+  },
+  "/images/case-studies/doordash/art-direction/render_5.png": {
+    "src": "/images/case-studies/doordash/art-direction/render_5-1200.jpg",
+    "webpSrc": "/images/case-studies/doordash/art-direction/render_5-1200.webp",
+    "webp": "/images/case-studies/doordash/art-direction/render_5-800.webp 800w, /images/case-studies/doordash/art-direction/render_5-1200.webp 1200w, /images/case-studies/doordash/art-direction/render_5-1920.webp 1920w",
+    "fallback": "/images/case-studies/doordash/art-direction/render_5-800.jpg 800w, /images/case-studies/doordash/art-direction/render_5-1200.jpg 1200w, /images/case-studies/doordash/art-direction/render_5-1920.jpg 1920w",
+    "width": 1200,
+    "height": 900,
+    "sizes": "min(86.667svh, 80vw)"
+  },
+  "/images/case-studies/doordash/art-direction/render_7.png": {
+    "src": "/images/case-studies/doordash/art-direction/render_7-960.jpg",
+    "webpSrc": "/images/case-studies/doordash/art-direction/render_7-960.webp",
+    "webp": "/images/case-studies/doordash/art-direction/render_7-640.webp 640w, /images/case-studies/doordash/art-direction/render_7-960.webp 960w, /images/case-studies/doordash/art-direction/render_7-1440.webp 1440w",
+    "fallback": "/images/case-studies/doordash/art-direction/render_7-640.jpg 640w, /images/case-studies/doordash/art-direction/render_7-960.jpg 960w, /images/case-studies/doordash/art-direction/render_7-1440.jpg 1440w",
+    "width": 960,
+    "height": 1200,
+    "sizes": "min(52svh, 48vw)"
+  },
+  "/images/case-studies/doordash/art-direction/render_8.png": {
+    "src": "/images/case-studies/doordash/art-direction/render_8-960.jpg",
+    "webpSrc": "/images/case-studies/doordash/art-direction/render_8-960.webp",
+    "webp": "/images/case-studies/doordash/art-direction/render_8-640.webp 640w, /images/case-studies/doordash/art-direction/render_8-960.webp 960w, /images/case-studies/doordash/art-direction/render_8-1440.webp 1440w",
+    "fallback": "/images/case-studies/doordash/art-direction/render_8-640.jpg 640w, /images/case-studies/doordash/art-direction/render_8-960.jpg 960w, /images/case-studies/doordash/art-direction/render_8-1440.jpg 1440w",
+    "width": 960,
+    "height": 1200,
+    "sizes": "min(52svh, 48vw)"
+  },
+  "/images/case-studies/nuance/fig-1-clouds.jpg": {
+    "src": "/images/case-studies/nuance/fig-1-clouds-1200.jpg",
+    "webpSrc": "/images/case-studies/nuance/fig-1-clouds-1200.webp",
+    "webp": "/images/case-studies/nuance/fig-1-clouds-800.webp 800w, /images/case-studies/nuance/fig-1-clouds-1200.webp 1200w, /images/case-studies/nuance/fig-1-clouds-1760.webp 1760w",
+    "fallback": "/images/case-studies/nuance/fig-1-clouds-800.jpg 800w, /images/case-studies/nuance/fig-1-clouds-1200.jpg 1200w, /images/case-studies/nuance/fig-1-clouds-1760.jpg 1760w",
+    "width": 1200,
+    "height": 800,
+    "sizes": "(min-width: 1832px) 1800px, (min-width: 640px) calc(100vw - 32px), calc(200vw - 64px)"
+  },
+  "/images/case-studies/nuance/iphone-16-pro.png": {
+    "src": "/images/case-studies/nuance/iphone-16-pro.png",
+    "webpSrc": "/images/case-studies/nuance/iphone-16-pro-820.webp",
+    "webp": "/images/case-studies/nuance/iphone-16-pro-820.webp 820w, /images/case-studies/nuance/iphone-16-pro-1350.webp 1350w",
+    "fallback": "",
+    "width": 1350,
+    "height": 2760,
+    "sizes": "(min-width: 1832px) 438px, (min-width: 640px) 25vw, 58vw"
+  }
+}

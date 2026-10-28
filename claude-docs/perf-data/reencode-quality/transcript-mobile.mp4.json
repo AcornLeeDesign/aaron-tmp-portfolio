@@ -1,0 +1,47 @@
+{
+  "file": "transcript-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/transcript.mp4",
+  "sourceSha256": "575a04f1d534de592892b1559e65a884d283ca01e2c1008bb4066e0868093a54",
+  "sha256": "184b06916f916c77f9828fbc4da325b110397debc28dd372bad5e64f6ca897ef",
+  "before": {
+    "bytes": 2992748,
+    "duration": 22.183333,
+    "avgKbps": 1074.9226908327976,
+    "peakKbps": 2906.568
+  },
+  "after": {
+    "bytes": 593916,
+    "duration": 22.183333,
+    "avgKbps": 209.84078452052267,
+    "peakKbps": 513.856
+  },
+  "source": {
+    "bytes": 1668208,
+    "duration": 22.183333,
+    "avgKbps": 596.6111584765013,
+    "peakKbps": 1464.352
+  },
+  "width": 1280,
+  "height": 836,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 2179,
+    "bufsizeKbits": 2179,
+    "ssim": 0.999478,
+    "bytes": 593916
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 2179,
+      "bufsizeKbits": 2179,
+      "ssim": 0.999478,
+      "bytes": 593916
+    }
+  ],
+  "frames": 885,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

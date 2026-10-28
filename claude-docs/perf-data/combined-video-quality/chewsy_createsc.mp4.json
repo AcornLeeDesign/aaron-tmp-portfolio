@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/chewsy_createsc.mp4",
+  "source": "public/videos/originals/chewsy_createsc.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 295736,
+  "bytes": 295731,
+  "width": 1440,
+  "height": 896,
+  "sourceWidth": 1440,
+  "sourceHeight": 896,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 262,
+  "sourceFrames": 262,
+  "duration": "8.733333",
+  "sourceDuration": "8.733333",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999953,
+      "bytes": 1937502
+    }
+  ],
+  "sha256": "6767b1acb9cec3a4b3d4e38d4503a5606d7b0d0ae5aaf23574e11ab84e9928ac"
+}

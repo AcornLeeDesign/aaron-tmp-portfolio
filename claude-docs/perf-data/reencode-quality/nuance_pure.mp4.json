@@ -1,0 +1,38 @@
+{
+  "file": "nuance_pure.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/nuance_pure.mp4",
+  "sourceSha256": "cc16e98cc628840fc1f412054fe0fc3b74deecf04712840cf13534cc994dcaef",
+  "sha256": "90f84ec825921a2aa385d1ddf701524663e6d370747d541a8a302beae5c8fb9d",
+  "before": {
+    "bytes": 133303,
+    "duration": 5.0,
+    "avgKbps": 209.5232,
+    "peakKbps": 369.848
+  },
+  "after": {
+    "bytes": 133303,
+    "duration": 5.0,
+    "avgKbps": 209.5232,
+    "peakKbps": 369.848
+  },
+  "source": {
+    "bytes": 133304,
+    "duration": 5.0,
+    "avgKbps": 209.5232,
+    "peakKbps": 369.848
+  },
+  "width": 600,
+  "height": 600,
+  "method": "Stream copy (compact original)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [],
+  "frames": 120,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

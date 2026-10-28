@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/toast-entry.mp4",
+  "source": "public/videos/originals/doordash/toast-entry.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 10510825,
+  "bytes": 4396105,
+  "width": 1920,
+  "height": 1080,
+  "sourceWidth": 2726,
+  "sourceHeight": 1532,
+  "ssim": 0.999754,
+  "vmaf": null,
+  "frames": 963,
+  "sourceFrames": 963,
+  "duration": "16.683021",
+  "sourceDuration": "16.683021",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999754,
+      "bytes": 4396105
+    }
+  ],
+  "sha256": "b4053d6e7d2aa597ca0ccdc45793db9b33bc0dd6358193f467f7d0085ace6c2f"
+}

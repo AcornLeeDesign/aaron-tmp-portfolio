@@ -1,0 +1,34 @@
+{
+  "file": "public/videos/doordash/legacy-feature-flag.mp4",
+  "source": "public/videos/originals/doordash/legacy-feature-flag.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 18209464,
+  "bytes": 6330323,
+  "width": 1920,
+  "height": 1056,
+  "sourceWidth": 3836,
+  "sourceHeight": 2110,
+  "ssim": 0.999975,
+  "vmaf": null,
+  "frames": 1259,
+  "sourceFrames": 1259,
+  "duration": "24.901667",
+  "sourceDuration": "24.901667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999975,
+      "bytes": 6330323
+    }
+  ],
+  "sha256": "55fa54a83c447749864916ec50560028270d64b5b4b1d406ef8bfe532c9142c4"
+}

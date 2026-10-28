@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/nova_practice_V.mp4",
+  "source": "public/videos/originals/nova_practice_V.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 1129973,
+  "bytes": 1129989,
+  "width": 1588,
+  "height": 1288,
+  "sourceWidth": 1588,
+  "sourceHeight": 1288,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 502,
+  "sourceFrames": 502,
+  "duration": "8.366667",
+  "sourceDuration": "8.366667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 2000,
+  "maxrate": 3000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 2000,
+      "maxrate": 3000,
+      "ssim": 0.999518,
+      "bytes": 2172671
+    }
+  ],
+  "sha256": "60b72dd8d2a50e478ca2d9e71d517b89bcd057afb97db793bea16f6a2e7a4dd1"
+}

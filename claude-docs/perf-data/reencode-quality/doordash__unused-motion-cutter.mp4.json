@@ -1,0 +1,38 @@
+{
+  "file": "doordash/unused-motion-cutter.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/doordash/unused-motion-cutter.mp4",
+  "sourceSha256": "1fa72a1b2bffcbe7c5718ee3010a6b3fecabf86fe79a4a5c96be7570e2a28e21",
+  "sha256": "fb0f587290d1b86acad400adcfa99cd54bd988cc467590885bd344bf0cbc43f2",
+  "before": {
+    "bytes": 138447,
+    "duration": 4.033333,
+    "avgKbps": 271.906138174061,
+    "peakKbps": 830.176
+  },
+  "after": {
+    "bytes": 138425,
+    "duration": 4.033333,
+    "avgKbps": 271.906138174061,
+    "peakKbps": 830.176
+  },
+  "source": {
+    "bytes": 138431,
+    "duration": 4.033333,
+    "avgKbps": 271.906138174061,
+    "peakKbps": 830.176
+  },
+  "width": 1126,
+  "height": 720,
+  "method": "Stream copy (compact original)",
+  "selected": {
+    "ssim": 1.0,
+    "crf": null,
+    "maxrateKbps": null,
+    "bufsizeKbits": null
+  },
+  "attempts": [],
+  "frames": 121,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

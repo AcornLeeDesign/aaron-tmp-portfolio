@@ -1,0 +1,35 @@
+{
+  "file": "public/videos/rabbithole-mobile.mp4",
+  "source": "public/videos/originals/rabbithole.mp4",
+  "sourceRef": "596990b",
+  "sourceBytes": 1371451,
+  "bytes": 1371446,
+  "width": 1200,
+  "height": 778,
+  "sourceWidth": 1200,
+  "sourceHeight": 778,
+  "ssim": 1.0,
+  "vmaf": null,
+  "frames": 719,
+  "sourceFrames": 719,
+  "duration": "23.966667",
+  "sourceDuration": "23.966667",
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0,
+  "sampleAspectRatio": "1:1",
+  "profile": "High",
+  "level": 42,
+  "pixFmt": "yuv420p",
+  "bitrate": 1000,
+  "maxrate": 2000,
+  "exception": "Lossless source stream copy: already fits rendition; two-pass encode inflated bytes",
+  "attempts": [
+    {
+      "bitrate": 1000,
+      "maxrate": 2000,
+      "ssim": 0.999196,
+      "bytes": 3144803
+    }
+  ],
+  "sha256": "d59c4a30ef1a22cee98562e47ef8926eb001b2f437c58a83a03ec32ffcf25bd0"
+}

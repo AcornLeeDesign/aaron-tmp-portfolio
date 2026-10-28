@@ -1,0 +1,47 @@
+{
+  "file": "nova_preview_quiz-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/nova_preview_quiz.mp4",
+  "sourceSha256": "b1ed2a20a2cb3c791384b74ecba8765ce767ae4c2c7cacfc57ea4d89a42eae54",
+  "sha256": "0ad57664d9b198308da3d487ec452b06b05b06286852fd3ba982ab861baa82b2",
+  "before": {
+    "bytes": 1232419,
+    "duration": 10.0,
+    "avgKbps": 983.3728000000001,
+    "peakKbps": 2726.064
+  },
+  "after": {
+    "bytes": 460474,
+    "duration": 10.0,
+    "avgKbps": 365.8304,
+    "peakKbps": 980.352
+  },
+  "source": {
+    "bytes": 8053131,
+    "duration": 10.0,
+    "avgKbps": 6440.9392,
+    "peakKbps": 16883.2
+  },
+  "width": 1280,
+  "height": 720,
+  "method": "CRF search",
+  "selected": {
+    "crf": 20,
+    "maxrateKbps": 2044,
+    "bufsizeKbits": 2044,
+    "ssim": 0.999313,
+    "bytes": 460474
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 2044,
+      "bufsizeKbits": 2044,
+      "ssim": 0.999313,
+      "bytes": 460474
+    }
+  ],
+  "frames": 240,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

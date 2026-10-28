@@ -1,0 +1,75 @@
+{
+  "file": "asl-feature-mobile.mp4",
+  "sourceRef": "596990b",
+  "sourcePath": "public/videos/asl-feature.mp4",
+  "sourceSha256": "3e8d8b806a5dd8cc796e188e80ae90c8bc7e3454a107277f919777e8f3439060",
+  "sha256": "b4baf2679a85a11f7b9ad1b583ebafb4245443b864523770390646772c27a9e5",
+  "before": {
+    "bytes": 1234542,
+    "duration": 9.316667,
+    "avgKbps": 1054.3830749773497,
+    "peakKbps": 2171.6
+  },
+  "after": {
+    "bytes": 399629,
+    "duration": 9.316667,
+    "avgKbps": 336.96170529654006,
+    "peakKbps": 531.096
+  },
+  "source": {
+    "bytes": 1464490,
+    "duration": 9.316667,
+    "avgKbps": 1251.33161891479,
+    "peakKbps": 1778.184
+  },
+  "width": 1280,
+  "height": 836,
+  "method": "CRF search",
+  "selected": {
+    "crf": 17,
+    "maxrateKbps": 1628,
+    "bufsizeKbits": 1628,
+    "ssim": 0.999042,
+    "bytes": 399629
+  },
+  "attempts": [
+    {
+      "crf": 20,
+      "maxrateKbps": 1628,
+      "bufsizeKbits": 1628,
+      "ssim": 0.998717,
+      "bytes": 276320
+    },
+    {
+      "crf": 9,
+      "maxrateKbps": 1628,
+      "bufsizeKbits": 1628,
+      "ssim": 0.999565,
+      "bytes": 1261775
+    },
+    {
+      "crf": 14,
+      "maxrateKbps": 1628,
+      "bufsizeKbits": 1628,
+      "ssim": 0.999283,
+      "bytes": 599171
+    },
+    {
+      "crf": 17,
+      "maxrateKbps": 1628,
+      "bufsizeKbits": 1628,
+      "ssim": 0.999042,
+      "bytes": 399629
+    },
+    {
+      "crf": 18,
+      "maxrateKbps": 1628,
+      "bufsizeKbits": 1628,
+      "ssim": 0.998945,
+      "bytes": 352727
+    }
+  ],
+  "frames": 480,
+  "maxTimestampDelta": 0.0,
+  "durationDelta": 0.0
+}

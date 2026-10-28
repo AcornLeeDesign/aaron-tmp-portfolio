@@ -1,0 +1,87 @@
+{
+  "/images/doordash.png": {
+    "src": "/images/doordash.lossless.webp",
+    "width": 1024,
+    "height": 607
+  },
+  "/images/evtol.png": {
+    "src": "/images/evtol.lossless.webp",
+    "width": 3274,
+    "height": 1454
+  },
+  "/images/haven.png": {
+    "src": "/images/haven.lossless.webp",
+    "width": 1678,
+    "height": 1080
+  },
+  "/images/watch_3_4_view.png": {
+    "src": "/images/watch_3_4_view.lossless.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "/images/case-studies/doordash/alert-after.png": {
+    "src": "/images/case-studies/doordash/alert-after.lossless.webp",
+    "width": 2758,
+    "height": 1913
+  },
+  "/images/case-studies/doordash/alert-before.png": {
+    "src": "/images/case-studies/doordash/alert-before.lossless.webp",
+    "width": 2758,
+    "height": 1913
+  },
+  "/images/case-studies/doordash/flow-adapted-detail.png": {
+    "src": "/images/case-studies/doordash/flow-adapted-detail.lossless.webp",
+    "width": 1629,
+    "height": 454
+  },
+  "/images/case-studies/doordash/flow-ideal-detail.png": {
+    "src": "/images/case-studies/doordash/flow-ideal-detail.lossless.webp",
+    "width": 1629,
+    "height": 325
+  },
+  "/images/case-studies/doordash/handheld-status-bar.png": {
+    "src": "/images/case-studies/doordash/handheld-status-bar.lossless.webp",
+    "width": 435,
+    "height": 600
+  },
+  "/images/case-studies/doordash/hardware-icons.png": {
+    "src": "/images/case-studies/doordash/hardware-icons.lossless.webp",
+    "width": 443,
+    "height": 195
+  },
+  "/images/case-studies/doordash/printer-illustrations.png": {
+    "src": "/images/case-studies/doordash/printer-illustrations.lossless.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "/images/case-studies/doordash/status-actions.png": {
+    "src": "/images/case-studies/doordash/status-actions.lossless.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "/images/case-studies/doordash/art-direction/render_3.png": {
+    "src": "/images/case-studies/doordash/art-direction/render_3.lossless.webp",
+    "width": 2160,
+    "height": 2700
+  },
+  "/images/case-studies/doordash/art-direction/render_4.png": {
+    "src": "/images/case-studies/doordash/art-direction/render_4.lossless.webp",
+    "width": 2160,
+    "height": 2700
+  },
+  "/images/case-studies/doordash/art-direction/render_5.png": {
+    "src": "/images/case-studies/doordash/art-direction/render_5.lossless.webp",
+    "width": 2560,
+    "height": 1920
+  },
+  "/images/case-studies/doordash/art-direction/render_7.png": {
+    "src": "/images/case-studies/doordash/art-direction/render_7.lossless.webp",
+    "width": 2160,
+    "height": 2700
+  },
+  "/images/case-studies/doordash/art-direction/render_8.png": {
+    "src": "/images/case-studies/doordash/art-direction/render_8.lossless.webp",
+    "width": 2160,
+    "height": 2700
+  }
+}

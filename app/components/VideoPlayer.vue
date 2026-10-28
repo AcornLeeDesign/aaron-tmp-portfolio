@@ -2,22 +2,24 @@
 interface VideoRegistration {
   id: number
   caseStudy: boolean
-  userPaused: boolean
-  prepare: (load: boolean, active: boolean) => void
+  prepare: (load: boolean) => void
   onPause: () => void
-  onPlay: () => void
   video: HTMLVideoElement
   visibilityRatio: number
   viewportTop: number
   wantsPlayback: boolean
   playPending: boolean
+  playbackStarted: boolean
+  stalledTimer: number | undefined
+  onFallback: (visible: boolean) => void
   retryDelay: number
   retryTimer: number | undefined
   onCanPlay: () => void
   onPlaying: () => void
 }
 
-const MAX_PLAYING_VIDEOS = 2
+const STALLED_PLAYBACK_DELAY = 8000
+const MAX_PLAYING_VIDEOS = 1
 const videoRegistrations = new Map<number, VideoRegistration>()
 let nextRegistrationId = 0
 let playbackTimer: number | undefined
@@ -54,8 +56,42 @@ function clearPlaybackRetry(registration: VideoRegistration) {
   registration.retryTimer = undefined
 }
 
+function clearStalledFallback(registration: VideoRegistration) {
+  window.clearTimeout(registration.stalledTimer)
+  registration.stalledTimer = undefined
+  registration.onFallback(false)
+}
+
+function playbackStarted(registration: VideoRegistration) {
+  registration.playbackStarted = true
+  clearStalledFallback(registration)
+}
+
+function watchStalledPlayback(registration: VideoRegistration) {
+  if (!registration.caseStudy || registration.playbackStarted || registration.stalledTimer !== undefined) return
+  // Retain the handle until reset so syncs do not rearm a visible toast.
+  registration.stalledTimer = window.setTimeout(() => {
+    // Recheck selection and geometry, including scrolls before the next sync.
+    syncPlayback()
+    if (registration.wantsPlayback && !registration.playbackStarted) {
+      registration.onFallback(true)
+    }
+  }, STALLED_PLAYBACK_DELAY)
+}
+
+function playFromFallback(registration: VideoRegistration) {
+  // Keep the play call in the user gesture, but revalidate the one-player selection.
+  syncPlayback()
+  if (!registration.wantsPlayback) return
+  clearStalledFallback(registration)
+  watchStalledPlayback(registration)
+  playVideo(registration, true)
+}
+
 function pauseVideo(registration: VideoRegistration) {
   registration.wantsPlayback = false
+  registration.playbackStarted = false
+  clearStalledFallback(registration)
   clearPlaybackRetry(registration)
 
   if (!registration.video.paused) {
@@ -63,39 +99,25 @@ function pauseVideo(registration: VideoRegistration) {
   }
 }
 
-function bufferedAhead(video: HTMLVideoElement) {
-  for (let i = 0; i < video.buffered.length; i++) {
-    if (video.buffered.start(i) <= video.currentTime && video.buffered.end(i) > video.currentTime) {
-      return video.buffered.end(i) - video.currentTime
-    }
-  }
-  return 0
-}
-
-function hasStartupBuffer(video: HTMLVideoElement) {
-  return Number.isFinite(video.duration)
-    && bufferedAhead(video) >= Math.min(3, Math.max(0, video.duration - video.currentTime - 0.1))
-}
-
-function fullyBuffered(video: HTMLVideoElement) {
-  return Number.isFinite(video.duration) && video.buffered.length > 0
-    && video.buffered.start(0) === 0 && video.buffered.end(0) >= video.duration - 0.1
-}
-
-function playVideo(registration: VideoRegistration) {
+function playVideo(registration: VideoRegistration, userInitiated = false) {
   if (
-    registration.playPending
-    || registration.userPaused
-    || (registration.caseStudy && !hasStartupBuffer(registration.video))
+    (!userInitiated && registration.playPending)
+    || (!userInitiated && registration.caseStudy && registration.video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA)
     || !registration.wantsPlayback
     || document.visibilityState !== 'visible'
     || !registration.video.isConnected
     || registration.video.querySelector('source') === null
-    || !registration.video.paused
+    || (!userInitiated && !registration.video.paused)
   ) {
     return
   }
 
+  clearPlaybackRetry(registration)
+  // Set the DOM properties before every attempt, including delayed retries.
+  registration.video.muted = true
+  registration.video.defaultMuted = true
+  registration.video.playsInline = true
+  registration.video.controls = false
   registration.playPending = true
   const playAttempt = registration.video.play()
 
@@ -105,6 +127,8 @@ function playVideo(registration: VideoRegistration) {
 
     if (!registration.wantsPlayback || document.visibilityState !== 'visible') {
       registration.video.pause()
+    } else {
+      playbackStarted(registration)
     }
   }).catch(() => {
     registration.playPending = false
@@ -132,40 +156,26 @@ function syncPlayback() {
         .filter(registration =>
           registration.visibilityRatio > 0
           && registration.video.isConnected
-          && (registration.caseStudy || registration.video.querySelector('source') !== null)
         )
         .sort((a, b) =>
           b.visibilityRatio - a.visibilityRatio
           || a.viewportTop - b.viewportTop
           || a.id - b.id
         )
-        .slice(0, [...videoRegistrations.values()].some(item => item.caseStudy) ? 1 : MAX_PLAYING_VIDEOS)
+        .slice(0, MAX_PLAYING_VIDEOS)
     : []
 
-  // Explicit comparison groups may play together while both are visible.
-  const group = candidates[0]?.video.dataset.playbackGroup
-  if (group) {
-    const partner = [...videoRegistrations.values()].find(item =>
-      item !== candidates[0] && item.video.dataset.playbackGroup === group
-      && item.video.isConnected && viewportVisibilityRatio(item.video) > 0
-    )
-    if (partner) candidates.push(partner)
-  }
-
-  // Prepare only the nearest upcoming case-study video, and only once the
-  // current clip is fully buffered so it does not compete with initial playback.
+  // Preload the next clip as soon as playback starts. Waiting for the entire
+  // current file to buffer stalls prefetch on slow connections.
   const active = candidates[0]
-  const upcoming = document.visibilityState === 'visible' && candidates.every(item => fullyBuffered(item.video))
+  const upcoming = document.visibilityState === 'visible' && candidates.length <= MAX_PLAYING_VIDEOS
+    && active && !active.video.paused && active.video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA
     ? [...videoRegistrations.values()]
         .filter(item => item.caseStudy && item !== active
           && item.video.getBoundingClientRect().top >= window.innerHeight
           && item.video.getBoundingClientRect().top < window.innerHeight * 2)
         .sort((a, b) => a.video.getBoundingClientRect().top - b.video.getBoundingClientRect().top)[0]
     : undefined
-
-  for (const item of videoRegistrations.values()) {
-    if (item.caseStudy) item.prepare(candidates.includes(item) || item === upcoming, candidates.includes(item))
-  }
 
   const selectedIds = new Set(candidates.map(registration => registration.id))
 
@@ -176,8 +186,13 @@ function syncPlayback() {
     }
   }
 
+  for (const item of videoRegistrations.values()) {
+    item.prepare(candidates.includes(item) || item === upcoming)
+  }
+
   for (const registration of candidates) {
     registration.wantsPlayback = true
+    watchStalledPlayback(registration)
     playVideo(registration)
   }
 }
@@ -210,28 +225,39 @@ function detachCoordinatorListeners() {
   }
 }
 
-function registerVideo(video: HTMLVideoElement, caseStudy: boolean, prepare: VideoRegistration['prepare']) {
+function registerVideo(
+  video: HTMLVideoElement,
+  caseStudy: boolean,
+  prepare: VideoRegistration['prepare'],
+  onFallback: VideoRegistration['onFallback'] = () => {},
+) {
   const registration: VideoRegistration = {
     id: nextRegistrationId++,
     caseStudy,
     prepare,
-    userPaused: false,
     onPause: () => {
-      if (registration.caseStudy && registration.wantsPlayback && video.controls) registration.userPaused = true
+      // Presentation media has no manual pause UI. Recover from browser pauses
+      // while leaving offscreen/hidden videos under coordinator control.
+      if (registration.wantsPlayback) schedulePlaybackSync()
     },
-    onPlay: () => { registration.userPaused = false },
     video,
     visibilityRatio: 0,
     viewportTop: Number.POSITIVE_INFINITY,
     wantsPlayback: false,
     playPending: false,
+    playbackStarted: false,
+    stalledTimer: undefined,
+    onFallback,
     retryDelay: 250,
     retryTimer: undefined,
     onCanPlay: schedulePlaybackSync,
     onPlaying: () => {
       if (!registration.wantsPlayback || document.visibilityState !== 'visible') {
         video.pause()
+      } else {
+        playbackStarted(registration)
       }
+      schedulePlaybackSync()
     },
   }
 
@@ -239,7 +265,6 @@ function registerVideo(video: HTMLVideoElement, caseStudy: boolean, prepare: Vid
   video.addEventListener('canplay', registration.onCanPlay)
   video.addEventListener('progress', registration.onCanPlay)
   video.addEventListener('pause', registration.onPause)
-  video.addEventListener('play', registration.onPlay)
   video.addEventListener('playing', registration.onPlaying)
   attachCoordinatorListeners()
   return registration
@@ -250,7 +275,6 @@ function unregisterVideo(registration: VideoRegistration) {
   registration.video.removeEventListener('canplay', registration.onCanPlay)
   registration.video.removeEventListener('progress', registration.onCanPlay)
   registration.video.removeEventListener('pause', registration.onPause)
-  registration.video.removeEventListener('play', registration.onPlay)
   registration.video.removeEventListener('playing', registration.onPlaying)
   videoRegistrations.delete(registration.id)
 
@@ -263,43 +287,75 @@ function unregisterVideo(registration: VideoRegistration) {
 </script>
 
 <script setup lang="ts">
-const props = defineProps<{
+// Apply caller attributes first so they cannot enable native media controls.
+defineOptions({ inheritAttrs: false })
+
+const props = withDefaults(defineProps<{
   src: string
   poster?: string
   caseStudy?: boolean
   playbackGroup?: string
-}>()
+  /** Set false only when a media asset has no mobile rendition. */
+  mobileVariant?: boolean
+}>(), { mobileVariant: true })
 
 const videoRef = ref<HTMLVideoElement | null>(null)
+const showStalledToast = ref(false)
+const attrs = useAttrs()
+// Layout classes belong to the case-study frame; media events stay on the video.
+const videoAttrs = () => props.caseStudy
+  ? Object.fromEntries(Object.entries(attrs).filter(([key]) => key !== 'class' && key !== 'style'))
+  : attrs
+
+function retryFromToast() {
+  if (registration) playFromFallback(registration)
+}
 const sourcesAttached = ref(false)
 const preload = ref<'none' | 'metadata' | 'auto'>('none')
-const showControls = ref(false)
-let slowLoadTimer: number | undefined
+let wantsLoad = false
+const isMobileViewport = ref(false)
+let mobileQuery: MediaQueryList | undefined
 
-function clearSlowLoadTimer() {
-  if (slowLoadTimer === undefined) return
-  window.clearTimeout(slowLoadTimer)
-  slowLoadTimer = undefined
-}
-
-function prepareCaseStudy(load: boolean, active: boolean) {
-  preload.value = load ? 'auto' : 'none'
-  if (load) attachSources()
-  if (active && videoRef.value?.paused && !showControls.value) {
-    if (slowLoadTimer === undefined) {
-      slowLoadTimer = window.setTimeout(() => {
-        slowLoadTimer = undefined
-        if (videoRef.value?.paused) showControls.value = true
-      }, 8000)
-    }
-  } else {
-    clearSlowLoadTimer()
+function prepareMedia(load: boolean) {
+  wantsLoad = load
+  const video = videoRef.value
+  const rect = video?.getBoundingClientRect()
+  // Retain partial buffers for two viewport heights in either direction.
+  // Recheck geometry here (and in the timer) to avoid stale observer releases.
+  const nearby = rect && rect.bottom >= -window.innerHeight * 2
+    && rect.top <= window.innerHeight * 3
+  preload.value = load ? 'auto' : isWithinSourceRange ? 'metadata' : 'none'
+  if (load || isWithinSourceRange) {
+    clearSourceRelease()
+    attachSources()
+  } else if (nearby) {
+    clearSourceRelease()
+  } else if (sourcesAttached.value) {
+    scheduleSourceRelease()
   }
 }
-const webmSrc = computed(() => props.src.replace(/\.mp4$/, '.webm'))
-const posterSrc = computed(() =>
-  props.poster ?? props.src.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
-)
+// Select in JS so the browser never fetches both desktop and mobile sources.
+const activeSrc = computed(() => props.mobileVariant !== false && isMobileViewport.value
+  ? props.src.replace(/\.mp4$/, '-mobile.mp4') : props.src)
+
+watch(activeSrc, () => {
+  if (registration) pauseVideo(registration)
+  if (!sourcesAttached.value || !videoRef.value) return
+  nextTick(() => {
+    videoRef.value?.load()
+    schedulePlaybackSync()
+  })
+})
+
+function syncViewportQuery() {
+  isMobileViewport.value = mobileQuery?.matches ?? false
+}
+const posterSrc = computed(() => {
+  if (props.poster) return props.poster
+  // Preserve the separate mobile crop and custom posters.
+  if (activeSrc.value === '/videos/asl-feature.mp4') return '/videos/posters/asl-feature.webp'
+  return activeSrc.value.replace(/\.mp4$/, '.jpg').replace('/videos/', '/videos/posters/')
+})
 
 let sourceObserver: IntersectionObserver | undefined
 let viewportObserver: IntersectionObserver | undefined
@@ -318,12 +374,11 @@ function clearSourceRelease() {
 
 function attachSources() {
   const video = videoRef.value
-  if (!video || (!props.caseStudy && !isWithinSourceRange) || sourcesAttached.value) return
+  if (!video || sourcesAttached.value) return
 
   clearSourceRelease()
   const transition = ++sourceTransition
   sourcesAttached.value = true
-  if (!props.caseStudy) preload.value = 'metadata'
 
   nextTick(() => {
     if (transition !== sourceTransition || !sourcesAttached.value) return
@@ -334,13 +389,14 @@ function attachSources() {
 
 function releaseSources() {
   const video = videoRef.value
-  if (!video || isWithinSourceRange || !sourcesAttached.value) return
+  if (!video || wantsLoad || !sourcesAttached.value) return
+  const rect = video.getBoundingClientRect()
+  if (rect.bottom >= -window.innerHeight * 2 && rect.top <= window.innerHeight * 3) return
 
   if (registration) pauseVideo(registration)
   const transition = ++sourceTransition
   sourcesAttached.value = false
-  showControls.value = false
-  if (registration) registration.userPaused = false
+  preload.value = 'none'
 
   nextTick(() => {
     if (transition !== sourceTransition || sourcesAttached.value) return
@@ -350,33 +406,40 @@ function releaseSources() {
 }
 
 function scheduleSourceRelease() {
-  if (!sourcesAttached.value || sourceReleaseTimer !== undefined) return
+  if (wantsLoad || !sourcesAttached.value || sourceReleaseTimer !== undefined) return
   sourceReleaseTimer = window.setTimeout(() => {
     sourceReleaseTimer = undefined
     releaseSources()
-  }, props.caseStudy ? 30000 : SOURCE_RELEASE_DELAY)
+  }, SOURCE_RELEASE_DELAY)
+}
+
+function observeSourceRange() {
+  sourceObserver?.disconnect()
+  sourceObserver = new IntersectionObserver(
+    ([entry]) => {
+      isWithinSourceRange = Boolean(entry?.isIntersecting)
+      schedulePlaybackSync()
+    },
+    // IO percentages resolve against width, not height. Pixels give one actual
+    // screen ahead on both tall phones and wide desktop viewports.
+    { rootMargin: `${window.innerHeight}px 0px` }
+  )
+  if (videoRef.value) sourceObserver.observe(videoRef.value)
 }
 
 onMounted(() => {
   const video = videoRef.value
   if (!video) return
 
-  registration = registerVideo(video, Boolean(props.caseStudy), prepareCaseStudy)
+  mobileQuery = window.matchMedia('(max-width: 639px)')
+  syncViewportQuery()
+  mobileQuery.addEventListener('change', syncViewportQuery)
+  registration = registerVideo(video, Boolean(props.caseStudy), prepareMedia, visible => {
+    showStalledToast.value = visible
+  })
 
-  sourceObserver = new IntersectionObserver(
-    ([entry]) => {
-      isWithinSourceRange = Boolean(entry?.isIntersecting)
-
-      if (isWithinSourceRange) {
-        clearSourceRelease()
-        if (!props.caseStudy) attachSources()
-      } else {
-        scheduleSourceRelease()
-      }
-      schedulePlaybackSync()
-    },
-    { rootMargin: props.caseStudy ? '100% 0px' : '200px 75%' }
-  )
+  observeSourceRange()
+  window.addEventListener('resize', observeSourceRange)
 
   viewportObserver = new IntersectionObserver(
     ([entry]) => {
@@ -389,41 +452,128 @@ onMounted(() => {
     }
   )
 
-  sourceObserver.observe(video)
   viewportObserver.observe(video)
 })
 
 onBeforeUnmount(() => {
+  wantsLoad = false
+  mobileQuery?.removeEventListener('change', syncViewportQuery)
   isWithinSourceRange = false
   sourceTransition += 1
   clearSourceRelease()
-  clearSlowLoadTimer()
   sourceObserver?.disconnect()
+  window.removeEventListener('resize', observeSourceRange)
   viewportObserver?.disconnect()
 
   if (registration) {
     unregisterVideo(registration)
   }
+  // A detached element can otherwise keep downloading after route navigation.
+  const video = videoRef.value
+  if (video) {
+    video.querySelectorAll('source').forEach(source => source.removeAttribute('src'))
+    video.removeAttribute('src')
+    video.load()
+  }
 })
 </script>
 
 <template>
-  <video
-    ref="videoRef"
-    :data-playback-group="playbackGroup"
-    loop
-    muted
-    playsinline
-    :aria-hidden="showControls ? undefined : true"
-    :aria-label="showControls ? 'Case study video' : undefined"
-    :controls="showControls"
-    :preload="preload"
-    @playing="clearSlowLoadTimer"
-    :poster="posterSrc"
+  <div
+    class="video-player"
+    :class="caseStudy ? ['video-player--case-study', $attrs.class] : undefined"
+    :style="caseStudy ? $attrs.style : undefined"
   >
-    <template v-if="sourcesAttached">
-      <source :src="src" type="video/mp4" />
-      <source :src="webmSrc" type="video/webm" />
-    </template>
-  </video>
+    <video
+      v-bind="videoAttrs()"
+      ref="videoRef"
+      :data-playback-group="playbackGroup"
+      loop
+      muted
+      playsinline
+      aria-hidden="true"
+      tabindex="-1"
+      :controls="false"
+      disableremoteplayback
+      disablepictureinpicture
+      controlslist="nodownload nofullscreen noremoteplayback"
+      :preload="preload"
+      @click.prevent
+      @contextmenu.prevent
+      loading="lazy"
+      :poster="posterSrc"
+    >
+      <template v-if="sourcesAttached">
+        <source :src="activeSrc" type="video/mp4" />
+      </template>
+    </video>
+    <Transition name="video-toast">
+      <button
+        v-if="caseStudy && showStalledToast"
+        class="video-player__toast"
+        type="button"
+        aria-label="Video didn't load due to poor connection, Press play"
+        @click.stop="retryFromToast"
+      >Video didn't load due to poor connection, Press play</button>
+    </Transition>
+  </div>
 </template>
+
+<style scoped>
+/* Homepage media keeps its existing layout; case studies need an overlay frame. */
+.video-player { display: contents; }
+.video-player.video-player--case-study {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  position: relative;
+  max-width: 100%;
+}
+.video-player--case-study > video {
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  max-height: inherit;
+  border-radius: inherit;
+  object-fit: inherit;
+  object-position: inherit;
+}
+.video-player__toast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 320px;
+  max-width: calc(100% - var(--space-m) * 2);
+  padding: var(--space-s) var(--space-m);
+  border: 0;
+  border-radius: var(--radius-m);
+  background: var(--overlay-sheet-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  text-align: center;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.video-player__toast:focus-visible {
+  outline: 1px solid var(--color-text);
+  outline-offset: var(--space-1);
+}
+.video-toast-enter-active,
+.video-toast-leave-active {
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+.video-toast-enter-from { opacity: 0; transform: translateY(var(--space-1)); }
+.video-toast-leave-to { opacity: 0; }
+.video-toast-leave-active { pointer-events: none; }
+@media (prefers-reduced-motion: reduce) {
+  .video-toast-enter-active,
+  .video-toast-leave-active { transition: none; }
+  .video-toast-enter-from { transform: none; }
+}
+/* Let touch gestures scroll the page without invoking native video UI. */
+video { pointer-events: none; }
+</style>
