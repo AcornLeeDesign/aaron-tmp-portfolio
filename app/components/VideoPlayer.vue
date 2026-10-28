@@ -543,7 +543,7 @@ onBeforeUnmount(() => {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  width: var(--space-50);
+  width: 320px;
   max-width: calc(100% - var(--space-m) * 2);
   padding: var(--space-s) var(--space-m);
   border: 0;
