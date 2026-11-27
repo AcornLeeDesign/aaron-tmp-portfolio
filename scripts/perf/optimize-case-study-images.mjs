@@ -13,6 +13,7 @@ sharp.cache(false)
 
 const copySizes = '(min-width: 640px) 600px, calc(100vw - 32px)'
 const wideSizes = '(min-width: 1832px) 1800px, calc(100vw - 32px)'
+const fleetlinePairedSizes = '(min-width: 1832px) 876px, (min-width: 1024px) 50vw, calc(100vw - 32px)'
 const allJobs = [
   ['nova/computer-lab.jpg', [1200, 1800], 600, copySizes],
   ['nova/field-research-blurred.png', [800, 1200, 1800], 1200, copySizes],
@@ -32,6 +33,21 @@ const allJobs = [
   ...[3, 4, 5, 7, 8].map(number => [`doordash/art-direction/render_${number}.png`,
     number === 5 ? [800, 1200, 1920] : [640, 960, 1440], number === 5 ? 960 : 640,
     number === 5 ? 'min(86.667svh, 80vw)' : 'min(52svh, 48vw)']),
+  ...['network-map-after', 'legacy-software', 'old-map', 'old-map-issues', 'route-map-reference', 'select-markets',
+    'load-volume-map', 'detail-panel-iterations', 'detail-panel-final', 'rpm-before', 'rpm-iteration-1', 'rpm-iteration-2',
+    'rpm-iteration-3', 'rpm-final', 'network-insights-old', 'network-insights-new', 'design-in-product', 'design-in-canvas',
+    'customer-performance', 'driver-performance'].map(name => [`fleetline/${name}.png`, [800, 1440, 2560], 1800, wideSizes]),
+  ...[['load-volume-detail', 1854], ['detail-panel-directional', 1860]].map(([name, width]) =>
+    [`fleetline/${name}.png`, [800, 1440, width], 1200, '(min-width: 1248px) 1200px, calc(100vw - 32px)']),
+  ...['product-planning', 'product-gantt', 'market-selected', 'lane-selected', 'tags-a', 'tags-b'].map(name =>
+    [`fleetline/${name}.png`, [640, 1200, 1800], 900, fleetlinePairedSizes]),
+  ...['stops-panel-a', 'stops-panel-b'].map(name => [`fleetline/${name}.png`, [640, 1200], 600, fleetlinePairedSizes]),
+  ...[['lane-panel', 852], ['market-panel', 846]].map(([name, width]) =>
+    [`fleetline/${name}.png`, [480, width], 400, '(min-width: 1024px) 400px, 45vw']),
+  ['fleetline/stops-tooltip.png', [480, 962], 480, '(min-width: 640px) 480px, calc(100vw - 32px)'],
+  ['fleetline/design-system-list-rows.png', [800, 1502], 600, copySizes],
+  ...[['rpm-view-deadhead', 1188], ['rpm-view-unique-loads', 1392], ['rpm-view-rpm', 918]].map(([name, width]) =>
+    [`fleetline/${name}.png`, [480, width], 560, '(min-width: 1024px) 30vw, calc(100vw - 32px)']),
 ]
 const only = process.argv.find(arg => arg.startsWith('--only='))?.slice(7).split(',')
 const jobs = only ? allJobs.filter(([relative]) => only.includes(relative)) : allJobs
