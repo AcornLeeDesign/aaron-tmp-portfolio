@@ -32,7 +32,7 @@ function trackLinkPointer(event: PointerEvent) {
 const sections: { title: string, entries: WorkEntry[] }[] = [
   { title: 'Work', entries: [
     { year: '2026', name: 'DoorDash', role: 'Product design intern', project: 'DoorDash' },
-    { year: '2026', name: 'Fleetline', role: 'Product designer', soon: true },
+    { year: '2026', name: 'Fleetline', role: 'Product designer', project: 'Fleetline' },
     { year: '2026', name: 'Innovative Design @ USC', role: 'Co president', instagram: true },
     { year: '2025', name: 'Innovative Design @ USC', role: 'VP of Design', continuation: true },
     { year: '2025', name: 'LavaLab @ USC', role: 'Designer' },
