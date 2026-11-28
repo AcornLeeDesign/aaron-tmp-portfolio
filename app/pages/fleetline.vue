@@ -141,8 +141,8 @@ onBeforeUnmount(() => {
       <section class="story outcomes" aria-labelledby="outcomes-title">
         <h2 id="outcomes-title" class="copy">Key outcomes</h2>
         <div class="outcomes__panel">
-          <div class="outcomes__metric outcomes__metric--secondary"><strong>0 → weekly</strong><p class="outcomes__detail">Reported network map usage for 3 customers, from 100% dropoff to consistent weekly use</p></div>
-          <div class="outcomes__metric outcomes__metric--primary"><strong>15 fleets</strong><p>rolled out</p></div>
+          <div class="outcomes__metric outcomes__metric--primary"><strong>0 → weekly</strong><p class="outcomes__detail">Reported network map usage for 3 customers, from 100% dropoff to consistent weekly use</p></div>
+          <div class="outcomes__metric outcomes__metric--secondary"><strong>15 fleets</strong><p>rolled out</p></div>
         </div>
       </section>
 
