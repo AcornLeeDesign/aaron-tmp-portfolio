@@ -161,6 +161,7 @@ onBeforeUnmount(() => {
         </div>
         <figure>
           <div class="stage">
+            <img class="plan-diagram-shot" src="/images/case-studies/fleetline/load-diagram.png" width="1189" height="544" alt="A load from St. Louis, MO at 08:00 to Chicago, IL at 16:00 paying $2,500 at $2.11 per mile, followed by 485 deadhead miles to the next pickup in Kansas, IL paying $1,000 at $2.20 per mile">
             <div class="plan-diagram" role="img" aria-label="A load from St. Louis, MO at 08:00 to Chicago, IL at 16:00 paying $2,500 at $2.11 per mile, followed by 485 deadhead miles to the next pickup in Kansas, IL paying $1,000 at $2.20 per mile">
               <span class="plan-tag plan-tag--load plan-diagram__load">Load</span>
               <div class="plan-stop plan-diagram__pickup"><span>July 8th, 08:00 ET</span><strong>St. Louis, MO</strong></div>
@@ -706,6 +707,7 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
 .plan-tag--deadhead { background: var(--fleetline-tag-deadhead-background); color: var(--fleetline-tag-deadhead-text); }
 .plan-tag--rpm { background: var(--fleetline-tag-rpm-background); color: var(--fleetline-tag-rpm-text); }
 .plan-tag--revenue { background: var(--fleetline-tag-revenue-background); color: var(--fleetline-tag-revenue-text); }
+.plan-diagram-shot { display: none; width: 100%; height: auto; background: var(--fleetline-card-background); border: 1px solid var(--fleetline-card-border); border-radius: var(--case-study-surface-radius); }
 
 .factor-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-s) var(--space-xl); counter-reset: factor; }
 .factor-list li { display: flex; gap: var(--space-s); counter-increment: factor; font-size: var(--font-size-m); font-weight: var(--font-weight-medium); }
@@ -782,20 +784,8 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
   .case-numbered-list { gap: var(--space-xl); }
   .case-numbered-list--plain { gap: var(--space-s); }
   .case-numbered-list li > div { grid-template-columns: 1fr; gap: var(--space-xs); }
-  .plan-diagram {
-    grid-template-columns: auto minmax(0, 1fr);
-    grid-template-areas:
-      "load pickup"
-      "load dropoff"
-      ". money"
-      "deadhead miles"
-      ". next"
-      ". next-money";
-    padding: var(--space-m);
-    column-gap: var(--space-s);
-  }
-  .plan-diagram__money, .plan-diagram__next-money { align-items: flex-start; padding: var(--space-xs) 0 var(--space-s) var(--space-m); border-left: 1px solid var(--fleetline-stage-text); }
-  .plan-diagram__next-money { border-left-style: dashed; }
+  .plan-diagram { display: none; }
+  .plan-diagram-shot { display: block; }
   .metric-compare, .panel-compare, .view-trio { grid-template-columns: 1fr; }
   .panel-compare__item { margin-inline: auto; }
   .metric-actions li { grid-template-columns: 1fr; gap: var(--space-xs); }
