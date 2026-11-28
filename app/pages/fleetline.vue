@@ -159,22 +159,9 @@ onBeforeUnmount(() => {
           <h2>Fleet planning</h2>
           <p>Trucking companies (“fleets”) haul freight for businesses. Planners decide which driver takes which job. Their job is to keep trucks loaded and plan loads that pay well for the miles they take.</p>
         </div>
-        <figure>
+        <figure class="copy">
           <div class="stage">
-            <img class="plan-diagram-shot" src="/images/case-studies/fleetline/load-diagram.png" width="1189" height="544" alt="A load from St. Louis, MO at 08:00 to Chicago, IL at 16:00 paying $2,500 at $2.11 per mile, followed by 485 deadhead miles to the next pickup in Kansas, IL paying $1,000 at $2.20 per mile">
-            <div class="plan-diagram" role="img" aria-label="A load from St. Louis, MO at 08:00 to Chicago, IL at 16:00 paying $2,500 at $2.11 per mile, followed by 485 deadhead miles to the next pickup in Kansas, IL paying $1,000 at $2.20 per mile">
-              <span class="plan-tag plan-tag--load plan-diagram__load">Load</span>
-              <div class="plan-stop plan-diagram__pickup"><span>July 8th, 08:00 ET</span><strong>St. Louis, MO</strong></div>
-              <div class="plan-stop plan-diagram__dropoff"><span>July 8th, 16:00 ET</span><strong>Chicago, IL</strong></div>
-              <div class="plan-money plan-diagram__money">
-                <p class="plan-money__row"><span class="plan-money__rpm">$2.11 / mi</span><span class="plan-tag plan-tag--rpm">RPM</span></p>
-                <p class="plan-money__row"><strong>$2,500</strong><span class="plan-tag plan-tag--revenue">Revenue</span></p>
-              </div>
-              <span class="plan-tag plan-tag--deadhead plan-diagram__deadhead">Deadhead</span>
-              <div class="plan-diagram__miles"><span class="plan-miles">485 mi</span></div>
-              <div class="plan-stop plan-stop--next plan-diagram__next"><span>July 8th, 22:00 ET</span><strong>Kansas, IL</strong></div>
-              <div class="plan-money plan-money--next plan-diagram__next-money"><span>$2.20 / mi</span><strong>$1,000</strong></div>
-            </div>
+            <img src="/images/case-studies/fleetline/load-diagram.png" width="1189" height="544" alt="A load from St. Louis, MO at 08:00 to Chicago, IL at 16:00 paying $2,500 at $2.11 per mile, followed by 485 deadhead miles to the next pickup in Kansas, IL paying $1,000 at $2.20 per mile">
           </div>
           <figcaption>Fig. 2. A load, the empty deadhead miles to the next pickup, rate per mile (RPM), and revenue.</figcaption>
         </figure>
@@ -609,16 +596,8 @@ onBeforeUnmount(() => {
   --fleetline-number-size: var(--space-10);
   --fleetline-stat-primary-size: 48px;
   --fleetline-stat-secondary-size: var(--font-size-xxl);
-  /* Term tags from the deck's load diagram. */
+  /* Term tag from the deck, reused on metric samples. */
   --fleetline-tag-load-background: #e7e5e4;
-  --fleetline-tag-load-text: #44403c;
-  --fleetline-tag-deadhead-background: #f3e8dc;
-  --fleetline-tag-deadhead-text: #904417;
-  --fleetline-tag-rpm-background: #d1f0dc;
-  --fleetline-tag-rpm-text: #15803d;
-  --fleetline-tag-revenue-background: #dbe5fb;
-  --fleetline-tag-revenue-text: #1d4ed8;
-  --fleetline-deadhead-line: #f59e0b;
   /* Same reading measure as the DoorDash outcomes quote cards. */
   --fleetline-outcome-detail-width: 480px;
   /* Detail panels are narrow portrait crops; keep them near their UI scale. */
@@ -665,49 +644,6 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
 .outcomes__metric--primary p { font-size: var(--font-size-m); }
 .outcomes__metric--secondary strong { font-size: var(--fleetline-stat-secondary-size); }
 .outcomes__detail { max-width: var(--fleetline-outcome-detail-width); }
-.plan-diagram {
-  width: min(var(--fleetline-diagram-width), 100%);
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  grid-template-areas:
-    "load pickup money"
-    "load dropoff money"
-    "deadhead miles ."
-    ". next next-money";
-  align-items: center;
-  column-gap: var(--space-m);
-  padding: var(--space-8) var(--space-xl);
-  background: var(--fleetline-card-background);
-  border: 1px solid var(--fleetline-card-border);
-  border-radius: var(--case-study-surface-radius);
-  font-size: var(--font-size-s);
-}
-.plan-diagram__load { grid-area: load; }
-.plan-diagram__pickup { grid-area: pickup; }
-.plan-diagram__dropoff { grid-area: dropoff; }
-.plan-diagram__money { grid-area: money; }
-.plan-diagram__deadhead { grid-area: deadhead; }
-.plan-diagram__miles { grid-area: miles; }
-.plan-diagram__next { grid-area: next; }
-.plan-diagram__next-money { grid-area: next-money; }
-.plan-stop { display: flex; flex-direction: column; padding: var(--space-s) 0 var(--space-s) var(--space-m); border-left: 1px solid var(--fleetline-stage-text); }
-.plan-stop span, .plan-money span:not(.plan-tag) { color: var(--fleetline-stage-subdued); font-size: var(--font-size-xs); }
-.plan-stop strong, .plan-money strong { font-weight: var(--font-weight-medium); }
-.plan-stop--next, .plan-money--next { opacity: 0.4; }
-.plan-stop--next { border-left-style: dashed; }
-.plan-money { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: var(--space-xs); }
-.plan-money__row { display: flex; align-items: center; gap: var(--space-s); }
-.plan-money .plan-money__rpm { color: var(--fleetline-tag-rpm-text); }
-.plan-money:not(.plan-money--next) strong { color: var(--fleetline-tag-revenue-text); }
-.plan-diagram__miles { padding: var(--space-s) 0 var(--space-s) var(--space-m); border-left: 1px dashed var(--fleetline-deadhead-line); }
-.plan-miles { display: inline-flex; padding: 0 var(--space-xs); border: 1px solid var(--fleetline-deadhead-line); border-radius: var(--radius-xs); background: var(--fleetline-tag-deadhead-background); color: var(--fleetline-tag-deadhead-text); font-family: var(--font-mono-ui); font-size: var(--font-size-xs); }
-.plan-tag { justify-self: start; padding: var(--space-xxs) var(--space-s); border-radius: var(--radius-xs); font-family: var(--font-mono-ui); font-size: var(--font-size-xs); white-space: nowrap; }
-.plan-tag--load { background: var(--fleetline-tag-load-background); color: var(--fleetline-tag-load-text); }
-.plan-tag--deadhead { background: var(--fleetline-tag-deadhead-background); color: var(--fleetline-tag-deadhead-text); }
-.plan-tag--rpm { background: var(--fleetline-tag-rpm-background); color: var(--fleetline-tag-rpm-text); }
-.plan-tag--revenue { background: var(--fleetline-tag-revenue-background); color: var(--fleetline-tag-revenue-text); }
-.plan-diagram-shot { display: none; width: 100%; height: auto; background: var(--fleetline-card-background); border: 1px solid var(--fleetline-card-border); border-radius: var(--case-study-surface-radius); }
 
 .factor-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-s) var(--space-xl); counter-reset: factor; }
 .factor-list li { display: flex; gap: var(--space-s); counter-increment: factor; font-size: var(--font-size-m); font-weight: var(--font-weight-medium); }
@@ -784,8 +720,6 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
   .case-numbered-list { gap: var(--space-xl); }
   .case-numbered-list--plain { gap: var(--space-s); }
   .case-numbered-list li > div { grid-template-columns: 1fr; gap: var(--space-xs); }
-  .plan-diagram { display: none; }
-  .plan-diagram-shot { display: block; }
   .metric-compare, .panel-compare, .view-trio { grid-template-columns: 1fr; }
   .panel-compare__item { margin-inline: auto; }
   .metric-actions li { grid-template-columns: 1fr; gap: var(--space-xs); }
