@@ -129,11 +129,11 @@ onBeforeUnmount(() => {
         <div class="copy overview__intro">
           <h1>Fleetline</h1>
           <div class="text-group">
-            <h2>Helping managers understand their network and take action to best position their fleets</h2>
+            <h2>Helping managers understand their network and best position their fleets</h2>
             <p>Fleetline is an AI planning and dispatch platform for trucking fleets. I redesigned its network map so managers can see where their fleet is busy, where it’s losing money, and what to change.</p>
           </div>
           <ul class="case-meta" aria-label="Project details">
-            <li>Rolled out to 15 fleets</li><li>Product designer, contract</li><li>Mentored by Eric Wang</li><li>2026</li>
+            <li>Rolled out to 15 fleets</li><li>Product designer</li><li>Engineering partner: Jeffrey Lin</li><li>June 2026</li>
           </ul>
         </div>
         <figure>
