@@ -141,8 +141,8 @@ onBeforeUnmount(() => {
       <section class="story outcomes" aria-labelledby="outcomes-title">
         <h2 id="outcomes-title" class="copy">Key outcomes</h2>
         <div class="outcomes__panel">
+          <div class="outcomes__metric outcomes__metric--secondary"><strong>0 → weekly</strong><p class="outcomes__detail">Reported network map usage for 3 customers, from 100% dropoff to consistent weekly use</p></div>
           <div class="outcomes__metric outcomes__metric--primary"><strong>15 fleets</strong><p>rolled out</p></div>
-          <div class="outcomes__metric outcomes__metric--secondary"><strong>0 → weekly</strong><p>Reported network map usage for 3 customers, from 100% dropoff to consistent weekly use</p></div>
         </div>
       </section>
 
@@ -616,6 +616,8 @@ onBeforeUnmount(() => {
   --fleetline-tag-revenue-background: #dbe5fb;
   --fleetline-tag-revenue-text: #1d4ed8;
   --fleetline-deadhead-line: #f59e0b;
+  /* Same reading measure as the DoorDash outcomes quote cards. */
+  --fleetline-outcome-detail-width: 480px;
   /* Detail panels are narrow portrait crops; keep them near their UI scale. */
   --fleetline-panel-width: 400px;
   /* Diagram cards stay at a comfortable reading measure inside the stage. */
@@ -659,6 +661,7 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
 .outcomes__metric--primary strong { font-size: var(--fleetline-stat-primary-size); }
 .outcomes__metric--primary p { font-size: var(--font-size-m); }
 .outcomes__metric--secondary strong { font-size: var(--fleetline-stat-secondary-size); }
+.outcomes__detail { max-width: var(--fleetline-outcome-detail-width); }
 .plan-diagram {
   width: min(var(--fleetline-diagram-width), 100%);
   margin-inline: auto;
