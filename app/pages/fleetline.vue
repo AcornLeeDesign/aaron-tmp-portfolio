@@ -136,19 +136,22 @@ onBeforeUnmount(() => {
             <li>Rolled out to 15 fleets</li><li>Product designer</li><li>Engineering partner: Jeffrey Lin</li><li>June 2026</li>
           </ul>
         </div>
+      </section>
+
+      <section class="story outcomes" aria-labelledby="outcomes-title">
+        <h2 id="outcomes-title" class="copy">Key outcomes</h2>
+        <div class="outcomes__panel">
+          <div class="outcomes__metric outcomes__metric--primary"><strong>15 fleets</strong><p>rolled out</p></div>
+          <div class="outcomes__metric outcomes__metric--secondary"><strong>0 → weekly</strong><p>Reported network map usage for 3 customers, from 100% dropoff to consistent weekly use</p></div>
+        </div>
+      </section>
+
+      <section class="story" aria-labelledby="preview-title">
+        <h2 id="preview-title" class="copy">The redesigned network map</h2>
         <figure>
           <CaseStudyImage src="/images/case-studies/fleetline/network-map-after.png" alt="Redesigned Fleetline network map with load-volume markers across the United States and a market detail panel" />
           <figcaption>Fig. 1. The redesigned network map.</figcaption>
         </figure>
-      </section>
-
-      <section class="story outcomes" aria-labelledby="outcomes-title">
-        <h2 id="outcomes-title" class="copy">Outcomes</h2>
-        <div class="outcomes__panel">
-          <div class="outcomes__metric outcomes__metric--primary"><strong>15 fleets</strong><p>rolled out</p></div>
-          <div class="outcomes__metric outcomes__metric--secondary"><strong>0 → weekly</strong><p>Reported network map usage for 3 customers, from 100% dropoff to consistent weekly use</p></div>
-          <p class="outcomes__note">There wasn’t enough time to gather longitudinal data due to the pivot and acquisition.</p>
-        </div>
       </section>
 
       <section id="context" class="story" data-case-section="context">
@@ -596,7 +599,7 @@ onBeforeUnmount(() => {
   --fleetline-card-background: #fff;
   --fleetline-card-border: #e7e5e4;
   --fleetline-card-shadow: 0 var(--space-1) var(--space-3) rgb(0 0 0 / 5%);
-  /* Deck section-divider stone with the blue rule used in the deck's chapter list. */
+  /* Deck section-divider stone. */
   --fleetline-panel-background: #44403c;
   --fleetline-accent: #2563eb;
   --fleetline-accent-text: #fff;
@@ -650,14 +653,12 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
 .stage { padding: var(--space-xl); background: var(--fleetline-stage-background); color: var(--fleetline-stage-text); border-radius: var(--case-study-surface-radius); }
 .stage img { box-shadow: var(--fleetline-card-shadow); }
 
-.outcomes__panel { width: min(var(--content-copy-width), 100%); margin-inline: auto; display: flex; flex-direction: column; align-items: center; gap: var(--space-8); padding: var(--space-12) var(--space-xl); background: var(--fleetline-panel-background); border-top: 1px solid var(--fleetline-accent); border-radius: var(--case-study-surface-radius); text-align: center; line-height: var(--line-height-heading); }
+.outcomes__panel { width: min(var(--content-copy-width), 100%); margin-inline: auto; display: flex; flex-direction: column; align-items: center; gap: var(--space-8); padding: var(--space-12) var(--space-xl); background: var(--fleetline-panel-background); border-radius: var(--case-study-surface-radius); text-align: center; line-height: var(--line-height-heading); }
 .outcomes__metric { display: flex; flex-direction: column; align-items: center; gap: var(--space-xs); max-width: var(--fleetline-diagram-width); }
 .outcomes__metric strong { font-weight: var(--font-weight-regular); }
 .outcomes__metric--primary strong { font-size: var(--fleetline-stat-primary-size); }
 .outcomes__metric--primary p { font-size: var(--font-size-m); }
 .outcomes__metric--secondary strong { font-size: var(--fleetline-stat-secondary-size); }
-.outcomes__note { color: var(--color-subdued); font-size: var(--font-size-xs); }
-
 .plan-diagram {
   width: min(var(--fleetline-diagram-width), 100%);
   margin-inline: auto;
