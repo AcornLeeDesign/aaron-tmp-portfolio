@@ -200,7 +200,6 @@ onBeforeUnmount(() => {
           <ol class="case-numbered-list">
             <li><div><h3>Where do we grow?</h3><p>See busy markets to add drivers, protect customers, and add more contract work.</p></div></li>
             <li><div><h3>Where are we losing money?</h3><p>See underpaid routes and empty miles.</p></div></li>
-            <li><div><h3>Is the data worth acting on?</h3><p>Quickly gain fleet context behind metrics.</p></div></li>
             <li><div><h3>What should change?</h3><p>Act on a rule, a price, or a customer.</p></div></li>
           </ol>
           <p>Managers need a way to understand where the market lies to best take advantage of it.</p>
