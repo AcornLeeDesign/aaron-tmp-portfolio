@@ -165,8 +165,10 @@ onBeforeUnmount(() => {
               <span class="plan-tag plan-tag--load plan-diagram__load">Load</span>
               <div class="plan-stop plan-diagram__pickup"><span>July 8th, 08:00 ET</span><strong>St. Louis, MO</strong></div>
               <div class="plan-stop plan-diagram__dropoff"><span>July 8th, 16:00 ET</span><strong>Chicago, IL</strong></div>
-              <div class="plan-money plan-diagram__money"><span class="plan-money__rpm">$2.11 / mi</span><strong>$2,500</strong></div>
-              <div class="plan-diagram__tags"><span class="plan-tag plan-tag--rpm">RPM</span><span class="plan-tag plan-tag--revenue">Revenue</span></div>
+              <div class="plan-money plan-diagram__money">
+                <p class="plan-money__row"><span class="plan-money__rpm">$2.11 / mi</span><span class="plan-tag plan-tag--rpm">RPM</span></p>
+                <p class="plan-money__row"><strong>$2,500</strong><span class="plan-tag plan-tag--revenue">Revenue</span></p>
+              </div>
               <span class="plan-tag plan-tag--deadhead plan-diagram__deadhead">Deadhead</span>
               <div class="plan-diagram__miles"><span class="plan-miles">485 mi</span></div>
               <div class="plan-stop plan-stop--next plan-diagram__next"><span>July 8th, 22:00 ET</span><strong>Kansas, IL</strong></div>
@@ -666,12 +668,12 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
   width: min(var(--fleetline-diagram-width), 100%);
   margin-inline: auto;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   grid-template-areas:
-    "load pickup money tags"
-    "load dropoff money tags"
-    "deadhead miles . ."
-    ". next next-money .";
+    "load pickup money"
+    "load dropoff money"
+    "deadhead miles ."
+    ". next next-money";
   align-items: center;
   column-gap: var(--space-m);
   padding: var(--space-8) var(--space-xl);
@@ -684,17 +686,17 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
 .plan-diagram__pickup { grid-area: pickup; }
 .plan-diagram__dropoff { grid-area: dropoff; }
 .plan-diagram__money { grid-area: money; }
-.plan-diagram__tags { grid-area: tags; display: flex; flex-direction: column; gap: var(--space-xs); }
 .plan-diagram__deadhead { grid-area: deadhead; }
 .plan-diagram__miles { grid-area: miles; }
 .plan-diagram__next { grid-area: next; }
 .plan-diagram__next-money { grid-area: next-money; }
 .plan-stop { display: flex; flex-direction: column; padding: var(--space-s) 0 var(--space-s) var(--space-m); border-left: 1px solid var(--fleetline-stage-text); }
-.plan-stop span, .plan-money span { color: var(--fleetline-stage-subdued); font-size: var(--font-size-xs); }
+.plan-stop span, .plan-money span:not(.plan-tag) { color: var(--fleetline-stage-subdued); font-size: var(--font-size-xs); }
 .plan-stop strong, .plan-money strong { font-weight: var(--font-weight-medium); }
 .plan-stop--next, .plan-money--next { opacity: 0.4; }
 .plan-stop--next { border-left-style: dashed; }
-.plan-money { display: flex; flex-direction: column; align-items: flex-end; }
+.plan-money { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: var(--space-xs); }
+.plan-money__row { display: flex; align-items: center; gap: var(--space-s); }
 .plan-money .plan-money__rpm { color: var(--fleetline-tag-rpm-text); }
 .plan-money:not(.plan-money--next) strong { color: var(--fleetline-tag-revenue-text); }
 .plan-diagram__miles { padding: var(--space-s) 0 var(--space-s) var(--space-m); border-left: 1px dashed var(--fleetline-deadhead-line); }
@@ -781,17 +783,19 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
   .case-numbered-list--plain { gap: var(--space-s); }
   .case-numbered-list li > div { grid-template-columns: 1fr; gap: var(--space-xs); }
   .plan-diagram {
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr);
     grid-template-areas:
-      "load pickup money"
-      "load dropoff money"
-      "tags tags tags"
-      "deadhead miles ."
-      ". next next-money";
+      "load pickup"
+      "load dropoff"
+      ". money"
+      "deadhead miles"
+      ". next"
+      ". next-money";
     padding: var(--space-m);
     column-gap: var(--space-s);
   }
-  .plan-diagram__tags { flex-direction: row; padding-block: var(--space-s); }
+  .plan-diagram__money, .plan-diagram__next-money { align-items: flex-start; padding: var(--space-xs) 0 var(--space-s) var(--space-m); border-left: 1px solid var(--fleetline-stage-text); }
+  .plan-diagram__next-money { border-left-style: dashed; }
   .metric-compare, .panel-compare, .view-trio { grid-template-columns: 1fr; }
   .panel-compare__item { margin-inline: auto; }
   .metric-actions li { grid-template-columns: 1fr; gap: var(--space-xs); }
