@@ -149,7 +149,9 @@ onBeforeUnmount(() => {
       <section class="story" aria-labelledby="preview-title">
         <h2 id="preview-title" class="copy">The redesigned network map</h2>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/network-map-after.png" alt="Redesigned Fleetline network map with load-volume markers across the United States and a market detail panel" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/network-map-after.png" alt="Redesigned Fleetline network map with load-volume markers across the United States and a market detail panel" />
+          </div>
           <figcaption>Fig. 1. The redesigned network map.</figcaption>
         </figure>
       </section>
@@ -174,7 +176,9 @@ onBeforeUnmount(() => {
           <p>Nobody can compare them all, so planners lean on habit, spreadsheets and phone calls. Fleets run on archaic software from 2000–2010, and regular software algorithms aren’t flexible to tribal knowledge. The cost is lost revenue, wasted time, and a higher driver churn rate.</p>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/legacy-software.png" alt="Legacy planning software with dense menus, tables, and a small map" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/legacy-software.png" alt="Legacy planning software with dense menus, tables, and a small map" loading="lazy" />
+          </div>
           <figcaption>Fig. 3. Legacy planning software.</figcaption>
         </figure>
         <div class="copy text-group">
@@ -186,8 +190,8 @@ onBeforeUnmount(() => {
         </div>
         <figure>
           <div class="paired">
-            <CaseStudyImage src="/images/case-studies/fleetline/product-planning.png" alt="Fleetline planning table of drivers, loads, and recommended assignments" loading="lazy" />
-            <CaseStudyImage src="/images/case-studies/fleetline/product-gantt.png" alt="Fleetline dispatch timeline of driver assignments" loading="lazy" />
+            <div class="media-frame"><CaseStudyImage src="/images/case-studies/fleetline/product-planning.png" alt="Fleetline planning table of drivers, loads, and recommended assignments" loading="lazy" /></div>
+            <div class="media-frame"><CaseStudyImage src="/images/case-studies/fleetline/product-gantt.png" alt="Fleetline dispatch timeline of driver assignments" loading="lazy" /></div>
           </div>
           <figcaption>Fig. 4. Fleetline’s planning and dispatch views.</figcaption>
         </figure>
@@ -205,7 +209,9 @@ onBeforeUnmount(() => {
           <p>Managers need a way to understand where the market lies to best take advantage of it.</p>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/old-map.png" alt="Original network map with hundreds of overlapping lane lines across the United States" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/old-map.png" alt="Original network map with hundreds of overlapping lane lines across the United States" loading="lazy" />
+          </div>
           <figcaption>Fig. 5. The original network map.</figcaption>
         </figure>
         <div class="copy text-group"><h2>Review, investigate, decide</h2></div>
@@ -247,11 +253,15 @@ onBeforeUnmount(() => {
           </ol>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/old-map-issues.png" alt="Original map with overlapping stop blobs and dense lane lines" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/old-map-issues.png" alt="Original map with overlapping stop blobs and dense lane lines" loading="lazy" />
+          </div>
           <figcaption>Fig. 7. Unlabeled stop counts and overlapping lanes on the original map.</figcaption>
         </figure>
         <figure class="figure--medium">
-          <CaseStudyImage src="/images/case-studies/fleetline/route-map-reference.png" alt="Route map reference with arcs radiating from a single hub" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/route-map-reference.png" alt="Route map reference with arcs radiating from a single hub" loading="lazy" />
+          </div>
           <figcaption>Fig. 8. Shoutout: a route map reference.</figcaption>
         </figure>
         <div class="copy text-group">
@@ -263,7 +273,9 @@ onBeforeUnmount(() => {
           </ul>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/select-markets.png" alt="Map of market points where a manager selects one market, then another" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/select-markets.png" alt="Map of market points where a manager selects one market, then another" loading="lazy" />
+          </div>
           <figcaption>Fig. 9. Iteration 1: selecting markets instead of lanes.</figcaption>
         </figure>
         <div class="copy text-group">
@@ -271,7 +283,7 @@ onBeforeUnmount(() => {
           <p>Show the stops data, but how do managers have enough context for the number to make sense?</p>
         </div>
         <figure>
-          <div class="stage stops-stage">
+          <div class="stage stage--cover stops-stage">
             <CaseStudyImage class="stops-stage__tooltip" src="/images/case-studies/fleetline/stops-tooltip.png" alt="Map tooltip for St. Louis, MO summarizing pickup and delivery stops" loading="lazy" />
             <div class="paired">
               <CaseStudyImage src="/images/case-studies/fleetline/stops-panel-a.png" alt="Detail panel explaining stop counts for St. Louis, MO" loading="lazy" />
@@ -314,11 +326,15 @@ onBeforeUnmount(() => {
           </ol>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/load-volume-map.png" alt="Map markers sized by load volume with a market detail panel" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/load-volume-map.png" alt="Map markers sized by load volume with a market detail panel" loading="lazy" />
+          </div>
           <figcaption>Fig. 12. Load volume as the map’s comparison metric.</figcaption>
         </figure>
         <figure class="figure--medium">
-          <CaseStudyImage src="/images/case-studies/fleetline/load-volume-detail.png" alt="Close-up of a selected market with load volume in the detail panel" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/load-volume-detail.png" alt="Close-up of a selected market with load volume in the detail panel" loading="lazy" />
+          </div>
           <figcaption>Fig. 13. Opening a market for contextual data.</figcaption>
         </figure>
       </section>
@@ -336,8 +352,8 @@ onBeforeUnmount(() => {
         </div>
         <figure>
           <div class="paired">
-            <CaseStudyImage src="/images/case-studies/fleetline/market-selected.png" alt="Selected market with connected lanes and a list of loads" loading="lazy" />
-            <CaseStudyImage src="/images/case-studies/fleetline/lane-selected.png" alt="Selected lane between two markets with a list of loads" loading="lazy" />
+            <div class="media-frame"><CaseStudyImage src="/images/case-studies/fleetline/market-selected.png" alt="Selected market with connected lanes and a list of loads" loading="lazy" /></div>
+            <div class="media-frame"><CaseStudyImage src="/images/case-studies/fleetline/lane-selected.png" alt="Selected lane between two markets with a list of loads" loading="lazy" /></div>
           </div>
           <figcaption>Fig. 14. Selected market and lane views without direction, deadhead, or RPM.</figcaption>
         </figure>
@@ -362,11 +378,13 @@ onBeforeUnmount(() => {
           </ul>
         </div>
         <figure class="figure--medium">
-          <CaseStudyImage src="/images/case-studies/fleetline/detail-panel-directional.png" alt="Lane detail panel for Toledo, OH and Chicago, IL with inbound and outbound loads, revenue, and RPM" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/detail-panel-directional.png" alt="Lane detail panel for Toledo, OH and Chicago, IL with inbound and outbound loads, revenue, and RPM" loading="lazy" />
+          </div>
           <figcaption>Fig. 16. Iteration 1: inbound and outbound data in the detail panel.</figcaption>
         </figure>
         <figure>
-          <div class="stage">
+          <div class="media-frame">
             <CaseStudyImage src="/images/case-studies/fleetline/detail-panel-iterations.png" alt="Side-by-side explorations of detail panel layouts" loading="lazy" />
           </div>
           <figcaption>Fig. 17. Detail panel explorations.</figcaption>
@@ -392,7 +410,9 @@ onBeforeUnmount(() => {
           <figcaption>Fig. 18. Market and lane detail panels.</figcaption>
         </figure>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/detail-panel-final.png" alt="Final network map with a market selected and its detail panel open" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/detail-panel-final.png" alt="Final network map with a market selected and its detail panel open" loading="lazy" />
+          </div>
           <figcaption>Fig. 19. Iteration 6: the final detail panel.</figcaption>
         </figure>
       </section>
@@ -408,7 +428,9 @@ onBeforeUnmount(() => {
           </ol>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/rpm-before.png" alt="Map with lanes drawn at varying thickness from a selected market" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/rpm-before.png" alt="Map with lanes drawn at varying thickness from a selected market" loading="lazy" />
+          </div>
           <figcaption>Fig. 20. Lane thickness as the only RPM signal.</figcaption>
         </figure>
         <div class="copy text-group">
@@ -420,7 +442,9 @@ onBeforeUnmount(() => {
           </ul>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/rpm-iteration-1.png" alt="Map with paired curved inbound and outbound lines between markets" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/rpm-iteration-1.png" alt="Map with paired curved inbound and outbound lines between markets" loading="lazy" />
+          </div>
           <figcaption>Fig. 21. Iteration 1: curved inbound and outbound lines.</figcaption>
         </figure>
         <div class="copy text-group">
@@ -431,7 +455,9 @@ onBeforeUnmount(() => {
           </ul>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/rpm-iteration-2.png" alt="Map with simplified lines and two RPM values at each market" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/rpm-iteration-2.png" alt="Map with simplified lines and two RPM values at each market" loading="lazy" />
+          </div>
           <figcaption>Fig. 22. Iteration 2: simplified lines.</figcaption>
         </figure>
         <div class="copy text-group">
@@ -439,7 +465,7 @@ onBeforeUnmount(() => {
           <p>Color is controlled by the view and scale by load count, giving a baseline of comparison between views. Markets under 12 loads are gray.</p>
         </div>
         <figure>
-          <div class="stage view-trio">
+          <div class="stage stage--cover view-trio">
             <div><CaseStudyImage src="/images/case-studies/fleetline/rpm-view-deadhead.png" alt="Deadhead view with markers colored by empty miles" loading="lazy" /><p>Deadhead</p></div>
             <div><CaseStudyImage src="/images/case-studies/fleetline/rpm-view-unique-loads.png" alt="Unique loads view with markers sized by load count" loading="lazy" /><p>Unique loads</p></div>
             <div><CaseStudyImage src="/images/case-studies/fleetline/rpm-view-rpm.png" alt="RPM view with markers labeled by rate per mile" loading="lazy" /><p>RPM</p></div>
@@ -456,14 +482,18 @@ onBeforeUnmount(() => {
           </ul>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/rpm-iteration-3.png" alt="Map showing combined RPM values at markets and RPM on the busiest lanes" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/rpm-iteration-3.png" alt="Map showing combined RPM values at markets and RPM on the busiest lanes" loading="lazy" />
+          </div>
           <figcaption>Fig. 24. Iteration 3: RPM on the busiest lanes.</figcaption>
         </figure>
         <div class="copy text-group">
           <h3 class="iteration-heading"><span class="iteration-label">it. 4</span>Final map pattern</h3>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/rpm-final.png" alt="Final RPM view of the network map with colored markers and a market detail panel" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/rpm-final.png" alt="Final RPM view of the network map with colored markers and a market detail panel" loading="lazy" />
+          </div>
           <figcaption>Fig. 25. Iteration 4: the final RPM view.</figcaption>
         </figure>
       </section>
@@ -474,11 +504,15 @@ onBeforeUnmount(() => {
           <p>A holistic view of the network.</p>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/network-insights-old.png" alt="Original network insights page with a map of market points and tables" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/network-insights-old.png" alt="Original network insights page with a map of market points and tables" loading="lazy" />
+          </div>
           <figcaption>Fig. 26. Network insights, before.</figcaption>
         </figure>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/network-insights-new.png" alt="Redesigned network insights page with load-volume markers and a summary panel" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/network-insights-new.png" alt="Redesigned network insights page with load-volume markers and a summary panel" loading="lazy" />
+          </div>
           <figcaption>Fig. 27. Network insights, after.</figcaption>
         </figure>
       </section>
@@ -488,11 +522,15 @@ onBeforeUnmount(() => {
           <h2 class="numbered-heading"><span class="numbered-heading__number">5</span><span>End-to-end network mapping</span></h2>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/old-map.png" alt="Original network map with hundreds of overlapping lane lines" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/old-map.png" alt="Original network map with hundreds of overlapping lane lines" loading="lazy" />
+          </div>
           <figcaption>Fig. 28. Before.</figcaption>
         </figure>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/network-map-after.png" alt="Redesigned network map with load-volume markers and a market detail panel" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/network-map-after.png" alt="Redesigned network map with load-volume markers and a market detail panel" loading="lazy" />
+          </div>
           <figcaption>Fig. 29. After.</figcaption>
         </figure>
       </section>
@@ -527,7 +565,9 @@ onBeforeUnmount(() => {
           </ul>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/design-in-product.png" alt="Code editor with an agent conversation beside a running prototype of the network map" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/design-in-product.png" alt="Code editor with an agent conversation beside a running prototype of the network map" loading="lazy" />
+          </div>
           <figcaption>Fig. 30. Prototyping in the product with real fleet data.</figcaption>
         </figure>
         <div class="copy text-group">
@@ -539,7 +579,9 @@ onBeforeUnmount(() => {
           </ul>
         </div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/design-in-canvas.png" alt="Figma canvas with rows of detail panel iterations" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/design-in-canvas.png" alt="Figma canvas with rows of detail panel iterations" loading="lazy" />
+          </div>
           <figcaption>Fig. 31. UI iterations in Figma.</figcaption>
         </figure>
         <div class="copy text-group">
@@ -555,19 +597,23 @@ onBeforeUnmount(() => {
         <div class="copy text-group"><h2>Tags extended</h2></div>
         <figure>
           <div class="paired">
-            <CaseStudyImage src="/images/case-studies/fleetline/tags-a.png" alt="Deadhead view with mileage tags on each market" loading="lazy" />
-            <CaseStudyImage src="/images/case-studies/fleetline/tags-b.png" alt="Unique loads view with load-count tags and a market tooltip" loading="lazy" />
+            <div class="media-frame"><CaseStudyImage src="/images/case-studies/fleetline/tags-a.png" alt="Deadhead view with mileage tags on each market" loading="lazy" /></div>
+            <div class="media-frame"><CaseStudyImage src="/images/case-studies/fleetline/tags-b.png" alt="Unique loads view with load-count tags and a market tooltip" loading="lazy" /></div>
           </div>
           <figcaption>Fig. 33. Value tags on deadhead and unique loads views.</figcaption>
         </figure>
         <div class="copy text-group"><h2>Customer performance</h2></div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/customer-performance.png" alt="Customer performance page with a revenue chart and a table of loads" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/customer-performance.png" alt="Customer performance page with a revenue chart and a table of loads" loading="lazy" />
+          </div>
           <figcaption>Fig. 34. Customer performance.</figcaption>
         </figure>
         <div class="copy text-group"><h2>Driver performance</h2></div>
         <figure>
-          <CaseStudyImage src="/images/case-studies/fleetline/driver-performance.png" alt="Driver performance table with utilization and revenue per driver" loading="lazy" />
+          <div class="media-frame">
+            <CaseStudyImage src="/images/case-studies/fleetline/driver-performance.png" alt="Driver performance table with utilization and revenue per driver" loading="lazy" />
+          </div>
           <figcaption>Fig. 35. Driver performance.</figcaption>
         </figure>
       </section>
@@ -631,9 +677,29 @@ figure { margin: 0; min-width: 0; width: 100%; }
 figure.copy { width: min(var(--content-copy-width), 100%); }
 .figure--medium { width: min(var(--fleetline-medium-width), 100%); margin-inline: auto; }
 figure img { display: block; width: 100%; height: auto; border-radius: var(--case-study-surface-radius); }
+/* Large screenshots sit inside the homepage Fleetline cover, the way Nova insets product media. */
+.media-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-10);
+  overflow: hidden;
+  border-radius: var(--case-study-surface-radius);
+  background-color: var(--color-media-background);
+  background-image: url('/images/home/media-backgrounds/fleetline.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.media-frame :deep(img) {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
 figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs) auto 0; color: var(--color-subdued); font-family: var(--font-mono-ui); font-size: var(--font-size-s); line-height: var(--line-height-body); text-align: left; }
 .paired { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--case-study-media-stack-gap) var(--space-xl); align-items: start; }
 .stage { padding: var(--space-xl); background: var(--fleetline-stage-background); color: var(--fleetline-stage-text); border-radius: var(--case-study-surface-radius); }
+.stage--cover { background-color: var(--color-media-background); background-image: url('/images/home/media-backgrounds/fleetline.jpg'); background-position: center; background-size: cover; }
 .stage img { box-shadow: var(--fleetline-card-shadow); }
 
 .outcomes__panel { width: min(var(--content-copy-width), 100%); margin-inline: auto; display: flex; flex-direction: column; align-items: center; gap: var(--space-8); padding: var(--space-12) var(--space-xl); background: var(--fleetline-panel-background); border-radius: var(--case-study-surface-radius); text-align: center; line-height: var(--line-height-heading); }
@@ -701,6 +767,7 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
 .view-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: var(--space-xl); }
 .view-trio > div { display: flex; flex-direction: column; gap: var(--space-xs); }
 .view-trio p { font-family: var(--font-mono-ui); font-size: var(--font-size-xs); color: var(--fleetline-stage-subdued); }
+.stage--cover.view-trio p { color: var(--color-subdued); }
 
 .numbered-heading { position: relative; }
 .numbered-heading__number { position: absolute; right: calc(100% + var(--space-m)); top: 0; margin-top: calc(-1 * var(--space-xs)); display: flex; align-items: center; justify-content: center; width: var(--fleetline-number-size); height: var(--fleetline-number-size); border-radius: var(--radius-m); background: var(--fleetline-accent); color: var(--fleetline-accent-text); font-family: var(--font-mono-ui); font-size: inherit; font-weight: var(--font-weight-regular); line-height: 1.2; transform: rotate(-6deg); }
@@ -715,7 +782,7 @@ figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs
   .metric-compare { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 639px) {
-  .stage { padding: var(--space-m); }
+  .stage, .media-frame { padding: var(--space-m); }
   .case-numbered-list { gap: var(--space-xl); }
   .case-numbered-list--plain { gap: var(--space-s); }
   .case-numbered-list li > div { grid-template-columns: 1fr; gap: var(--space-xs); }
