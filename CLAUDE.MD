@@ -52,7 +52,7 @@ Personal portfolio website for ACAD 275. Built with Nuxt 4 and Vue 3. Uses npm a
 - Aspect ratios can be manually overridden (e.g. `1 / 1`) — `object-fit: cover` handles cropping.
 
 ## Case-study Routes
-- `/doordash`, `/nova`, and `/nuance` are public, linked case studies in development and production.
+- `/doordash`, `/fleetline`, `/nova`, and `/nuance` are public, linked case studies in development and production.
 - Content lives in the page components and `app/data/caseStudies.ts` (sourced from Framer dumps in `content/case-studies/`).
 - `CaseStudyPage.vue` provides a shared layout/body.
 - Do not invent case-study facts beyond the Framer text package.

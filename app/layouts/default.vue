@@ -14,7 +14,7 @@ type BlobCoreController = {
 const route = useRoute()
 const aboutSheet = ref<{ open: () => void } | null>(null)
 const workSheet = ref<{ open: () => void } | null>(null)
-const isCaseStudy = computed(() => ['/nuance', '/nova', '/doordash'].includes(route.path))
+const isCaseStudy = computed(() => ['/nuance', '/nova', '/doordash', '/fleetline'].includes(route.path))
 const pacificTime = ref('--:--:-- PST')
 const headerNavPhase = ref<HeaderNavPhase>('expanded')
 const headerNavRef = ref<HTMLElement | null>(null)

@@ -187,5 +187,338 @@
     "width": 1350,
     "height": 2760,
     "sizes": "(min-width: 1832px) 438px, (min-width: 640px) 25vw, 58vw"
+  },
+  "/images/case-studies/fleetline/network-map-after.png": {
+    "src": "/images/case-studies/fleetline/network-map-after-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/network-map-after-1440.webp",
+    "webp": "/images/case-studies/fleetline/network-map-after-800.webp 800w, /images/case-studies/fleetline/network-map-after-1440.webp 1440w, /images/case-studies/fleetline/network-map-after-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/network-map-after-800.jpg 800w, /images/case-studies/fleetline/network-map-after-1440.jpg 1440w, /images/case-studies/fleetline/network-map-after-2560.jpg 2560w",
+    "width": 1440,
+    "height": 849,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/legacy-software.png": {
+    "src": "/images/case-studies/fleetline/legacy-software-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/legacy-software-1440.webp",
+    "webp": "/images/case-studies/fleetline/legacy-software-800.webp 800w, /images/case-studies/fleetline/legacy-software-1440.webp 1440w, /images/case-studies/fleetline/legacy-software-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/legacy-software-800.jpg 800w, /images/case-studies/fleetline/legacy-software-1440.jpg 1440w, /images/case-studies/fleetline/legacy-software-2560.jpg 2560w",
+    "width": 1440,
+    "height": 810,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/old-map.png": {
+    "src": "/images/case-studies/fleetline/old-map-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/old-map-1440.webp",
+    "webp": "/images/case-studies/fleetline/old-map-800.webp 800w, /images/case-studies/fleetline/old-map-1440.webp 1440w, /images/case-studies/fleetline/old-map-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/old-map-800.jpg 800w, /images/case-studies/fleetline/old-map-1440.jpg 1440w, /images/case-studies/fleetline/old-map-2560.jpg 2560w",
+    "width": 1440,
+    "height": 843,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/old-map-issues.png": {
+    "src": "/images/case-studies/fleetline/old-map-issues-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/old-map-issues-1440.webp",
+    "webp": "/images/case-studies/fleetline/old-map-issues-800.webp 800w, /images/case-studies/fleetline/old-map-issues-1440.webp 1440w, /images/case-studies/fleetline/old-map-issues-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/old-map-issues-800.jpg 800w, /images/case-studies/fleetline/old-map-issues-1440.jpg 1440w, /images/case-studies/fleetline/old-map-issues-2560.jpg 2560w",
+    "width": 1440,
+    "height": 636,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/route-map-reference.png": {
+    "src": "/images/case-studies/fleetline/route-map-reference-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/route-map-reference-1440.webp",
+    "webp": "/images/case-studies/fleetline/route-map-reference-800.webp 800w, /images/case-studies/fleetline/route-map-reference-1440.webp 1440w, /images/case-studies/fleetline/route-map-reference-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/route-map-reference-800.jpg 800w, /images/case-studies/fleetline/route-map-reference-1440.jpg 1440w, /images/case-studies/fleetline/route-map-reference-2560.jpg 2560w",
+    "width": 1440,
+    "height": 1078,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/select-markets.png": {
+    "src": "/images/case-studies/fleetline/select-markets-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/select-markets-1440.webp",
+    "webp": "/images/case-studies/fleetline/select-markets-800.webp 800w, /images/case-studies/fleetline/select-markets-1440.webp 1440w, /images/case-studies/fleetline/select-markets-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/select-markets-800.jpg 800w, /images/case-studies/fleetline/select-markets-1440.jpg 1440w, /images/case-studies/fleetline/select-markets-2560.jpg 2560w",
+    "width": 1440,
+    "height": 848,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/load-volume-map.png": {
+    "src": "/images/case-studies/fleetline/load-volume-map-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/load-volume-map-1440.webp",
+    "webp": "/images/case-studies/fleetline/load-volume-map-800.webp 800w, /images/case-studies/fleetline/load-volume-map-1440.webp 1440w, /images/case-studies/fleetline/load-volume-map-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/load-volume-map-800.jpg 800w, /images/case-studies/fleetline/load-volume-map-1440.jpg 1440w, /images/case-studies/fleetline/load-volume-map-2560.jpg 2560w",
+    "width": 1440,
+    "height": 916,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/detail-panel-iterations.png": {
+    "src": "/images/case-studies/fleetline/detail-panel-iterations-1440.png",
+    "webpSrc": "/images/case-studies/fleetline/detail-panel-iterations-1440.webp",
+    "webp": "/images/case-studies/fleetline/detail-panel-iterations-800.webp 800w, /images/case-studies/fleetline/detail-panel-iterations-1440.webp 1440w, /images/case-studies/fleetline/detail-panel-iterations-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/detail-panel-iterations-800.png 800w, /images/case-studies/fleetline/detail-panel-iterations-1440.png 1440w, /images/case-studies/fleetline/detail-panel-iterations-2560.png 2560w",
+    "width": 1440,
+    "height": 733,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/detail-panel-final.png": {
+    "src": "/images/case-studies/fleetline/detail-panel-final-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/detail-panel-final-1440.webp",
+    "webp": "/images/case-studies/fleetline/detail-panel-final-800.webp 800w, /images/case-studies/fleetline/detail-panel-final-1440.webp 1440w, /images/case-studies/fleetline/detail-panel-final-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/detail-panel-final-800.jpg 800w, /images/case-studies/fleetline/detail-panel-final-1440.jpg 1440w, /images/case-studies/fleetline/detail-panel-final-2560.jpg 2560w",
+    "width": 1440,
+    "height": 829,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/rpm-before.png": {
+    "src": "/images/case-studies/fleetline/rpm-before-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/rpm-before-1440.webp",
+    "webp": "/images/case-studies/fleetline/rpm-before-800.webp 800w, /images/case-studies/fleetline/rpm-before-1440.webp 1440w, /images/case-studies/fleetline/rpm-before-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/rpm-before-800.jpg 800w, /images/case-studies/fleetline/rpm-before-1440.jpg 1440w, /images/case-studies/fleetline/rpm-before-2560.jpg 2560w",
+    "width": 1440,
+    "height": 771,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/rpm-iteration-1.png": {
+    "src": "/images/case-studies/fleetline/rpm-iteration-1-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/rpm-iteration-1-1440.webp",
+    "webp": "/images/case-studies/fleetline/rpm-iteration-1-800.webp 800w, /images/case-studies/fleetline/rpm-iteration-1-1440.webp 1440w, /images/case-studies/fleetline/rpm-iteration-1-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/rpm-iteration-1-800.jpg 800w, /images/case-studies/fleetline/rpm-iteration-1-1440.jpg 1440w, /images/case-studies/fleetline/rpm-iteration-1-2560.jpg 2560w",
+    "width": 1440,
+    "height": 826,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/rpm-iteration-2.png": {
+    "src": "/images/case-studies/fleetline/rpm-iteration-2-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/rpm-iteration-2-1440.webp",
+    "webp": "/images/case-studies/fleetline/rpm-iteration-2-800.webp 800w, /images/case-studies/fleetline/rpm-iteration-2-1440.webp 1440w, /images/case-studies/fleetline/rpm-iteration-2-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/rpm-iteration-2-800.jpg 800w, /images/case-studies/fleetline/rpm-iteration-2-1440.jpg 1440w, /images/case-studies/fleetline/rpm-iteration-2-2560.jpg 2560w",
+    "width": 1440,
+    "height": 826,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/rpm-iteration-3.png": {
+    "src": "/images/case-studies/fleetline/rpm-iteration-3-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/rpm-iteration-3-1440.webp",
+    "webp": "/images/case-studies/fleetline/rpm-iteration-3-800.webp 800w, /images/case-studies/fleetline/rpm-iteration-3-1440.webp 1440w, /images/case-studies/fleetline/rpm-iteration-3-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/rpm-iteration-3-800.jpg 800w, /images/case-studies/fleetline/rpm-iteration-3-1440.jpg 1440w, /images/case-studies/fleetline/rpm-iteration-3-2560.jpg 2560w",
+    "width": 1440,
+    "height": 826,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/rpm-final.png": {
+    "src": "/images/case-studies/fleetline/rpm-final-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/rpm-final-1440.webp",
+    "webp": "/images/case-studies/fleetline/rpm-final-800.webp 800w, /images/case-studies/fleetline/rpm-final-1440.webp 1440w, /images/case-studies/fleetline/rpm-final-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/rpm-final-800.jpg 800w, /images/case-studies/fleetline/rpm-final-1440.jpg 1440w, /images/case-studies/fleetline/rpm-final-2560.jpg 2560w",
+    "width": 1440,
+    "height": 849,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/network-insights-old.png": {
+    "src": "/images/case-studies/fleetline/network-insights-old-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/network-insights-old-1440.webp",
+    "webp": "/images/case-studies/fleetline/network-insights-old-800.webp 800w, /images/case-studies/fleetline/network-insights-old-1440.webp 1440w, /images/case-studies/fleetline/network-insights-old-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/network-insights-old-800.jpg 800w, /images/case-studies/fleetline/network-insights-old-1440.jpg 1440w, /images/case-studies/fleetline/network-insights-old-2560.jpg 2560w",
+    "width": 1440,
+    "height": 826,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/network-insights-new.png": {
+    "src": "/images/case-studies/fleetline/network-insights-new-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/network-insights-new-1440.webp",
+    "webp": "/images/case-studies/fleetline/network-insights-new-800.webp 800w, /images/case-studies/fleetline/network-insights-new-1440.webp 1440w, /images/case-studies/fleetline/network-insights-new-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/network-insights-new-800.jpg 800w, /images/case-studies/fleetline/network-insights-new-1440.jpg 1440w, /images/case-studies/fleetline/network-insights-new-2560.jpg 2560w",
+    "width": 1440,
+    "height": 849,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/design-in-product.png": {
+    "src": "/images/case-studies/fleetline/design-in-product-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/design-in-product-1440.webp",
+    "webp": "/images/case-studies/fleetline/design-in-product-800.webp 800w, /images/case-studies/fleetline/design-in-product-1440.webp 1440w, /images/case-studies/fleetline/design-in-product-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/design-in-product-800.jpg 800w, /images/case-studies/fleetline/design-in-product-1440.jpg 1440w, /images/case-studies/fleetline/design-in-product-2560.jpg 2560w",
+    "width": 1440,
+    "height": 931,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/design-in-canvas.png": {
+    "src": "/images/case-studies/fleetline/design-in-canvas-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/design-in-canvas-1440.webp",
+    "webp": "/images/case-studies/fleetline/design-in-canvas-800.webp 800w, /images/case-studies/fleetline/design-in-canvas-1440.webp 1440w, /images/case-studies/fleetline/design-in-canvas-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/design-in-canvas-800.jpg 800w, /images/case-studies/fleetline/design-in-canvas-1440.jpg 1440w, /images/case-studies/fleetline/design-in-canvas-2560.jpg 2560w",
+    "width": 1440,
+    "height": 547,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/customer-performance.png": {
+    "src": "/images/case-studies/fleetline/customer-performance-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/customer-performance-1440.webp",
+    "webp": "/images/case-studies/fleetline/customer-performance-800.webp 800w, /images/case-studies/fleetline/customer-performance-1440.webp 1440w, /images/case-studies/fleetline/customer-performance-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/customer-performance-800.jpg 800w, /images/case-studies/fleetline/customer-performance-1440.jpg 1440w, /images/case-studies/fleetline/customer-performance-2560.jpg 2560w",
+    "width": 1440,
+    "height": 848,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/driver-performance.png": {
+    "src": "/images/case-studies/fleetline/driver-performance-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/driver-performance-1440.webp",
+    "webp": "/images/case-studies/fleetline/driver-performance-800.webp 800w, /images/case-studies/fleetline/driver-performance-1440.webp 1440w, /images/case-studies/fleetline/driver-performance-2560.webp 2560w",
+    "fallback": "/images/case-studies/fleetline/driver-performance-800.jpg 800w, /images/case-studies/fleetline/driver-performance-1440.jpg 1440w, /images/case-studies/fleetline/driver-performance-2560.jpg 2560w",
+    "width": 1440,
+    "height": 851,
+    "sizes": "(min-width: 1832px) 1800px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/load-volume-detail.png": {
+    "src": "/images/case-studies/fleetline/load-volume-detail-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/load-volume-detail-1440.webp",
+    "webp": "/images/case-studies/fleetline/load-volume-detail-800.webp 800w, /images/case-studies/fleetline/load-volume-detail-1440.webp 1440w, /images/case-studies/fleetline/load-volume-detail-1854.webp 1854w",
+    "fallback": "/images/case-studies/fleetline/load-volume-detail-800.jpg 800w, /images/case-studies/fleetline/load-volume-detail-1440.jpg 1440w, /images/case-studies/fleetline/load-volume-detail-1854.jpg 1854w",
+    "width": 1440,
+    "height": 999,
+    "sizes": "(min-width: 1248px) 1200px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/detail-panel-directional.png": {
+    "src": "/images/case-studies/fleetline/detail-panel-directional-1440.jpg",
+    "webpSrc": "/images/case-studies/fleetline/detail-panel-directional-1440.webp",
+    "webp": "/images/case-studies/fleetline/detail-panel-directional-800.webp 800w, /images/case-studies/fleetline/detail-panel-directional-1440.webp 1440w, /images/case-studies/fleetline/detail-panel-directional-1860.webp 1860w",
+    "fallback": "/images/case-studies/fleetline/detail-panel-directional-800.jpg 800w, /images/case-studies/fleetline/detail-panel-directional-1440.jpg 1440w, /images/case-studies/fleetline/detail-panel-directional-1860.jpg 1860w",
+    "width": 1440,
+    "height": 836,
+    "sizes": "(min-width: 1248px) 1200px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/product-planning.png": {
+    "src": "/images/case-studies/fleetline/product-planning-1200.jpg",
+    "webpSrc": "/images/case-studies/fleetline/product-planning-1200.webp",
+    "webp": "/images/case-studies/fleetline/product-planning-640.webp 640w, /images/case-studies/fleetline/product-planning-1200.webp 1200w, /images/case-studies/fleetline/product-planning-1800.webp 1800w",
+    "fallback": "/images/case-studies/fleetline/product-planning-640.jpg 640w, /images/case-studies/fleetline/product-planning-1200.jpg 1200w, /images/case-studies/fleetline/product-planning-1800.jpg 1800w",
+    "width": 1200,
+    "height": 647,
+    "sizes": "(min-width: 1832px) 876px, (min-width: 1024px) 50vw, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/product-gantt.png": {
+    "src": "/images/case-studies/fleetline/product-gantt-1200.png",
+    "webpSrc": "/images/case-studies/fleetline/product-gantt-1200.webp",
+    "webp": "/images/case-studies/fleetline/product-gantt-640.webp 640w, /images/case-studies/fleetline/product-gantt-1200.webp 1200w, /images/case-studies/fleetline/product-gantt-1800.webp 1800w",
+    "fallback": "/images/case-studies/fleetline/product-gantt-640.png 640w, /images/case-studies/fleetline/product-gantt-1200.png 1200w, /images/case-studies/fleetline/product-gantt-1800.png 1800w",
+    "width": 1200,
+    "height": 586,
+    "sizes": "(min-width: 1832px) 876px, (min-width: 1024px) 50vw, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/market-selected.png": {
+    "src": "/images/case-studies/fleetline/market-selected-1200.jpg",
+    "webpSrc": "/images/case-studies/fleetline/market-selected-1200.webp",
+    "webp": "/images/case-studies/fleetline/market-selected-640.webp 640w, /images/case-studies/fleetline/market-selected-1200.webp 1200w, /images/case-studies/fleetline/market-selected-1800.webp 1800w",
+    "fallback": "/images/case-studies/fleetline/market-selected-640.jpg 640w, /images/case-studies/fleetline/market-selected-1200.jpg 1200w, /images/case-studies/fleetline/market-selected-1800.jpg 1800w",
+    "width": 1200,
+    "height": 553,
+    "sizes": "(min-width: 1832px) 876px, (min-width: 1024px) 50vw, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/lane-selected.png": {
+    "src": "/images/case-studies/fleetline/lane-selected-1200.jpg",
+    "webpSrc": "/images/case-studies/fleetline/lane-selected-1200.webp",
+    "webp": "/images/case-studies/fleetline/lane-selected-640.webp 640w, /images/case-studies/fleetline/lane-selected-1200.webp 1200w, /images/case-studies/fleetline/lane-selected-1800.webp 1800w",
+    "fallback": "/images/case-studies/fleetline/lane-selected-640.jpg 640w, /images/case-studies/fleetline/lane-selected-1200.jpg 1200w, /images/case-studies/fleetline/lane-selected-1800.jpg 1800w",
+    "width": 1200,
+    "height": 577,
+    "sizes": "(min-width: 1832px) 876px, (min-width: 1024px) 50vw, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/tags-a.png": {
+    "src": "/images/case-studies/fleetline/tags-a-1200.jpg",
+    "webpSrc": "/images/case-studies/fleetline/tags-a-1200.webp",
+    "webp": "/images/case-studies/fleetline/tags-a-640.webp 640w, /images/case-studies/fleetline/tags-a-1200.webp 1200w, /images/case-studies/fleetline/tags-a-1800.webp 1800w",
+    "fallback": "/images/case-studies/fleetline/tags-a-640.jpg 640w, /images/case-studies/fleetline/tags-a-1200.jpg 1200w, /images/case-studies/fleetline/tags-a-1800.jpg 1800w",
+    "width": 1200,
+    "height": 994,
+    "sizes": "(min-width: 1832px) 876px, (min-width: 1024px) 50vw, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/tags-b.png": {
+    "src": "/images/case-studies/fleetline/tags-b-1200.jpg",
+    "webpSrc": "/images/case-studies/fleetline/tags-b-1200.webp",
+    "webp": "/images/case-studies/fleetline/tags-b-640.webp 640w, /images/case-studies/fleetline/tags-b-1200.webp 1200w, /images/case-studies/fleetline/tags-b-1800.webp 1800w",
+    "fallback": "/images/case-studies/fleetline/tags-b-640.jpg 640w, /images/case-studies/fleetline/tags-b-1200.jpg 1200w, /images/case-studies/fleetline/tags-b-1800.jpg 1800w",
+    "width": 1200,
+    "height": 978,
+    "sizes": "(min-width: 1832px) 876px, (min-width: 1024px) 50vw, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/stops-panel-a.png": {
+    "src": "/images/case-studies/fleetline/stops-panel-a-640.jpg",
+    "webpSrc": "/images/case-studies/fleetline/stops-panel-a-640.webp",
+    "webp": "/images/case-studies/fleetline/stops-panel-a-640.webp 640w, /images/case-studies/fleetline/stops-panel-a-1200.webp 1200w",
+    "fallback": "/images/case-studies/fleetline/stops-panel-a-640.jpg 640w, /images/case-studies/fleetline/stops-panel-a-1200.jpg 1200w",
+    "width": 640,
+    "height": 531,
+    "sizes": "(min-width: 1832px) 876px, (min-width: 1024px) 50vw, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/stops-panel-b.png": {
+    "src": "/images/case-studies/fleetline/stops-panel-b-640.jpg",
+    "webpSrc": "/images/case-studies/fleetline/stops-panel-b-640.webp",
+    "webp": "/images/case-studies/fleetline/stops-panel-b-640.webp 640w, /images/case-studies/fleetline/stops-panel-b-1200.webp 1200w",
+    "fallback": "/images/case-studies/fleetline/stops-panel-b-640.jpg 640w, /images/case-studies/fleetline/stops-panel-b-1200.jpg 1200w",
+    "width": 640,
+    "height": 511,
+    "sizes": "(min-width: 1832px) 876px, (min-width: 1024px) 50vw, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/lane-panel.png": {
+    "src": "/images/case-studies/fleetline/lane-panel-480.jpg",
+    "webpSrc": "/images/case-studies/fleetline/lane-panel-480.webp",
+    "webp": "/images/case-studies/fleetline/lane-panel-480.webp 480w, /images/case-studies/fleetline/lane-panel-852.webp 852w",
+    "fallback": "/images/case-studies/fleetline/lane-panel-480.jpg 480w, /images/case-studies/fleetline/lane-panel-852.jpg 852w",
+    "width": 480,
+    "height": 909,
+    "sizes": "(min-width: 1024px) 400px, 45vw"
+  },
+  "/images/case-studies/fleetline/market-panel.png": {
+    "src": "/images/case-studies/fleetline/market-panel-480.jpg",
+    "webpSrc": "/images/case-studies/fleetline/market-panel-480.webp",
+    "webp": "/images/case-studies/fleetline/market-panel-480.webp 480w, /images/case-studies/fleetline/market-panel-846.webp 846w",
+    "fallback": "/images/case-studies/fleetline/market-panel-480.jpg 480w, /images/case-studies/fleetline/market-panel-846.jpg 846w",
+    "width": 480,
+    "height": 915,
+    "sizes": "(min-width: 1024px) 400px, 45vw"
+  },
+  "/images/case-studies/fleetline/stops-tooltip.png": {
+    "src": "/images/case-studies/fleetline/stops-tooltip-480.jpg",
+    "webpSrc": "/images/case-studies/fleetline/stops-tooltip-480.webp",
+    "webp": "/images/case-studies/fleetline/stops-tooltip-480.webp 480w, /images/case-studies/fleetline/stops-tooltip-962.webp 962w",
+    "fallback": "/images/case-studies/fleetline/stops-tooltip-480.jpg 480w, /images/case-studies/fleetline/stops-tooltip-962.jpg 962w",
+    "width": 480,
+    "height": 218,
+    "sizes": "(min-width: 640px) 480px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/design-system-list-rows.png": {
+    "src": "/images/case-studies/fleetline/design-system-list-rows-800.jpg",
+    "webpSrc": "/images/case-studies/fleetline/design-system-list-rows-800.webp",
+    "webp": "/images/case-studies/fleetline/design-system-list-rows-800.webp 800w, /images/case-studies/fleetline/design-system-list-rows-1502.webp 1502w",
+    "fallback": "/images/case-studies/fleetline/design-system-list-rows-800.jpg 800w, /images/case-studies/fleetline/design-system-list-rows-1502.jpg 1502w",
+    "width": 800,
+    "height": 152,
+    "sizes": "(min-width: 640px) 600px, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/rpm-view-deadhead.png": {
+    "src": "/images/case-studies/fleetline/rpm-view-deadhead-480.jpg",
+    "webpSrc": "/images/case-studies/fleetline/rpm-view-deadhead-480.webp",
+    "webp": "/images/case-studies/fleetline/rpm-view-deadhead-480.webp 480w, /images/case-studies/fleetline/rpm-view-deadhead-1188.webp 1188w",
+    "fallback": "/images/case-studies/fleetline/rpm-view-deadhead-480.jpg 480w, /images/case-studies/fleetline/rpm-view-deadhead-1188.jpg 1188w",
+    "width": 480,
+    "height": 334,
+    "sizes": "(min-width: 1024px) 30vw, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/rpm-view-unique-loads.png": {
+    "src": "/images/case-studies/fleetline/rpm-view-unique-loads-480.jpg",
+    "webpSrc": "/images/case-studies/fleetline/rpm-view-unique-loads-480.webp",
+    "webp": "/images/case-studies/fleetline/rpm-view-unique-loads-480.webp 480w, /images/case-studies/fleetline/rpm-view-unique-loads-1392.webp 1392w",
+    "fallback": "/images/case-studies/fleetline/rpm-view-unique-loads-480.jpg 480w, /images/case-studies/fleetline/rpm-view-unique-loads-1392.jpg 1392w",
+    "width": 480,
+    "height": 300,
+    "sizes": "(min-width: 1024px) 30vw, calc(100vw - 32px)"
+  },
+  "/images/case-studies/fleetline/rpm-view-rpm.png": {
+    "src": "/images/case-studies/fleetline/rpm-view-rpm-480.jpg",
+    "webpSrc": "/images/case-studies/fleetline/rpm-view-rpm-480.webp",
+    "webp": "/images/case-studies/fleetline/rpm-view-rpm-480.webp 480w, /images/case-studies/fleetline/rpm-view-rpm-918.webp 918w",
+    "fallback": "/images/case-studies/fleetline/rpm-view-rpm-480.jpg 480w, /images/case-studies/fleetline/rpm-view-rpm-918.jpg 918w",
+    "width": 480,
+    "height": 307,
+    "sizes": "(min-width: 1024px) 30vw, calc(100vw - 32px)"
   }
 }
