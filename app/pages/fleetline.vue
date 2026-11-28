@@ -1,9 +1,10 @@
 <script setup lang="ts">
-type SectionId = 'overview' | 'context' | 'problem' | 'hotspots' | 'data' | 'rpm' | 'insights' | 'solution' | 'learning' | 'next-steps' | 'extra'
+type SectionId = 'overview' | 'context' | 'problem' | 'first-map' | 'hotspots' | 'data' | 'rpm' | 'insights' | 'solution' | 'learning' | 'next-steps' | 'extra'
 const sections: Array<{ id: SectionId, label: string }> = [
   { id: 'overview', label: 'Overview' },
   { id: 'context', label: 'Context' },
   { id: 'problem', label: 'Problem' },
+  { id: 'first-map', label: 'First map' },
   { id: 'hotspots', label: 'Hotspots' },
   { id: 'data', label: 'Contextual data' },
   { id: 'rpm', label: 'RPM diagnosis' },
@@ -208,11 +209,18 @@ onBeforeUnmount(() => {
           </ol>
           <p>Managers need a way to understand where the market lies to best take advantage of it.</p>
         </div>
+      </section>
+
+      <section id="first-map" class="story" data-case-section="first-map" aria-labelledby="first-map-title">
+        <div class="copy text-group">
+          <h2 id="first-map-title">The first network map</h2>
+          <p>A forward deployed engineer built this first version. It wasn’t easy to use, and it wasn’t accessible.</p>
+        </div>
         <figure>
           <div class="media-frame">
             <CaseStudyImage src="/images/case-studies/fleetline/old-map.png" alt="Original network map with hundreds of overlapping lane lines across the United States" loading="lazy" />
           </div>
-          <figcaption>Fig. 5. The original network map.</figcaption>
+          <figcaption>Fig. 5. The original network map, the forward deployed engineer’s first build.</figcaption>
         </figure>
       </section>
 
