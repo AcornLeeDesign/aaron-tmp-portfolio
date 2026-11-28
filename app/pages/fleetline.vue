@@ -639,6 +639,8 @@ onBeforeUnmount(() => {
   --fleetline-panel-width: 400px;
   /* Diagram cards stay at a comfortable reading measure inside the stage. */
   --fleetline-diagram-width: 720px;
+  /* Heavy shade over the homepage cover so product screenshots sit on a dark field. */
+  --fleetline-media-shade: rgb(0 0 0 / 68%);
   padding: calc(var(--layout-header-clearance) + var(--space-m)) var(--layout-content-edge) var(--space-30);
   color: var(--color-text);
   font-size: var(--font-size-s);
@@ -677,7 +679,9 @@ figure img { display: block; width: 100%; height: auto; border-radius: var(--cas
   overflow: hidden;
   border-radius: var(--case-study-surface-radius);
   background-color: var(--color-media-background);
-  background-image: url('/images/home/media-backgrounds/fleetline.jpg');
+  background-image:
+    linear-gradient(var(--fleetline-media-shade), var(--fleetline-media-shade)),
+    url('/images/home/media-backgrounds/fleetline.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -689,7 +693,14 @@ figure img { display: block; width: 100%; height: auto; border-radius: var(--cas
 figcaption { width: min(var(--content-copy-width), 100%); margin: var(--space-xs) auto 0; color: var(--color-subdued); font-family: var(--font-mono-ui); font-size: var(--font-size-s); line-height: var(--line-height-body); text-align: left; }
 .paired { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--case-study-media-stack-gap) var(--space-xl); align-items: start; }
 .stage { padding: var(--space-xl); background: var(--fleetline-stage-background); color: var(--fleetline-stage-text); border-radius: var(--case-study-surface-radius); }
-.stage--cover { background-color: var(--color-media-background); background-image: url('/images/home/media-backgrounds/fleetline.jpg'); background-position: center; background-size: cover; }
+.stage--cover {
+  background-color: var(--color-media-background);
+  background-image:
+    linear-gradient(var(--fleetline-media-shade), var(--fleetline-media-shade)),
+    url('/images/home/media-backgrounds/fleetline.jpg');
+  background-position: center;
+  background-size: cover;
+}
 .stage img { box-shadow: var(--fleetline-card-shadow); }
 
 .outcomes__panel { width: min(var(--content-copy-width), 100%); margin-inline: auto; display: flex; flex-direction: column; align-items: center; gap: var(--space-8); padding: var(--space-12) var(--space-xl); background: var(--fleetline-panel-background); border-radius: var(--case-study-surface-radius); text-align: center; line-height: var(--line-height-heading); }
